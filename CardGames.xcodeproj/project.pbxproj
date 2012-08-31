@@ -7,96 +7,99 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D109FFBB15E8227B000B7826 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D109FFBA15E8227B000B7826 /* UIKit.framework */; };
-		D109FFBD15E8227B000B7826 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D109FFBC15E8227B000B7826 /* Foundation.framework */; };
-		D109FFBF15E8227B000B7826 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D109FFBE15E8227B000B7826 /* CoreGraphics.framework */; };
-		D109FFC515E8227B000B7826 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D109FFC315E8227B000B7826 /* InfoPlist.strings */; };
-		D109FFC715E8227B000B7826 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D109FFC615E8227B000B7826 /* main.m */; };
-		D109FFCB15E8227B000B7826 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D109FFCA15E8227B000B7826 /* AppDelegate.m */; };
-		D109FFCE15E8227B000B7826 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D109FFCC15E8227B000B7826 /* MainStoryboard_iPhone.storyboard */; };
-		D109FFD115E8227B000B7826 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D109FFCF15E8227B000B7826 /* MainStoryboard_iPad.storyboard */; };
-		D109FFD415E8227B000B7826 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D109FFD315E8227B000B7826 /* ViewController.m */; };
+		D18663A115F109BE0098E8AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18663A015F109BE0098E8AD /* UIKit.framework */; };
+		D18663A315F109BE0098E8AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18663A215F109BE0098E8AD /* Foundation.framework */; };
+		D18663A515F109BE0098E8AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18663A415F109BE0098E8AD /* CoreGraphics.framework */; };
+		D18663AB15F109BE0098E8AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D18663A915F109BE0098E8AD /* InfoPlist.strings */; };
+		D18663AD15F109BE0098E8AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D18663AC15F109BE0098E8AD /* main.m */; };
+		D18663B115F109BE0098E8AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D18663B015F109BE0098E8AD /* AppDelegate.m */; };
+		D18663B415F109BE0098E8AD /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18663B215F109BE0098E8AD /* MainStoryboard_iPhone.storyboard */; };
+		D18663B715F109BE0098E8AD /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18663B515F109BE0098E8AD /* MainStoryboard_iPad.storyboard */; };
+		D18663BA15F109BE0098E8AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D18663B915F109BE0098E8AD /* ViewController.m */; };
+		D18663C115F10C130098E8AD /* ic_launcher_card_games.png in Resources */ = {isa = PBXBuildFile; fileRef = D18663C015F10C130098E8AD /* ic_launcher_card_games.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D109FFB615E8227B000B7826 /* CardGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D109FFBA15E8227B000B7826 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D109FFBC15E8227B000B7826 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D109FFBE15E8227B000B7826 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D109FFC215E8227B000B7826 /* CardGames-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CardGames-Info.plist"; sourceTree = "<group>"; };
-		D109FFC415E8227B000B7826 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D109FFC615E8227B000B7826 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D109FFC815E8227B000B7826 /* CardGames-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CardGames-Prefix.pch"; sourceTree = "<group>"; };
-		D109FFC915E8227B000B7826 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D109FFCA15E8227B000B7826 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D109FFCD15E8227B000B7826 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		D109FFD015E8227B000B7826 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		D109FFD215E8227B000B7826 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D109FFD315E8227B000B7826 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D186639C15F109BE0098E8AD /* CardGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D18663A015F109BE0098E8AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D18663A215F109BE0098E8AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D18663A415F109BE0098E8AD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D18663A815F109BE0098E8AD /* CardGames-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CardGames-Info.plist"; sourceTree = "<group>"; };
+		D18663AA15F109BE0098E8AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D18663AC15F109BE0098E8AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D18663AE15F109BE0098E8AD /* CardGames-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CardGames-Prefix.pch"; sourceTree = "<group>"; };
+		D18663AF15F109BE0098E8AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D18663B015F109BE0098E8AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D18663B315F109BE0098E8AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		D18663B615F109BE0098E8AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		D18663B815F109BE0098E8AD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D18663B915F109BE0098E8AD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D18663C015F10C130098E8AD /* ic_launcher_card_games.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher_card_games.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D109FFB315E8227B000B7826 /* Frameworks */ = {
+		D186639915F109BE0098E8AD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D109FFBB15E8227B000B7826 /* UIKit.framework in Frameworks */,
-				D109FFBD15E8227B000B7826 /* Foundation.framework in Frameworks */,
-				D109FFBF15E8227B000B7826 /* CoreGraphics.framework in Frameworks */,
+				D18663A115F109BE0098E8AD /* UIKit.framework in Frameworks */,
+				D18663A315F109BE0098E8AD /* Foundation.framework in Frameworks */,
+				D18663A515F109BE0098E8AD /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D109FFAB15E8227B000B7826 = {
+		D186639115F109BE0098E8AD = {
 			isa = PBXGroup;
 			children = (
-				D109FFC015E8227B000B7826 /* CardGames */,
-				D109FFB915E8227B000B7826 /* Frameworks */,
-				D109FFB715E8227B000B7826 /* Products */,
+				D18663C015F10C130098E8AD /* ic_launcher_card_games.png */,
+				D18663A615F109BE0098E8AD /* CardGames */,
+				D186639F15F109BE0098E8AD /* Frameworks */,
+				D186639D15F109BE0098E8AD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D109FFB715E8227B000B7826 /* Products */ = {
+		D186639D15F109BE0098E8AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D109FFB615E8227B000B7826 /* CardGames.app */,
+				D186639C15F109BE0098E8AD /* CardGames.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D109FFB915E8227B000B7826 /* Frameworks */ = {
+		D186639F15F109BE0098E8AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D109FFBA15E8227B000B7826 /* UIKit.framework */,
-				D109FFBC15E8227B000B7826 /* Foundation.framework */,
-				D109FFBE15E8227B000B7826 /* CoreGraphics.framework */,
+				D18663A015F109BE0098E8AD /* UIKit.framework */,
+				D18663A215F109BE0098E8AD /* Foundation.framework */,
+				D18663A415F109BE0098E8AD /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D109FFC015E8227B000B7826 /* CardGames */ = {
+		D18663A615F109BE0098E8AD /* CardGames */ = {
 			isa = PBXGroup;
 			children = (
-				D109FFC915E8227B000B7826 /* AppDelegate.h */,
-				D109FFCA15E8227B000B7826 /* AppDelegate.m */,
-				D109FFCC15E8227B000B7826 /* MainStoryboard_iPhone.storyboard */,
-				D109FFCF15E8227B000B7826 /* MainStoryboard_iPad.storyboard */,
-				D109FFD215E8227B000B7826 /* ViewController.h */,
-				D109FFD315E8227B000B7826 /* ViewController.m */,
-				D109FFC115E8227B000B7826 /* Supporting Files */,
+				D18663AF15F109BE0098E8AD /* AppDelegate.h */,
+				D18663B015F109BE0098E8AD /* AppDelegate.m */,
+				D18663B215F109BE0098E8AD /* MainStoryboard_iPhone.storyboard */,
+				D18663B515F109BE0098E8AD /* MainStoryboard_iPad.storyboard */,
+				D18663B815F109BE0098E8AD /* ViewController.h */,
+				D18663B915F109BE0098E8AD /* ViewController.m */,
+				D18663A715F109BE0098E8AD /* Supporting Files */,
 			);
 			path = CardGames;
 			sourceTree = "<group>";
 		};
-		D109FFC115E8227B000B7826 /* Supporting Files */ = {
+		D18663A715F109BE0098E8AD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D109FFC215E8227B000B7826 /* CardGames-Info.plist */,
-				D109FFC315E8227B000B7826 /* InfoPlist.strings */,
-				D109FFC615E8227B000B7826 /* main.m */,
-				D109FFC815E8227B000B7826 /* CardGames-Prefix.pch */,
+				D18663A815F109BE0098E8AD /* CardGames-Info.plist */,
+				D18663A915F109BE0098E8AD /* InfoPlist.strings */,
+				D18663AC15F109BE0098E8AD /* main.m */,
+				D18663AE15F109BE0098E8AD /* CardGames-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -104,13 +107,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D109FFB515E8227B000B7826 /* CardGames */ = {
+		D186639B15F109BE0098E8AD /* CardGames */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D109FFD715E8227B000B7826 /* Build configuration list for PBXNativeTarget "CardGames" */;
+			buildConfigurationList = D18663BD15F109BE0098E8AD /* Build configuration list for PBXNativeTarget "CardGames" */;
 			buildPhases = (
-				D109FFB215E8227B000B7826 /* Sources */,
-				D109FFB315E8227B000B7826 /* Frameworks */,
-				D109FFB415E8227B000B7826 /* Resources */,
+				D186639815F109BE0098E8AD /* Sources */,
+				D186639915F109BE0098E8AD /* Frameworks */,
+				D186639A15F109BE0098E8AD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -118,82 +121,83 @@
 			);
 			name = CardGames;
 			productName = CardGames;
-			productReference = D109FFB615E8227B000B7826 /* CardGames.app */;
+			productReference = D186639C15F109BE0098E8AD /* CardGames.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D109FFAD15E8227B000B7826 /* Project object */ = {
+		D186639315F109BE0098E8AD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Brian Reber";
 			};
-			buildConfigurationList = D109FFB015E8227B000B7826 /* Build configuration list for PBXProject "CardGames" */;
+			buildConfigurationList = D186639615F109BE0098E8AD /* Build configuration list for PBXProject "CardGames" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = D109FFAB15E8227B000B7826;
-			productRefGroup = D109FFB715E8227B000B7826 /* Products */;
+			mainGroup = D186639115F109BE0098E8AD;
+			productRefGroup = D186639D15F109BE0098E8AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D109FFB515E8227B000B7826 /* CardGames */,
+				D186639B15F109BE0098E8AD /* CardGames */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D109FFB415E8227B000B7826 /* Resources */ = {
+		D186639A15F109BE0098E8AD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D109FFC515E8227B000B7826 /* InfoPlist.strings in Resources */,
-				D109FFCE15E8227B000B7826 /* MainStoryboard_iPhone.storyboard in Resources */,
-				D109FFD115E8227B000B7826 /* MainStoryboard_iPad.storyboard in Resources */,
+				D18663AB15F109BE0098E8AD /* InfoPlist.strings in Resources */,
+				D18663B415F109BE0098E8AD /* MainStoryboard_iPhone.storyboard in Resources */,
+				D18663B715F109BE0098E8AD /* MainStoryboard_iPad.storyboard in Resources */,
+				D18663C115F10C130098E8AD /* ic_launcher_card_games.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D109FFB215E8227B000B7826 /* Sources */ = {
+		D186639815F109BE0098E8AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D109FFC715E8227B000B7826 /* main.m in Sources */,
-				D109FFCB15E8227B000B7826 /* AppDelegate.m in Sources */,
-				D109FFD415E8227B000B7826 /* ViewController.m in Sources */,
+				D18663AD15F109BE0098E8AD /* main.m in Sources */,
+				D18663B115F109BE0098E8AD /* AppDelegate.m in Sources */,
+				D18663BA15F109BE0098E8AD /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D109FFC315E8227B000B7826 /* InfoPlist.strings */ = {
+		D18663A915F109BE0098E8AD /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D109FFC415E8227B000B7826 /* en */,
+				D18663AA15F109BE0098E8AD /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		D109FFCC15E8227B000B7826 /* MainStoryboard_iPhone.storyboard */ = {
+		D18663B215F109BE0098E8AD /* MainStoryboard_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D109FFCD15E8227B000B7826 /* en */,
+				D18663B315F109BE0098E8AD /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
-		D109FFCF15E8227B000B7826 /* MainStoryboard_iPad.storyboard */ = {
+		D18663B515F109BE0098E8AD /* MainStoryboard_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D109FFD015E8227B000B7826 /* en */,
+				D18663B615F109BE0098E8AD /* en */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
@@ -201,7 +205,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D109FFD515E8227B000B7826 /* Debug */ = {
+		D18663BB15F109BE0098E8AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -229,7 +233,7 @@
 			};
 			name = Debug;
 		};
-		D109FFD615E8227B000B7826 /* Release */ = {
+		D18663BC15F109BE0098E8AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -252,7 +256,7 @@
 			};
 			name = Release;
 		};
-		D109FFD815E8227B000B7826 /* Debug */ = {
+		D18663BE15F109BE0098E8AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -263,7 +267,7 @@
 			};
 			name = Debug;
 		};
-		D109FFD915E8227B000B7826 /* Release */ = {
+		D18663BF15F109BE0098E8AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -277,24 +281,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D109FFB015E8227B000B7826 /* Build configuration list for PBXProject "CardGames" */ = {
+		D186639615F109BE0098E8AD /* Build configuration list for PBXProject "CardGames" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D109FFD515E8227B000B7826 /* Debug */,
-				D109FFD615E8227B000B7826 /* Release */,
+				D18663BB15F109BE0098E8AD /* Debug */,
+				D18663BC15F109BE0098E8AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D109FFD715E8227B000B7826 /* Build configuration list for PBXNativeTarget "CardGames" */ = {
+		D18663BD15F109BE0098E8AD /* Build configuration list for PBXNativeTarget "CardGames" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D109FFD815E8227B000B7826 /* Debug */,
-				D109FFD915E8227B000B7826 /* Release */,
+				D18663BE15F109BE0098E8AD /* Debug */,
+				D18663BF15F109BE0098E8AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D109FFAD15E8227B000B7826 /* Project object */;
+	rootObject = D186639315F109BE0098E8AD /* Project object */;
 }

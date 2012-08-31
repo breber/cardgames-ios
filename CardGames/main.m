@@ -2,7 +2,7 @@
 //  main.m
 //  CardGames
 //
-//  Created by Brian Reber on 8/24/12.
+//  Created by Brian Reber on 8/31/12.
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
