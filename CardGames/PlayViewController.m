@@ -34,6 +34,7 @@
     if ([[alertView title] isEqualToString:@"Enter IP Address"]) {
         [connection initNetworkCommunication:result];
     } else if ([[alertView title] isEqualToString:@"Enter Name"]) {
+        // TODO: Should only need to send "{\\\"playername\\\":\\\"%@\\\"}"
         NSString *toWrite = [NSString stringWithFormat:@"{\"DATA\":\"{\\\"playername\\\":\\\"%@\\\"}\",\"MSG_TYPE\":1915416160}", result];
         [connection write:toWrite];
     }
