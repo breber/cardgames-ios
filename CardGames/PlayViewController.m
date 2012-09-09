@@ -25,10 +25,6 @@
     connection = [WifiConnection sharedInstance];
     connection.listener = self;
     
-    CGAffineTransform rotationTransform = CGAffineTransformIdentity;
-    rotationTransform = CGAffineTransformRotate(rotationTransform, 90);
-    cardHand.transform = rotationTransform;
-    
     // Show a popup requesting the IP address of the server to connect to
     UIAlertView *temp = [[UIAlertView alloc] initWithTitle:@"Enter IP Address" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     temp.alertViewStyle = UIAlertViewStylePlainTextInput;
@@ -83,7 +79,7 @@
     }
 }
 
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.hand count];
 }
 
@@ -94,7 +90,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    
+
+    // Set the image of the cell
     [[cell imageView] setImage:[UIImage imageNamed:[c cardImagePath]]];
     return cell;
 }

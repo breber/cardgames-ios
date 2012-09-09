@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HorizontalTableView.h"
 #import "ViewController.h"
 #import "WifiConnection.h"
 
 @interface PlayViewController : ViewController <ConnectionListener, UITableViewDataSource, UITableViewDelegate> {
-    IBOutlet UITableView *cardHand;
+    IBOutlet HorizontalTableView *cardHand;
     WifiConnection *connection;
 }
 

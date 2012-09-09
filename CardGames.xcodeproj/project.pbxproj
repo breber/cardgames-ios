@@ -87,6 +87,8 @@
 		D1CAA3CE15FD28C100549EF7 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3C115FD28C100549EF7 /* SBJsonUTF8Stream.m */; };
 		D1CAA3CF15FD28C100549EF7 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3C315FD28C100549EF7 /* SBJsonWriter.m */; };
 		D1CAA3D215FD32E000549EF7 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3D115FD32E000549EF7 /* Card.m */; };
+		D1CAA3D915FD5AF400549EF7 /* HorizontalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3D815FD5AF400549EF7 /* HorizontalTableView.m */; };
+		D1CAA3DD15FD5C6200549EF7 /* HorizontalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3DC15FD5C6200549EF7 /* HorizontalTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -193,6 +195,10 @@
 		D1CAA3C315FD28C100549EF7 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = CardGames/Libraries/sbjson/SBJsonWriter.m; sourceTree = "<group>"; };
 		D1CAA3D015FD32E000549EF7 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		D1CAA3D115FD32E000549EF7 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		D1CAA3D715FD5AF400549EF7 /* HorizontalTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalTableView.h; sourceTree = "<group>"; };
+		D1CAA3D815FD5AF400549EF7 /* HorizontalTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalTableView.m; sourceTree = "<group>"; };
+		D1CAA3DB15FD5C6200549EF7 /* HorizontalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalTableViewCell.h; sourceTree = "<group>"; };
+		D1CAA3DC15FD5C6200549EF7 /* HorizontalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +261,10 @@
 				D1CAA24315FD21BF00549EF7 /* ConnectionListener.h */,
 				D1CAA3D015FD32E000549EF7 /* Card.h */,
 				D1CAA3D115FD32E000549EF7 /* Card.m */,
+				D1CAA3D715FD5AF400549EF7 /* HorizontalTableView.h */,
+				D1CAA3D815FD5AF400549EF7 /* HorizontalTableView.m */,
+				D1CAA3DB15FD5C6200549EF7 /* HorizontalTableViewCell.h */,
+				D1CAA3DC15FD5C6200549EF7 /* HorizontalTableViewCell.m */,
 			);
 			path = CardGames;
 			sourceTree = "<group>";
@@ -520,6 +530,8 @@
 				D1CAA3CE15FD28C100549EF7 /* SBJsonUTF8Stream.m in Sources */,
 				D1CAA3CF15FD28C100549EF7 /* SBJsonWriter.m in Sources */,
 				D1CAA3D215FD32E000549EF7 /* Card.m in Sources */,
+				D1CAA3D915FD5AF400549EF7 /* HorizontalTableView.m in Sources */,
+				D1CAA3DD15FD5C6200549EF7 /* HorizontalTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
