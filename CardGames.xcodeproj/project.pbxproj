@@ -17,6 +17,7 @@
 		D18663B715F109BE0098E8AD /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18663B515F109BE0098E8AD /* MainStoryboard_iPad.storyboard */; };
 		D18663BA15F109BE0098E8AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D18663B915F109BE0098E8AD /* ViewController.m */; };
 		D18663C115F10C130098E8AD /* ic_launcher_card_games.png in Resources */ = {isa = PBXBuildFile; fileRef = D18663C015F10C130098E8AD /* ic_launcher_card_games.png */; };
+		D1CAA23C15FD066900549EF7 /* wooden_top.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA23B15FD066900549EF7 /* wooden_top.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		D18663B815F109BE0098E8AD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D18663B915F109BE0098E8AD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D18663C015F10C130098E8AD /* ic_launcher_card_games.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher_card_games.png; sourceTree = "<group>"; };
+		D1CAA23515FD034600549EF7 /* hammersmithone.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hammersmithone.ttf; sourceTree = "<group>"; };
+		D1CAA23B15FD066900549EF7 /* wooden_top.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wooden_top.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +57,8 @@
 		D186639115F109BE0098E8AD = {
 			isa = PBXGroup;
 			children = (
-				D18663C015F10C130098E8AD /* ic_launcher_card_games.png */,
+				D1CAA23515FD034600549EF7 /* hammersmithone.ttf */,
+				D1CAA23315FD033900549EF7 /* Resources */,
 				D18663A615F109BE0098E8AD /* CardGames */,
 				D186639F15F109BE0098E8AD /* Frameworks */,
 				D186639D15F109BE0098E8AD /* Products */,
@@ -102,6 +106,15 @@
 				D18663AE15F109BE0098E8AD /* CardGames-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D1CAA23315FD033900549EF7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D1CAA23B15FD066900549EF7 /* wooden_top.jpg */,
+				D18663C015F10C130098E8AD /* ic_launcher_card_games.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +172,7 @@
 				D18663B415F109BE0098E8AD /* MainStoryboard_iPhone.storyboard in Resources */,
 				D18663B715F109BE0098E8AD /* MainStoryboard_iPad.storyboard in Resources */,
 				D18663C115F10C130098E8AD /* ic_launcher_card_games.png in Resources */,
+				D1CAA23C15FD066900549EF7 /* wooden_top.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +311,7 @@
 				D18663BF15F109BE0098E8AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
