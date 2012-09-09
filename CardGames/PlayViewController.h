@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
+#import "WifiConnection.h"
 
-@interface PlayViewController : ViewController <NSStreamDelegate> {
-    NSInputStream *inputStream;
-    NSOutputStream *outputStream;
+@interface PlayViewController : ViewController <ConnectionListener> {
+    WifiConnection *connection;
 }
+
+- (void) outputStreamOpened;
 
 @end

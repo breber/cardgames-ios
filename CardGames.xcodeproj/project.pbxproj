@@ -19,6 +19,7 @@
 		D18663C115F10C130098E8AD /* ic_launcher_card_games.png in Resources */ = {isa = PBXBuildFile; fileRef = D18663C015F10C130098E8AD /* ic_launcher_card_games.png */; };
 		D1CAA23C15FD066900549EF7 /* wooden_top.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA23B15FD066900549EF7 /* wooden_top.jpg */; };
 		D1CAA23F15FD0D3300549EF7 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA23E15FD0D3300549EF7 /* PlayViewController.m */; };
+		D1CAA24215FD1F6D00549EF7 /* WifiConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA24115FD1F6D00549EF7 /* WifiConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,9 @@
 		D1CAA23B15FD066900549EF7 /* wooden_top.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wooden_top.jpg; sourceTree = "<group>"; };
 		D1CAA23D15FD0D3300549EF7 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
 		D1CAA23E15FD0D3300549EF7 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
+		D1CAA24015FD1F6D00549EF7 /* WifiConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiConnection.h; sourceTree = "<group>"; };
+		D1CAA24115FD1F6D00549EF7 /* WifiConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiConnection.m; sourceTree = "<group>"; };
+		D1CAA24315FD21BF00549EF7 /* ConnectionListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectionListener.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,9 @@
 				D18663B815F109BE0098E8AD /* ViewController.h */,
 				D18663B915F109BE0098E8AD /* ViewController.m */,
 				D18663A715F109BE0098E8AD /* Supporting Files */,
+				D1CAA24015FD1F6D00549EF7 /* WifiConnection.h */,
+				D1CAA24115FD1F6D00549EF7 /* WifiConnection.m */,
+				D1CAA24315FD21BF00549EF7 /* ConnectionListener.h */,
 			);
 			path = CardGames;
 			sourceTree = "<group>";
@@ -192,6 +199,7 @@
 				D18663B115F109BE0098E8AD /* AppDelegate.m in Sources */,
 				D18663BA15F109BE0098E8AD /* ViewController.m in Sources */,
 				D1CAA23F15FD0D3300549EF7 /* PlayViewController.m in Sources */,
+				D1CAA24215FD1F6D00549EF7 /* WifiConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
