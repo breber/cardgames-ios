@@ -7,6 +7,7 @@
 //
 
 #import "PlayViewController.h"
+#import "Card.h"
 #import "SBJson.h"
 
 @interface PlayViewController ()
@@ -15,12 +16,18 @@
 
 @implementation PlayViewController
 
+@synthesize hand = _hand;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     connection = [WifiConnection sharedInstance];
     connection.listener = self;
+    
+    CGAffineTransform rotationTransform = CGAffineTransformIdentity;
+    rotationTransform = CGAffineTransformRotate(rotationTransform, 90);
+    cardHand.transform = rotationTransform;
     
     // Show a popup requesting the IP address of the server to connect to
     UIAlertView *temp = [[UIAlertView alloc] initWithTitle:@"Enter IP Address" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -36,7 +43,6 @@
         [connection initNetworkCommunication:result];
     } else if ([[alertView title] isEqualToString:@"Enter Name"]) {
         NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: result, @"playername", nil];
-
         [connection write:[dict JSONRepresentation] withType:1915416160];
     }
 }
@@ -51,6 +57,46 @@
     UIAlertView *temp = [[UIAlertView alloc] initWithTitle:@"Enter Name" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     temp.alertViewStyle = UIAlertViewStylePlainTextInput;
     [temp show];
+}
+
+- (void) newDataArrived:(NSString *)data withType:(int) type {
+    // If this is the init message
+    if (type == NSIntegerMax) {
+        NSLog(@"App Init...");
+    } else if (type == 0) {
+        // Setup
+        SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
+        NSDictionary *jsonObject = [jsonParser objectWithString:data];
+        NSMutableArray *arr = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *t in jsonObject) {
+            Card *c = [[Card alloc] init];
+            c.value = [[t objectForKey:@"value"] intValue];
+            c.suit = [[t objectForKey:@"suit"] intValue];
+            c.cardId = [[t objectForKey:@"id"] intValue];
+
+           [arr addObject:c];
+        }
+        
+        self.hand = arr;
+        [cardHand reloadData];
+    }
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.hand count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Card *c = [self.hand objectAtIndex:indexPath.row];
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    
+    [[cell imageView] setImage:[UIImage imageNamed:[c cardImagePath]]];
+    return cell;
 }
 
 @end

@@ -86,6 +86,7 @@
 		D1CAA3CD15FD28C100549EF7 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3BF15FD28C100549EF7 /* SBJsonTokeniser.m */; };
 		D1CAA3CE15FD28C100549EF7 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3C115FD28C100549EF7 /* SBJsonUTF8Stream.m */; };
 		D1CAA3CF15FD28C100549EF7 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3C315FD28C100549EF7 /* SBJsonWriter.m */; };
+		D1CAA3D215FD32E000549EF7 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3D115FD32E000549EF7 /* Card.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -190,6 +191,8 @@
 		D1CAA3C115FD28C100549EF7 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonUTF8Stream.m; path = CardGames/Libraries/sbjson/SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		D1CAA3C215FD28C100549EF7 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = CardGames/Libraries/sbjson/SBJsonWriter.h; sourceTree = "<group>"; };
 		D1CAA3C315FD28C100549EF7 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = CardGames/Libraries/sbjson/SBJsonWriter.m; sourceTree = "<group>"; };
+		D1CAA3D015FD32E000549EF7 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		D1CAA3D115FD32E000549EF7 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +253,8 @@
 				D1CAA24015FD1F6D00549EF7 /* WifiConnection.h */,
 				D1CAA24115FD1F6D00549EF7 /* WifiConnection.m */,
 				D1CAA24315FD21BF00549EF7 /* ConnectionListener.h */,
+				D1CAA3D015FD32E000549EF7 /* Card.h */,
+				D1CAA3D115FD32E000549EF7 /* Card.m */,
 			);
 			path = CardGames;
 			sourceTree = "<group>";
@@ -514,6 +519,7 @@
 				D1CAA3CD15FD28C100549EF7 /* SBJsonTokeniser.m in Sources */,
 				D1CAA3CE15FD28C100549EF7 /* SBJsonUTF8Stream.m in Sources */,
 				D1CAA3CF15FD28C100549EF7 /* SBJsonWriter.m in Sources */,
+				D1CAA3D215FD32E000549EF7 /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

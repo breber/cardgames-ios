@@ -10,10 +10,14 @@
 #import "ViewController.h"
 #import "WifiConnection.h"
 
-@interface PlayViewController : ViewController <ConnectionListener> {
+@interface PlayViewController : ViewController <ConnectionListener, UITableViewDataSource, UITableViewDelegate> {
+    IBOutlet UITableView *cardHand;
     WifiConnection *connection;
 }
 
+@property(nonatomic, strong) NSMutableArray *hand;
+
 - (void) outputStreamOpened;
+- (void) newDataArrived:(NSString *)data withType:(int) type;
 
 @end

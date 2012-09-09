@@ -81,8 +81,14 @@ static WifiConnection *instance = nil;
                         if (nil != output) {
                             NSLog(@"server said: %@", output);
                             // TODO:
+                            SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
+                            NSDictionary *jsonObject = [jsonParser objectWithString:output];
+                            
                             if ([self.listener respondsToSelector:@selector(newDataArrived:withType:)]) {
-                                [self.listener newDataArrived:output withType:0];
+                                NSString *data = [jsonObject objectForKey:@"DATA"];
+                                int type = [[jsonObject objectForKey:@"MSG_TYPE"] intValue];
+                                
+                                [self.listener newDataArrived:data withType:type];
                             }
                         }
                     }
