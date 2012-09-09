@@ -21,6 +21,6 @@
 - (void)initNetworkCommunication:(NSString *)address;
 - (void)closeConnections;
 
-- (BOOL) write:(NSString *)data;
+- (BOOL) write:(NSString *)data withType:(int)type;
 
 @end

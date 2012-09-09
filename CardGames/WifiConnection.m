@@ -7,6 +7,7 @@
 //
 
 #import "WifiConnection.h"
+#import "SBJson.h"
 
 @implementation WifiConnection
 
@@ -45,8 +46,9 @@ static WifiConnection *instance = nil;
     [inputStream close];
 }
 
-- (BOOL) write:(NSString *)data {
-    NSData *dataToWrite = [data dataUsingEncoding:NSUTF8StringEncoding];
+- (BOOL) write:(NSString *)data withType:(int)type {
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: data, @"DATA", [NSString stringWithFormat:@"%i", type], @"MSG_TYPE", nil];
+    NSData *dataToWrite = [[dict JSONRepresentation] dataUsingEncoding:NSUTF8StringEncoding];
     
     return [outputStream write:[dataToWrite bytes] maxLength:[dataToWrite length]] == [dataToWrite length];
 }
