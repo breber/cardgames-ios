@@ -9,6 +9,7 @@
 #import "PlayViewController.h"
 #import "Card.h"
 #import "Constants.h"
+#import "CrazyEightsRules.h"
 #import "SBJson.h"
 
 @interface PlayViewController ()
@@ -70,12 +71,17 @@
             Card *c = [self.hand objectAtIndex:selected.row];
             
             // TODO: check if 8
-            // TODO: check if can play
-            [connection write:[c jsonString] withType:MSG_PLAY_CARD];
-            
-            [self.hand removeObjectAtIndex:selected.row];
-            [cardHand reloadData];
-            self.isTurn = NO;
+            if ([CrazyEightsRules canPlay:c withDiscard:self.discardCard]) {
+                // Send the card
+                [connection write:[c jsonString] withType:MSG_PLAY_CARD];
+                
+                // Remove the card from our hand
+                [self.hand removeObjectAtIndex:selected.row];
+                [cardHand reloadData];
+                
+                // Set that it isn't our turn anymore
+                self.isTurn = NO;
+            }
         }
     }
 }

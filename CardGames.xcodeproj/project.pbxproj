@@ -16,6 +16,7 @@
 		D18663B415F109BE0098E8AD /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18663B215F109BE0098E8AD /* MainStoryboard_iPhone.storyboard */; };
 		D18663B715F109BE0098E8AD /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18663B515F109BE0098E8AD /* MainStoryboard_iPad.storyboard */; };
 		D18663BA15F109BE0098E8AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D18663B915F109BE0098E8AD /* ViewController.m */; };
+		D1A7A52C15FEA4EF00754BD9 /* CrazyEightsRules.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A7A52B15FEA4EF00754BD9 /* CrazyEightsRules.m */; };
 		D1CAA23F15FD0D3300549EF7 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA23E15FD0D3300549EF7 /* PlayViewController.m */; };
 		D1CAA24215FD1F6D00549EF7 /* WifiConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA24115FD1F6D00549EF7 /* WifiConnection.m */; };
 		D1CAA35315FD265400549EF7 /* clubs_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA31D15FD265400549EF7 /* clubs_2.png */; };
@@ -111,6 +112,8 @@
 		D18663B815F109BE0098E8AD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D18663B915F109BE0098E8AD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D1A7A52915FE96FD00754BD9 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = ../Constants.h; sourceTree = "<group>"; };
+		D1A7A52A15FEA4EF00754BD9 /* CrazyEightsRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrazyEightsRules.h; sourceTree = "<group>"; };
+		D1A7A52B15FEA4EF00754BD9 /* CrazyEightsRules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrazyEightsRules.m; sourceTree = "<group>"; };
 		D1CAA23D15FD0D3300549EF7 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
 		D1CAA23E15FD0D3300549EF7 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		D1CAA24015FD1F6D00549EF7 /* WifiConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiConnection.h; sourceTree = "<group>"; };
@@ -427,6 +430,8 @@
 			children = (
 				D1CAA3D015FD32E000549EF7 /* Card.h */,
 				D1CAA3D115FD32E000549EF7 /* Card.m */,
+				D1A7A52A15FEA4EF00754BD9 /* CrazyEightsRules.h */,
+				D1A7A52B15FEA4EF00754BD9 /* CrazyEightsRules.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -574,6 +579,7 @@
 				D1CAA3D215FD32E000549EF7 /* Card.m in Sources */,
 				D1CAA3D915FD5AF400549EF7 /* HorizontalTableView.m in Sources */,
 				D1CAA3DD15FD5C6200549EF7 /* HorizontalTableViewCell.m in Sources */,
+				D1A7A52C15FEA4EF00754BD9 /* CrazyEightsRules.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,4 +16,7 @@ static const int MSG_PLAY_CARD = 9;
 static const int MSG_DRAW_CARD = 10;
 static const int MSG_PLAYER_NAME = 1915416160;
 
+static const int SUIT_JOKER = 4;
+static const int CARD_EIGHT = 7;
+
 #endif
