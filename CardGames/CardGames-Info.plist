@@ -16,6 +16,9 @@
 			<array>
 				<string>ic_launcher_card_games.png</string>
 				<string>icon.png</string>
+				<string>icon-retina.png</string>
+				<string>icon-ipad.png</string>
+				<string>icon-ipad-retina.png</string>
 			</array>
 		</dict>
 	</dict>

@@ -72,7 +72,6 @@
 		D1CAA38615FD265400549EF7 /* spades_j.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA35015FD265400549EF7 /* spades_j.png */; };
 		D1CAA38715FD265400549EF7 /* spades_k.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA35115FD265400549EF7 /* spades_k.png */; };
 		D1CAA38815FD265400549EF7 /* spades_q.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA35215FD265400549EF7 /* spades_q.png */; };
-		D1CAA38C15FD266C00549EF7 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA38A15FD266C00549EF7 /* icon.png */; };
 		D1CAA38D15FD266C00549EF7 /* wooden_top.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA38B15FD266C00549EF7 /* wooden_top.jpg */; };
 		D1CAA3C415FD28C100549EF7 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3AC15FD28C100549EF7 /* NSObject+SBJson.m */; };
 		D1CAA3C515FD28C100549EF7 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3AF15FD28C100549EF7 /* SBJsonParser.m */; };
@@ -90,6 +89,10 @@
 		D1CAA3D915FD5AF400549EF7 /* HorizontalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3D815FD5AF400549EF7 /* HorizontalTableView.m */; };
 		D1CAA3DD15FD5C6200549EF7 /* HorizontalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3DC15FD5C6200549EF7 /* HorizontalTableViewCell.m */; };
 		D1CAA3E515FD63E800549EF7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CAA3E415FD63E800549EF7 /* QuartzCore.framework */; };
+		D1CAA3EA15FD6F6800549EF7 /* icon-ipad-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA3E615FD6F6800549EF7 /* icon-ipad-retina.png */; };
+		D1CAA3EB15FD6F6800549EF7 /* icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA3E715FD6F6800549EF7 /* icon-ipad.png */; };
+		D1CAA3EC15FD6F6800549EF7 /* icon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA3E815FD6F6800549EF7 /* icon-retina.png */; };
+		D1CAA3ED15FD6F6800549EF7 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA3E915FD6F6800549EF7 /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -167,7 +170,6 @@
 		D1CAA35115FD265400549EF7 /* spades_k.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spades_k.png; path = CardGames/Resources/Cards/spades_k.png; sourceTree = "<group>"; };
 		D1CAA35215FD265400549EF7 /* spades_q.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spades_q.png; path = CardGames/Resources/Cards/spades_q.png; sourceTree = "<group>"; };
 		D1CAA38915FD266100549EF7 /* hammersmithone.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = hammersmithone.ttf; path = CardGames/Resources/hammersmithone.ttf; sourceTree = "<group>"; };
-		D1CAA38A15FD266C00549EF7 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = CardGames/Resources/icon.png; sourceTree = "<group>"; };
 		D1CAA38B15FD266C00549EF7 /* wooden_top.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wooden_top.jpg; path = CardGames/Resources/wooden_top.jpg; sourceTree = "<group>"; };
 		D1CAA3AB15FD28C100549EF7 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJson.h"; path = "CardGames/Libraries/sbjson/NSObject+SBJson.h"; sourceTree = "<group>"; };
 		D1CAA3AC15FD28C100549EF7 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SBJson.m"; path = "CardGames/Libraries/sbjson/NSObject+SBJson.m"; sourceTree = "<group>"; };
@@ -201,6 +203,10 @@
 		D1CAA3DB15FD5C6200549EF7 /* HorizontalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalTableViewCell.h; sourceTree = "<group>"; };
 		D1CAA3DC15FD5C6200549EF7 /* HorizontalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalTableViewCell.m; sourceTree = "<group>"; };
 		D1CAA3E415FD63E800549EF7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D1CAA3E615FD6F6800549EF7 /* icon-ipad-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-ipad-retina.png"; path = "CardGames/Resources/icon-ipad-retina.png"; sourceTree = "<group>"; };
+		D1CAA3E715FD6F6800549EF7 /* icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-ipad.png"; path = "CardGames/Resources/icon-ipad.png"; sourceTree = "<group>"; };
+		D1CAA3E815FD6F6800549EF7 /* icon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-retina.png"; path = "CardGames/Resources/icon-retina.png"; sourceTree = "<group>"; };
+		D1CAA3E915FD6F6800549EF7 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = CardGames/Resources/icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,7 +289,10 @@
 			children = (
 				D1CAA24415FD254E00549EF7 /* Cards */,
 				D1CAA38915FD266100549EF7 /* hammersmithone.ttf */,
-				D1CAA38A15FD266C00549EF7 /* icon.png */,
+				D1CAA3E615FD6F6800549EF7 /* icon-ipad-retina.png */,
+				D1CAA3E715FD6F6800549EF7 /* icon-ipad.png */,
+				D1CAA3E815FD6F6800549EF7 /* icon-retina.png */,
+				D1CAA3E915FD6F6800549EF7 /* icon.png */,
 				D1CAA38B15FD266C00549EF7 /* wooden_top.jpg */,
 			);
 			name = Resources;
@@ -528,8 +537,11 @@
 				D1CAA38615FD265400549EF7 /* spades_j.png in Resources */,
 				D1CAA38715FD265400549EF7 /* spades_k.png in Resources */,
 				D1CAA38815FD265400549EF7 /* spades_q.png in Resources */,
-				D1CAA38C15FD266C00549EF7 /* icon.png in Resources */,
 				D1CAA38D15FD266C00549EF7 /* wooden_top.jpg in Resources */,
+				D1CAA3EA15FD6F6800549EF7 /* icon-ipad-retina.png in Resources */,
+				D1CAA3EB15FD6F6800549EF7 /* icon-ipad.png in Resources */,
+				D1CAA3EC15FD6F6800549EF7 /* icon-retina.png in Resources */,
+				D1CAA3ED15FD6F6800549EF7 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
