@@ -79,8 +79,6 @@ static WifiConnection *instance = nil;
                         NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:NSASCIIStringEncoding];
                         
                         if (nil != output) {
-                            NSLog(@"server said: %@", output);
-                            // TODO:
                             SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
                             NSDictionary *jsonObject = [jsonParser objectWithString:output];
                             

@@ -18,6 +18,9 @@
 
 @property(nonatomic, strong) NSMutableArray *hand;
 
+- (IBAction) playButtonPressed;
+- (IBAction) drawButtonPressed;
+
 - (void) outputStreamOpened;
 - (void) newDataArrived:(NSString *)data withType:(int) type;
 

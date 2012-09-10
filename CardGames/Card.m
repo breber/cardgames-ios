@@ -7,12 +7,18 @@
 //
 
 #import "Card.h"
+#import "SBJson.h"
 
 @implementation Card
 
 @synthesize cardId = _cardId;
 @synthesize suit = _suit;
 @synthesize value = _value;
+
+- (NSString *) jsonString {
+    NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:self.suit], @"suit", [NSNumber numberWithInt:self.cardId], @"id", [NSNumber numberWithInt:self.value], @"value", nil];
+    return [data JSONRepresentation];
+}
 
 - (NSString *) cardImagePath {
     switch (self.cardId) {

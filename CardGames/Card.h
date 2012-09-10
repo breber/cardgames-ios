@@ -14,6 +14,7 @@
 @property int suit;
 @property int value;
 
+- (NSString *) jsonString;
 - (NSString *) cardImagePath;
 
 @end

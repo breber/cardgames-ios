@@ -119,6 +119,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="playButtonPressed" destination="5YQ-yq-kIg" eventType="touchUpInside" id="39b-nn-Kao"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bOQ-tT-kDU">
                                 <rect key="frame" x="20" y="12" width="160" height="37"/>
@@ -132,6 +135,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="drawButtonPressed" destination="5YQ-yq-kIg" eventType="touchUpInside" id="wjw-hn-e7W"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="155" sectionHeaderHeight="22" sectionFooterHeight="22" id="gay-Bn-PyB" customClass="HorizontalTableView">
                                 <rect key="frame" x="9" y="65" width="462" height="255"/>
