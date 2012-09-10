@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" id="tVp-Qz-sAM">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="291"/>
+                                <rect key="frame" x="0.0" y="-15" width="480" height="305"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="96a-6f-9WC">
@@ -181,7 +181,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="DS5-d0-A8G">
-                                <rect key="frame" x="20" y="20" width="440" height="236"/>
+                                <rect key="frame" x="20" y="20" width="440" height="249"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <string key="text">The basic game of Crazy Eights is played with a standard deck of 52 cards. Each player will be dealt five cards and the rest of the cards will be put into a draw pile which is placed face down on the playing table. After the cards are dealt, one card will be taken from and placed next to the draw pile face up. This will serve as the discard pile.
@@ -229,7 +229,7 @@ The first player to successfully get rid of all of their cards wins the game. If
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="MvG-L9-2d0">
-                                <rect key="frame" x="20" y="20" width="440" height="236"/>
+                                <rect key="frame" x="20" y="20" width="440" height="249"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <string key="text">This 2 to 4 player card game application requires one Android tablet per game and one Android device of any kind per player, all of which should have Bluetooth or WiFi capabilities. The tablet will serve as the game board, and each of the player’s devices will contain their hands of cards. Each player will connect to the tablet via Wifi or Bluetooth, depending on the chosen option in the application preferences.
@@ -263,7 +263,7 @@ A preferences page is also available from the home screen. To get to this page, 
         <class className="PlayViewController" superclassName="ViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="cardHand" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="cardHand" candidateClass="HorizontalTableView"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">

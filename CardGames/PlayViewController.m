@@ -18,13 +18,12 @@
 
 @synthesize hand = _hand;
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     connection = [WifiConnection sharedInstance];
     connection.listener = self;
-    
+        
     // Show a popup requesting the IP address of the server to connect to
     UIAlertView *temp = [[UIAlertView alloc] initWithTitle:@"Enter IP Address" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     temp.alertViewStyle = UIAlertViewStylePlainTextInput;
@@ -43,8 +42,7 @@
     }
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
 }
 

@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -17,7 +18,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    for (UIView* button in [self.view subviews]) {
+        if ([button isMemberOfClass:[UIButton class]]) {
+            [button.layer setMasksToBounds:true];
+            [button.layer setCornerRadius:4.0f];
+            [button.layer setBorderColor:[UIColor blackColor].CGColor];
+            [button.layer setBorderWidth:1.0f];
+        }
+    }
 }
 
 - (void)viewDidUnload

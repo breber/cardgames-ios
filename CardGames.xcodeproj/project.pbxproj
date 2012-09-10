@@ -89,6 +89,7 @@
 		D1CAA3D215FD32E000549EF7 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3D115FD32E000549EF7 /* Card.m */; };
 		D1CAA3D915FD5AF400549EF7 /* HorizontalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3D815FD5AF400549EF7 /* HorizontalTableView.m */; };
 		D1CAA3DD15FD5C6200549EF7 /* HorizontalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3DC15FD5C6200549EF7 /* HorizontalTableViewCell.m */; };
+		D1CAA3E515FD63E800549EF7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CAA3E415FD63E800549EF7 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -199,6 +200,7 @@
 		D1CAA3D815FD5AF400549EF7 /* HorizontalTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalTableView.m; sourceTree = "<group>"; };
 		D1CAA3DB15FD5C6200549EF7 /* HorizontalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalTableViewCell.h; sourceTree = "<group>"; };
 		D1CAA3DC15FD5C6200549EF7 /* HorizontalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalTableViewCell.m; sourceTree = "<group>"; };
+		D1CAA3E415FD63E800549EF7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1CAA3E515FD63E800549EF7 /* QuartzCore.framework in Frameworks */,
 				D18663A115F109BE0098E8AD /* UIKit.framework in Frameworks */,
 				D18663A315F109BE0098E8AD /* Foundation.framework in Frameworks */,
 				D18663A515F109BE0098E8AD /* CoreGraphics.framework in Frameworks */,
@@ -237,6 +240,7 @@
 		D186639F15F109BE0098E8AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1CAA3E415FD63E800549EF7 /* QuartzCore.framework */,
 				D18663A015F109BE0098E8AD /* UIKit.framework */,
 				D18663A215F109BE0098E8AD /* Foundation.framework */,
 				D18663A415F109BE0098E8AD /* CoreGraphics.framework */,
@@ -247,6 +251,9 @@
 		D18663A615F109BE0098E8AD /* CardGames */ = {
 			isa = PBXGroup;
 			children = (
+				D1CAA3DF15FD61B200549EF7 /* Connection */,
+				D1CAA3E015FD61C600549EF7 /* Game */,
+				D1CAA3DE15FD619A00549EF7 /* UIComponents */,
 				D18663AF15F109BE0098E8AD /* AppDelegate.h */,
 				D18663B015F109BE0098E8AD /* AppDelegate.m */,
 				D18663B215F109BE0098E8AD /* MainStoryboard_iPhone.storyboard */,
@@ -256,15 +263,6 @@
 				D18663B815F109BE0098E8AD /* ViewController.h */,
 				D18663B915F109BE0098E8AD /* ViewController.m */,
 				D18663A715F109BE0098E8AD /* Supporting Files */,
-				D1CAA24015FD1F6D00549EF7 /* WifiConnection.h */,
-				D1CAA24115FD1F6D00549EF7 /* WifiConnection.m */,
-				D1CAA24315FD21BF00549EF7 /* ConnectionListener.h */,
-				D1CAA3D015FD32E000549EF7 /* Card.h */,
-				D1CAA3D115FD32E000549EF7 /* Card.m */,
-				D1CAA3D715FD5AF400549EF7 /* HorizontalTableView.h */,
-				D1CAA3D815FD5AF400549EF7 /* HorizontalTableView.m */,
-				D1CAA3DB15FD5C6200549EF7 /* HorizontalTableViewCell.h */,
-				D1CAA3DC15FD5C6200549EF7 /* HorizontalTableViewCell.m */,
 			);
 			path = CardGames;
 			sourceTree = "<group>";
@@ -390,6 +388,36 @@
 				D1CAA3C315FD28C100549EF7 /* SBJsonWriter.m */,
 			);
 			name = sbjson;
+			sourceTree = "<group>";
+		};
+		D1CAA3DE15FD619A00549EF7 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D1CAA3D715FD5AF400549EF7 /* HorizontalTableView.h */,
+				D1CAA3D815FD5AF400549EF7 /* HorizontalTableView.m */,
+				D1CAA3DB15FD5C6200549EF7 /* HorizontalTableViewCell.h */,
+				D1CAA3DC15FD5C6200549EF7 /* HorizontalTableViewCell.m */,
+			);
+			name = UIComponents;
+			sourceTree = "<group>";
+		};
+		D1CAA3DF15FD61B200549EF7 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				D1CAA24315FD21BF00549EF7 /* ConnectionListener.h */,
+				D1CAA24015FD1F6D00549EF7 /* WifiConnection.h */,
+				D1CAA24115FD1F6D00549EF7 /* WifiConnection.m */,
+			);
+			name = Connection;
+			sourceTree = "<group>";
+		};
+		D1CAA3E015FD61C600549EF7 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				D1CAA3D015FD32E000549EF7 /* Card.h */,
+				D1CAA3D115FD32E000549EF7 /* Card.m */,
+			);
+			name = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
