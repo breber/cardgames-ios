@@ -21,6 +21,8 @@
 		D1A7A53215FEC9A400754BD9 /* diamondsuitimage.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A7A52E15FEC9A400754BD9 /* diamondsuitimage.png */; };
 		D1A7A53315FEC9A400754BD9 /* heartsuitimage.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A7A52F15FEC9A400754BD9 /* heartsuitimage.png */; };
 		D1A7A53415FEC9A400754BD9 /* spadesuitimage.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A7A53015FEC9A400754BD9 /* spadesuitimage.png */; };
+		D1A7A53715FECD6F00754BD9 /* ChooseSuitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A7A53615FECD6F00754BD9 /* ChooseSuitViewController.m */; };
+		D1A7A53A15FED05C00754BD9 /* GameResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A7A53915FED05C00754BD9 /* GameResultViewController.m */; };
 		D1CAA23F15FD0D3300549EF7 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA23E15FD0D3300549EF7 /* PlayViewController.m */; };
 		D1CAA24215FD1F6D00549EF7 /* WifiConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA24115FD1F6D00549EF7 /* WifiConnection.m */; };
 		D1CAA35315FD265400549EF7 /* clubs_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA31D15FD265400549EF7 /* clubs_2.png */; };
@@ -122,6 +124,10 @@
 		D1A7A52E15FEC9A400754BD9 /* diamondsuitimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = diamondsuitimage.png; path = CardGames/Resources/diamondsuitimage.png; sourceTree = "<group>"; };
 		D1A7A52F15FEC9A400754BD9 /* heartsuitimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heartsuitimage.png; path = CardGames/Resources/heartsuitimage.png; sourceTree = "<group>"; };
 		D1A7A53015FEC9A400754BD9 /* spadesuitimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spadesuitimage.png; path = CardGames/Resources/spadesuitimage.png; sourceTree = "<group>"; };
+		D1A7A53515FECD6F00754BD9 /* ChooseSuitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSuitViewController.h; sourceTree = "<group>"; };
+		D1A7A53615FECD6F00754BD9 /* ChooseSuitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSuitViewController.m; sourceTree = "<group>"; };
+		D1A7A53815FED05C00754BD9 /* GameResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameResultViewController.h; sourceTree = "<group>"; };
+		D1A7A53915FED05C00754BD9 /* GameResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameResultViewController.m; sourceTree = "<group>"; };
 		D1CAA23D15FD0D3300549EF7 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
 		D1CAA23E15FD0D3300549EF7 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		D1CAA24015FD1F6D00549EF7 /* WifiConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiConnection.h; sourceTree = "<group>"; };
@@ -275,6 +281,10 @@
 				D1CAA3DE15FD619A00549EF7 /* UIComponents */,
 				D18663AF15F109BE0098E8AD /* AppDelegate.h */,
 				D18663B015F109BE0098E8AD /* AppDelegate.m */,
+				D1A7A53515FECD6F00754BD9 /* ChooseSuitViewController.h */,
+				D1A7A53615FECD6F00754BD9 /* ChooseSuitViewController.m */,
+				D1A7A53815FED05C00754BD9 /* GameResultViewController.h */,
+				D1A7A53915FED05C00754BD9 /* GameResultViewController.m */,
 				D18663B215F109BE0098E8AD /* MainStoryboard_iPhone.storyboard */,
 				D18663B515F109BE0098E8AD /* MainStoryboard_iPad.storyboard */,
 				D1CAA23D15FD0D3300549EF7 /* PlayViewController.h */,
@@ -596,6 +606,8 @@
 				D1CAA3D915FD5AF400549EF7 /* HorizontalTableView.m in Sources */,
 				D1CAA3DD15FD5C6200549EF7 /* HorizontalTableViewCell.m in Sources */,
 				D1A7A52C15FEA4EF00754BD9 /* CrazyEightsRules.m in Sources */,
+				D1A7A53715FECD6F00754BD9 /* ChooseSuitViewController.m in Sources */,
+				D1A7A53A15FED05C00754BD9 /* GameResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

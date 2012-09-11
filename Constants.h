@@ -16,8 +16,16 @@ static const int MSG_WINNER = 3;
 static const int MSG_LOSER = 4;
 static const int MSG_PLAY_CARD = 9;
 static const int MSG_DRAW_CARD = 10;
+static const int MSG_PLAY_EIGHT_C = 11;
+static const int MSG_PLAY_EIGHT_D = 12;
+static const int MSG_PLAY_EIGHT_H = 13;
+static const int MSG_PLAY_EIGHT_S = 14;
 static const int MSG_PLAYER_NAME = 1915416160;
 
+static const int SUIT_CLUBS = 0;
+static const int SUIT_DIAMONDS = 1;
+static const int SUIT_HEARTS = 2;
+static const int SUIT_SPADES = 3;
 static const int SUIT_JOKER = 4;
 static const int CARD_EIGHT = 7;
 

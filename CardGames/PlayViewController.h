@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChooseSuitViewController.h"
 #import "HorizontalTableView.h"
 #import "ViewController.h"
 #import "WifiConnection.h"
 
-@interface PlayViewController : ViewController <ConnectionListener, UITableViewDataSource, UITableViewDelegate> {
+@interface PlayViewController : ViewController <ConnectionListener, ChooseSuit, UITableViewDataSource, UITableViewDelegate> {
     IBOutlet HorizontalTableView *cardHand;
     IBOutlet UIButton *drawButton;
     IBOutlet UIButton *playButton;
@@ -23,6 +24,7 @@
 - (IBAction) playButtonPressed;
 - (IBAction) drawButtonPressed;
 
+- (void)handleChooseSuit:(int)suit;
 - (void) outputStreamOpened;
 - (void) newDataArrived:(NSString *)data withType:(int) type;
 

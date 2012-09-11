@@ -28,7 +28,7 @@
         <scene sceneID="5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
-                <viewController wantsFullScreenLayout="YES" id="2" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menu" wantsFullScreenLayout="YES" id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="44" width="480" height="276"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -94,22 +94,26 @@
             </objects>
             <point key="canvasLocation" x="100" y="317"/>
         </scene>
-        <!--View Controller-->
+        <!--Choose Suit View Controller-->
         <scene sceneID="xAe-K8-npy">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qRg-Ad-zel" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="FfN-mB-015" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="FfN-mB-015" customClass="ChooseSuitViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="center" id="wzr-uP-KWP">
-                        <rect key="frame" x="0.0" y="0.0" width="460" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="276"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" id="Yq3-oS-Xsn">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="276"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" id="Xxq-of-keN">
-                                <rect key="frame" x="53" y="80" width="355" height="160"/>
+                                <rect key="frame" x="70" y="89" width="340" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nRG-nM-fD0">
-                                <rect key="frame" x="74" y="129" width="72" height="61"/>
+                                <rect key="frame" x="84" y="107" width="72" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="diamondsuitimage.png">
@@ -119,9 +123,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="diamondsSelected:" destination="FfN-mB-015" eventType="touchUpInside" id="mBB-jW-ssi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fc9-2I-9Zw">
-                                <rect key="frame" x="154" y="129" width="72" height="61"/>
+                                <rect key="frame" x="164" y="107" width="72" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="clubsuitimage.png">
@@ -131,9 +138,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clubsSelected:" destination="FfN-mB-015" eventType="touchUpInside" id="LiS-Tn-xzo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iOI-t2-pWt">
-                                <rect key="frame" x="314" y="129" width="72" height="61"/>
+                                <rect key="frame" x="324" y="107" width="72" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="spadesuitimage.png">
@@ -143,9 +153,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="spadesSelected:" destination="FfN-mB-015" eventType="touchUpInside" id="qWm-P5-ZFQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lqa-nJ-KkH">
-                                <rect key="frame" x="234" y="129" width="72" height="61"/>
+                                <rect key="frame" x="244" y="107" width="72" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="heartsuitimage.png">
@@ -155,11 +168,15 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="heartsSelected:" destination="FfN-mB-015" eventType="touchUpInside" id="urF-uJ-rAr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1163" y="-802"/>
@@ -254,11 +271,11 @@
             </objects>
             <point key="canvasLocation" x="796" y="-88"/>
         </scene>
-        <!--View Controller - You Win!-->
+        <!--Game Result View Controller - You Win!-->
         <scene sceneID="bfp-y4-ARU">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUv-RR-MJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="k5I-1V-T9v" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="k5I-1V-T9v" customClass="GameResultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3d3-0a-Lbi">
                         <rect key="frame" x="0.0" y="44" width="480" height="276"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -279,6 +296,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="mainMenu:" destination="k5I-1V-T9v" eventType="touchUpInside" id="Bww-Nk-h4P"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -372,11 +392,11 @@ A preferences page is also available from the home screen. To get to this page, 
             </objects>
             <point key="canvasLocation" x="796" y="747"/>
         </scene>
-        <!--View Controller - You Lose :(-->
+        <!--Game Result View Controller - You Lose :(-->
         <scene sceneID="MpV-RQ-DHB">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eff-Dh-Kv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="PIN-XC-1M0" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="PIN-XC-1M0" customClass="GameResultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wuk-Fq-hVI">
                         <rect key="frame" x="0.0" y="44" width="480" height="276"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -397,6 +417,9 @@ A preferences page is also available from the home screen. To get to this page, 
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="mainMenu:" destination="PIN-XC-1M0" eventType="touchUpInside" id="kXX-T4-5Wq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -417,6 +440,21 @@ A preferences page is also available from the home screen. To get to this page, 
         <image name="wooden_top.jpg" width="600" height="361"/>
     </resources>
     <classes>
+        <class className="ChooseSuitViewController" superclassName="ViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChooseSuitViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clubsSelected:"/>
+                <relationship kind="action" name="diamondsSelected:"/>
+                <relationship kind="action" name="heartsSelected:"/>
+                <relationship kind="action" name="spadesSelected:"/>
+            </relationships>
+        </class>
+        <class className="GameResultViewController" superclassName="ViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameResultViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="mainMenu:"/>
+            </relationships>
+        </class>
         <class className="HorizontalTableView" superclassName="UITableView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HorizontalTableView.h"/>
         </class>

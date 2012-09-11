@@ -95,13 +95,6 @@ static WifiConnection *instance = nil;
 			break;
             
         case NSStreamEventHasSpaceAvailable:
-            if (aStream == inputStream) {
-                NSLog(@"Input: Has space available...");
-            } else if (aStream == outputStream) {
-                NSLog(@"Output: Has space available...");
-            } else {
-                NSLog(@"Unknown: Has space available...");
-            }
             break;
             
 		case NSStreamEventErrorOccurred:

@@ -52,6 +52,13 @@
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if ([segue.identifier isEqualToString:@"choosesuit"]) {
+		ChooseSuitViewController *chooseSuitViewController = segue.destinationViewController;
+		chooseSuitViewController.delegate = self;
+	}
+}
+
 - (void)viewDidUnload {
     [super viewDidUnload];
 }
@@ -74,12 +81,53 @@
             if ([CrazyEightsRules canPlay:c withDiscard:self.discardCard]) {
                 if (c.value == CARD_EIGHT) {
                     [self performSegueWithIdentifier:@"choosesuit" sender:self];
+                } else {
+                    // Send the card
+                    [connection write:[c jsonString] withType:MSG_PLAY_CARD];
+                    
+                    // Remove the card from our hand
+                    [self.hand removeObjectAtIndex:selected.row];
+                    [cardHand reloadData];
+                    
+                    // Set that it isn't our turn anymore
+                    self.isTurn = NO;
+                    [self toggleButtons];
                 }
-                
-                NSLog(@"after perform segue");
-                
+            }
+        }
+    }
+}
+
+- (void)handleChooseSuit:(int)suit {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    int type = 0;
+    
+    switch (suit) {
+        case SUIT_CLUBS:
+            type = MSG_PLAY_EIGHT_C;
+            break;
+        case SUIT_DIAMONDS:
+            type = MSG_PLAY_EIGHT_D;
+            break;
+        case SUIT_HEARTS:
+            type = MSG_PLAY_EIGHT_H;
+            break;
+        case SUIT_SPADES:
+            type = MSG_PLAY_EIGHT_S;
+            break;
+        default:
+            break;
+    }
+    
+    if (self.isTurn) {
+        NSIndexPath *selected = [cardHand indexPathForSelectedRow];
+        
+        if (selected) {
+            Card *c = [self.hand objectAtIndex:selected.row];
+            
+            if ([CrazyEightsRules canPlay:c withDiscard:self.discardCard]) {
                 // Send the card
-                [connection write:[c jsonString] withType:MSG_PLAY_CARD];
+                [connection write:[c jsonString] withType:type];
                 
                 // Remove the card from our hand
                 [self.hand removeObjectAtIndex:selected.row];
