@@ -72,6 +72,12 @@
             
             // TODO: check if 8
             if ([CrazyEightsRules canPlay:c withDiscard:self.discardCard]) {
+                if (c.value == CARD_EIGHT) {
+                    [self performSegueWithIdentifier:@"choosesuit" sender:self];
+                }
+                
+                NSLog(@"after perform segue");
+                
                 // Send the card
                 [connection write:[c jsonString] withType:MSG_PLAY_CARD];
                 
@@ -81,6 +87,7 @@
                 
                 // Set that it isn't our turn anymore
                 self.isTurn = NO;
+                [self toggleButtons];
             }
         }
     }
@@ -90,6 +97,7 @@
     if (self.isTurn) {
         [connection write:@"" withType:MSG_DRAW_CARD];
         self.isTurn = NO;
+        [self toggleButtons];
     }
 }
 
@@ -127,7 +135,8 @@
         c.cardId = [[jsonObject objectForKey:@"id"] intValue];
         
         self.discardCard = c;
-        // TODO: set button disabled
+        
+        [self toggleButtons];
     } else if (type == MSG_CARD_DRAWN) {
         NSLog(@"MSG_CARD_DRAWN");
         NSDictionary *jsonObject = [jsonParser objectWithString:data];
@@ -138,7 +147,26 @@
         
         [self.hand addObject:c];
         [cardHand reloadData];
+    } else if (type == MSG_WINNER) {
+        [self performSegueWithIdentifier:@"winner" sender:self];
+    } else if (type == MSG_LOSER) {
+        [self performSegueWithIdentifier:@"loser" sender:self];
     }
+}
+
+- (void)toggleButtons {
+    UIColor *goldColor = [UIColor colorWithRed:1 green:201 / 255.0 blue:14 / 255.0 alpha:1];
+
+    if (self.isTurn) {
+        drawButton.backgroundColor = goldColor;
+        playButton.backgroundColor = goldColor;
+    } else {
+        drawButton.backgroundColor = [UIColor blackColor];
+        playButton.backgroundColor = [UIColor blackColor];
+    }
+    
+    playButton.enabled = self.isTurn;
+    drawButton.enabled = self.isTurn;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -154,7 +182,16 @@
     }
 
     // Set the image of the cell
-    [[cell imageView] setImage:[UIImage imageNamed:[c cardImagePath]]];
+    UIImage *cardImage = [UIImage imageNamed:[c cardImagePath]];
+    
+    if (self.isTurn) {
+        if (![CrazyEightsRules canPlay:c withDiscard:self.discardCard]) {
+            // TODO: set background color
+ 
+        }
+    }
+    
+    [[cell imageView] setImage:cardImage];
     return cell;
 }
 

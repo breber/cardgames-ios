@@ -13,6 +13,8 @@
 
 @interface PlayViewController : ViewController <ConnectionListener, UITableViewDataSource, UITableViewDelegate> {
     IBOutlet HorizontalTableView *cardHand;
+    IBOutlet UIButton *drawButton;
+    IBOutlet UIButton *playButton;
     WifiConnection *connection;
 }
 

@@ -109,8 +109,10 @@ static WifiConnection *instance = nil;
 			break;
             
 		case NSStreamEventEndEncountered:
-			NSLog(@"Stream end encountered!");
-			break;
+            [outputStream close];
+            [inputStream close];
+            NSLog(@"Stream end encountered!");
+            break;
             
 		default:
 			NSLog(@"Unknown event %i", eventCode);

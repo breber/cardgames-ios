@@ -17,6 +17,10 @@
 		D18663B715F109BE0098E8AD /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18663B515F109BE0098E8AD /* MainStoryboard_iPad.storyboard */; };
 		D18663BA15F109BE0098E8AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D18663B915F109BE0098E8AD /* ViewController.m */; };
 		D1A7A52C15FEA4EF00754BD9 /* CrazyEightsRules.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A7A52B15FEA4EF00754BD9 /* CrazyEightsRules.m */; };
+		D1A7A53115FEC9A400754BD9 /* clubsuitimage.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A7A52D15FEC9A400754BD9 /* clubsuitimage.png */; };
+		D1A7A53215FEC9A400754BD9 /* diamondsuitimage.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A7A52E15FEC9A400754BD9 /* diamondsuitimage.png */; };
+		D1A7A53315FEC9A400754BD9 /* heartsuitimage.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A7A52F15FEC9A400754BD9 /* heartsuitimage.png */; };
+		D1A7A53415FEC9A400754BD9 /* spadesuitimage.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A7A53015FEC9A400754BD9 /* spadesuitimage.png */; };
 		D1CAA23F15FD0D3300549EF7 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA23E15FD0D3300549EF7 /* PlayViewController.m */; };
 		D1CAA24215FD1F6D00549EF7 /* WifiConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA24115FD1F6D00549EF7 /* WifiConnection.m */; };
 		D1CAA35315FD265400549EF7 /* clubs_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA31D15FD265400549EF7 /* clubs_2.png */; };
@@ -114,6 +118,10 @@
 		D1A7A52915FE96FD00754BD9 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = ../Constants.h; sourceTree = "<group>"; };
 		D1A7A52A15FEA4EF00754BD9 /* CrazyEightsRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrazyEightsRules.h; sourceTree = "<group>"; };
 		D1A7A52B15FEA4EF00754BD9 /* CrazyEightsRules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrazyEightsRules.m; sourceTree = "<group>"; };
+		D1A7A52D15FEC9A400754BD9 /* clubsuitimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clubsuitimage.png; path = CardGames/Resources/clubsuitimage.png; sourceTree = "<group>"; };
+		D1A7A52E15FEC9A400754BD9 /* diamondsuitimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = diamondsuitimage.png; path = CardGames/Resources/diamondsuitimage.png; sourceTree = "<group>"; };
+		D1A7A52F15FEC9A400754BD9 /* heartsuitimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heartsuitimage.png; path = CardGames/Resources/heartsuitimage.png; sourceTree = "<group>"; };
+		D1A7A53015FEC9A400754BD9 /* spadesuitimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spadesuitimage.png; path = CardGames/Resources/spadesuitimage.png; sourceTree = "<group>"; };
 		D1CAA23D15FD0D3300549EF7 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
 		D1CAA23E15FD0D3300549EF7 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		D1CAA24015FD1F6D00549EF7 /* WifiConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiConnection.h; sourceTree = "<group>"; };
@@ -294,6 +302,10 @@
 			children = (
 				D1CAA24415FD254E00549EF7 /* Cards */,
 				D1CAA38915FD266100549EF7 /* hammersmithone.ttf */,
+				D1A7A52D15FEC9A400754BD9 /* clubsuitimage.png */,
+				D1A7A52E15FEC9A400754BD9 /* diamondsuitimage.png */,
+				D1A7A52F15FEC9A400754BD9 /* heartsuitimage.png */,
+				D1A7A53015FEC9A400754BD9 /* spadesuitimage.png */,
 				D1CAA3E615FD6F6800549EF7 /* icon-ipad-retina.png */,
 				D1CAA3E715FD6F6800549EF7 /* icon-ipad.png */,
 				D1CAA3E815FD6F6800549EF7 /* icon-retina.png */,
@@ -549,6 +561,10 @@
 				D1CAA3EB15FD6F6800549EF7 /* icon-ipad.png in Resources */,
 				D1CAA3EC15FD6F6800549EF7 /* icon-retina.png in Resources */,
 				D1CAA3ED15FD6F6800549EF7 /* icon.png in Resources */,
+				D1A7A53115FEC9A400754BD9 /* clubsuitimage.png in Resources */,
+				D1A7A53215FEC9A400754BD9 /* diamondsuitimage.png in Resources */,
+				D1A7A53315FEC9A400754BD9 /* heartsuitimage.png in Resources */,
+				D1A7A53415FEC9A400754BD9 /* spadesuitimage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

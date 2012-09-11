@@ -92,7 +92,77 @@
                     <navigationItem key="navigationItem" title="Card Games" id="9MM-wM-YTE"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="99" y="317"/>
+            <point key="canvasLocation" x="100" y="317"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xAe-K8-npy">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qRg-Ad-zel" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="FfN-mB-015" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="center" id="wzr-uP-KWP">
+                        <rect key="frame" x="0.0" y="0.0" width="460" height="320"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="Xxq-of-keN">
+                                <rect key="frame" x="53" y="80" width="355" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nRG-nM-fD0">
+                                <rect key="frame" x="74" y="129" width="72" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="diamondsuitimage.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fc9-2I-9Zw">
+                                <rect key="frame" x="154" y="129" width="72" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="clubsuitimage.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iOI-t2-pWt">
+                                <rect key="frame" x="314" y="129" width="72" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="spadesuitimage.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lqa-nJ-KkH">
+                                <rect key="frame" x="234" y="129" width="72" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="heartsuitimage.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1163" y="-802"/>
         </scene>
         <!--Play View Controller - Play-->
         <scene sceneID="Wss-xF-8cb">
@@ -116,6 +186,9 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -131,6 +204,9 @@
                                 <state key="normal" title="Draw">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -168,16 +244,57 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="cardHand" destination="gay-Bn-PyB" id="dBr-5H-Ces"/>
+                        <outlet property="drawButton" destination="bOQ-tT-kDU" id="hok-lZ-KNq"/>
+                        <outlet property="playButton" destination="N2C-1h-UWX" id="daY-SV-Ib2"/>
+                        <segue destination="k5I-1V-T9v" kind="push" identifier="winner" id="15z-C5-MOh"/>
+                        <segue destination="PIN-XC-1M0" kind="push" identifier="loser" id="pIk-C5-dlR"/>
+                        <segue destination="FfN-mB-015" kind="modal" identifier="choosesuit" id="mKu-YP-5qm"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="796" y="-88"/>
         </scene>
+        <!--View Controller - You Win!-->
+        <scene sceneID="bfp-y4-ARU">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jUv-RR-MJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="k5I-1V-T9v" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3d3-0a-Lbi">
+                        <rect key="frame" x="0.0" y="44" width="480" height="276"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" id="iru-UQ-Bwi">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="276"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vEN-GI-iU9">
+                                <rect key="frame" x="20" y="110" width="440" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="You Win!" id="Mnv-wB-KCW"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1497" y="-373"/>
+        </scene>
         <!--View Controller - Rules-->
         <scene sceneID="Zlx-XT-R6h">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfq-7J-QZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="FVG-eZ-usr" sceneMemberID="viewController">
+                <viewController id="FVG-eZ-usr" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YCP-Kx-Ab5">
                         <rect key="frame" x="0.0" y="44" width="480" height="276"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -225,7 +342,7 @@ The first player to successfully get rid of all of their cards wins the game. If
         <scene sceneID="anr-Yt-sla">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6e-eb-7Ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="k1N-Vb-Mth" sceneMemberID="viewController">
+                <viewController id="k1N-Vb-Mth" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uof-fW-9wb">
                         <rect key="frame" x="0.0" y="44" width="480" height="276"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -255,8 +372,48 @@ A preferences page is also available from the home screen. To get to this page, 
             </objects>
             <point key="canvasLocation" x="796" y="747"/>
         </scene>
+        <!--View Controller - You Lose :(-->
+        <scene sceneID="MpV-RQ-DHB">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eff-Dh-Kv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="PIN-XC-1M0" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wuk-Fq-hVI">
+                        <rect key="frame" x="0.0" y="44" width="480" height="276"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" id="zTW-yn-FTZ">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="276"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cuD-rI-SVO">
+                                <rect key="frame" x="20" y="110" width="440" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="You Lose :(" id="1cK-pF-GAW"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1497" y="56"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="clubsuitimage.png" width="348" height="348"/>
+        <image name="diamondsuitimage.png" width="348" height="348"/>
+        <image name="heartsuitimage.png" width="348" height="348"/>
+        <image name="spadesuitimage.png" width="348" height="348"/>
         <image name="wooden_top.jpg" width="600" height="361"/>
     </resources>
     <classes>
@@ -269,7 +426,11 @@ A preferences page is also available from the home screen. To get to this page, 
         <class className="PlayViewController" superclassName="ViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayViewController.h"/>
             <relationships>
+                <relationship kind="action" name="drawButtonPressed"/>
+                <relationship kind="action" name="playButtonPressed"/>
                 <relationship kind="outlet" name="cardHand" candidateClass="HorizontalTableView"/>
+                <relationship kind="outlet" name="drawButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">

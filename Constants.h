@@ -12,6 +12,8 @@
 static const int MSG_SETUP = 0;
 static const int MSG_IS_TURN = 1;
 static const int MSG_CARD_DRAWN = 2;
+static const int MSG_WINNER = 3;
+static const int MSG_LOSER = 4;
 static const int MSG_PLAY_CARD = 9;
 static const int MSG_DRAW_CARD = 10;
 static const int MSG_PLAYER_NAME = 1915416160;
