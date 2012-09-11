@@ -155,9 +155,9 @@
     // If this is the init message
     if (type == NSIntegerMax) {
         NSLog(@"App Init...");
+        // TODO: stop spinner or something indicating we are ready
     } else if (type == MSG_SETUP) {
         // Setup
-        NSLog(@"MSG_SETUP");
         NSDictionary *jsonObject = [jsonParser objectWithString:data];
         NSMutableArray *arr = [[NSMutableArray alloc] init];
         
@@ -173,7 +173,6 @@
         self.hand = arr;
         [cardHand reloadData];
     } else if (type == MSG_IS_TURN) {
-        NSLog(@"MSG_IS_TURN");
         self.isTurn = YES;
         
         NSDictionary *jsonObject = [jsonParser objectWithString:data];
@@ -186,7 +185,6 @@
         
         [self toggleButtons];
     } else if (type == MSG_CARD_DRAWN) {
-        NSLog(@"MSG_CARD_DRAWN");
         NSDictionary *jsonObject = [jsonParser objectWithString:data];
         Card *c = [[Card alloc] init];
         c.value = [[jsonObject objectForKey:@"value"] intValue];
@@ -199,6 +197,12 @@
         [self performSegueWithIdentifier:@"winner" sender:self];
     } else if (type == MSG_LOSER) {
         [self performSegueWithIdentifier:@"loser" sender:self];
+    } else if (type == MSG_REFRESH) {
+        // TODO: handle refresh
+    } else if (type == MSG_PAUSE) {
+        [self performSegueWithIdentifier:@"pause" sender:self];
+    } else if (type == MSG_UNPAUSE) {
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
