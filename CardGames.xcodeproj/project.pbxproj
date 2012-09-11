@@ -279,18 +279,11 @@
 				D1CAA3DF15FD61B200549EF7 /* Connection */,
 				D1CAA3E015FD61C600549EF7 /* Game */,
 				D1CAA3DE15FD619A00549EF7 /* UIComponents */,
+				D1A7A53B15FEE97A00754BD9 /* ViewControllers */,
 				D18663AF15F109BE0098E8AD /* AppDelegate.h */,
 				D18663B015F109BE0098E8AD /* AppDelegate.m */,
-				D1A7A53515FECD6F00754BD9 /* ChooseSuitViewController.h */,
-				D1A7A53615FECD6F00754BD9 /* ChooseSuitViewController.m */,
-				D1A7A53815FED05C00754BD9 /* GameResultViewController.h */,
-				D1A7A53915FED05C00754BD9 /* GameResultViewController.m */,
 				D18663B215F109BE0098E8AD /* MainStoryboard_iPhone.storyboard */,
 				D18663B515F109BE0098E8AD /* MainStoryboard_iPad.storyboard */,
-				D1CAA23D15FD0D3300549EF7 /* PlayViewController.h */,
-				D1CAA23E15FD0D3300549EF7 /* PlayViewController.m */,
-				D18663B815F109BE0098E8AD /* ViewController.h */,
-				D18663B915F109BE0098E8AD /* ViewController.m */,
 				D18663A715F109BE0098E8AD /* Supporting Files */,
 			);
 			path = CardGames;
@@ -305,6 +298,21 @@
 				D18663AE15F109BE0098E8AD /* CardGames-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D1A7A53B15FEE97A00754BD9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D1A7A53515FECD6F00754BD9 /* ChooseSuitViewController.h */,
+				D1A7A53615FECD6F00754BD9 /* ChooseSuitViewController.m */,
+				D1A7A53815FED05C00754BD9 /* GameResultViewController.h */,
+				D1A7A53915FED05C00754BD9 /* GameResultViewController.m */,
+				D1CAA23D15FD0D3300549EF7 /* PlayViewController.h */,
+				D1CAA23E15FD0D3300549EF7 /* PlayViewController.m */,
+				D18663B815F109BE0098E8AD /* ViewController.h */,
+				D18663B915F109BE0098E8AD /* ViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		D1CAA23315FD033900549EF7 /* Resources */ = {
