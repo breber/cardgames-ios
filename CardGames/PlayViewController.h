@@ -24,8 +24,4 @@
 - (IBAction) playButtonPressed;
 - (IBAction) drawButtonPressed;
 
-- (void)handleChooseSuit:(int)suit;
-- (void) outputStreamOpened;
-- (void) newDataArrived:(NSString *)data withType:(int) type;
-
 @end

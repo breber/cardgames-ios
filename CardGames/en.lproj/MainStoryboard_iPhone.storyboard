@@ -98,7 +98,7 @@
         <scene sceneID="a1o-St-jIU">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHY-Wz-k1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="F5Q-YB-nBF" sceneMemberID="viewController">
+                <viewController id="F5Q-YB-nBF" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DcQ-3z-aZx">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
