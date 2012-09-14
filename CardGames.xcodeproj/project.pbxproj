@@ -100,6 +100,9 @@
 		D1CAA3EB15FD6F6800549EF7 /* icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA3E715FD6F6800549EF7 /* icon-ipad.png */; };
 		D1CAA3EC15FD6F6800549EF7 /* icon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA3E815FD6F6800549EF7 /* icon-retina.png */; };
 		D1CAA3ED15FD6F6800549EF7 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA3E915FD6F6800549EF7 /* icon.png */; };
+		D1D2BA771603C9A0008EE137 /* CrazyEightsPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA761603C9A0008EE137 /* CrazyEightsPlayerController.m */; };
+		D1D2BA7A1603CDA0008EE137 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA791603CDA0008EE137 /* PlayerController.m */; };
+		D1D2BA7D1603CEE1008EE137 /* Rules.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA7C1603CEE1008EE137 /* Rules.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -225,6 +228,12 @@
 		D1CAA3E715FD6F6800549EF7 /* icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-ipad.png"; path = "CardGames/Resources/icon-ipad.png"; sourceTree = "<group>"; };
 		D1CAA3E815FD6F6800549EF7 /* icon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-retina.png"; path = "CardGames/Resources/icon-retina.png"; sourceTree = "<group>"; };
 		D1CAA3E915FD6F6800549EF7 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = CardGames/Resources/icon.png; sourceTree = "<group>"; };
+		D1D2BA751603C9A0008EE137 /* CrazyEightsPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrazyEightsPlayerController.h; sourceTree = "<group>"; };
+		D1D2BA761603C9A0008EE137 /* CrazyEightsPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrazyEightsPlayerController.m; sourceTree = "<group>"; };
+		D1D2BA781603CDA0008EE137 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
+		D1D2BA791603CDA0008EE137 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
+		D1D2BA7B1603CEE1008EE137 /* Rules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rules.h; sourceTree = "<group>"; };
+		D1D2BA7C1603CEE1008EE137 /* Rules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rules.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -458,12 +467,26 @@
 		D1CAA3E015FD61C600549EF7 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				D1D2BA721603C8AF008EE137 /* CrazyEights */,
 				D1CAA3D015FD32E000549EF7 /* Card.h */,
 				D1CAA3D115FD32E000549EF7 /* Card.m */,
+				D1D2BA781603CDA0008EE137 /* PlayerController.h */,
+				D1D2BA791603CDA0008EE137 /* PlayerController.m */,
+				D1D2BA7B1603CEE1008EE137 /* Rules.h */,
+				D1D2BA7C1603CEE1008EE137 /* Rules.m */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		D1D2BA721603C8AF008EE137 /* CrazyEights */ = {
+			isa = PBXGroup;
+			children = (
+				D1D2BA751603C9A0008EE137 /* CrazyEightsPlayerController.h */,
+				D1D2BA761603C9A0008EE137 /* CrazyEightsPlayerController.m */,
 				D1A7A52A15FEA4EF00754BD9 /* CrazyEightsRules.h */,
 				D1A7A52B15FEA4EF00754BD9 /* CrazyEightsRules.m */,
 			);
-			name = Game;
+			name = CrazyEights;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -616,6 +639,9 @@
 				D1A7A52C15FEA4EF00754BD9 /* CrazyEightsRules.m in Sources */,
 				D1A7A53715FECD6F00754BD9 /* ChooseSuitViewController.m in Sources */,
 				D1A7A53A15FED05C00754BD9 /* GameResultViewController.m in Sources */,
+				D1D2BA771603C9A0008EE137 /* CrazyEightsPlayerController.m in Sources */,
+				D1D2BA7A1603CDA0008EE137 /* PlayerController.m in Sources */,
+				D1D2BA7D1603CEE1008EE137 /* Rules.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

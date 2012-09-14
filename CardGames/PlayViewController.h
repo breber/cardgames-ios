@@ -7,21 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ChooseSuitViewController.h"
 #import "HorizontalTableView.h"
+#import "PlayerController.h"
 #import "ViewController.h"
-#import "WifiConnection.h"
 
-@interface PlayViewController : ViewController <ConnectionListener, ChooseSuit, UITableViewDataSource, UITableViewDelegate> {
-    IBOutlet HorizontalTableView *cardHand;
+@interface PlayViewController : ViewController <UITableViewDataSource, UITableViewDelegate, PlayerControllerDelegate> {
     IBOutlet UIButton *drawButton;
     IBOutlet UIButton *playButton;
-    WifiConnection *connection;
 }
 
-@property(nonatomic, strong) NSMutableArray *hand;
+@property(nonatomic, strong) IBOutlet HorizontalTableView *cardHand;
+@property(nonatomic, strong) IBOutlet PlayerController *playerController;
 
-- (IBAction) playButtonPressed;
 - (IBAction) drawButtonPressed;
+- (IBAction) playButtonPressed;
 
 @end

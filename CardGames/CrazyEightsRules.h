@@ -7,10 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Card.h"
+#import "Rules.h"
 
-@interface CrazyEightsRules : NSObject
-
-+ (BOOL)canPlay:(Card *)card withDiscard:(Card *)discard;
+@interface CrazyEightsRules : Rules
 
 @end
