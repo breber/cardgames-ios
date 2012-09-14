@@ -14,6 +14,7 @@
 
 @synthesize hand = _hand;
 @synthesize rules = _rules;
+@synthesize buttonView = _buttonView;
 
 - (id) init {
     self = [super init];
@@ -23,10 +24,14 @@
         connection.listener = self;
         
         self.isTurn = NO;
-        [self.delegate playerTurnDidChange:self.isTurn];
     }
 
     return self;
+}
+
+- (void)setIsTurn:(BOOL)isTurn {
+    _isTurn = isTurn;
+    [self.delegate playerTurnDidChange:self.isTurn];
 }
 
 - (void) outputStreamOpened {
@@ -76,8 +81,6 @@
         
         NSDictionary *jsonObject = [jsonParser objectWithString:data];
         [self handleIsTurn:jsonObject];
-        
-        [self.delegate playerTurnDidChange:self.isTurn];
     } else if (type == MSG_CARD_DRAWN) {
         NSDictionary *jsonObject = [jsonParser objectWithString:data];
         Card *c = [[Card alloc] init];
@@ -105,6 +108,10 @@
 }
 
 - (void)handleSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Nothing needed in this class
+}
+
+- (void)addButtons:(UIView *)wrapper {
     // Nothing needed in this class
 }
 

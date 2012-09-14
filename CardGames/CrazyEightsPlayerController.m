@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "Constants.h"
 #import "CrazyEightsPlayerController.h"
 #import "CrazyEightsRules.h"
@@ -28,11 +30,30 @@
     return self;
 }
 
+- (void)setIsTurn:(BOOL)isTurn {
+    [super setIsTurn:isTurn];
+    
+    NSLog(@"isTurn: %d", isTurn);
+    
+    UIColor *goldColor = [UIColor colorWithRed:1 green:201 / 255.0 blue:14 / 255.0 alpha:1];
+    for (UIView* button in [self.buttonView subviews]) {
+        if ([button isMemberOfClass:[UIButton class]]) {
+            UIButton *b = (UIButton *)button;
+
+            if (isTurn) {
+                b.backgroundColor = goldColor;
+            } else {
+                b.backgroundColor = [UIColor blackColor];
+            }
+            
+            b.enabled = isTurn;
+        }
+    }
+}
+
 - (void)handleIsTurn:(NSDictionary *)data {
     [super handleIsTurn:data];
-    
-    NSLog(@"handleIsTurn");
-    
+        
     Card *c = [[Card alloc] init];
     c.value = [[data objectForKey:@"value"] intValue];
     c.suit = [[data objectForKey:@"suit"] intValue];
@@ -48,22 +69,54 @@
 	}
 }
 
-- (IBAction) drawButtonPressed {
+- (void)addButtons:(UIView *)wrapper {
+    UIColor *goldColor = [UIColor colorWithRed:1 green:201 / 255.0 blue:14 / 255.0 alpha:1];
+    
+    self.buttonView = wrapper;
+    UIButton *drawButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    drawButton.frame = CGRectMake(0, 0, 160, 37);
+    drawButton.backgroundColor = [UIColor blackColor];
+    [drawButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [drawButton setTitleColor:goldColor forState:UIControlStateDisabled];
+    [drawButton setTitle:@"Draw" forState:UIControlStateNormal];
+    [drawButton addTarget:self action:@selector(drawButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [drawButton setEnabled:NO];
+    [drawButton.layer setMasksToBounds:true];
+    [drawButton.layer setCornerRadius:4.0f];
+    [drawButton.layer setBorderColor:[UIColor blackColor].CGColor];
+    [drawButton.layer setBorderWidth:1.0f];
+
+    UIButton *playButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    playButton.frame = CGRectMake(280, 0, 160, 37);
+    playButton.backgroundColor = [UIColor blackColor];
+    [playButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [playButton setTitleColor:goldColor forState:UIControlStateDisabled];
+    [playButton setTitle:@"Play" forState:UIControlStateNormal];
+    [playButton addTarget:self action:@selector(playButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [playButton setEnabled:NO];
+    [playButton.layer setMasksToBounds:true];
+    [playButton.layer setCornerRadius:4.0f];
+    [playButton.layer setBorderColor:[UIColor blackColor].CGColor];
+    [playButton.layer setBorderWidth:1.0f];
+    
+    [self.buttonView addSubview:drawButton];
+    [self.buttonView addSubview:playButton];
+}
+
+- (void)drawButtonPressed {
     if (self.isTurn) {
         [connection write:@"" withType:MSG_DRAW_CARD];
         self.isTurn = NO;
-        [self.delegate playerTurnDidChange:self.isTurn];
     }
 }
 
-- (IBAction) playButtonPressed {
+- (void)playButtonPressed {
     if (self.isTurn) {
         NSIndexPath *selected = [self.delegate getSelectedCardIndex];
         
         if (selected) {
             Card *c = [self.hand objectAtIndex:selected.row];
             
-            // TODO: check if 8
             if ([CrazyEightsRules canPlay:c withDiscard:self.discardCard]) {
                 if (c.value == CARD_EIGHT) {
                     [self.delegate showNewScreen:@"choosesuit"];
@@ -77,7 +130,6 @@
                     
                     // Set that it isn't our turn anymore
                     self.isTurn = NO;
-                    [self.delegate playerTurnDidChange:self.isTurn];
                 }
             }
         }
@@ -121,7 +173,6 @@
                 
                 // Set that it isn't our turn anymore
                 self.isTurn = NO;
-                [self.delegate playerTurnDidChange:self.isTurn];
             }
         }
     }

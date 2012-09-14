@@ -12,7 +12,7 @@
 
 @interface CrazyEightsPlayerController : PlayerController <ChooseSuit>
 
-- (IBAction) drawButtonPressed;
-- (IBAction) playButtonPressed;
+- (void)drawButtonPressed;
+- (void)playButtonPressed;
 
 @end

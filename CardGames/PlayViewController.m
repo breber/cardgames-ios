@@ -20,7 +20,10 @@
     [super viewDidLoad];
 
     self.playerController = [[CrazyEightsPlayerController alloc] init];
-    self.playerController.delegate = self;    
+    self.playerController.delegate = self;
+
+    // Add the game specific buttons
+    [self.playerController addButtons:buttonLayout];
     
     // Show a popup requesting the IP address of the server to connect to
     UIAlertView *temp = [[UIAlertView alloc] initWithTitle:@"Enter IP Address" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -38,14 +41,6 @@
     }
 }
 
-- (IBAction) drawButtonPressed {
-    [self.playerController performSelector:@selector(drawButtonPressed)];
-}
-
-- (IBAction) playButtonPressed {
-    [self.playerController performSelector:@selector(playButtonPressed)];
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     [self.playerController handleSegue:segue sender:sender];
 }
@@ -55,17 +50,7 @@
 }
 
 - (void)playerTurnDidChange:(BOOL)withTurn {
-    if (withTurn) {
-        UIColor *goldColor = [UIColor colorWithRed:1 green:201 / 255.0 blue:14 / 255.0 alpha:1];
-        drawButton.backgroundColor = goldColor;
-        playButton.backgroundColor = goldColor;
-    } else {
-        drawButton.backgroundColor = [UIColor blackColor];
-        playButton.backgroundColor = [UIColor blackColor];
-    }
-    
-    playButton.enabled = withTurn;
-    drawButton.enabled = withTurn;
+    // Nothing to do...
 }
 
 - (void)playerHandDidChange {

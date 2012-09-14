@@ -12,14 +12,10 @@
 #import "ViewController.h"
 
 @interface PlayViewController : ViewController <UITableViewDataSource, UITableViewDelegate, PlayerControllerDelegate> {
-    IBOutlet UIButton *drawButton;
-    IBOutlet UIButton *playButton;
+    IBOutlet UIView *buttonLayout;
 }
 
 @property(nonatomic, strong) IBOutlet HorizontalTableView *cardHand;
-@property(nonatomic, strong) IBOutlet PlayerController *playerController;
-
-- (IBAction) drawButtonPressed;
-- (IBAction) playButtonPressed;
+@property(nonatomic, strong) PlayerController *playerController;
 
 @end

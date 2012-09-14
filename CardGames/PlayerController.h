@@ -33,8 +33,10 @@
 @property(nonatomic) BOOL isTurn;
 @property(nonatomic, strong) NSMutableArray *hand;
 @property(nonatomic, strong) Rules *rules;
+@property(nonatomic, weak) UIView *buttonView;
 
 - (void)handleIsTurn:(NSDictionary *)data;
 - (void)handleSegue:(UIStoryboardSegue *)segue sender:(id)sender;
+- (void)addButtons:(UIView *)wrapper;
 
 @end

@@ -234,44 +234,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="N2C-1h-UWX">
-                                <rect key="frame" x="300" y="12" width="160" height="37"/>
+                            <view contentMode="scaleToFill" id="y4x-mT-jqK">
+                                <rect key="frame" x="20" y="12" width="440" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                <state key="normal" title="Play">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <state key="disabled">
-                                    <color key="titleColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="playButtonPressed" destination="5YQ-yq-kIg" eventType="touchUpInside" id="Npd-F6-Uoj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bOQ-tT-kDU">
-                                <rect key="frame" x="20" y="12" width="160" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                <state key="normal" title="Draw">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <state key="disabled">
-                                    <color key="titleColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="drawButtonPressed" destination="5YQ-yq-kIg" eventType="touchUpInside" id="PZJ-7s-MS0"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="155" sectionHeaderHeight="22" sectionFooterHeight="22" id="gay-Bn-PyB" customClass="HorizontalTableView">
                                 <rect key="frame" x="9" y="65" width="462" height="256"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -300,9 +267,8 @@
                     <navigationItem key="navigationItem" title="Play" id="34m-PX-dtm"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="buttonLayout" destination="y4x-mT-jqK" id="Z6O-GD-s6T"/>
                         <outlet property="cardHand" destination="gay-Bn-PyB" id="dBr-5H-Ces"/>
-                        <outlet property="drawButton" destination="bOQ-tT-kDU" id="hok-lZ-KNq"/>
-                        <outlet property="playButton" destination="N2C-1h-UWX" id="daY-SV-Ib2"/>
                         <segue destination="k5I-1V-T9v" kind="push" identifier="winner" id="15z-C5-MOh"/>
                         <segue destination="PIN-XC-1M0" kind="push" identifier="loser" id="pIk-C5-dlR"/>
                         <segue destination="Dsh-Ae-EZB" kind="modal" identifier="choosesuit" id="DVa-3A-q7h"/>
@@ -505,14 +471,9 @@ A preferences page is also available from the home screen. To get to this page, 
         <class className="PlayViewController" superclassName="ViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="buttonLayout" candidateClass="UIView"/>
                 <relationship kind="outlet" name="cardHand" candidateClass="HorizontalTableView"/>
-                <relationship kind="outlet" name="drawButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="playerController" candidateClass="PlayerController"/>
             </relationships>
-        </class>
-        <class className="PlayerController" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayerController.h"/>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
