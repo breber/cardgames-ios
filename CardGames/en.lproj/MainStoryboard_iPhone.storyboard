@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="XAC-B5-a4b">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
@@ -94,12 +95,12 @@
             <point key="canvasLocation" x="100" y="317"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="Du6-YP-LSd">
+        <scene sceneID="a1o-St-jIU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="POs-VA-xWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController wantsFullScreenLayout="YES" definesPresentationContext="YES" id="2Ns-dV-OGg" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gl6-yn-bai">
-                        <rect key="frame" x="0.0" y="0.0" width="460" height="320"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tHY-Wz-k1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="F5Q-YB-nBF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DcQ-3z-aZx">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" id="kgP-to-WDw">
@@ -107,7 +108,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="ITL-eQ-f8S">
-                                <rect key="frame" x="48" y="111" width="365" height="98"/>
+                                <rect key="frame" x="58" y="111" width="365" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Paused..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="kx4-kZ-AZS">
@@ -128,23 +129,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1497" y="-1157"/>
+            <point key="canvasLocation" x="1497" y="-1204"/>
         </scene>
         <!--Choose Suit View Controller-->
-        <scene sceneID="xAe-K8-npy">
+        <scene sceneID="gHR-ZM-WJk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qRg-Ad-zel" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController wantsFullScreenLayout="YES" definesPresentationContext="YES" id="FfN-mB-015" customClass="ChooseSuitViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="center" id="wzr-uP-KWP">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="276"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ttr-6H-6T4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Dsh-Ae-EZB" customClass="ChooseSuitViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6qR-LF-PLI">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" id="Yq3-oS-Xsn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" id="zKf-gw-Sp4">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="Xxq-of-keN">
                                 <rect key="frame" x="64" y="111" width="352" height="98"/>
@@ -162,7 +162,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="diamondsSelected:" destination="FfN-mB-015" eventType="touchUpInside" id="mBB-jW-ssi"/>
+                                            <action selector="diamondsSelected:" destination="Dsh-Ae-EZB" eventType="touchUpInside" id="mA1-Gq-qcf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fc9-2I-9Zw">
@@ -177,7 +177,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="clubsSelected:" destination="FfN-mB-015" eventType="touchUpInside" id="LiS-Tn-xzo"/>
+                                            <action selector="clubsSelected:" destination="Dsh-Ae-EZB" eventType="touchUpInside" id="kWW-Hq-4rN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iOI-t2-pWt">
@@ -192,7 +192,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="spadesSelected:" destination="FfN-mB-015" eventType="touchUpInside" id="qWm-P5-ZFQ"/>
+                                            <action selector="spadesSelected:" destination="Dsh-Ae-EZB" eventType="touchUpInside" id="nP5-x9-Eha"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lqa-nJ-KkH">
@@ -207,21 +207,19 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="heartsSelected:" destination="FfN-mB-015" eventType="touchUpInside" id="urF-uJ-rAr"/>
+                                            <action selector="heartsSelected:" destination="Dsh-Ae-EZB" eventType="touchUpInside" id="RXu-KE-yMv"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1497" y="-749"/>
+            <point key="canvasLocation" x="1497" y="-779"/>
         </scene>
         <!--Play View Controller - Play-->
         <scene sceneID="Wss-xF-8cb">
@@ -275,7 +273,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="155" sectionHeaderHeight="22" sectionFooterHeight="22" id="gay-Bn-PyB" customClass="HorizontalTableView">
-                                <rect key="frame" x="9" y="65" width="462" height="255"/>
+                                <rect key="frame" x="9" y="65" width="462" height="256"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -307,8 +305,8 @@
                         <outlet property="playButton" destination="N2C-1h-UWX" id="daY-SV-Ib2"/>
                         <segue destination="k5I-1V-T9v" kind="push" identifier="winner" id="15z-C5-MOh"/>
                         <segue destination="PIN-XC-1M0" kind="push" identifier="loser" id="pIk-C5-dlR"/>
-                        <segue destination="FfN-mB-015" kind="modal" identifier="choosesuit" id="mKu-YP-5qm"/>
-                        <segue destination="2Ns-dV-OGg" kind="modal" identifier="pause" id="JFE-6l-s4Z"/>
+                        <segue destination="Dsh-Ae-EZB" kind="modal" identifier="choosesuit" id="DVa-3A-q7h"/>
+                        <segue destination="F5Q-YB-nBF" kind="modal" identifier="pause" id="wQv-A3-LEw"/>
                     </connections>
                 </viewController>
             </objects>
