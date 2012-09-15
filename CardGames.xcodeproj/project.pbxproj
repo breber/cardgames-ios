@@ -103,6 +103,7 @@
 		D1D2BA771603C9A0008EE137 /* CrazyEightsPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA761603C9A0008EE137 /* CrazyEightsPlayerController.m */; };
 		D1D2BA7A1603CDA0008EE137 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA791603CDA0008EE137 /* PlayerController.m */; };
 		D1D2BA7D1603CEE1008EE137 /* Rules.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA7C1603CEE1008EE137 /* Rules.m */; };
+		D1DA26281604E4D100E32193 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DA26271604E4D100E32193 /* ConnectViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -234,6 +235,8 @@
 		D1D2BA791603CDA0008EE137 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
 		D1D2BA7B1603CEE1008EE137 /* Rules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rules.h; sourceTree = "<group>"; };
 		D1D2BA7C1603CEE1008EE137 /* Rules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rules.m; sourceTree = "<group>"; };
+		D1DA26261604E4D100E32193 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
+		D1DA26271604E4D100E32193 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +317,8 @@
 			children = (
 				D1A7A53515FECD6F00754BD9 /* ChooseSuitViewController.h */,
 				D1A7A53615FECD6F00754BD9 /* ChooseSuitViewController.m */,
+				D1DA26261604E4D100E32193 /* ConnectViewController.h */,
+				D1DA26271604E4D100E32193 /* ConnectViewController.m */,
 				D1A7A53815FED05C00754BD9 /* GameResultViewController.h */,
 				D1A7A53915FED05C00754BD9 /* GameResultViewController.m */,
 				D1CAA23D15FD0D3300549EF7 /* PlayViewController.h */,
@@ -642,6 +647,7 @@
 				D1D2BA771603C9A0008EE137 /* CrazyEightsPlayerController.m in Sources */,
 				D1D2BA7A1603CDA0008EE137 /* PlayerController.m in Sources */,
 				D1D2BA7D1603CEE1008EE137 /* Rules.m in Sources */,
+				D1DA26281604E4D100E32193 /* ConnectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
