@@ -22,22 +22,38 @@
     self.playerController = [[CrazyEightsPlayerController alloc] init];
     self.playerController.delegate = self;
 
+    // Show the keyboard
+    [textPopupTextField becomeFirstResponder];
+    
     // Add the game specific buttons
     [self.playerController addButtons:buttonLayout];
-    
-    // Show a popup requesting the IP address of the server to connect to
-    UIAlertView *temp = [[UIAlertView alloc] initWithTitle:@"Enter IP Address" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    temp.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [temp show];
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    UITextField *textField = [alertView textFieldAtIndex:0];
-    NSString *result = [textField text];
-    WifiConnection *connection = [WifiConnection sharedInstance];
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    // TODO: maybe check to see if the string is in the right format
+    [textField resignFirstResponder];
+    return YES;
+}
 
-    if ([[alertView title] isEqualToString:@"Enter IP Address"]) {
-        [connection initNetworkCommunication:result];
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    static int state = 0;
+    
+    if (state == 0) {
+        WifiConnection *connection = [WifiConnection sharedInstance];
+        [connection initNetworkCommunication:[textField text]];
+        
+        [textPopup setHidden:YES];
+        [loadingPopup setHidden:NO];
+        state++;
+    } else if (state == 1) {
+        // Save the player's name
+        [self.playerController setName:[textField text]];
+        
+        [loadingPopupTitle setText:@"Waiting for game to begin..."];
+        
+        [textPopup setHidden:YES];
+        [loadingPopup setHidden:NO];
+        state++;
     }
 }
 
@@ -47,6 +63,25 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
+}
+
+- (void)gameRequestingName {
+    [textPopupTextField setKeyboardType:UIKeyboardTypeASCIICapable];
+    [textPopupTextField setText:@""];
+    [textPopupTitle setText:@"Please Enter Your Name"];
+    [textPopupTextField setPlaceholder:@"Anonymous"];
+    [textPopupTextField becomeFirstResponder];
+     
+    [loadingPopup setHidden:YES];
+    [textPopup setHidden:NO];
+}
+
+- (void)gameDidBegin {
+    [overlay setHidden:YES];
+}
+
+- (void)gameDidEnd {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)playerTurnDidChange:(BOOL)withTurn {

@@ -11,8 +11,15 @@
 #import "PlayerController.h"
 #import "ViewController.h"
 
-@interface PlayViewController : ViewController <UITableViewDataSource, UITableViewDelegate, PlayerControllerDelegate> {
+@interface PlayViewController : ViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, PlayerControllerDelegate> {
     IBOutlet UIView *buttonLayout;
+
+    IBOutlet UIView *overlay;
+    IBOutlet UILabel *textPopupTitle;
+    IBOutlet UITextField *textPopupTextField;
+    IBOutlet UIView *textPopup;
+    IBOutlet UIView *loadingPopup;
+    IBOutlet UILabel *loadingPopupTitle;
 }
 
 @property(nonatomic, strong) IBOutlet HorizontalTableView *cardHand;

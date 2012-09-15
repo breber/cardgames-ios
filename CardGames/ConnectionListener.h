@@ -11,9 +11,8 @@
 @protocol ConnectionListener <NSObject>
 
 @optional
-- (void) outputStreamOpened;
-
-@optional
-- (void) newDataArrived:(NSString *)data withType:(int) type;
+- (void)outputStreamOpened;
+- (void)outputStreamClosed;
+- (void)newDataArrived:(NSString *)data withType:(int) type;
 
 @end

@@ -34,23 +34,21 @@
     [self.delegate playerTurnDidChange:self.isTurn];
 }
 
-- (void) outputStreamOpened {
+- (void)outputStreamOpened {
     // Show a popup requesting the IP address of the server to connect to
-    UIAlertView *temp = [[UIAlertView alloc] initWithTitle:@"Enter Name" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    temp.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [temp show];
+    [self.delegate gameRequestingName];
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    UITextField *textField = [alertView textFieldAtIndex:0];
-    NSString *result = [textField text];
+- (void)outputStreamClosed {
+    // Clear the player's hand
+    [self.hand removeAllObjects];
     
-    NSLog(@"alertView: %@", [alertView title]);
-    
-    if ([[alertView title] isEqualToString:@"Enter Name"]) {
-        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: result, @"playername", nil];
-        [connection write:[dict JSONRepresentation] withType:MSG_PLAYER_NAME];
-    }
+    [self.delegate gameDidEnd];
+}
+
+- (void)setName:(NSString *)name {
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: name, @"playername", nil];
+    [connection write:[dict JSONRepresentation] withType:MSG_PLAYER_NAME];
 }
 
 - (void) newDataArrived:(NSString *)data withType:(int) type {
@@ -59,7 +57,7 @@
     // If this is the init message
     if (type == NSIntegerMax) {
         self.isTurn = NO;
-        // TODO: stop spinner or something indicating we are ready
+        [self.delegate gameDidBegin];
     } else if (type == MSG_SETUP) {
         // Setup
         NSDictionary *jsonObject = [jsonParser objectWithString:data];

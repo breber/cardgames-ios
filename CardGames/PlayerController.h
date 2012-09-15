@@ -13,8 +13,12 @@
 
 @protocol PlayerControllerDelegate <NSObject>
 
+// TODO: make some of these optional
+- (void)gameRequestingName;
+- (void)gameDidBegin;
 - (void)gameDidPause;
 - (void)gameDidResume;
+- (void)gameDidEnd;
 - (void)playerDidWin;
 - (void)playerDidLose;
 - (void)playerTurnDidChange:(BOOL)withTurn;
@@ -35,6 +39,7 @@
 @property(nonatomic, strong) Rules *rules;
 @property(nonatomic, weak) UIView *buttonView;
 
+- (void)setName:(NSString *)name;
 - (void)handleIsTurn:(NSDictionary *)data;
 - (void)handleSegue:(UIStoryboardSegue *)segue sender:(id)sender;
 - (void)addButtons:(UIView *)wrapper;

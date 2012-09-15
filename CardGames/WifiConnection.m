@@ -56,15 +56,10 @@ static WifiConnection *instance = nil;
 - (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode {
     switch (eventCode) {
 		case NSStreamEventOpenCompleted:
-            if (aStream == inputStream) {
-                NSLog(@"Input: stream opened");
-            } else if (aStream == outputStream) {
-                NSLog(@"Output: stream opened");
+            if (aStream == outputStream) {
                 if ([self.listener respondsToSelector:@selector(outputStreamOpened)]) {
                     [self.listener outputStreamOpened];
                 }
-            } else {
-                NSLog(@"Unknown: stream opened");
             }
             break;
             
@@ -98,13 +93,13 @@ static WifiConnection *instance = nil;
             break;
             
 		case NSStreamEventErrorOccurred:
-			NSLog(@"Can not connect to the host!");
-			break;
-            
-		case NSStreamEventEndEncountered:
+        case NSStreamEventEndEncountered:
             [outputStream close];
             [inputStream close];
-            NSLog(@"Stream end encountered!");
+            
+            if ([self.listener respondsToSelector:@selector(outputStreamClosed)]) {
+                [self.listener outputStreamClosed];
+            }
             break;
             
 		default:
