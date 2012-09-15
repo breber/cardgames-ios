@@ -72,7 +72,12 @@
     
     self.buttonView = wrapper;
     UIButton *drawButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    drawButton.frame = CGRectMake(0, 0, 160, 37);
+    
+    if ([self.buttonView frame].size.width > 480) {
+        drawButton.frame = CGRectMake(0, 0, 160, 37);
+    } else {
+        drawButton.frame = CGRectMake(0, 0, 160, 37);
+    }
     drawButton.backgroundColor = [UIColor blackColor];
     [drawButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [drawButton setTitleColor:goldColor forState:UIControlStateDisabled];
@@ -85,7 +90,11 @@
     [drawButton.layer setBorderWidth:1.0f];
 
     UIButton *playButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    playButton.frame = CGRectMake(280, 0, 160, 37);
+    if ([self.buttonView frame].size.width > 480) {
+        playButton.frame = CGRectMake(824, 0, 160, 37);
+    } else {
+        playButton.frame = CGRectMake(280, 0, 160, 37);
+    }
     playButton.backgroundColor = [UIColor blackColor];
     [playButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [playButton setTitleColor:goldColor forState:UIControlStateDisabled];
