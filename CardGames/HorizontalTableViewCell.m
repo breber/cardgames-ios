@@ -17,6 +17,11 @@
     
     if (self) {
         self.transform = CGAffineTransformRotate(CGAffineTransformIdentity, M_PI_2);
+
+        // Set the selected item's background color
+        UIView *bgView = [[UIView alloc] initWithFrame:self.frame];
+        bgView.backgroundColor = [UIColor colorWithRed:1 green:201 / 255.0 blue:14 / 255.0 alpha:1];
+        self.selectedBackgroundView = bgView;
     }
     
     assert(self);

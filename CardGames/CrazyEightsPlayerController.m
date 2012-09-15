@@ -33,8 +33,6 @@
 - (void)setIsTurn:(BOOL)isTurn {
     [super setIsTurn:isTurn];
     
-    NSLog(@"isTurn: %d", isTurn);
-    
     UIColor *goldColor = [UIColor colorWithRed:1 green:201 / 255.0 blue:14 / 255.0 alpha:1];
     for (UIView* button in [self.buttonView subviews]) {
         if ([button isMemberOfClass:[UIButton class]]) {
