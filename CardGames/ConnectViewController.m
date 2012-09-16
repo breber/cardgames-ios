@@ -13,6 +13,7 @@
 @interface ConnectViewController () {
     Server *server;
     NSMutableArray *connections;
+    NSArray *devicesUi;
 }
 
 @end
@@ -23,6 +24,7 @@
 {
     [super viewDidLoad];
     services = [[NSMutableArray alloc] init];
+    devicesUi = [[NSArray alloc] initWithObjects:player1Device, player2Device, player3Device, player4Device, nil];
 
     server = [[Server alloc] init];
     server.delegate = self;
@@ -52,6 +54,19 @@
 
 - (void)updateUI {
     // TODO: do something
+    int i = 0;
+    for (WifiConnection *c in services) {
+        if ([c isActive]) {
+            [[devicesUi objectAtIndex:i] setBackgroundColor:[UIColor lightGrayColor]];
+            i++;
+        } else {
+            [services removeObject:c];
+        }
+    }
+    
+    for (; i < 4; i++) {
+        [[devicesUi objectAtIndex:i] setBackgroundColor:[UIColor darkGrayColor]];
+    }
 }
 
 @end
