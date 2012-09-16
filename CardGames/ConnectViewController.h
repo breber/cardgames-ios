@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ConnectViewController : ViewController {
+@interface ConnectViewController : ViewController <NSNetServiceDelegate> {
     IBOutlet UILabel *deviceName;
     IBOutlet UIButton *startButton;
     
@@ -26,6 +26,9 @@
     IBOutlet UIView *player2Device;
     IBOutlet UIView *player3Device;
     IBOutlet UIView *player4Device;
+    
+    // Keeps track of active services or services about to be published
+    NSMutableArray *services;
 }
 
 @end
