@@ -23,22 +23,26 @@ static WifiConnection *instance = nil;
     return instance;
 }
 
-- (void)initNetworkCommunication:(NSString *)address {
-    CFReadStreamRef readStream;
-    CFWriteStreamRef writeStream;
+- (BOOL)initNetworkCommunication:(NSNetService *)service {
+    NSInputStream *readStream;
+    NSOutputStream *writeStream;
     
-    CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef)(address), 1234, &readStream, &writeStream);
-    inputStream = (NSInputStream *)CFBridgingRelease(readStream);
-    outputStream = (NSOutputStream *)CFBridgingRelease(writeStream);
+    if ([service getInputStream:&readStream outputStream:&writeStream]) {
+        inputStream = readStream;
+        outputStream = writeStream;
+        
+        [inputStream setDelegate:self];
+        [outputStream setDelegate:self];
+        
+        [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        [outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        
+        [inputStream open];
+        [outputStream open];
+        return YES;
+    }
     
-    [inputStream setDelegate:self];
-    [outputStream setDelegate:self];
-    
-    [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    [outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    
-    [inputStream open];
-    [outputStream open];
+    return NO;
 }
 
 - (void)closeConnections {

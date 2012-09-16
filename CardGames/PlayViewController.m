@@ -36,25 +36,13 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    static int state = 0;
+    // Save the player's name
+    [self.playerController setName:[textField text]];
     
-    if (state == 0) {
-        WifiConnection *connection = [WifiConnection sharedInstance];
-        [connection initNetworkCommunication:[textField text]];
-        
-        [textPopup setHidden:YES];
-        [loadingPopup setHidden:NO];
-        state++;
-    } else if (state == 1) {
-        // Save the player's name
-        [self.playerController setName:[textField text]];
-        
-        [loadingPopupTitle setText:@"Waiting for game to begin..."];
-        
-        [textPopup setHidden:YES];
-        [loadingPopup setHidden:NO];
-        state++;
-    }
+    [loadingPopupTitle setText:@"Waiting for game to begin..."];
+    
+    [textPopup setHidden:YES];
+    [loadingPopup setHidden:NO];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

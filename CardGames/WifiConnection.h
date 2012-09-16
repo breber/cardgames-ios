@@ -18,7 +18,7 @@
 
 + (id)sharedInstance;
 
-- (void)initNetworkCommunication:(NSString *)address;
+- (BOOL)initNetworkCommunication:(NSNetService *)service;
 - (void)closeConnections;
 
 - (BOOL) write:(NSString *)data withType:(int)type;

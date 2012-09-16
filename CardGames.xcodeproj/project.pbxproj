@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D140E9A116056E6700FDC2DA /* PlayerConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D140E9A016056E6700FDC2DA /* PlayerConnectViewController.m */; };
+		D140E9AA1605705900FDC2DA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D140E9A91605705900FDC2DA /* CFNetwork.framework */; };
 		D18663A115F109BE0098E8AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18663A015F109BE0098E8AD /* UIKit.framework */; };
 		D18663A315F109BE0098E8AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18663A215F109BE0098E8AD /* Foundation.framework */; };
 		D18663A515F109BE0098E8AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18663A415F109BE0098E8AD /* CoreGraphics.framework */; };
@@ -107,6 +109,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D140E99F16056E6700FDC2DA /* PlayerConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerConnectViewController.h; sourceTree = "<group>"; };
+		D140E9A016056E6700FDC2DA /* PlayerConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerConnectViewController.m; sourceTree = "<group>"; };
+		D140E9A91605705900FDC2DA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D186639C15F109BE0098E8AD /* CardGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18663A015F109BE0098E8AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D18663A215F109BE0098E8AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -244,6 +249,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D140E9AA1605705900FDC2DA /* CFNetwork.framework in Frameworks */,
 				D1CAA3E515FD63E800549EF7 /* QuartzCore.framework in Frameworks */,
 				D18663A115F109BE0098E8AD /* UIKit.framework in Frameworks */,
 				D18663A315F109BE0098E8AD /* Foundation.framework in Frameworks */,
@@ -276,6 +282,7 @@
 		D186639F15F109BE0098E8AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D140E9A91605705900FDC2DA /* CFNetwork.framework */,
 				D1CAA3E415FD63E800549EF7 /* QuartzCore.framework */,
 				D18663A015F109BE0098E8AD /* UIKit.framework */,
 				D18663A215F109BE0098E8AD /* Foundation.framework */,
@@ -323,6 +330,8 @@
 				D1A7A53915FED05C00754BD9 /* GameResultViewController.m */,
 				D1CAA23D15FD0D3300549EF7 /* PlayViewController.h */,
 				D1CAA23E15FD0D3300549EF7 /* PlayViewController.m */,
+				D140E99F16056E6700FDC2DA /* PlayerConnectViewController.h */,
+				D140E9A016056E6700FDC2DA /* PlayerConnectViewController.m */,
 				D18663B815F109BE0098E8AD /* ViewController.h */,
 				D18663B915F109BE0098E8AD /* ViewController.m */,
 			);
@@ -648,6 +657,7 @@
 				D1D2BA7A1603CDA0008EE137 /* PlayerController.m in Sources */,
 				D1D2BA7D1603CEE1008EE137 /* Rules.m in Sources */,
 				D1DA26281604E4D100E32193 /* ConnectViewController.m in Sources */,
+				D140E9A116056E6700FDC2DA /* PlayerConnectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
