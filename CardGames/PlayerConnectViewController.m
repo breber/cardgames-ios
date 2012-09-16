@@ -90,13 +90,6 @@
 // UI update code
 - (void)updateUI {
     [self.servers reloadData];
-        
-    if (searching) {
-        [self.searching startAnimating];
-    } else {
-        // Update the user interface to indicate not searching
-        [self.searching stopAnimating];
-    }
 }
 
 - (void)netServiceDidResolveAddress:(NSNetService *)netService {

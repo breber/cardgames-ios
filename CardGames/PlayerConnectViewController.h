@@ -13,7 +13,6 @@
     BOOL searching;
 }
 
-@property(nonatomic, strong) IBOutlet UIActivityIndicatorView *searching;
 @property(nonatomic, strong) IBOutlet UITableView *servers;
 
 @end

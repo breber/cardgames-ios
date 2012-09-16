@@ -413,17 +413,12 @@
                                     <outlet property="delegate" destination="PEr-Mu-qhH" id="WLw-zp-qM5"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" id="gH1-hU-Jlc">
-                                <rect key="frame" x="451" y="7" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="M8I-fp-cMR"/>
                     <connections>
-                        <outlet property="searching" destination="gH1-hU-Jlc" id="jFr-w6-uEC"/>
                         <outlet property="servers" destination="QOj-88-ui7" id="GTS-9x-w8O"/>
                         <segue destination="5YQ-yq-kIg" kind="push" identifier="playerhand" id="pNd-fX-tjn"/>
                     </connections>
