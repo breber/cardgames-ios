@@ -15,7 +15,6 @@
     IBOutlet UIView *buttonLayout;
 
     IBOutlet UIView *overlay;
-    IBOutlet UILabel *textPopupTitle;
     IBOutlet UITextField *textPopupTextField;
     IBOutlet UIView *textPopup;
     IBOutlet UIView *loadingPopup;

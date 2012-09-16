@@ -54,10 +54,6 @@
 }
 
 - (void)gameRequestingName {
-    [textPopupTextField setKeyboardType:UIKeyboardTypeASCIICapable];
-    [textPopupTextField setText:@""];
-    [textPopupTitle setText:@"Please Enter Your Name"];
-    [textPopupTextField setPlaceholder:@"Anonymous"];
     [textPopupTextField becomeFirstResponder];
      
     [loadingPopup setHidden:YES];

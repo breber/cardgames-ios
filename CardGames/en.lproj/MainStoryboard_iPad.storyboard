@@ -22,7 +22,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-1204" y="317"/>
+            <point key="canvasLocation" x="-2608" y="313"/>
         </scene>
         <!--View Controller - Card Games-->
         <scene sceneID="zeh-nb-bew">
@@ -66,7 +66,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="kKW-Fg-x1I" kind="push" id="i2s-W1-BVC"/>
+                                    <segue destination="Nd4-77-F2C" kind="push" id="jQG-IQ-N5x"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2cU-hb-mOp">
@@ -109,7 +109,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="100" y="317"/>
+            <point key="canvasLocation" x="-1304" y="313"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5Xn-BW-8GU">
@@ -430,7 +430,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1352" y="-3194"/>
+            <point key="canvasLocation" x="-76" y="-3090"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xh5-6Q-Kh9">
@@ -452,7 +452,7 @@
                     <navigationItem key="navigationItem" id="xlM-ex-jb4"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2589" y="-3194"/>
+            <point key="canvasLocation" x="1161" y="-3090"/>
         </scene>
         <!--Play View Controller - Play-->
         <scene sceneID="iWU-dS-Gv9">
@@ -501,18 +501,18 @@
                                         <rect key="frame" x="335" y="40" width="355" height="100"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enter IP Address of Server" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="nhO-OH-Wg7">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please Enter Your Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="nhO-OH-Wg7">
                                                 <rect key="frame" x="20" y="20" width="315" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="***.***.***.***" textAlignment="center" minimumFontSize="17" id="GYY-Bc-v2M">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Anonymous" textAlignment="center" minimumFontSize="17" id="GYY-Bc-v2M">
                                                 <rect key="frame" x="80" y="49" width="194" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="kKW-Fg-x1I" id="YJl-Dk-xYo"/>
                                                 </connections>
@@ -556,7 +556,6 @@
                         <outlet property="overlay" destination="wWK-Do-sxt" id="OGl-WG-wbr"/>
                         <outlet property="textPopup" destination="Oyy-lz-VTY" id="4gp-hb-bJq"/>
                         <outlet property="textPopupTextField" destination="GYY-Bc-v2M" id="AYD-AE-Xqs"/>
-                        <outlet property="textPopupTitle" destination="nhO-OH-Wg7" id="Bew-bu-JOE"/>
                         <segue destination="wtK-XN-KPg" kind="push" identifier="winner" id="Cld-eg-tPY"/>
                         <segue destination="cc5-qU-mmm" kind="push" identifier="loser" id="E4y-Wk-bmJ"/>
                         <segue destination="CeU-N6-zvj" kind="modal" identifier="choosesuit" id="cjU-zk-OcI"/>
@@ -653,7 +652,7 @@ The first player to successfully get rid of all of their cards wins the game. If
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1344" y="325"/>
+            <point key="canvasLocation" x="-64" y="313"/>
         </scene>
         <!--View Controller - About-->
         <scene sceneID="q9b-tM-g0p">
@@ -688,7 +687,7 @@ A preferences page is also available from the home screen. To get to this page, 
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1352" y="1215"/>
+            <point key="canvasLocation" x="-56" y="1203"/>
         </scene>
         <!--Game Result View Controller - You Lose :(-->
         <scene sceneID="Rl4-H1-uJB">
@@ -730,6 +729,62 @@ A preferences page is also available from the home screen. To get to this page, 
             </objects>
             <point key="canvasLocation" x="2589" y="456"/>
         </scene>
+        <!--Player Connect View Controller - Search for Devices-->
+        <scene sceneID="0Or-QE-llb">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CJZ-jI-Yq6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Nd4-77-F2C" customClass="PlayerConnectViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZiT-bZ-pwv">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" id="8xO-xI-0cI">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="P7i-H5-Cz0">
+                                <rect key="frame" x="20" y="20" width="984" height="664"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="services" textLabel="l2V-J5-23d" style="IBUITableViewCellStyleDefault" id="G1a-v8-Oyu">
+                                        <rect key="frame" x="0.0" y="22" width="984" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="984" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l2V-J5-23d">
+                                                    <rect key="frame" x="10" y="0.0" width="964" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Nd4-77-F2C" id="vU1-nk-3Iz"/>
+                                    <outlet property="delegate" destination="Nd4-77-F2C" id="hyB-yE-SVX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search for Devices" id="quh-d7-FXq"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <connections>
+                        <outlet property="servers" destination="P7i-H5-Cz0" id="Ngz-wy-CuP"/>
+                        <segue destination="kKW-Fg-x1I" kind="push" identifier="playerhand" id="IQ8-Jq-j0h"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-64" y="-592"/>
+        </scene>
     </scenes>
     <resources>
         <image name="clubsuitimage.png" width="348" height="348"/>
@@ -752,14 +807,19 @@ A preferences page is also available from the home screen. To get to this page, 
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ConnectViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="deviceName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="player1Device" candidateClass="UIView"/>
                 <relationship kind="outlet" name="player1Loading" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="player1Name" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="player2Device" candidateClass="UIView"/>
                 <relationship kind="outlet" name="player2Loading" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="player2Name" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="player3Device" candidateClass="UIView"/>
                 <relationship kind="outlet" name="player3Loading" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="player3Name" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="player4Device" candidateClass="UIView"/>
                 <relationship kind="outlet" name="player4Loading" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="player4Name" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="GameResultViewController" superclassName="ViewController">
@@ -784,7 +844,12 @@ A preferences page is also available from the home screen. To get to this page, 
                 <relationship kind="outlet" name="overlay" candidateClass="UIView"/>
                 <relationship kind="outlet" name="textPopup" candidateClass="UIView"/>
                 <relationship kind="outlet" name="textPopupTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="textPopupTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PlayerConnectViewController" superclassName="ViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayerConnectViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="servers" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">

@@ -268,18 +268,18 @@
                                         <rect key="frame" x="63" y="20" width="355" height="100"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enter IP Address of Server" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="zR8-ag-3gv">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please Enter Your Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="zR8-ag-3gv">
                                                 <rect key="frame" x="20" y="20" width="315" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="***.***.***.***" textAlignment="center" minimumFontSize="17" id="nYZ-Ig-gFw">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Anonymous" textAlignment="center" minimumFontSize="17" id="nYZ-Ig-gFw">
                                                 <rect key="frame" x="80" y="49" width="194" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="5YQ-yq-kIg" id="I3X-JY-yS9"/>
                                                 </connections>
@@ -322,7 +322,6 @@
                         <outlet property="overlay" destination="O6Q-ID-1ca" id="OE1-Zy-wyb"/>
                         <outlet property="textPopup" destination="IGR-yd-dUZ" id="UO8-cC-7SW"/>
                         <outlet property="textPopupTextField" destination="nYZ-Ig-gFw" id="o29-qG-Age"/>
-                        <outlet property="textPopupTitle" destination="zR8-ag-3gv" id="6ek-2m-94K"/>
                         <segue destination="k5I-1V-T9v" kind="push" identifier="winner" id="15z-C5-MOh"/>
                         <segue destination="PIN-XC-1M0" kind="push" identifier="loser" id="pIk-C5-dlR"/>
                         <segue destination="Dsh-Ae-EZB" kind="modal" identifier="choosesuit" id="DVa-3A-q7h"/>
@@ -371,7 +370,7 @@
             </objects>
             <point key="canvasLocation" x="2063" y="-283"/>
         </scene>
-        <!--Player Connect View Controller-->
+        <!--Player Connect View Controller - Search for Devices-->
         <scene sceneID="tlx-vQ-2aC">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Iz-MX-rGt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -396,7 +395,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="440" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sju-Qj-XfD">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sju-Qj-XfD">
                                                     <rect key="frame" x="10" y="0.0" width="420" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -417,7 +416,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" id="M8I-fp-cMR"/>
+                    <navigationItem key="navigationItem" title="Search for Devices" id="M8I-fp-cMR"/>
                     <connections>
                         <outlet property="servers" destination="QOj-88-ui7" id="GTS-9x-w8O"/>
                         <segue destination="5YQ-yq-kIg" kind="push" identifier="playerhand" id="pNd-fX-tjn"/>
@@ -593,7 +592,6 @@ A preferences page is also available from the home screen. To get to this page, 
         <class className="PlayerConnectViewController" superclassName="ViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayerConnectViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="searching" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="servers" candidateClass="UITableView"/>
             </relationships>
         </class>
