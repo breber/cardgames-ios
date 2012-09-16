@@ -7,6 +7,7 @@
 //
 
 #import "WifiConnection.h"
+#import <CFNetwork/CFSocketStream.h>
 #import "SBJson.h"
 
 @implementation WifiConnection
@@ -21,6 +22,24 @@ static WifiConnection *instance = nil;
     }
     
     return instance;
+}
+
+- (BOOL)initWithNativeSocket:(CFSocketNativeHandle)socket {
+    CFReadStreamRef readStream;
+    CFWriteStreamRef writeStream;
+    
+    CFStreamCreatePairWithSocket(kCFAllocatorDefault, socket, &readStream, &writeStream);
+    inputStream = (NSInputStream *)CFBridgingRelease(readStream);
+    outputStream = (NSOutputStream *)CFBridgingRelease(writeStream);
+    [inputStream setDelegate:self];
+    [outputStream setDelegate:self];
+    
+    [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    
+    [inputStream open];
+    [outputStream open];
+    return YES;
 }
 
 - (BOOL)initNetworkCommunication:(NSNetService *)service {
@@ -50,7 +69,12 @@ static WifiConnection *instance = nil;
     [inputStream close];
 }
 
-- (BOOL) write:(NSString *)data withType:(int)type {
+- (BOOL)isActive {
+    return (outputStream.streamStatus == NSStreamStatusOpen) &&
+            (inputStream.streamStatus == NSStreamStatusOpen);
+}
+
+- (BOOL)write:(NSString *)data withType:(int)type {
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: data, @"DATA", [NSString stringWithFormat:@"%i", type], @"MSG_TYPE", nil];
     NSData *dataToWrite = [[dict JSONRepresentation] dataUsingEncoding:NSUTF8StringEncoding];
     

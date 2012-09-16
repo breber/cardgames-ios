@@ -6,9 +6,10 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
+#import "Server.h"
 #import "ViewController.h"
 
-@interface ConnectViewController : ViewController <NSNetServiceDelegate> {
+@interface ConnectViewController : ViewController <ServerDelegate> {
     IBOutlet UILabel *deviceName;
     IBOutlet UIButton *startButton;
     

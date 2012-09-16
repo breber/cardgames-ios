@@ -18,9 +18,10 @@
 
 + (id)sharedInstance;
 
+- (BOOL)initWithNativeSocket:(CFSocketNativeHandle)socket;
 - (BOOL)initNetworkCommunication:(NSNetService *)service;
 - (void)closeConnections;
-
-- (BOOL) write:(NSString *)data withType:(int)type;
+- (BOOL)isActive;
+- (BOOL)write:(NSString *)data withType:(int)type;
 
 @end
