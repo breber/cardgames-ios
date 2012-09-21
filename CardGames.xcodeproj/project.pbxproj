@@ -108,6 +108,8 @@
 		D1D2BA7A1603CDA0008EE137 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA791603CDA0008EE137 /* PlayerController.m */; };
 		D1D2BA7D1603CEE1008EE137 /* Rules.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA7C1603CEE1008EE137 /* Rules.m */; };
 		D1DA26281604E4D100E32193 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DA26271604E4D100E32193 /* ConnectViewController.m */; };
+		D1F488D0160CC06700CC1A07 /* RoundedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F488CF160CC06700CC1A07 /* RoundedTextView.m */; };
+		D1F488D4160CC16600CC1A07 /* RoundedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F488D3160CC16600CC1A07 /* RoundedTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -248,6 +250,10 @@
 		D1D2BA7C1603CEE1008EE137 /* Rules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rules.m; sourceTree = "<group>"; };
 		D1DA26261604E4D100E32193 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
 		D1DA26271604E4D100E32193 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
+		D1F488CE160CC06700CC1A07 /* RoundedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedTextView.h; sourceTree = "<group>"; };
+		D1F488CF160CC06700CC1A07 /* RoundedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedTextView.m; sourceTree = "<group>"; };
+		D1F488D2160CC16600CC1A07 /* RoundedTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedTableView.h; sourceTree = "<group>"; };
+		D1F488D3160CC16600CC1A07 /* RoundedTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -471,6 +477,10 @@
 				D1CAA3D815FD5AF400549EF7 /* HorizontalTableView.m */,
 				D1CAA3DB15FD5C6200549EF7 /* HorizontalTableViewCell.h */,
 				D1CAA3DC15FD5C6200549EF7 /* HorizontalTableViewCell.m */,
+				D1F488CE160CC06700CC1A07 /* RoundedTextView.h */,
+				D1F488CF160CC06700CC1A07 /* RoundedTextView.m */,
+				D1F488D2160CC16600CC1A07 /* RoundedTableView.h */,
+				D1F488D3160CC16600CC1A07 /* RoundedTableView.m */,
 			);
 			name = UIComponents;
 			sourceTree = "<group>";
@@ -670,6 +680,8 @@
 				D1DA26281604E4D100E32193 /* ConnectViewController.m in Sources */,
 				D140E9A116056E6700FDC2DA /* PlayerConnectViewController.m in Sources */,
 				D140E9BD16062AB200FDC2DA /* Server.m in Sources */,
+				D1F488D0160CC06700CC1A07 /* RoundedTextView.m in Sources */,
+				D1F488D4160CC16600CC1A07 /* RoundedTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
