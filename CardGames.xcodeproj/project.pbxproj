@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D11F4972160CB97B00F46EE4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D11F4971160CB97B00F46EE4 /* Default-568h@2x.png */; };
 		D140E9A116056E6700FDC2DA /* PlayerConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D140E9A016056E6700FDC2DA /* PlayerConnectViewController.m */; };
 		D140E9AA1605705900FDC2DA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D140E9A91605705900FDC2DA /* CFNetwork.framework */; };
 		D140E9BD16062AB200FDC2DA /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = D140E9BB16062AB200FDC2DA /* Server.m */; };
@@ -107,10 +108,10 @@
 		D1D2BA7A1603CDA0008EE137 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA791603CDA0008EE137 /* PlayerController.m */; };
 		D1D2BA7D1603CEE1008EE137 /* Rules.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA7C1603CEE1008EE137 /* Rules.m */; };
 		D1DA26281604E4D100E32193 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DA26271604E4D100E32193 /* ConnectViewController.m */; };
-		D1F3395B160A8CE100ABFA19 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F3395A160A8CE100ABFA19 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D11F4971160CB97B00F46EE4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "CardGames/Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		D140E99F16056E6700FDC2DA /* PlayerConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerConnectViewController.h; sourceTree = "<group>"; };
 		D140E9A016056E6700FDC2DA /* PlayerConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerConnectViewController.m; sourceTree = "<group>"; };
 		D140E9A91605705900FDC2DA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -247,7 +248,6 @@
 		D1D2BA7C1603CEE1008EE137 /* Rules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rules.m; sourceTree = "<group>"; };
 		D1DA26261604E4D100E32193 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
 		D1DA26271604E4D100E32193 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
-		D1F3395A160A8CE100ABFA19 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,7 +353,7 @@
 				D1A7A52E15FEC9A400754BD9 /* diamondsuitimage.png */,
 				D1A7A52F15FEC9A400754BD9 /* heartsuitimage.png */,
 				D1A7A53015FEC9A400754BD9 /* spadesuitimage.png */,
-				D1F3395A160A8CE100ABFA19 /* Default-568h@2x.png */,
+				D11F4971160CB97B00F46EE4 /* Default-568h@2x.png */,
 				D1CAA3E615FD6F6800549EF7 /* icon-ipad-retina.png */,
 				D1CAA3E715FD6F6800549EF7 /* icon-ipad.png */,
 				D1CAA3E815FD6F6800549EF7 /* icon-retina.png */,
@@ -630,7 +630,7 @@
 				D1A7A53215FEC9A400754BD9 /* diamondsuitimage.png in Resources */,
 				D1A7A53315FEC9A400754BD9 /* heartsuitimage.png in Resources */,
 				D1A7A53415FEC9A400754BD9 /* spadesuitimage.png in Resources */,
-				D1F3395B160A8CE100ABFA19 /* Default-568h@2x.png in Resources */,
+				D11F4972160CB97B00F46EE4 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

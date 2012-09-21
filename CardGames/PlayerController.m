@@ -93,7 +93,26 @@
     } else if (type == MSG_LOSER) {
         [self.delegate playerDidLose];
     } else if (type == MSG_REFRESH) {
-        // TODO: handle refresh
+        // TODO: fix refresh after updating to use JSONObject with JSONArray
+        NSDictionary *jsonObject = [jsonParser objectWithString:data];
+        NSMutableArray *arr = [[NSMutableArray alloc] init];
+        int loopCount = 0;
+        
+        for (NSDictionary *t in jsonObject) {
+            if (loopCount > 1) {
+                Card *c = [[Card alloc] init];
+                c.value = [[t objectForKey:@"value"] intValue];
+                c.suit = [[t objectForKey:@"suit"] intValue];
+                c.cardId = [[t objectForKey:@"id"] intValue];
+                
+                [arr addObject:c];
+            }
+            
+            loopCount++;
+        }
+        
+        self.hand = arr;
+        [self.delegate playerHandDidChange];
     } else if (type == MSG_PAUSE) {
         [self.delegate gameDidPause];
     } else if (type == MSG_UNPAUSE) {

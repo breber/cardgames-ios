@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="XAC-B5-a4b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="XAC-B5-a4b">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="LMK-uP-YsT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cVp-4U-MIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController wantsFullScreenLayout="YES" definesPresentationContext="YES" id="XAC-B5-a4b" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
@@ -21,13 +19,13 @@
                         <segue destination="2" kind="relationship" relationship="rootViewController" id="jXH-Px-evK"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cVp-4U-MIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-544" y="317"/>
         </scene>
         <!--View Controller - Card Games-->
         <scene sceneID="5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="menu" wantsFullScreenLayout="YES" id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="44" width="480" height="276"/>
@@ -91,16 +89,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="Card Games" id="9MM-wM-YTE"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="100" y="317"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="a1o-St-jIU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tHY-Wz-k1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="F5Q-YB-nBF" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DcQ-3z-aZx">
-                        <rect key="frame" x="0.0" y="0.0" width="460" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" id="kgP-to-WDw">
@@ -130,20 +128,20 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tHY-Wz-k1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2063" y="-1114"/>
         </scene>
         <!--Choose Suit View Controller-->
         <scene sceneID="gHR-ZM-WJk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ttr-6H-6T4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Dsh-Ae-EZB" customClass="ChooseSuitViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6qR-LF-PLI">
-                        <rect key="frame" x="0.0" y="0.0" width="460" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" id="zKf-gw-Sp4">
-                                <rect key="frame" x="0.0" y="0.0" width="460" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="Xxq-of-keN">
@@ -218,13 +216,13 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ttr-6H-6T4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2063" y="-689"/>
         </scene>
         <!--Play View Controller - Play-->
         <scene sceneID="Wss-xF-8cb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Pe-BX-vnZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController wantsFullScreenLayout="YES" providesPresentationContextTransitionStyle="YES" id="5YQ-yq-kIg" customClass="PlayViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="var-dd-0E9">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
@@ -328,13 +326,13 @@
                         <segue destination="F5Q-YB-nBF" kind="modal" identifier="pause" id="wQv-A3-LEw"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Pe-BX-vnZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1363" y="-92"/>
         </scene>
         <!--Game Result View Controller - You Win!-->
         <scene sceneID="bfp-y4-ARU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jUv-RR-MJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="k5I-1V-T9v" customClass="GameResultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3d3-0a-Lbi">
                         <rect key="frame" x="0.0" y="44" width="480" height="276"/>
@@ -367,13 +365,13 @@
                     <navigationItem key="navigationItem" title="You Win!" id="Mnv-wB-KCW"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jUv-RR-MJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2063" y="-283"/>
         </scene>
         <!--Player Connect View Controller - Search for Devices-->
         <scene sceneID="tlx-vQ-2aC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Iz-MX-rGt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="PEr-Mu-qhH" customClass="PlayerConnectViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wvY-yA-cs4">
                         <rect key="frame" x="0.0" y="44" width="480" height="276"/>
@@ -422,13 +420,13 @@
                         <segue destination="5YQ-yq-kIg" kind="push" identifier="playerhand" id="pNd-fX-tjn"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Iz-MX-rGt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="796" y="-92"/>
         </scene>
         <!--View Controller - Rules-->
         <scene sceneID="Zlx-XT-R6h">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hfq-7J-QZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="FVG-eZ-usr" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YCP-Kx-Ab5">
                         <rect key="frame" x="0.0" y="44" width="480" height="276"/>
@@ -470,13 +468,13 @@ The first player to successfully get rid of all of their cards wins the game. If
                     </view>
                     <navigationItem key="navigationItem" title="Rules" id="4fr-vz-lfA"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hfq-7J-QZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="796" y="317"/>
         </scene>
         <!--View Controller - About-->
         <scene sceneID="anr-Yt-sla">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i6e-eb-7Ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="k1N-Vb-Mth" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uof-fW-9wb">
                         <rect key="frame" x="0.0" y="44" width="480" height="276"/>
@@ -504,13 +502,13 @@ A preferences page is also available from the home screen. To get to this page, 
                     </view>
                     <navigationItem key="navigationItem" title="About" id="bn7-XW-iXa"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i6e-eb-7Ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="796" y="747"/>
         </scene>
         <!--Game Result View Controller - You Lose :(-->
         <scene sceneID="MpV-RQ-DHB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eff-Dh-Kv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="PIN-XC-1M0" customClass="GameResultViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wuk-Fq-hVI">
                         <rect key="frame" x="0.0" y="44" width="480" height="276"/>
@@ -543,6 +541,7 @@ A preferences page is also available from the home screen. To get to this page, 
                     <navigationItem key="navigationItem" title="You Lose :(" id="1cK-pF-GAW"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eff-Dh-Kv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2063" y="146"/>
         </scene>
@@ -586,7 +585,6 @@ A preferences page is also available from the home screen. To get to this page, 
                 <relationship kind="outlet" name="overlay" candidateClass="UIView"/>
                 <relationship kind="outlet" name="textPopup" candidateClass="UIView"/>
                 <relationship kind="outlet" name="textPopupTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="textPopupTitle" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="PlayerConnectViewController" superclassName="ViewController">

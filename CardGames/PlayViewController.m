@@ -37,7 +37,11 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     // Save the player's name
-    [self.playerController setName:[textField text]];
+    if ([[textField text] length]) {
+        [self.playerController setName:[textField text]];
+    } else {
+        [self.playerController setName:@"Anonymous"];
+    }
     
     [loadingPopupTitle setText:@"Waiting for game to begin..."];
     
