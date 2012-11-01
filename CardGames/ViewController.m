@@ -11,10 +11,6 @@
 #import "RoundedTableView.h"
 #import "RoundedTextView.h"
 
-@interface ViewController ()
-
-@end
-
 @implementation ViewController
 
 - (void)viewDidLoad
@@ -44,7 +40,7 @@
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown) &&
-            (interfaceOrientation != UIInterfaceOrientationPortrait);
+               (interfaceOrientation != UIInterfaceOrientationPortrait);
     } else {
         return YES;
     }

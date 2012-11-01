@@ -11,7 +11,9 @@
 
 @implementation CrazyEightsRules
 
-+ (BOOL)canPlay:(Card *)card withDiscard:(Card *)discard {
++ (BOOL)canPlay:(Card *)card
+    withDiscard:(Card *)discard
+{
     if (card == nil || discard == nil) {
         return NO;
     }

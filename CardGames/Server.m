@@ -34,7 +34,8 @@
 @synthesize port, netService;
 
 // Create server and announce it
-- (BOOL)start {
+- (BOOL)start
+{
     // Start the socket server
     if (![self createServer]) {
         return NO;
@@ -51,7 +52,8 @@
 
 
 // Close everything
-- (void)stop {
+- (void)stop
+{
     [self terminateServer];
     [self unpublishService];
 }
@@ -60,7 +62,8 @@
 #pragma mark Callbacks
 
 // Handle new connections
-- (void)handleNewNativeSocket:(CFSocketNativeHandle)nativeSocketHandle {
+- (void)handleNewNativeSocket:(CFSocketNativeHandle)nativeSocketHandle
+{
     WifiConnection* connection = [WifiConnection sharedInstance];
 
     if (![connection initWithNativeSocket:nativeSocketHandle]) {
@@ -73,7 +76,8 @@
 
 
 // This function will be used as a callback while creating our listening socket via 'CFSocketCreate'
-static void serverAcceptCallback(CFSocketRef socket, CFSocketCallBackType type, CFDataRef address, const void *data, void *info) {
+static void serverAcceptCallback(CFSocketRef socket, CFSocketCallBackType type, CFDataRef address, const void *data, void *info)
+{
     Server *server = (__bridge Server*)info;
 
     // We can only process "connection accepted" calls here
@@ -90,7 +94,8 @@ static void serverAcceptCallback(CFSocketRef socket, CFSocketCallBackType type, 
 
 #pragma mark Sockets and streams
 
-- (BOOL)createServer {
+- (BOOL)createServer
+{
     //// PART 1: Create a socket that can accept connections
     CFSocketContext socketCtxt = {0, (__bridge void *)(self), NULL, NULL, NULL};
 
@@ -161,7 +166,8 @@ static void serverAcceptCallback(CFSocketRef socket, CFSocketCallBackType type, 
 }
 
 
-- (void) terminateServer {
+- (void)terminateServer
+{
     if (listeningSocket) {
         CFSocketInvalidate(listeningSocket);
         CFRelease(listeningSocket);
@@ -172,8 +178,10 @@ static void serverAcceptCallback(CFSocketRef socket, CFSocketCallBackType type, 
 
 #pragma mark Bonjour
 
-- (BOOL) publishService {
+- (BOOL)publishService
+{
     // come up with a name for our service
+    // TODO: this won't currently be unique
     NSString* serviceName = [NSString stringWithFormat:@"Card Games - %@", [[UIDevice currentDevice] name]];
 
     // create new instance of netService
@@ -196,7 +204,8 @@ static void serverAcceptCallback(CFSocketRef socket, CFSocketCallBackType type, 
 }
 
 
-- (void) unpublishService {
+- (void)unpublishService
+{
     if (self.netService) {
         [self.netService stop];
         [self.netService removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
@@ -204,12 +213,12 @@ static void serverAcceptCallback(CFSocketRef socket, CFSocketCallBackType type, 
     }
 }
 
-
-#pragma mark -
 #pragma mark NSNetService Delegate Method Implementations
 
 // Delegate method, called by NSNetService in case service publishing fails for whatever reason
-- (void)netService:(NSNetService*)sender didNotPublish:(NSDictionary*)errorDict {
+- (void)netService:(NSNetService*)sender
+     didNotPublish:(NSDictionary*)errorDict
+{
     if (sender != self.netService) {
         return;
     }

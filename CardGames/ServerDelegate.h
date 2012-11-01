@@ -32,9 +32,10 @@
 @protocol ServerDelegate
 
 // Server has been terminated because of an error
-- (void) serverFailed:(Server*)server reason:(NSString*)reason;
+- (void)serverFailed:(Server *)server
+               reason:(NSString *)reason;
 
 // Server has accepted a new connection and it needs to be processed
-- (void) handleNewConnection:(WifiConnection*)connection;
+- (void)handleNewConnection:(WifiConnection *)connection;
 
 @end

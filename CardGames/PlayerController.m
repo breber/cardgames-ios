@@ -12,11 +12,8 @@
 
 @implementation PlayerController
 
-@synthesize hand = _hand;
-@synthesize rules = _rules;
-@synthesize buttonView = _buttonView;
-
-- (id) init {
+- (id) init
+{
     self = [super init];
     
     if (self) {
@@ -29,29 +26,36 @@
     return self;
 }
 
-- (void)setIsTurn:(BOOL)isTurn {
+- (void)setIsTurn:(BOOL)isTurn
+{
     _isTurn = isTurn;
     [self.delegate playerTurnDidChange:self.isTurn];
 }
 
-- (void)outputStreamOpened {
+- (void)outputStreamOpened:(WifiConnection *)connection
+{
     // Show a popup requesting the IP address of the server to connect to
     [self.delegate gameRequestingName];
 }
 
-- (void)outputStreamClosed {
+- (void)outputStreamClosed:(WifiConnection *)connection
+{
     // Clear the player's hand
     [self.hand removeAllObjects];
     
     [self.delegate gameDidEnd];
 }
 
-- (void)setName:(NSString *)name {
+- (void)setName:(NSString *)name
+{
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: name, @"playername", nil];
     [connection write:[dict JSONRepresentation] withType:MSG_PLAYER_NAME];
 }
 
-- (void) newDataArrived:(NSString *)data withType:(int) type {
+- (void)newDataArrived:(WifiConnection *)connection
+              withData:(NSString *)data
+              withType:(int)type
+{
     SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
     
     // If this is the init message
@@ -120,15 +124,19 @@
     }
 }
 
-- (void)handleIsTurn:(NSDictionary *)data {
+- (void)handleIsTurn:(NSDictionary *)data
+{
     // Nothing needed in this class
 }
 
-- (void)handleSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)handleSegue:(UIStoryboardSegue *)segue
+             sender:(id)sender
+{
     // Nothing needed in this class
 }
 
-- (void)addButtons:(UIView *)wrapper {
+- (void)addButtons:(UIView *)wrapper
+{
     // Nothing needed in this class
 }
 

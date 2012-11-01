@@ -9,27 +9,25 @@
 #import "ChooseSuitViewController.h"
 #import "Constants.h"
 
-@interface ChooseSuitViewController ()
-
-@end
-
 @implementation ChooseSuitViewController
 
-@synthesize delegate;
-
-- (IBAction)heartsSelected:(id)sender {
+- (IBAction)heartsSelected:(id)sender
+{
     [self.delegate handleChooseSuit:SUIT_HEARTS];
 }
 
-- (IBAction)spadesSelected:(id)sender {
+- (IBAction)spadesSelected:(id)sender
+{
     [self.delegate handleChooseSuit:SUIT_SPADES];
 }
 
-- (IBAction)diamondsSelected:(id)sender {
+- (IBAction)diamondsSelected:(id)sender
+{
     [self.delegate handleChooseSuit:SUIT_DIAMONDS];
 }
 
-- (IBAction)clubsSelected:(id)sender {
+- (IBAction)clubsSelected:(id)sender
+{
     [self.delegate handleChooseSuit:SUIT_CLUBS];
 }
 

@@ -10,7 +10,8 @@
 #import "Server.h"
 #import "WifiConnection.h"
 
-@interface ConnectViewController () {
+@interface ConnectViewController()
+{
     Server *server;
     NSMutableArray *connections;
     NSArray *devicesUi;
@@ -39,20 +40,25 @@
 }
 
 // Server has been terminated because of an error
-- (void)serverFailed:(Server*)server reason:(NSString*)reason {
+- (void)serverFailed:(Server *)server
+              reason:(NSString *)reason
+{
     NSLog(@"server failed");
 }
 
 // Server has accepted a new connection and it needs to be processed
-- (void)handleNewConnection:(WifiConnection*)connection {
+- (void)handleNewConnection:(WifiConnection *)connection
+{
     if ([connection isActive]) {
         [services addObject:connection];
+        connection.listener = self;
     }
     
     [self updateUI];
 }
 
-- (void)updateUI {
+- (void)updateUI
+{
     // TODO: do something
     int i = 0;
     for (WifiConnection *c in services) {
@@ -67,6 +73,15 @@
     for (; i < 4; i++) {
         [[devicesUi objectAtIndex:i] setBackgroundColor:[UIColor darkGrayColor]];
     }
+}
+
+
+- (void)newDataArrived:(WifiConnection *)connection
+              withData:(NSString *)data
+              withType:(int) type
+{
+    // TODO: implement
+    NSLog(@"%@", data);
 }
 
 @end

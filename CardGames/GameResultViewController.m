@@ -8,19 +8,17 @@
 
 #import "GameResultViewController.h"
 
-@interface GameResultViewController ()
-
-@end
-
 @implementation GameResultViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     self.navigationItem.hidesBackButton = YES;
 }
 
-- (IBAction)mainMenu:(id)sender {
+- (IBAction)mainMenu:(id)sender
+{
     [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 

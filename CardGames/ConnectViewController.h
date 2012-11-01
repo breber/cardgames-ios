@@ -7,9 +7,11 @@
 //
 
 #import "Server.h"
+#import "ConnectionListener.h"
 #import "ViewController.h"
 
-@interface ConnectViewController : ViewController <ServerDelegate> {
+@interface ConnectViewController : ViewController <ServerDelegate, ConnectionListener>
+{
     IBOutlet UILabel *deviceName;
     IBOutlet UIButton *startButton;
     

@@ -11,7 +11,8 @@
 #import "PlayerController.h"
 #import "ViewController.h"
 
-@interface PlayViewController : ViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, PlayerControllerDelegate> {
+@interface PlayViewController : ViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, PlayerControllerDelegate>
+{
     IBOutlet UIView *buttonLayout;
 
     IBOutlet UIView *overlay;

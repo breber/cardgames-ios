@@ -10,7 +10,9 @@
 
 @implementation Rules
 
-+ (BOOL)canPlay:(Card *)card withDiscard:(Card *)discard {
++ (BOOL)canPlay:(Card *)card
+    withDiscard:(Card *)discard
+{
     return YES;
 }
 

@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 
-@interface PlayerConnectViewController : ViewController <UITableViewDataSource, UITableViewDelegate, NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
+@interface PlayerConnectViewController : ViewController <UITableViewDataSource, UITableViewDelegate, NSNetServiceBrowserDelegate, NSNetServiceDelegate>
+{
     NSMutableArray *services;
     BOOL searching;
 }

@@ -14,9 +14,8 @@
 
 static WifiConnection *instance = nil;
 
-@synthesize listener = _listener;
-
-+ (WifiConnection *)sharedInstance {
++ (WifiConnection *)sharedInstance
+{
     if (instance == nil) {
         instance = [[WifiConnection alloc] init];
     }
@@ -24,7 +23,8 @@ static WifiConnection *instance = nil;
     return instance;
 }
 
-- (BOOL)initWithNativeSocket:(CFSocketNativeHandle)socket {
+- (BOOL)initWithNativeSocket:(CFSocketNativeHandle)socket
+{
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
     
@@ -42,7 +42,8 @@ static WifiConnection *instance = nil;
     return YES;
 }
 
-- (BOOL)initNetworkCommunication:(NSNetService *)service {
+- (BOOL)initNetworkCommunication:(NSNetService *)service
+{
     NSInputStream *readStream;
     NSOutputStream *writeStream;
     
@@ -64,29 +65,35 @@ static WifiConnection *instance = nil;
     return NO;
 }
 
-- (void)closeConnections {
+- (void)closeConnections
+{
     [outputStream close];
     [inputStream close];
 }
 
-- (BOOL)isActive {
+- (BOOL)isActive
+{
     return (outputStream.streamStatus == NSStreamStatusOpen) &&
             (inputStream.streamStatus == NSStreamStatusOpen);
 }
 
-- (BOOL)write:(NSString *)data withType:(int)type {
+- (BOOL)write:(NSString *)data
+     withType:(int)type
+{
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: data, @"DATA", [NSString stringWithFormat:@"%i", type], @"MSG_TYPE", nil];
     NSData *dataToWrite = [[dict JSONRepresentation] dataUsingEncoding:NSUTF8StringEncoding];
     
     return [outputStream write:[dataToWrite bytes] maxLength:[dataToWrite length]] == [dataToWrite length];
 }
 
-- (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode {
+- (void)stream:(NSStream *)aStream
+   handleEvent:(NSStreamEvent)eventCode
+{
     switch (eventCode) {
 		case NSStreamEventOpenCompleted:
             if (aStream == outputStream) {
                 if ([self.listener respondsToSelector:@selector(outputStreamOpened)]) {
-                    [self.listener outputStreamOpened];
+                    [self.listener outputStreamOpened:self];
                 }
             }
             break;
@@ -105,11 +112,11 @@ static WifiConnection *instance = nil;
                             SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
                             NSDictionary *jsonObject = [jsonParser objectWithString:output];
                             
-                            if ([self.listener respondsToSelector:@selector(newDataArrived:withType:)]) {
+                            if ([self.listener respondsToSelector:@selector(newDataArrived:withData:withType:)]) {
                                 NSString *data = [jsonObject objectForKey:@"DATA"];
                                 int type = [[jsonObject objectForKey:@"MSG_TYPE"] intValue];
                                 
-                                [self.listener newDataArrived:data withType:type];
+                                [self.listener newDataArrived:self withData:data withType:type];
                             }
                         }
                     }
@@ -126,7 +133,7 @@ static WifiConnection *instance = nil;
             [inputStream close];
             
             if ([self.listener respondsToSelector:@selector(outputStreamClosed)]) {
-                [self.listener outputStreamClosed];
+                [self.listener outputStreamClosed:self];
             }
             break;
             

@@ -17,8 +17,6 @@
 
 @implementation PlayerConnectViewController
 
-@synthesize servers = _servers;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -82,17 +80,20 @@
 }
 
 // Error handling code
-- (void)handleError:(NSNumber *)error {
+- (void)handleError:(NSNumber *)error
+{
     NSLog(@"An error occurred. Error code = %d", [error intValue]);
     // Handle error here
 }
 
 // UI update code
-- (void)updateUI {
+- (void)updateUI
+{
     [self.servers reloadData];
 }
 
-- (void)netServiceDidResolveAddress:(NSNetService *)netService {
+- (void)netServiceDidResolveAddress:(NSNetService *)netService
+{
     NSArray *addresses = [netService addresses];
     
     if ([addresses count] > 0) {
@@ -109,17 +110,22 @@
     NSLog(@"didNotResolve");
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     NSNetService * selected = [services objectAtIndex:indexPath.row];
     [selected setDelegate:self];
     [selected resolveWithTimeout:5.0];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
     return [services count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     NSNetService *c = [services objectAtIndex:indexPath.row];
         
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"services"];

@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "ConnectionListener.h"
 
-@interface WifiConnection : NSObject <NSStreamDelegate> {
+@interface WifiConnection : NSObject <NSStreamDelegate>
+{
     NSInputStream *inputStream;
     NSOutputStream *outputStream;
 }

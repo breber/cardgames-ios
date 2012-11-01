@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "Card.h"
 
 @interface Rules : NSObject
 
-+ (BOOL)canPlay:(Card *)card withDiscard:(Card *)discard;
++ (BOOL)canPlay:(Card *)card
+    withDiscard:(Card *)discard;
 
 @end

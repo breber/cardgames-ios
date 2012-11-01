@@ -20,7 +20,8 @@
 
 @implementation CrazyEightsPlayerController
 
-- (id)init {
+- (id)init
+{
     self = [super init];
     
     if (self) {
@@ -30,7 +31,8 @@
     return self;
 }
 
-- (void)setIsTurn:(BOOL)isTurn {
+- (void)setIsTurn:(BOOL)isTurn
+{
     [super setIsTurn:isTurn];
     
     UIColor *goldColor = [UIColor colorWithRed:1 green:201 / 255.0 blue:14 / 255.0 alpha:1];
@@ -49,7 +51,8 @@
     }
 }
 
-- (void)handleIsTurn:(NSDictionary *)data {
+- (void)handleIsTurn:(NSDictionary *)data
+{
     [super handleIsTurn:data];
         
     Card *c = [[Card alloc] init];
@@ -60,14 +63,17 @@
     self.discardCard = c;
 }
 
-- (void)handleSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)handleSegue:(UIStoryboardSegue *)segue
+             sender:(id)sender
+{
     if ([segue.identifier isEqualToString:@"choosesuit"]) {
 		ChooseSuitViewController *chooseSuitViewController = segue.destinationViewController;
 		chooseSuitViewController.delegate = self;
 	}
 }
 
-- (void)addButtons:(UIView *)wrapper {
+- (void)addButtons:(UIView *)wrapper
+{
     UIColor *goldColor = [UIColor colorWithRed:1 green:201 / 255.0 blue:14 / 255.0 alpha:1];
     
     self.buttonView = wrapper;
@@ -110,14 +116,16 @@
     [self.buttonView addSubview:playButton];
 }
 
-- (void)drawButtonPressed {
+- (void)drawButtonPressed
+{
     if (self.isTurn) {
         [connection write:@"" withType:MSG_DRAW_CARD];
         self.isTurn = NO;
     }
 }
 
-- (void)playButtonPressed {
+- (void)playButtonPressed
+{
     if (self.isTurn) {
         NSIndexPath *selected = [self.delegate getSelectedCardIndex];
         
@@ -143,7 +151,8 @@
     }
 }
 
-- (void)handleChooseSuit:(int)suit {
+- (void)handleChooseSuit:(int)suit
+{
     [self.delegate dismissScreen];
     int type = 0;
     

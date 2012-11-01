@@ -8,11 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+// Forward declare WifiConnection
+@class WifiConnection;
+
 @protocol ConnectionListener <NSObject>
 
 @optional
-- (void)outputStreamOpened;
-- (void)outputStreamClosed;
-- (void)newDataArrived:(NSString *)data withType:(int) type;
+- (void)outputStreamOpened:(WifiConnection *)connection;
+- (void)outputStreamClosed:(WifiConnection *)connection;
+- (void)newDataArrived:(WifiConnection *)connection
+              withData:(NSString *)data
+              withType:(int) type;
 
 @end

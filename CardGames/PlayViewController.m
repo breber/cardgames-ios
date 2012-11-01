@@ -14,9 +14,8 @@
 
 @implementation PlayViewController
 
-@synthesize cardHand = _cardHand;
-
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 
     self.playerController = [[CrazyEightsPlayerController alloc] init];
@@ -29,13 +28,15 @@
     [self.playerController addButtons:buttonLayout];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
     // TODO: maybe check to see if the string is in the right format
     [textField resignFirstResponder];
     return YES;
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
     // Save the player's name
     if ([[textField text] length]) {
         [self.playerController setName:[textField text]];
@@ -49,70 +50,89 @@
     [loadingPopup setHidden:NO];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
     [self.playerController handleSegue:segue sender:sender];
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
     [super viewDidUnload];
 }
 
-- (void)gameRequestingName {
+- (void)gameRequestingName
+{
     [textPopupTextField becomeFirstResponder];
      
     [loadingPopup setHidden:YES];
     [textPopup setHidden:NO];
 }
 
-- (void)gameDidBegin {
+- (void)gameDidBegin
+{
     [overlay setHidden:YES];
 }
 
-- (void)gameDidEnd {
+- (void)gameDidEnd
+{
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
-- (void)playerTurnDidChange:(BOOL)withTurn {
+- (void)playerTurnDidChange:(BOOL)withTurn
+{
     // Nothing to do...
 }
 
-- (void)playerHandDidChange {
+- (void)playerHandDidChange
+{
     [self.cardHand reloadData];
 }
 
-- (void)playerDidWin {
+- (void)playerDidWin
+{
     [self performSegueWithIdentifier:@"winner" sender:self];
 }
 
-- (void)playerDidLose {
+- (void)playerDidLose
+{
     [self performSegueWithIdentifier:@"loser" sender:self];
 }
 
-- (void)gameDidPause {
+- (void)gameDidPause
+{
     [self performSegueWithIdentifier:@"pause" sender:self];
 }
 
-- (void)gameDidResume {
+- (void)gameDidResume
+{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)showNewScreen:(NSString *)viewController {
+- (void)showNewScreen:(NSString *)viewController
+{
     [self performSegueWithIdentifier:viewController sender:self];
 }
 
-- (void)dismissScreen {
+- (void)dismissScreen
+{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (NSIndexPath *)getSelectedCardIndex {
+- (NSIndexPath *)getSelectedCardIndex
+{
     return [self.cardHand indexPathForSelectedRow];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
     return [self.playerController.hand count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     Card *c = [self.playerController.hand objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];

@@ -10,7 +10,8 @@
 
 @implementation HorizontalTableViewCell
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
     assert([aDecoder isKindOfClass:[NSCoder class]]);
     
     self = [super initWithCoder:aDecoder];
