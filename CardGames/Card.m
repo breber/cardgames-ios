@@ -7,18 +7,18 @@
 //
 
 #import "Card.h"
-#import "SBJson.h"
 
 @implementation Card
 
 - (NSString *)jsonString
 {
-    NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
-                          [NSNumber numberWithInt:self.suit], @"suit",
-                          [NSNumber numberWithInt:self.cardId], @"id",
-                          [NSNumber numberWithInt:self.value], @"value",
-                          nil];
-    return [data JSONRepresentation];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                         [NSNumber numberWithInt:self.suit], @"suit",
+                         [NSNumber numberWithInt:self.cardId], @"id",
+                         [NSNumber numberWithInt:self.value], @"value",
+                         nil];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:kNilOptions error:nil];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
 - (NSString *)cardImagePath

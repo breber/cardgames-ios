@@ -25,6 +25,7 @@
 - (BOOL)initNetworkCommunication:(NSNetService *)service;
 - (void)closeConnections;
 - (BOOL)isActive;
+- (BOOL)writeDictionary:(NSDictionary *)dict withType:(int)type;
 - (BOOL)write:(NSString *)data withType:(int)type;
 
 @end

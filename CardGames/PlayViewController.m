@@ -10,7 +10,6 @@
 #import "Card.h"
 #import "Constants.h"
 #import "CrazyEightsPlayerController.h"
-#import "SBJson.h"
 
 @implementation PlayViewController
 

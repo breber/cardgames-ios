@@ -8,7 +8,6 @@
 
 #import "PlayerController.h"
 #import "Constants.h"
-#import "SBJson.h"
 
 @implementation PlayerController
 
@@ -49,22 +48,21 @@
 - (void)setName:(NSString *)name
 {
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: name, @"playername", nil];
-    [connection write:[dict JSONRepresentation] withType:MSG_PLAYER_NAME];
+    [connection writeDictionary:dict withType:MSG_PLAYER_NAME];
 }
 
 - (void)newDataArrived:(WifiConnection *)connection
               withData:(NSString *)data
               withType:(int)type
 {
-    SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
-    
+    NSData *d = [data dataUsingEncoding:NSUTF8StringEncoding];
     // If this is the init message
     if (type == NSIntegerMax) {
         self.isTurn = NO;
         [self.delegate gameDidBegin];
     } else if (type == MSG_SETUP) {
         // Setup
-        NSDictionary *jsonObject = [jsonParser objectWithString:data];
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
         NSMutableArray *arr = [[NSMutableArray alloc] init];
         
         for (NSDictionary *t in jsonObject) {
@@ -81,10 +79,10 @@
     } else if (type == MSG_IS_TURN) {
         self.isTurn = YES;
         
-        NSDictionary *jsonObject = [jsonParser objectWithString:data];
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
         [self handleIsTurn:jsonObject];
     } else if (type == MSG_CARD_DRAWN) {
-        NSDictionary *jsonObject = [jsonParser objectWithString:data];
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
         Card *c = [[Card alloc] init];
         c.value = [[jsonObject objectForKey:@"value"] intValue];
         c.suit = [[jsonObject objectForKey:@"suit"] intValue];
@@ -98,7 +96,7 @@
         [self.delegate playerDidLose];
     } else if (type == MSG_REFRESH) {
         // TODO: fix refresh after updating to use JSONObject with JSONArray
-        NSDictionary *jsonObject = [jsonParser objectWithString:data];
+        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
         NSMutableArray *arr = [[NSMutableArray alloc] init];
         int loopCount = 0;
         

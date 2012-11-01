@@ -10,7 +10,6 @@
 #import "ConnectViewController.h"
 #import "Server.h"
 #import "WifiConnection.h"
-#import "SBJson.h"
 
 @interface ConnectViewController()
 {
@@ -86,13 +85,13 @@
 {
     // TODO: implement
     NSLog(@"%@", data);
+    NSData *d = [data dataUsingEncoding:NSUTF8StringEncoding];
     int remotePort = connection.data;
     if (MSG_PLAYER_NAME == type) {
         int i = 0;
         for (WifiConnection *c in services) {
             if (c.data == remotePort) {
-                SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
-                NSDictionary *jsonObject = [jsonParser objectWithString:data];
+                NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
                 UILabel *label = [devicesNames objectAtIndex:i];
                 [label setText:[jsonObject objectForKey:@"playername"]];
                 [label setHidden:NO];

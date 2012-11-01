@@ -8,7 +8,6 @@
 
 #import "WifiConnection.h"
 #import <CFNetwork/CFSocketStream.h>
-#import "SBJson.h"
 
 @implementation WifiConnection
 
@@ -79,11 +78,19 @@ static WifiConnection *instance = nil;
             (inputStream.streamStatus == NSStreamStatusOpen);
 }
 
+- (BOOL)writeDictionary:(NSDictionary *)dict
+               withType:(int)type
+{
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:kNilOptions error:nil];
+    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    return [self write:str withType:type];
+}
+
 - (BOOL)write:(NSString *)data
      withType:(int)type
 {
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: data, @"DATA", [NSString stringWithFormat:@"%i", type], @"MSG_TYPE", nil];
-    NSData *dataToWrite = [[dict JSONRepresentation] dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *dataToWrite = [NSJSONSerialization dataWithJSONObject:dict options:kNilOptions error:nil];
     
     return [outputStream write:[dataToWrite bytes] maxLength:[dataToWrite length]] == [dataToWrite length];
 }
@@ -111,8 +118,7 @@ static WifiConnection *instance = nil;
                         NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:NSASCIIStringEncoding];
                         
                         if (nil != output) {
-                            SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
-                            NSDictionary *jsonObject = [jsonParser objectWithString:output];
+                            NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:[output dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
                             
                             if ([self.listener respondsToSelector:@selector(newDataArrived:withData:withType:)]) {
                                 NSString *data = [jsonObject objectForKey:@"DATA"];

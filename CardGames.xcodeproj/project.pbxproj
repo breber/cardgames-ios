@@ -84,18 +84,6 @@
 		D1CAA38715FD265400549EF7 /* spades_k.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA35115FD265400549EF7 /* spades_k.png */; };
 		D1CAA38815FD265400549EF7 /* spades_q.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA35215FD265400549EF7 /* spades_q.png */; };
 		D1CAA38D15FD266C00549EF7 /* wooden_top.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA38B15FD266C00549EF7 /* wooden_top.jpg */; };
-		D1CAA3C415FD28C100549EF7 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3AC15FD28C100549EF7 /* NSObject+SBJson.m */; };
-		D1CAA3C515FD28C100549EF7 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3AF15FD28C100549EF7 /* SBJsonParser.m */; };
-		D1CAA3C615FD28C100549EF7 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3B115FD28C100549EF7 /* SBJsonStreamParser.m */; };
-		D1CAA3C715FD28C100549EF7 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3B315FD28C100549EF7 /* SBJsonStreamParserAccumulator.m */; };
-		D1CAA3C815FD28C100549EF7 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3B515FD28C100549EF7 /* SBJsonStreamParserAdapter.m */; };
-		D1CAA3C915FD28C100549EF7 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3B715FD28C100549EF7 /* SBJsonStreamParserState.m */; };
-		D1CAA3CA15FD28C100549EF7 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3B915FD28C100549EF7 /* SBJsonStreamWriter.m */; };
-		D1CAA3CB15FD28C100549EF7 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3BB15FD28C100549EF7 /* SBJsonStreamWriterAccumulator.m */; };
-		D1CAA3CC15FD28C100549EF7 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3BD15FD28C100549EF7 /* SBJsonStreamWriterState.m */; };
-		D1CAA3CD15FD28C100549EF7 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3BF15FD28C100549EF7 /* SBJsonTokeniser.m */; };
-		D1CAA3CE15FD28C100549EF7 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3C115FD28C100549EF7 /* SBJsonUTF8Stream.m */; };
-		D1CAA3CF15FD28C100549EF7 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3C315FD28C100549EF7 /* SBJsonWriter.m */; };
 		D1CAA3D215FD32E000549EF7 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3D115FD32E000549EF7 /* Card.m */; };
 		D1CAA3D915FD5AF400549EF7 /* HorizontalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3D815FD5AF400549EF7 /* HorizontalTableView.m */; };
 		D1CAA3DD15FD5C6200549EF7 /* HorizontalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3DC15FD5C6200549EF7 /* HorizontalTableViewCell.m */; };
@@ -206,31 +194,6 @@
 		D1CAA35215FD265400549EF7 /* spades_q.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spades_q.png; path = CardGames/Resources/Cards/spades_q.png; sourceTree = "<group>"; };
 		D1CAA38915FD266100549EF7 /* hammersmithone.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = hammersmithone.ttf; path = CardGames/Resources/hammersmithone.ttf; sourceTree = "<group>"; };
 		D1CAA38B15FD266C00549EF7 /* wooden_top.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wooden_top.jpg; path = CardGames/Resources/wooden_top.jpg; sourceTree = "<group>"; };
-		D1CAA3AB15FD28C100549EF7 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJson.h"; path = "CardGames/Libraries/sbjson/NSObject+SBJson.h"; sourceTree = "<group>"; };
-		D1CAA3AC15FD28C100549EF7 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SBJson.m"; path = "CardGames/Libraries/sbjson/NSObject+SBJson.m"; sourceTree = "<group>"; };
-		D1CAA3AD15FD28C100549EF7 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJson.h; path = CardGames/Libraries/sbjson/SBJson.h; sourceTree = "<group>"; };
-		D1CAA3AE15FD28C100549EF7 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = CardGames/Libraries/sbjson/SBJsonParser.h; sourceTree = "<group>"; };
-		D1CAA3AF15FD28C100549EF7 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonParser.m; path = CardGames/Libraries/sbjson/SBJsonParser.m; sourceTree = "<group>"; };
-		D1CAA3B015FD28C100549EF7 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParser.h; path = CardGames/Libraries/sbjson/SBJsonStreamParser.h; sourceTree = "<group>"; };
-		D1CAA3B115FD28C100549EF7 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParser.m; path = CardGames/Libraries/sbjson/SBJsonStreamParser.m; sourceTree = "<group>"; };
-		D1CAA3B215FD28C100549EF7 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserAccumulator.h; path = CardGames/Libraries/sbjson/SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
-		D1CAA3B315FD28C100549EF7 /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserAccumulator.m; path = CardGames/Libraries/sbjson/SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
-		D1CAA3B415FD28C100549EF7 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserAdapter.h; path = CardGames/Libraries/sbjson/SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
-		D1CAA3B515FD28C100549EF7 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserAdapter.m; path = CardGames/Libraries/sbjson/SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
-		D1CAA3B615FD28C100549EF7 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserState.h; path = CardGames/Libraries/sbjson/SBJsonStreamParserState.h; sourceTree = "<group>"; };
-		D1CAA3B715FD28C100549EF7 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserState.m; path = CardGames/Libraries/sbjson/SBJsonStreamParserState.m; sourceTree = "<group>"; };
-		D1CAA3B815FD28C100549EF7 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamWriter.h; path = CardGames/Libraries/sbjson/SBJsonStreamWriter.h; sourceTree = "<group>"; };
-		D1CAA3B915FD28C100549EF7 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamWriter.m; path = CardGames/Libraries/sbjson/SBJsonStreamWriter.m; sourceTree = "<group>"; };
-		D1CAA3BA15FD28C100549EF7 /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamWriterAccumulator.h; path = CardGames/Libraries/sbjson/SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
-		D1CAA3BB15FD28C100549EF7 /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamWriterAccumulator.m; path = CardGames/Libraries/sbjson/SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
-		D1CAA3BC15FD28C100549EF7 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamWriterState.h; path = CardGames/Libraries/sbjson/SBJsonStreamWriterState.h; sourceTree = "<group>"; };
-		D1CAA3BD15FD28C100549EF7 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamWriterState.m; path = CardGames/Libraries/sbjson/SBJsonStreamWriterState.m; sourceTree = "<group>"; };
-		D1CAA3BE15FD28C100549EF7 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonTokeniser.h; path = CardGames/Libraries/sbjson/SBJsonTokeniser.h; sourceTree = "<group>"; };
-		D1CAA3BF15FD28C100549EF7 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonTokeniser.m; path = CardGames/Libraries/sbjson/SBJsonTokeniser.m; sourceTree = "<group>"; };
-		D1CAA3C015FD28C100549EF7 /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonUTF8Stream.h; path = CardGames/Libraries/sbjson/SBJsonUTF8Stream.h; sourceTree = "<group>"; };
-		D1CAA3C115FD28C100549EF7 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonUTF8Stream.m; path = CardGames/Libraries/sbjson/SBJsonUTF8Stream.m; sourceTree = "<group>"; };
-		D1CAA3C215FD28C100549EF7 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = CardGames/Libraries/sbjson/SBJsonWriter.h; sourceTree = "<group>"; };
-		D1CAA3C315FD28C100549EF7 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = CardGames/Libraries/sbjson/SBJsonWriter.m; sourceTree = "<group>"; };
 		D1CAA3D015FD32E000549EF7 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		D1CAA3D115FD32E000549EF7 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		D1CAA3D715FD5AF400549EF7 /* HorizontalTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalTableView.h; sourceTree = "<group>"; };
@@ -275,7 +238,6 @@
 		D186639115F109BE0098E8AD = {
 			isa = PBXGroup;
 			children = (
-				D1CAA39015FD281A00549EF7 /* Libraries */,
 				D1CAA23315FD033900549EF7 /* Resources */,
 				D18663A615F109BE0098E8AD /* CardGames */,
 				D186639F15F109BE0098E8AD /* Frameworks */,
@@ -428,46 +390,6 @@
 				D1CAA35215FD265400549EF7 /* spades_q.png */,
 			);
 			name = Cards;
-			sourceTree = "<group>";
-		};
-		D1CAA39015FD281A00549EF7 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				D1CAA39115FD283E00549EF7 /* sbjson */,
-			);
-			name = Libraries;
-			sourceTree = "<group>";
-		};
-		D1CAA39115FD283E00549EF7 /* sbjson */ = {
-			isa = PBXGroup;
-			children = (
-				D1CAA3AB15FD28C100549EF7 /* NSObject+SBJson.h */,
-				D1CAA3AC15FD28C100549EF7 /* NSObject+SBJson.m */,
-				D1CAA3AD15FD28C100549EF7 /* SBJson.h */,
-				D1CAA3AE15FD28C100549EF7 /* SBJsonParser.h */,
-				D1CAA3AF15FD28C100549EF7 /* SBJsonParser.m */,
-				D1CAA3B015FD28C100549EF7 /* SBJsonStreamParser.h */,
-				D1CAA3B115FD28C100549EF7 /* SBJsonStreamParser.m */,
-				D1CAA3B215FD28C100549EF7 /* SBJsonStreamParserAccumulator.h */,
-				D1CAA3B315FD28C100549EF7 /* SBJsonStreamParserAccumulator.m */,
-				D1CAA3B415FD28C100549EF7 /* SBJsonStreamParserAdapter.h */,
-				D1CAA3B515FD28C100549EF7 /* SBJsonStreamParserAdapter.m */,
-				D1CAA3B615FD28C100549EF7 /* SBJsonStreamParserState.h */,
-				D1CAA3B715FD28C100549EF7 /* SBJsonStreamParserState.m */,
-				D1CAA3B815FD28C100549EF7 /* SBJsonStreamWriter.h */,
-				D1CAA3B915FD28C100549EF7 /* SBJsonStreamWriter.m */,
-				D1CAA3BA15FD28C100549EF7 /* SBJsonStreamWriterAccumulator.h */,
-				D1CAA3BB15FD28C100549EF7 /* SBJsonStreamWriterAccumulator.m */,
-				D1CAA3BC15FD28C100549EF7 /* SBJsonStreamWriterState.h */,
-				D1CAA3BD15FD28C100549EF7 /* SBJsonStreamWriterState.m */,
-				D1CAA3BE15FD28C100549EF7 /* SBJsonTokeniser.h */,
-				D1CAA3BF15FD28C100549EF7 /* SBJsonTokeniser.m */,
-				D1CAA3C015FD28C100549EF7 /* SBJsonUTF8Stream.h */,
-				D1CAA3C115FD28C100549EF7 /* SBJsonUTF8Stream.m */,
-				D1CAA3C215FD28C100549EF7 /* SBJsonWriter.h */,
-				D1CAA3C315FD28C100549EF7 /* SBJsonWriter.m */,
-			);
-			name = sbjson;
 			sourceTree = "<group>";
 		};
 		D1CAA3DE15FD619A00549EF7 /* UIComponents */ = {
@@ -656,18 +578,6 @@
 				D18663BA15F109BE0098E8AD /* ViewController.m in Sources */,
 				D1CAA23F15FD0D3300549EF7 /* PlayViewController.m in Sources */,
 				D1CAA24215FD1F6D00549EF7 /* WifiConnection.m in Sources */,
-				D1CAA3C415FD28C100549EF7 /* NSObject+SBJson.m in Sources */,
-				D1CAA3C515FD28C100549EF7 /* SBJsonParser.m in Sources */,
-				D1CAA3C615FD28C100549EF7 /* SBJsonStreamParser.m in Sources */,
-				D1CAA3C715FD28C100549EF7 /* SBJsonStreamParserAccumulator.m in Sources */,
-				D1CAA3C815FD28C100549EF7 /* SBJsonStreamParserAdapter.m in Sources */,
-				D1CAA3C915FD28C100549EF7 /* SBJsonStreamParserState.m in Sources */,
-				D1CAA3CA15FD28C100549EF7 /* SBJsonStreamWriter.m in Sources */,
-				D1CAA3CB15FD28C100549EF7 /* SBJsonStreamWriterAccumulator.m in Sources */,
-				D1CAA3CC15FD28C100549EF7 /* SBJsonStreamWriterState.m in Sources */,
-				D1CAA3CD15FD28C100549EF7 /* SBJsonTokeniser.m in Sources */,
-				D1CAA3CE15FD28C100549EF7 /* SBJsonUTF8Stream.m in Sources */,
-				D1CAA3CF15FD28C100549EF7 /* SBJsonWriter.m in Sources */,
 				D1CAA3D215FD32E000549EF7 /* Card.m in Sources */,
 				D1CAA3D915FD5AF400549EF7 /* HorizontalTableView.m in Sources */,
 				D1CAA3DD15FD5C6200549EF7 /* HorizontalTableViewCell.m in Sources */,
