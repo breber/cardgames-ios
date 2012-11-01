@@ -15,11 +15,13 @@
     NSOutputStream *outputStream;
 }
 
+@property int data;
 @property id <ConnectionListener> listener;
 
 + (id)sharedInstance;
 
-- (BOOL)initWithNativeSocket:(CFSocketNativeHandle)socket;
+- (BOOL)initWithNativeSocket:(CFSocketNativeHandle)socket
+                    withData:(int)data;
 - (BOOL)initNetworkCommunication:(NSNetService *)service;
 - (void)closeConnections;
 - (BOOL)isActive;

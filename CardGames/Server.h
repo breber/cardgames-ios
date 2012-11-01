@@ -10,10 +10,7 @@
 #import "ServerDelegate.h"
 
 @interface Server : NSObject <NSNetServiceDelegate> {
-    uint16_t port;
-    CFSocketRef listeningSocket;
-    id<ServerDelegate> delegate;
-    NSNetService* netService;
+    NSNetService *netService;
 }
 
 // Delegate receives various notifications about the state of our server

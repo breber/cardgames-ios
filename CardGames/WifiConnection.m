@@ -24,7 +24,9 @@ static WifiConnection *instance = nil;
 }
 
 - (BOOL)initWithNativeSocket:(CFSocketNativeHandle)socket
+                    withData:(int)data
 {
+    self.data = data;
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
     

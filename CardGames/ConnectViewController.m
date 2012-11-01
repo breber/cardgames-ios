@@ -6,15 +6,18 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
+#import "Constants.h"
 #import "ConnectViewController.h"
 #import "Server.h"
 #import "WifiConnection.h"
+#import "SBJson.h"
 
 @interface ConnectViewController()
 {
     Server *server;
     NSMutableArray *connections;
     NSArray *devicesUi;
+    NSArray *devicesNames;
 }
 
 @end
@@ -26,6 +29,7 @@
     [super viewDidLoad];
     services = [[NSMutableArray alloc] init];
     devicesUi = [[NSArray alloc] initWithObjects:player1Device, player2Device, player3Device, player4Device, nil];
+    devicesNames = [[NSArray alloc] initWithObjects:player1Name, player2Name, player3Name, player4Name, nil];
 
     server = [[Server alloc] init];
     server.delegate = self;
@@ -82,6 +86,22 @@
 {
     // TODO: implement
     NSLog(@"%@", data);
+    int remotePort = connection.data;
+    if (MSG_PLAYER_NAME == type) {
+        int i = 0;
+        for (WifiConnection *c in services) {
+            if (c.data == remotePort) {
+                SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
+                NSDictionary *jsonObject = [jsonParser objectWithString:data];
+                UILabel *label = [devicesNames objectAtIndex:i];
+                [label setText:[jsonObject objectForKey:@"playername"]];
+                [label setHidden:NO];
+                break;
+            }
+            
+            i++;
+        }
+    }
 }
 
 @end
