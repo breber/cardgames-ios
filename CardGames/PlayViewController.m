@@ -36,7 +36,12 @@
 
     // Show the keyboard
     [self.textPopupTextField becomeFirstResponder];
-    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
     // Add the game specific buttons
     [self.playerController addButtons:self.buttonLayout];
 }
@@ -67,11 +72,6 @@
                  sender:(id)sender
 {
     [self.playerController handleSegue:segue sender:sender];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
 }
 
 - (void)gameRequestingName
