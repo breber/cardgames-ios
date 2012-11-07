@@ -13,23 +13,10 @@
 #import "CrazyEightsRules.h"
 
 @interface CrazyEightsPlayerController()
-
 @property(nonatomic, strong) Card *discardCard;
-
 @end
 
 @implementation CrazyEightsPlayerController
-
-- (id)init
-{
-    self = [super init];
-    
-    if (self) {
-        self.discardCard = nil;
-    }
-    
-    return self;
-}
 
 - (void)setIsTurn:(BOOL)isTurn
 {
@@ -119,7 +106,7 @@
 - (void)drawButtonPressed
 {
     if (self.isTurn) {
-        [connection write:@"" withType:MSG_DRAW_CARD];
+        [self.connection write:@"" withType:MSG_DRAW_CARD];
         self.isTurn = NO;
     }
 }
@@ -137,7 +124,7 @@
                     [self.delegate showNewScreen:@"choosesuit"];
                 } else {
                     // Send the card
-                    [connection write:[c jsonString] withType:MSG_PLAY_CARD];
+                    [self.connection write:[c jsonString] withType:MSG_PLAY_CARD];
                     
                     // Remove the card from our hand
                     [self.hand removeObjectAtIndex:selected.row];
@@ -181,7 +168,7 @@
             
             if ([CrazyEightsRules canPlay:c withDiscard:self.discardCard]) {
                 // Send the card
-                [connection write:[c jsonString] withType:type];
+                [self.connection write:[c jsonString] withType:type];
                 
                 // Remove the card from our hand
                 [self.hand removeObjectAtIndex:selected.row];

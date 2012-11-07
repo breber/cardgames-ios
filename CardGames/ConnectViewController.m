@@ -12,12 +12,14 @@
 #import "WifiConnection.h"
 
 @interface ConnectViewController()
-{
-    Server *server;
-    NSMutableArray *connections;
-    NSArray *devicesUi;
-    NSArray *devicesNames;
-}
+
+@property(nonatomic, strong) Server *server;
+@property(nonatomic, strong) NSMutableArray *connections;
+@property(nonatomic, strong) NSArray *devicesUi;
+@property(nonatomic, strong) NSArray *devicesNames;
+
+// Keeps track of active services or services about to be published
+@property(nonatomic, strong) NSMutableArray *services;
 
 @end
 
@@ -26,20 +28,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    services = [[NSMutableArray alloc] init];
-    devicesUi = [[NSArray alloc] initWithObjects:player1Device, player2Device, player3Device, player4Device, nil];
-    devicesNames = [[NSArray alloc] initWithObjects:player1Name, player2Name, player3Name, player4Name, nil];
+    self.services = [[NSMutableArray alloc] init];
+    self.devicesUi = [[NSArray alloc] initWithObjects:player1Device, player2Device, player3Device, player4Device, nil];
+    self.devicesNames = [[NSArray alloc] initWithObjects:player1Name, player2Name, player3Name, player4Name, nil];
 
-    server = [[Server alloc] init];
-    server.delegate = self;
-    [server start];
+    self.server = [[Server alloc] init];
+    self.server.delegate = self;
+    [self.server start];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    [server stop];
-    // Release any retained subviews of the main view.
+    [self.server stop];
 }
 
 // Server has been terminated because of an error
@@ -53,8 +54,8 @@
 - (void)handleNewConnection:(WifiConnection *)connection
 {
     if ([connection isActive]) {
-        [services addObject:connection];
-        connection.listener = self;
+        [self.services addObject:connection];
+        connection.delegate = self;
     }
     
     [self updateUI];
@@ -64,17 +65,17 @@
 {
     // TODO: do something
     int i = 0;
-    for (WifiConnection *c in services) {
+    for (WifiConnection *c in self.services) {
         if ([c isActive]) {
-            [[devicesUi objectAtIndex:i] setBackgroundColor:[UIColor lightGrayColor]];
+            [[self.devicesUi objectAtIndex:i] setBackgroundColor:[UIColor lightGrayColor]];
             i++;
         } else {
-            [services removeObject:c];
+            [self.services removeObject:c];
         }
     }
     
     for (; i < 4; i++) {
-        [[devicesUi objectAtIndex:i] setBackgroundColor:[UIColor darkGrayColor]];
+        [[self.devicesUi objectAtIndex:i] setBackgroundColor:[UIColor darkGrayColor]];
     }
 }
 
@@ -89,10 +90,10 @@
     int remotePort = connection.data;
     if (MSG_PLAYER_NAME == type) {
         int i = 0;
-        for (WifiConnection *c in services) {
+        for (WifiConnection *c in self.services) {
             if (c.data == remotePort) {
                 NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
-                UILabel *label = [devicesNames objectAtIndex:i];
+                UILabel *label = [self.devicesNames objectAtIndex:i];
                 [label setText:[jsonObject objectForKey:@"playername"]];
                 [label setHidden:NO];
                 break;

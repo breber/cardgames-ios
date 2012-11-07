@@ -9,12 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "ServerDelegate.h"
 
-@interface Server : NSObject <NSNetServiceDelegate> {
-    NSNetService *netService;
-}
+@interface Server : NSObject <NSNetServiceDelegate>
 
 // Delegate receives various notifications about the state of our server
-@property(nonatomic,retain) id<ServerDelegate> delegate;
+@property(nonatomic, weak) id<ServerDelegate> delegate;
 
 // Initialize and start listening for connections
 - (BOOL)start;

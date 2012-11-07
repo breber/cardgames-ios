@@ -9,6 +9,13 @@
 #import "WifiConnection.h"
 #import <CFNetwork/CFSocketStream.h>
 
+@interface WifiConnection()
+
+@property (nonatomic, strong) NSInputStream *inputStream;
+@property (nonatomic, strong) NSOutputStream *outputStream;
+
+@end
+
 @implementation WifiConnection
 
 static WifiConnection *instance = nil;
@@ -30,16 +37,17 @@ static WifiConnection *instance = nil;
     CFWriteStreamRef writeStream;
     
     CFStreamCreatePairWithSocket(kCFAllocatorDefault, socket, &readStream, &writeStream);
-    inputStream = (NSInputStream *)CFBridgingRelease(readStream);
-    outputStream = (NSOutputStream *)CFBridgingRelease(writeStream);
-    [inputStream setDelegate:self];
-    [outputStream setDelegate:self];
+    self.inputStream = (NSInputStream *)CFBridgingRelease(readStream);
+    self.outputStream = (NSOutputStream *)CFBridgingRelease(writeStream);
+    [self.inputStream setDelegate:self];
+    [self.outputStream setDelegate:self];
     
-    [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    [outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [self.inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [self.outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     
-    [inputStream open];
-    [outputStream open];
+    [self.inputStream open];
+    [self.outputStream open];
+
     return YES;
 }
 
@@ -49,17 +57,18 @@ static WifiConnection *instance = nil;
     NSOutputStream *writeStream;
     
     if ([service getInputStream:&readStream outputStream:&writeStream]) {
-        inputStream = readStream;
-        outputStream = writeStream;
+        self.inputStream = readStream;
+        self.outputStream = writeStream;
         
-        [inputStream setDelegate:self];
-        [outputStream setDelegate:self];
+        [self.inputStream setDelegate:self];
+        [self.outputStream setDelegate:self];
         
-        [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-        [outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        [self.inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        [self.outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
         
-        [inputStream open];
-        [outputStream open];
+        [self.inputStream open];
+        [self.outputStream open];
+
         return YES;
     }
     
@@ -68,14 +77,17 @@ static WifiConnection *instance = nil;
 
 - (void)closeConnections
 {
-    [outputStream close];
-    [inputStream close];
+    [self.outputStream close];
+    [self.inputStream close];
+
+    self.outputStream = nil;
+    self.inputStream = nil;
 }
 
 - (BOOL)isActive
 {
-    return (outputStream.streamStatus == NSStreamStatusOpen) &&
-            (inputStream.streamStatus == NSStreamStatusOpen);
+    return (self.outputStream.streamStatus == NSStreamStatusOpen) &&
+            (self.inputStream.streamStatus == NSStreamStatusOpen);
 }
 
 - (BOOL)writeDictionary:(NSDictionary *)dict
@@ -92,7 +104,8 @@ static WifiConnection *instance = nil;
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: data, @"DATA", [NSString stringWithFormat:@"%i", type], @"MSG_TYPE", nil];
     NSData *dataToWrite = [NSJSONSerialization dataWithJSONObject:dict options:kNilOptions error:nil];
     
-    return [outputStream write:[dataToWrite bytes] maxLength:[dataToWrite length]] == [dataToWrite length];
+    return [self.outputStream write:[dataToWrite bytes]
+                          maxLength:[dataToWrite length]] == [dataToWrite length];
 }
 
 - (void)stream:(NSStream *)aStream
@@ -100,31 +113,31 @@ static WifiConnection *instance = nil;
 {
     switch (eventCode) {
 		case NSStreamEventOpenCompleted:
-            if (aStream == outputStream) {
-                if ([self.listener respondsToSelector:@selector(outputStreamOpened)]) {
-                    [self.listener outputStreamOpened:self];
+            if (aStream == self.outputStream) {
+                if ([self.delegate respondsToSelector:@selector(outputStreamOpened)]) {
+                    [self.delegate outputStreamOpened:self];
                 }
             }
             break;
             
 		case NSStreamEventHasBytesAvailable:
-            if (aStream == inputStream) {
+            if (aStream == self.inputStream) {
                 uint8_t buffer[1024];
                 int len;
                 
-                while ([inputStream hasBytesAvailable]) {
-                    len = [inputStream read:buffer maxLength:sizeof(buffer)];
+                while ([self.inputStream hasBytesAvailable]) {
+                    len = [self.inputStream read:buffer maxLength:sizeof(buffer)];
                     if (len > 0) {
                         NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:NSASCIIStringEncoding];
                         
                         if (nil != output) {
                             NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:[output dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
                             
-                            if ([self.listener respondsToSelector:@selector(newDataArrived:withData:withType:)]) {
+                            if ([self.delegate respondsToSelector:@selector(newDataArrived:withData:withType:)]) {
                                 NSString *data = [jsonObject objectForKey:@"DATA"];
                                 int type = [[jsonObject objectForKey:@"MSG_TYPE"] intValue];
                                 
-                                [self.listener newDataArrived:self withData:data withType:type];
+                                [self.delegate newDataArrived:self withData:data withType:type];
                             }
                         }
                     }
@@ -137,11 +150,11 @@ static WifiConnection *instance = nil;
             
 		case NSStreamEventErrorOccurred:
         case NSStreamEventEndEncountered:
-            [outputStream close];
-            [inputStream close];
+            [self.outputStream close];
+            [self.inputStream close];
             
-            if ([self.listener respondsToSelector:@selector(outputStreamClosed)]) {
-                [self.listener outputStreamClosed:self];
+            if ([self.delegate respondsToSelector:@selector(outputStreamClosed)]) {
+                [self.delegate outputStreamClosed:self];
             }
             break;
             

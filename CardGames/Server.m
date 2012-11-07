@@ -15,11 +15,12 @@
 #import "WifiConnection.h"
 
 // Declare some private properties and methods
-@interface Server () {
-    CFSocketRef socket;
-    uint32_t protocolFamily;
-    int port;
-}
+@interface Server ()
+
+@property (nonatomic) CFSocketRef socket;
+@property (nonatomic) uint32_t protocolFamily;
+@property (nonatomic) int port;
+@property (nonatomic) NSNetService *netService;
 
 - (BOOL)publishService;
 - (void)unpublishService;
@@ -65,29 +66,43 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
 	// Start by trying to do everything with IPv6.  This will work for both IPv4 and IPv6 clients
     // via the miracle of mapped IPv4 addresses.
     
-    socket = CFSocketCreate(kCFAllocatorDefault, PF_INET6, SOCK_STREAM, IPPROTO_TCP, kCFSocketAcceptCallBack, (CFSocketCallBack)&TCPServerAcceptCallBack, &socketCtxt);
+    self.socket = CFSocketCreate(kCFAllocatorDefault,
+                                 PF_INET6,
+                                 SOCK_STREAM,
+                                 IPPROTO_TCP,
+                                 kCFSocketAcceptCallBack,
+                                 (CFSocketCallBack)&TCPServerAcceptCallBack,
+                                 &socketCtxt);
 	
-	if (socket != NULL)	{ // the socket was created successfully
-		protocolFamily = PF_INET6;
+	if (self.socket != NULL)	{ // the socket was created successfully
+		self.protocolFamily = PF_INET6;
 	} else { // there was an error creating the IPv6 socket - could be running under iOS 3.x
-		socket = CFSocketCreate(kCFAllocatorDefault, PF_INET, SOCK_STREAM, IPPROTO_TCP, kCFSocketAcceptCallBack, (CFSocketCallBack)&TCPServerAcceptCallBack, &socketCtxt);
-		if (socket != NULL) {
-			protocolFamily = PF_INET;
+		self.socket = CFSocketCreate(kCFAllocatorDefault,
+                                     PF_INET,
+                                     SOCK_STREAM,
+                                     IPPROTO_TCP,
+                                     kCFSocketAcceptCallBack,
+                                     (CFSocketCallBack)&TCPServerAcceptCallBack,
+                                     &socketCtxt);
+		if (self.socket != NULL) {
+			self.protocolFamily = PF_INET;
 		}
 	}
     
-    if (NULL == socket) {
-        if (socket) CFRelease(socket);
-        socket = NULL;
+    if (NULL == self.socket) {
+        if (self.socket) {
+            CFRelease(self.socket);
+        }
+        self.socket = NULL;
         return NO;
     }
 	
 	
     int yes = 1;
-    setsockopt(CFSocketGetNative(socket), SOL_SOCKET, SO_REUSEADDR, (void *)&yes, sizeof(yes));
+    setsockopt(CFSocketGetNative(self.socket), SOL_SOCKET, SO_REUSEADDR, (void *)&yes, sizeof(yes));
 	
 	// set up the IP endpoint; use port 0, so the kernel will choose an arbitrary port for us, which will be advertised using Bonjour
-	if (protocolFamily == PF_INET6) {
+	if (self.protocolFamily == PF_INET6) {
 		struct sockaddr_in6 addr6;
 		memset(&addr6, 0, sizeof(addr6));
 		addr6.sin6_len = sizeof(addr6);
@@ -97,17 +112,19 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
 		addr6.sin6_addr = in6addr_any;
 		NSData *address6 = [NSData dataWithBytes:&addr6 length:sizeof(addr6)];
 		
-		if (kCFSocketSuccess != CFSocketSetAddress(socket, (__bridge CFDataRef)address6)) {
-			if (socket) CFRelease(socket);
-			socket = NULL;
+		if (kCFSocketSuccess != CFSocketSetAddress(self.socket, (__bridge CFDataRef)address6)) {
+			if (self.socket) {
+                CFRelease(self.socket);
+            }
+			self.socket = NULL;
 			return NO;
 		}
 		
 		// now that the binding was successful, we get the port number
 		// -- we will need it for the NSNetService
-		NSData *addr = (__bridge NSData *)CFSocketCopyAddress(socket);
+		NSData *addr = (__bridge NSData *)CFSocketCopyAddress(self.socket);
 		memcpy(&addr6, [addr bytes], [addr length]);
-		port = ntohs(addr6.sin6_port);
+		self.port = ntohs(addr6.sin6_port);
 	} else {
 		struct sockaddr_in addr4;
 		memset(&addr4, 0, sizeof(addr4));
@@ -117,22 +134,24 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
 		addr4.sin_addr.s_addr = htonl(INADDR_ANY);
 		NSData *address4 = [NSData dataWithBytes:&addr4 length:sizeof(addr4)];
 		
-		if (kCFSocketSuccess != CFSocketSetAddress(socket, (__bridge CFDataRef)address4)) {
-			if (socket) CFRelease(socket);
-			socket = NULL;
+		if (kCFSocketSuccess != CFSocketSetAddress(self.socket, (__bridge CFDataRef)address4)) {
+			if (self.socket) {
+                CFRelease(self.socket);
+            }
+			self.socket = NULL;
 			return NO;
 		}
 		
 		// now that the binding was successful, we get the port number
 		// -- we will need it for the NSNetService
-		NSData *addr = (__bridge NSData *)CFSocketCopyAddress(socket);
+		NSData *addr = (__bridge NSData *)CFSocketCopyAddress(self.socket);
 		memcpy(&addr4, [addr bytes], [addr length]);
-		port = ntohs(addr4.sin_port);
+		self.port = ntohs(addr4.sin_port);
 	}
 	
     // set up the run loop sources for the sockets
     CFRunLoopRef cfrl = CFRunLoopGetCurrent();
-    CFRunLoopSourceRef source = CFSocketCreateRunLoopSource(kCFAllocatorDefault, socket, 0);
+    CFRunLoopSourceRef source = CFSocketCreateRunLoopSource(kCFAllocatorDefault, self.socket, 0);
     CFRunLoopAddSource(cfrl, source, kCFRunLoopCommonModes);
     CFRelease(source);
 	
@@ -144,10 +163,10 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
 - (void)stop {
     [self unpublishService];
     
-	if (socket) {
-		CFSocketInvalidate(socket);
-		CFRelease(socket);
-		socket = NULL;
+	if (self.socket) {
+		CFSocketInvalidate(self.socket);
+		CFRelease(self.socket);
+		self.socket = NULL;
 	}
 }
 
@@ -161,20 +180,24 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
     NSString* serviceName = [NSString stringWithFormat:@"Card Games - %@", [[UIDevice currentDevice] name]];
 
     // create new instance of netService
-    netService = [[NSNetService alloc] initWithDomain:@"" type:@"_cardgames._tcp." name:serviceName port:port];
+    self.netService = [[NSNetService alloc] initWithDomain:@""
+                                                      type:@"_cardgames._tcp."
+                                                      name:serviceName
+                                                      port:self.port];
 
-    if (netService == nil) {
+    if (self.netService == nil) {
         return NO;
     }
 
     // Add service to current run loop
-    [netService scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    [self.netService scheduleInRunLoop:[NSRunLoop currentRunLoop]
+                               forMode:NSRunLoopCommonModes];
 
     // NetService will let us know about what's happening via delegate methods
-    [netService setDelegate:self];
+    [self.netService setDelegate:self];
 
     // Publish the service
-    [netService publish];
+    [self.netService publish];
 
     return YES;
 }
@@ -182,20 +205,19 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
 
 - (void)unpublishService
 {
-    if (netService) {
-        [netService stop];
-        [netService removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
-        netService = nil;
-    }
+    [self.netService stop];
+    [self.netService removeFromRunLoop:[NSRunLoop currentRunLoop]
+                               forMode:NSRunLoopCommonModes];
+    self.netService = nil;
 }
 
 #pragma mark NSNetService Delegate Method Implementations
 
 // Delegate method, called by NSNetService in case service publishing fails for whatever reason
-- (void)netService:(NSNetService*)sender
-     didNotPublish:(NSDictionary*)errorDict
+- (void)netService:(NSNetService *)sender
+     didNotPublish:(NSDictionary *)errorDict
 {
-    if (sender != netService) {
+    if (sender != self.netService) {
         return;
     }
 

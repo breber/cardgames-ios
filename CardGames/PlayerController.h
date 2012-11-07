@@ -29,14 +29,12 @@
 
 @end
 
-@interface PlayerController : NSObject <ConnectionListener> {
-    WifiConnection *connection;
-}
+@interface PlayerController : NSObject
 
 @property(nonatomic, weak) id <PlayerControllerDelegate> delegate;
+@property(nonatomic, strong) WifiConnection *connection;
 @property(nonatomic) BOOL isTurn;
 @property(nonatomic, strong) NSMutableArray *hand;
-@property(nonatomic, strong) Rules *rules;
 @property(nonatomic, weak) UIView *buttonView;
 
 - (void)setName:(NSString *)name;

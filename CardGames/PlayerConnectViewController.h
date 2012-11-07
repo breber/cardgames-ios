@@ -9,11 +9,7 @@
 #import "ViewController.h"
 
 @interface PlayerConnectViewController : ViewController <UITableViewDataSource, UITableViewDelegate, NSNetServiceBrowserDelegate, NSNetServiceDelegate>
-{
-    NSMutableArray *services;
-    BOOL searching;
-}
 
-@property(nonatomic, strong) IBOutlet UITableView *servers;
+@property(nonatomic, weak) IBOutlet UITableView *servers;
 
 @end

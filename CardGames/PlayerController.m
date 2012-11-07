@@ -9,6 +9,10 @@
 #import "PlayerController.h"
 #import "Constants.h"
 
+@interface PlayerController() <ConnectionListener>
+@property(nonatomic, strong) Rules *rules;
+@end
+
 @implementation PlayerController
 
 - (id) init
@@ -16,8 +20,8 @@
     self = [super init];
     
     if (self) {
-        connection = [WifiConnection sharedInstance];
-        connection.listener = self;
+        self.connection = [WifiConnection sharedInstance];
+        self.connection.delegate = self;
         
         self.isTurn = NO;
     }
@@ -48,7 +52,7 @@
 - (void)setName:(NSString *)name
 {
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: name, @"playername", nil];
-    [connection writeDictionary:dict withType:MSG_PLAYER_NAME];
+    [self.connection writeDictionary:dict withType:MSG_PLAYER_NAME];
 }
 
 - (void)newDataArrived:(WifiConnection *)connection

@@ -8,11 +8,11 @@
 
 @interface Card : NSObject
 
-@property int cardId;
-@property int suit;
-@property int value;
+@property (nonatomic) int cardId;
+@property (nonatomic) int suit;
+@property (nonatomic) int value;
 
-- (NSString *) jsonString;
-- (NSString *) cardImagePath;
+- (NSString *)jsonString;
+- (NSString *)cardImagePath;
 
 @end

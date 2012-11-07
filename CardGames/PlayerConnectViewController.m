@@ -9,9 +9,11 @@
 #import "PlayerConnectViewController.h"
 #import "WifiConnection.h"
 
-@interface PlayerConnectViewController () {
-    NSNetServiceBrowser *serviceBrowser;
-}
+@interface PlayerConnectViewController ()
+
+@property(nonatomic, strong) NSNetServiceBrowser *serviceBrowser;
+@property(nonatomic, strong) NSMutableArray *services;
+@property(nonatomic) BOOL searching;
 
 @end
 
@@ -21,30 +23,24 @@
 {
     [super viewDidLoad];
     
-    services = [[NSMutableArray alloc] init];
-    searching = NO;
+    self.services = [[NSMutableArray alloc] init];
+    self.searching = NO;
 
-    serviceBrowser = [[NSNetServiceBrowser alloc] init];
-    [serviceBrowser setDelegate:self];
-    [serviceBrowser searchForServicesOfType:@"_cardgames._tcp." inDomain:@""];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
+    self.serviceBrowser = [[NSNetServiceBrowser alloc] init];
+    [self.serviceBrowser setDelegate:self];
+    [self.serviceBrowser searchForServicesOfType:@"_cardgames._tcp." inDomain:@""];
 }
 
 - (void)netServiceBrowserWillSearch:(NSNetServiceBrowser *)browser
 {
-    searching = YES;
+    self.searching = YES;
     [self updateUI];
 }
 
 // Sent when browsing stops
 - (void)netServiceBrowserDidStopSearch:(NSNetServiceBrowser *)browser
 {
-    searching = NO;
+    self.searching = NO;
     [self updateUI];
 }
 
@@ -52,7 +48,7 @@
 - (void)netServiceBrowser:(NSNetServiceBrowser *)browser
              didNotSearch:(NSDictionary *)errorDict
 {
-    searching = NO;
+    self.searching = NO;
     [self handleError:[errorDict objectForKey:NSNetServicesErrorCode]];
 }
 
@@ -61,7 +57,7 @@
            didFindService:(NSNetService *)aNetService
                moreComing:(BOOL)moreComing
 {
-    [services addObject:aNetService];
+    [self.services addObject:aNetService];
     if (!moreComing) {
         [self updateUI];
     }
@@ -72,7 +68,7 @@
          didRemoveService:(NSNetService *)aNetService
                moreComing:(BOOL)moreComing
 {
-    [services removeObject:aNetService];
+    [self.services removeObject:aNetService];
     
     if (!moreComing) {
         [self updateUI];
@@ -112,7 +108,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSNetService * selected = [services objectAtIndex:indexPath.row];
+    NSNetService * selected = [self.services objectAtIndex:indexPath.row];
     [selected setDelegate:self];
     [selected resolveWithTimeout:5.0];
 }
@@ -120,13 +116,13 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return [services count];
+    return [self.services count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSNetService *c = [services objectAtIndex:indexPath.row];
+    NSNetService *c = [self.services objectAtIndex:indexPath.row];
         
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"services"];
     if (cell == nil) {

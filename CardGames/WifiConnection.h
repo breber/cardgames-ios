@@ -10,13 +10,9 @@
 #import "ConnectionListener.h"
 
 @interface WifiConnection : NSObject <NSStreamDelegate>
-{
-    NSInputStream *inputStream;
-    NSOutputStream *outputStream;
-}
 
-@property int data;
-@property id <ConnectionListener> listener;
+@property (nonatomic) int data;
+@property (nonatomic, weak) id <ConnectionListener> delegate;
 
 + (id)sharedInstance;
 

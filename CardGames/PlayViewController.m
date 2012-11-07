@@ -11,6 +11,20 @@
 #import "Constants.h"
 #import "CrazyEightsPlayerController.h"
 
+@interface PlayViewController()
+
+@property(nonatomic, weak) IBOutlet UIView *buttonLayout;
+@property(nonatomic, weak) IBOutlet UIView *overlay;
+@property(nonatomic, weak) IBOutlet UITextField *textPopupTextField;
+@property(nonatomic, weak) IBOutlet UIView *textPopup;
+@property(nonatomic, weak) IBOutlet UIView *loadingPopup;
+@property(nonatomic, weak) IBOutlet UILabel *loadingPopupTitle;
+@property(nonatomic, weak) IBOutlet HorizontalTableView *cardHand;
+
+@property(nonatomic, strong) PlayerController *playerController;
+
+@end
+
 @implementation PlayViewController
 
 - (void)viewDidLoad
@@ -21,10 +35,10 @@
     self.playerController.delegate = self;
 
     // Show the keyboard
-    [textPopupTextField becomeFirstResponder];
+    [self.textPopupTextField becomeFirstResponder];
     
     // Add the game specific buttons
-    [self.playerController addButtons:buttonLayout];
+    [self.playerController addButtons:self.buttonLayout];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -43,10 +57,10 @@
         [self.playerController setName:@"Anonymous"];
     }
     
-    [loadingPopupTitle setText:@"Waiting for game to begin..."];
+    [self.loadingPopupTitle setText:@"Waiting for game to begin..."];
     
-    [textPopup setHidden:YES];
-    [loadingPopup setHidden:NO];
+    [self.textPopup setHidden:YES];
+    [self.loadingPopup setHidden:NO];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
@@ -62,15 +76,15 @@
 
 - (void)gameRequestingName
 {
-    [textPopupTextField becomeFirstResponder];
-     
-    [loadingPopup setHidden:YES];
-    [textPopup setHidden:NO];
+    [self.textPopupTextField becomeFirstResponder];
+
+    [self.loadingPopup setHidden:YES];
+    [self.textPopup setHidden:NO];
 }
 
 - (void)gameDidBegin
 {
-    [overlay setHidden:YES];
+    [self.overlay setHidden:YES];
 }
 
 - (void)gameDidEnd
