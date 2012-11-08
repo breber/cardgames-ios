@@ -98,26 +98,26 @@
         [self.delegate playerDidWin];
     } else if (type == MSG_LOSER) {
         [self.delegate playerDidLose];
-    } else if (type == MSG_REFRESH) {
-        // TODO: fix refresh after updating to use JSONObject with JSONArray
+    } else if (type == MSG_REFRESHV2) {
+        NSLog(@"refresh2");
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
+        NSLog(@"%@", jsonObject);
         NSMutableArray *arr = [[NSMutableArray alloc] init];
-        int loopCount = 0;
         
-        for (NSDictionary *t in jsonObject) {
-            if (loopCount > 1) {
-                Card *c = [[Card alloc] init];
-                c.value = [[t objectForKey:@"value"] intValue];
-                c.suit = [[t objectForKey:@"suit"] intValue];
-                c.cardId = [[t objectForKey:@"id"] intValue];
-                
-                [arr addObject:c];
-            }
+        self.isTurn = [[jsonObject objectForKey:@"isturn"] boolValue];
+        // name...?
+        [self handleIsTurn:[jsonObject objectForKey:@"discardCard"]];
+        
+        for (NSDictionary *t in [jsonObject objectForKey:@"currenthand"]) {
+            Card *c = [[Card alloc] init];
+            c.value = [[t objectForKey:@"value"] intValue];
+            c.suit = [[t objectForKey:@"suit"] intValue];
+            c.cardId = [[t objectForKey:@"id"] intValue];
             
-            loopCount++;
+            [arr addObject:c];
         }
         
-        self.hand = arr;
+        self.hand = [arr mutableCopy];
         [self.delegate playerHandDidChange];
     } else if (type == MSG_PAUSE) {
         [self.delegate gameDidPause];

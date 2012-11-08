@@ -19,6 +19,7 @@ static const int MSG_PAUSE = 6;
 static const int MSG_UNPAUSE = 7;
 static const int MSG_PLAY_CARD = 9;
 static const int MSG_DRAW_CARD = 10;
+static const int MSG_REFRESHV2 = 5000;
 static const int MSG_PLAY_EIGHT_C = 11;
 static const int MSG_PLAY_EIGHT_D = 12;
 static const int MSG_PLAY_EIGHT_H = 13;

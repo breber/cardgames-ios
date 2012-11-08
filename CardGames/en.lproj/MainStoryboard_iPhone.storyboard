@@ -27,7 +27,6 @@
         <!--View Controller - Card Games-->
         <scene sceneID="5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="menu" wantsFullScreenLayout="YES" id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="44" width="480" height="276"/>
@@ -84,7 +83,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="k1N-Vb-Mth" kind="push" id="SqL-nE-BDq"/>
+                                            <segue destination="k1N-Vb-Mth" kind="push" id="ks2-Fq-GMb"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -119,6 +118,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Card Games" id="9MM-wM-YTE"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="100" y="317"/>
         </scene>
@@ -295,31 +295,17 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NlA-Ty-9oC"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85e-CY-pNg">
+                                <connections>
+                                    <outlet property="delegate" destination="5YQ-yq-kIg" id="sYO-17-psw"/>
+                                </connections>
+                            </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4x-mT-jqK" userLabel="ButtonView">
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" type="user" id="DpG-1n-9S2"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="155" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gay-Bn-PyB" customClass="HorizontalTableView">
-                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="cell" id="L3e-ZX-5zl" customClass="HorizontalTableViewCell">
-                                        <rect key="frame" x="0.0" y="22" width="464" height="155"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="464" height="154"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
-                                <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="5YQ-yq-kIg" id="AH0-ea-UUI"/>
-                                    <outlet property="delegate" destination="5YQ-yq-kIg" id="7zK-oz-qFT"/>
-                                </connections>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O6Q-ID-1ca" userLabel="Overlay">
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGR-yd-dUZ" userLabel="Prompt View">
@@ -381,7 +367,6 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="6hh-sm-L9v" secondAttribute="centerY" type="user" id="Yvz-eH-Ccr"/>
-                                    <constraint firstAttribute="centerX" secondItem="6hh-sm-L9v" secondAttribute="centerX" type="user" id="Zot-UC-Ckq"/>
                                     <constraint firstItem="6hh-sm-L9v" firstAttribute="centerX" secondItem="O6Q-ID-1ca" secondAttribute="centerX" type="user" id="gWo-He-Pnl"/>
                                     <constraint firstItem="IGR-yd-dUZ" firstAttribute="top" secondItem="O6Q-ID-1ca" secondAttribute="top" constant="20" symbolic="YES" type="user" id="iXs-e7-Ag4"/>
                                     <constraint firstItem="IGR-yd-dUZ" firstAttribute="trailing" secondItem="6hh-sm-L9v" secondAttribute="trailing" type="user" id="jRV-V3-Hwi"/>
@@ -391,20 +376,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gay-Bn-PyB" firstAttribute="trailing" secondItem="var-dd-0E9" secondAttribute="trailing" constant="-8" type="user" id="3nA-8Y-A9S"/>
+                            <constraint firstItem="85e-CY-pNg" firstAttribute="bottom" secondItem="var-dd-0E9" secondAttribute="bottom" type="default" id="0Xy-ge-Szb"/>
                             <constraint firstItem="y4x-mT-jqK" firstAttribute="leading" secondItem="var-dd-0E9" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="4Ug-Cd-0OW"/>
-                            <constraint firstItem="gay-Bn-PyB" firstAttribute="bottom" secondItem="var-dd-0E9" secondAttribute="bottom" type="default" id="5oP-He-dpj"/>
-                            <constraint firstItem="gay-Bn-PyB" firstAttribute="top" secondItem="y4x-mT-jqK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7tc-sW-q0R"/>
                             <constraint firstItem="NlA-Ty-9oC" firstAttribute="leading" secondItem="var-dd-0E9" secondAttribute="leading" type="user" id="Fpr-4g-Y2H"/>
                             <constraint firstItem="y4x-mT-jqK" firstAttribute="top" secondItem="var-dd-0E9" secondAttribute="top" constant="12" type="user" id="Jow-0U-1v3"/>
+                            <constraint firstItem="85e-CY-pNg" firstAttribute="top" secondItem="y4x-mT-jqK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="MtV-J8-623"/>
                             <constraint firstItem="NlA-Ty-9oC" firstAttribute="top" secondItem="var-dd-0E9" secondAttribute="top" type="user" id="NKS-MU-6LR"/>
                             <constraint firstItem="O6Q-ID-1ca" firstAttribute="bottom" secondItem="var-dd-0E9" secondAttribute="bottom" type="user" id="TcA-od-4gz"/>
                             <constraint firstItem="O6Q-ID-1ca" firstAttribute="top" secondItem="var-dd-0E9" secondAttribute="top" type="user" id="UmQ-rb-eIh"/>
-                            <constraint firstItem="gay-Bn-PyB" firstAttribute="leading" secondItem="var-dd-0E9" secondAttribute="leading" constant="8" type="user" id="Umx-nW-O1f"/>
                             <constraint firstAttribute="trailing" secondItem="y4x-mT-jqK" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="UvF-yK-hXr"/>
                             <constraint firstItem="NlA-Ty-9oC" firstAttribute="bottom" secondItem="var-dd-0E9" secondAttribute="bottom" type="user" id="VuO-wL-R2l"/>
+                            <constraint firstItem="85e-CY-pNg" firstAttribute="trailing" secondItem="var-dd-0E9" secondAttribute="trailing" type="user" id="YXv-z5-eKK"/>
                             <constraint firstAttribute="trailing" secondItem="NlA-Ty-9oC" secondAttribute="trailing" type="user" id="aOj-id-o53"/>
                             <constraint firstItem="O6Q-ID-1ca" firstAttribute="leading" secondItem="var-dd-0E9" secondAttribute="leading" type="user" id="fnB-1l-j7H"/>
+                            <constraint firstItem="85e-CY-pNg" firstAttribute="leading" secondItem="var-dd-0E9" secondAttribute="leading" type="default" id="gLE-oc-U4s"/>
                             <constraint firstItem="O6Q-ID-1ca" firstAttribute="trailing" secondItem="var-dd-0E9" secondAttribute="trailing" type="user" id="l16-Dr-unB"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -413,7 +398,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="buttonLayout" destination="y4x-mT-jqK" id="Z6O-GD-s6T"/>
-                        <outlet property="cardHand" destination="gay-Bn-PyB" id="dBr-5H-Ces"/>
+                        <outlet property="cardHand" destination="85e-CY-pNg" id="cDH-w9-2lh"/>
                         <outlet property="loadingPopup" destination="6hh-sm-L9v" id="kFz-z3-6aH"/>
                         <outlet property="loadingPopupTitle" destination="eQJ-7S-dua" id="XEX-e7-Zu4"/>
                         <outlet property="overlay" destination="O6Q-ID-1ca" id="OE1-Zy-wyb"/>
@@ -697,12 +682,6 @@ A preferences page is also available from the home screen. To get to this page, 
                 <relationship kind="action" name="mainMenu:"/>
             </relationships>
         </class>
-        <class className="HorizontalTableView" superclassName="UITableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HorizontalTableView.h"/>
-        </class>
-        <class className="HorizontalTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HorizontalTableViewCell.h"/>
-        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
@@ -710,7 +689,7 @@ A preferences page is also available from the home screen. To get to this page, 
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="buttonLayout" candidateClass="UIView"/>
-                <relationship kind="outlet" name="cardHand" candidateClass="HorizontalTableView"/>
+                <relationship kind="outlet" name="cardHand" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="loadingPopup" candidateClass="UIView"/>
                 <relationship kind="outlet" name="loadingPopupTitle" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="overlay" candidateClass="UIView"/>

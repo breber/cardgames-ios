@@ -7,7 +7,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-
+#import "UIColor+CardGamesColor.h"
 #import "Constants.h"
 #import "CrazyEightsPlayerController.h"
 #import "CrazyEightsRules.h"
@@ -21,14 +21,13 @@
 - (void)setIsTurn:(BOOL)isTurn
 {
     [super setIsTurn:isTurn];
-    
-    UIColor *goldColor = [UIColor colorWithRed:1 green:201 / 255.0 blue:14 / 255.0 alpha:1];
+
     for (UIView* button in [self.buttonView subviews]) {
         if ([button isMemberOfClass:[UIButton class]]) {
             UIButton *b = (UIButton *)button;
 
             if (isTurn) {
-                b.backgroundColor = goldColor;
+                b.backgroundColor = [UIColor goldColor];
             } else {
                 b.backgroundColor = [UIColor blackColor];
             }
@@ -61,14 +60,12 @@
 
 - (void)addButtons:(UIView *)wrapper
 {
-    UIColor *goldColor = [UIColor colorWithRed:1 green:201 / 255.0 blue:14 / 255.0 alpha:1];
-    
     self.buttonView = wrapper;
     UIButton *drawButton = [UIButton buttonWithType:UIButtonTypeCustom];
     drawButton.frame = CGRectMake(0, 0, 160, 37);
     drawButton.backgroundColor = [UIColor blackColor];
     [drawButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [drawButton setTitleColor:goldColor forState:UIControlStateDisabled];
+    [drawButton setTitleColor:[UIColor goldColor] forState:UIControlStateDisabled];
     [drawButton setTitle:@"Draw" forState:UIControlStateNormal];
     [drawButton addTarget:self action:@selector(drawButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [drawButton setEnabled:NO];
@@ -81,7 +78,7 @@
     playButton.frame = CGRectMake(self.buttonView.frame.size.width - 160, 0, 160, 37);
     playButton.backgroundColor = [UIColor blackColor];
     [playButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [playButton setTitleColor:goldColor forState:UIControlStateDisabled];
+    [playButton setTitleColor:[UIColor goldColor] forState:UIControlStateDisabled];
     [playButton setTitle:@"Play" forState:UIControlStateNormal];
     [playButton addTarget:self action:@selector(playButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [playButton setEnabled:NO];
@@ -105,10 +102,10 @@
 - (void)playButtonPressed
 {
     if (self.isTurn) {
-        NSIndexPath *selected = [self.delegate getSelectedCardIndex];
-        
-        if (selected) {
-            Card *c = [self.hand objectAtIndex:selected.row];
+        int selected = [self.delegate getSelectedCardIndex];
+
+        if (selected >= 0) {
+            Card *c = [self.hand objectAtIndex:selected];
             
             if ([CrazyEightsRules canPlay:c withDiscard:self.discardCard]) {
                 if (c.value == CARD_EIGHT) {
@@ -118,7 +115,7 @@
                     [self.connection write:[c jsonString] withType:MSG_PLAY_CARD];
                     
                     // Remove the card from our hand
-                    [self.hand removeObjectAtIndex:selected.row];
+                    [self.hand removeObjectAtIndex:selected];
                     [self.delegate playerHandDidChange];
                     
                     // Set that it isn't our turn anymore
@@ -152,17 +149,17 @@
     }
     
     if (self.isTurn) {
-        NSIndexPath *selected = [self.delegate getSelectedCardIndex];
+        int selected = [self.delegate getSelectedCardIndex];
         
-        if (selected) {
-            Card *c = [self.hand objectAtIndex:selected.row];
+        if (selected >= 0) {
+            Card *c = [self.hand objectAtIndex:selected];
             
             if ([CrazyEightsRules canPlay:c withDiscard:self.discardCard]) {
                 // Send the card
                 [self.connection write:[c jsonString] withType:type];
                 
                 // Remove the card from our hand
-                [self.hand removeObjectAtIndex:selected.row];
+                [self.hand removeObjectAtIndex:selected];
                 [self.delegate playerHandDidChange];
                 
                 // Set that it isn't our turn anymore

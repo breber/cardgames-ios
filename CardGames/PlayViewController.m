@@ -6,12 +6,13 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
+#import "UIColor+CardGamesColor.h"
 #import "PlayViewController.h"
 #import "Card.h"
 #import "Constants.h"
 #import "CrazyEightsPlayerController.h"
 
-@interface PlayViewController()
+@interface PlayViewController() <UITextFieldDelegate>
 
 @property(nonatomic, weak) IBOutlet UIView *buttonLayout;
 @property(nonatomic, weak) IBOutlet UIView *overlay;
@@ -19,9 +20,9 @@
 @property(nonatomic, weak) IBOutlet UIView *textPopup;
 @property(nonatomic, weak) IBOutlet UIView *loadingPopup;
 @property(nonatomic, weak) IBOutlet UILabel *loadingPopupTitle;
-@property(nonatomic, weak) IBOutlet HorizontalTableView *cardHand;
-
+@property(nonatomic, weak) IBOutlet UIScrollView *cardHand;
 @property(nonatomic, strong) PlayerController *playerController;
+@property(nonatomic, strong) NSArray *cardButtons;
 
 @end
 
@@ -99,7 +100,7 @@
 
 - (void)playerHandDidChange
 {
-    [self.cardHand reloadData];
+    [self reloadData];
 }
 
 - (void)playerDidWin
@@ -132,39 +133,84 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (NSIndexPath *)getSelectedCardIndex
+- (int)getSelectedCardIndex
 {
-    return [self.cardHand indexPathForSelectedRow];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section
-{
-    return [self.playerController.hand count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Card *c = [self.playerController.hand objectAtIndex:indexPath.row];
+    int toRet = 0;
+    for (UIButton *b in self.cardButtons) {
+        if (b.tag == 1) {
+            return toRet;
+        }
+        toRet++;
+    }
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    return -1;
+}
+
+- (void)cardSelected:(UIButton *)sender
+{
+    for (UIButton *b in self.cardButtons) {
+        b.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+    }
+    sender.backgroundColor = [UIColor goldColor];
+    sender.tag = 1;
+}
+
+- (void)reloadData
+{
+    // Remove all of the cards from the scrollview
+    for (UIButton *b in self.cardButtons) {
+        [b removeFromSuperview];
     }
 
-    // Set the image of the cell
-    UIImage *cardImage = [UIImage imageNamed:[c cardImagePath]];
+    // Create a new array for the buttons
+    NSMutableArray *buttons = [NSMutableArray array];
     
-//    if (self.isTurn) {
-//        if (![self.playerController.rules canPlay:c withDiscard:self.discardCard]) {
-            // TODO: set background color
- 
-//        }
-//    }
+    // Get the height of the scrollview
+    CGFloat height = self.cardHand.frame.size.height;
+    CGFloat width = 0;
     
-    [[cell imageView] setImage:cardImage];
-    return cell;
+    // For each card, add it to the scrollview
+    int cardCount = self.playerController.hand.count;
+    for (int i = 0; i < cardCount; i++) {
+        Card *c = [self.playerController.hand objectAtIndex:i];
+        UIImage *image = [UIImage imageNamed:[c cardImagePath]];
+        
+        // If we haven't calculated a width for the cards,
+        // do that now based on the aspect ratio of the image,
+        // and the height of the scrollview
+        if (!width) {
+            CGFloat imageRatio = image.size.width / image.size.height;
+            width = height * imageRatio;
+        }
+        
+        // Set up the frame for the card
+        CGRect frame;
+        frame.origin.x = width * i + 10 * i;
+        frame.origin.y = 0;
+        frame.size = CGSizeMake(width, height);
+
+        // Set up the button that will be the card
+        UIButton *button = [[UIButton alloc] initWithFrame:frame];
+        [button setImageEdgeInsets:UIEdgeInsetsMake(2, 2, 2, 2)];
+        [button addTarget:self action:@selector(cardSelected:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:image forState:UIControlStateNormal];
+        
+        // TODO: possibly grey out card if not playable?
+        
+        // Add the button to our array of buttons
+        [buttons addObject:button];
+        
+        [self.cardHand addSubview:button];
+    }
+
+    // Update our property with the button array
+    self.cardButtons = [buttons copy];
+    
+    // Set the scrollview's content size, so that it scrolls
+    self.cardHand.contentSize = CGSizeMake(width * cardCount + 10 * cardCount, height);
+    
+    // Set that we need to redisplay the scrollview
+    [self.cardHand setNeedsDisplay];
 }
 
 @end

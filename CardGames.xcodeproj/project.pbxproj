@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D11F4972160CB97B00F46EE4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D11F4971160CB97B00F46EE4 /* Default-568h@2x.png */; };
+		D129F74F164B51E9006FB0BD /* UIColor+CardGamesColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D129F74E164B51E9006FB0BD /* UIColor+CardGamesColor.m */; };
 		D140E9A116056E6700FDC2DA /* PlayerConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D140E9A016056E6700FDC2DA /* PlayerConnectViewController.m */; };
 		D140E9AA1605705900FDC2DA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D140E9A91605705900FDC2DA /* CFNetwork.framework */; };
 		D140E9BD16062AB200FDC2DA /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = D140E9BB16062AB200FDC2DA /* Server.m */; };
@@ -85,8 +86,6 @@
 		D1CAA38815FD265400549EF7 /* spades_q.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA35215FD265400549EF7 /* spades_q.png */; };
 		D1CAA38D15FD266C00549EF7 /* wooden_top.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA38B15FD266C00549EF7 /* wooden_top.jpg */; };
 		D1CAA3D215FD32E000549EF7 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3D115FD32E000549EF7 /* Card.m */; };
-		D1CAA3D915FD5AF400549EF7 /* HorizontalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3D815FD5AF400549EF7 /* HorizontalTableView.m */; };
-		D1CAA3DD15FD5C6200549EF7 /* HorizontalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA3DC15FD5C6200549EF7 /* HorizontalTableViewCell.m */; };
 		D1CAA3E515FD63E800549EF7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1CAA3E415FD63E800549EF7 /* QuartzCore.framework */; };
 		D1CAA3EA15FD6F6800549EF7 /* icon-ipad-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA3E615FD6F6800549EF7 /* icon-ipad-retina.png */; };
 		D1CAA3EB15FD6F6800549EF7 /* icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA3E715FD6F6800549EF7 /* icon-ipad.png */; };
@@ -102,6 +101,8 @@
 
 /* Begin PBXFileReference section */
 		D11F4971160CB97B00F46EE4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "CardGames/Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
+		D129F74D164B51E9006FB0BD /* UIColor+CardGamesColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CardGamesColor.h"; sourceTree = "<group>"; };
+		D129F74E164B51E9006FB0BD /* UIColor+CardGamesColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CardGamesColor.m"; sourceTree = "<group>"; };
 		D140E99F16056E6700FDC2DA /* PlayerConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerConnectViewController.h; sourceTree = "<group>"; };
 		D140E9A016056E6700FDC2DA /* PlayerConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerConnectViewController.m; sourceTree = "<group>"; };
 		D140E9A91605705900FDC2DA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -196,10 +197,6 @@
 		D1CAA38B15FD266C00549EF7 /* wooden_top.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wooden_top.jpg; path = CardGames/Resources/wooden_top.jpg; sourceTree = "<group>"; };
 		D1CAA3D015FD32E000549EF7 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		D1CAA3D115FD32E000549EF7 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
-		D1CAA3D715FD5AF400549EF7 /* HorizontalTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalTableView.h; sourceTree = "<group>"; };
-		D1CAA3D815FD5AF400549EF7 /* HorizontalTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalTableView.m; sourceTree = "<group>"; };
-		D1CAA3DB15FD5C6200549EF7 /* HorizontalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalTableViewCell.h; sourceTree = "<group>"; };
-		D1CAA3DC15FD5C6200549EF7 /* HorizontalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalTableViewCell.m; sourceTree = "<group>"; };
 		D1CAA3E415FD63E800549EF7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D1CAA3E615FD6F6800549EF7 /* icon-ipad-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-ipad-retina.png"; path = "CardGames/Resources/icon-ipad-retina.png"; sourceTree = "<group>"; };
 		D1CAA3E715FD6F6800549EF7 /* icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-ipad.png"; path = "CardGames/Resources/icon-ipad.png"; sourceTree = "<group>"; };
@@ -395,10 +392,8 @@
 		D1CAA3DE15FD619A00549EF7 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				D1CAA3D715FD5AF400549EF7 /* HorizontalTableView.h */,
-				D1CAA3D815FD5AF400549EF7 /* HorizontalTableView.m */,
-				D1CAA3DB15FD5C6200549EF7 /* HorizontalTableViewCell.h */,
-				D1CAA3DC15FD5C6200549EF7 /* HorizontalTableViewCell.m */,
+				D129F74D164B51E9006FB0BD /* UIColor+CardGamesColor.h */,
+				D129F74E164B51E9006FB0BD /* UIColor+CardGamesColor.m */,
 				D1F488CE160CC06700CC1A07 /* RoundedTextView.h */,
 				D1F488CF160CC06700CC1A07 /* RoundedTextView.m */,
 				D1F488D2160CC16600CC1A07 /* RoundedTableView.h */,
@@ -579,8 +574,6 @@
 				D1CAA23F15FD0D3300549EF7 /* PlayViewController.m in Sources */,
 				D1CAA24215FD1F6D00549EF7 /* WifiConnection.m in Sources */,
 				D1CAA3D215FD32E000549EF7 /* Card.m in Sources */,
-				D1CAA3D915FD5AF400549EF7 /* HorizontalTableView.m in Sources */,
-				D1CAA3DD15FD5C6200549EF7 /* HorizontalTableViewCell.m in Sources */,
 				D1A7A52C15FEA4EF00754BD9 /* CrazyEightsRules.m in Sources */,
 				D1A7A53715FECD6F00754BD9 /* ChooseSuitViewController.m in Sources */,
 				D1A7A53A15FED05C00754BD9 /* GameResultViewController.m in Sources */,
@@ -592,6 +585,7 @@
 				D140E9BD16062AB200FDC2DA /* Server.m in Sources */,
 				D1F488D0160CC06700CC1A07 /* RoundedTextView.m in Sources */,
 				D1F488D4160CC16600CC1A07 /* RoundedTableView.m in Sources */,
+				D129F74F164B51E9006FB0BD /* UIColor+CardGamesColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

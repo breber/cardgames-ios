@@ -23,7 +23,7 @@
 - (void)playerDidLose;
 - (void)playerTurnDidChange:(BOOL)withTurn;
 - (void)playerHandDidChange;
-- (NSIndexPath *)getSelectedCardIndex;
+- (int)getSelectedCardIndex;
 - (void)showNewScreen:(NSString *)viewController;
 - (void)dismissScreen;
 

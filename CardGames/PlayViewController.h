@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HorizontalTableView.h"
 #import "PlayerController.h"
 #import "ViewController.h"
 
-@interface PlayViewController : ViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, PlayerControllerDelegate>
+@interface PlayViewController : ViewController <PlayerControllerDelegate>
 
 @end

@@ -237,8 +237,8 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guw-u4-RBU">
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="58" id="agi-ZN-EsL"/>
                                             <constraint firstAttribute="width" constant="72" id="jEk-zL-7Ga"/>
-                                            <constraint firstAttribute="height" constant="60" id="kMz-8F-in3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="heartsuitimage.png">
@@ -258,15 +258,18 @@
                                     <constraint firstItem="guw-u4-RBU" firstAttribute="leading" secondItem="kQ9-al-vqS" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="2YV-RS-L1j"/>
                                     <constraint firstItem="wIj-cf-sVu" firstAttribute="top" secondItem="kQ9-al-vqS" secondAttribute="top" constant="20" symbolic="YES" type="default" id="7Zi-wg-E0N"/>
                                     <constraint firstItem="wIj-cf-sVu" firstAttribute="leading" secondItem="meY-ax-Iu7" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="8Aq-k2-gn1"/>
-                                    <constraint firstItem="guw-u4-RBU" firstAttribute="bottom" secondItem="meY-ax-Iu7" secondAttribute="bottom" type="default" id="DdG-xT-u1s"/>
+                                    <constraint firstAttribute="bottom" secondItem="meY-ax-Iu7" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="8ED-Qi-idQ"/>
+                                    <constraint firstItem="wIj-cf-sVu" firstAttribute="baseline" secondItem="meY-ax-Iu7" secondAttribute="baseline" type="default" id="ITR-0x-7AG"/>
+                                    <constraint firstItem="meY-ax-Iu7" firstAttribute="baseline" secondItem="guw-u4-RBU" secondAttribute="baseline" type="default" id="MDB-AM-NTW"/>
                                     <constraint firstItem="meY-ax-Iu7" firstAttribute="top" secondItem="kQ9-al-vqS" secondAttribute="top" constant="20" symbolic="YES" type="default" id="PPr-GU-rzK"/>
                                     <constraint firstItem="guw-u4-RBU" firstAttribute="top" secondItem="kQ9-al-vqS" secondAttribute="top" constant="20" symbolic="YES" type="default" id="RSf-Vu-vRO"/>
-                                    <constraint firstItem="wIj-cf-sVu" firstAttribute="bottom" secondItem="meY-ax-Iu7" secondAttribute="bottom" type="default" id="RcJ-Wj-ybo"/>
-                                    <constraint firstItem="1CJ-Hm-fmF" firstAttribute="bottom" secondItem="wIj-cf-sVu" secondAttribute="bottom" type="default" id="SMJ-Fe-J2G"/>
                                     <constraint firstAttribute="trailing" secondItem="1CJ-Hm-fmF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Zr1-L4-aiO"/>
+                                    <constraint firstAttribute="bottom" secondItem="guw-u4-RBU" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="eAq-qj-1ii"/>
                                     <constraint firstItem="1CJ-Hm-fmF" firstAttribute="leading" secondItem="wIj-cf-sVu" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="qq9-VX-tOc"/>
                                     <constraint firstItem="1CJ-Hm-fmF" firstAttribute="top" secondItem="kQ9-al-vqS" secondAttribute="top" constant="20" symbolic="YES" type="default" id="tdU-ZI-C3h"/>
+                                    <constraint firstAttribute="bottom" secondItem="1CJ-Hm-fmF" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="uRY-iA-sV7"/>
                                     <constraint firstItem="meY-ax-Iu7" firstAttribute="leading" secondItem="guw-u4-RBU" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="wUY-yP-fPk"/>
+                                    <constraint firstAttribute="bottom" secondItem="wIj-cf-sVu" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="y99-Fo-zAM"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -277,7 +280,6 @@
                             <constraint firstItem="8g1-dC-9Ff" firstAttribute="leading" secondItem="JY3-Md-D52" secondAttribute="leading" type="default" id="NC2-CV-KZn"/>
                             <constraint firstAttribute="centerX" secondItem="kQ9-al-vqS" secondAttribute="centerX" type="user" id="Vbb-iW-dRB"/>
                             <constraint firstAttribute="centerY" secondItem="kQ9-al-vqS" secondAttribute="centerY" type="user" id="ZfQ-CJ-8Mb"/>
-                            <constraint firstItem="kQ9-al-vqS" firstAttribute="top" secondItem="JY3-Md-D52" secondAttribute="top" constant="325" id="gTz-gS-tBF"/>
                             <constraint firstItem="8g1-dC-9Ff" firstAttribute="bottom" secondItem="JY3-Md-D52" secondAttribute="bottom" type="default" id="qFO-pt-l9B"/>
                             <constraint firstItem="kQ9-al-vqS" firstAttribute="leading" secondItem="JY3-Md-D52" secondAttribute="leading" constant="336" id="vXT-4a-dRV"/>
                         </constraints>
@@ -553,31 +555,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="HjG-rJ-fB4"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgr-5L-7gw">
+                                <connections>
+                                    <outlet property="delegate" destination="kKW-Fg-x1I" id="B37-D6-LTS"/>
+                                </connections>
+                            </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nU-vR-5fi" userLabel="Button View">
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="450" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zbg-AV-X1j" customClass="HorizontalTableView">
-                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="676" id="s1i-VJ-Fr3"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="cell" id="kbn-d9-bm8" customClass="HorizontalTableViewCell">
-                                        <rect key="frame" x="0.0" y="22" width="1008" height="450"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="1008" height="449"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
-                                <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="kKW-Fg-x1I" id="rQ1-aV-4XB"/>
-                                    <outlet property="delegate" destination="kKW-Fg-x1I" id="caB-l3-wUY"/>
-                                </connections>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWK-Do-sxt">
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oyy-lz-VTY">
@@ -650,20 +635,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zbg-AV-X1j" firstAttribute="top" secondItem="PDc-Ey-5uL" secondAttribute="top" constant="73" id="3nN-fv-c28"/>
                             <constraint firstItem="HjG-rJ-fB4" firstAttribute="bottom" secondItem="PDc-Ey-5uL" secondAttribute="bottom" type="default" id="5SD-MS-PIz"/>
-                            <constraint firstItem="zbg-AV-X1j" firstAttribute="leading" secondItem="PDc-Ey-5uL" secondAttribute="leading" constant="8" type="user" id="5ek-7e-5gx"/>
+                            <constraint firstItem="sgr-5L-7gw" firstAttribute="bottom" secondItem="PDc-Ey-5uL" secondAttribute="bottom" type="default" id="9Hg-zC-YR8"/>
+                            <constraint firstItem="sgr-5L-7gw" firstAttribute="top" secondItem="8nU-vR-5fi" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="CY3-I7-rwS"/>
                             <constraint firstAttribute="trailing" secondItem="8nU-vR-5fi" secondAttribute="trailing" constant="20" symbolic="YES" type="user" id="DTZ-7l-71L"/>
                             <constraint firstItem="HjG-rJ-fB4" firstAttribute="leading" secondItem="PDc-Ey-5uL" secondAttribute="leading" type="default" id="HiG-QP-eHV"/>
                             <constraint firstItem="HjG-rJ-fB4" firstAttribute="trailing" secondItem="PDc-Ey-5uL" secondAttribute="trailing" type="default" id="JkW-Ec-pGc"/>
+                            <constraint firstItem="sgr-5L-7gw" firstAttribute="trailing" secondItem="PDc-Ey-5uL" secondAttribute="trailing" type="user" id="MmS-3I-R1I"/>
                             <constraint firstItem="wWK-Do-sxt" firstAttribute="trailing" secondItem="PDc-Ey-5uL" secondAttribute="trailing" type="user" id="Rbb-Rh-FNz"/>
                             <constraint firstItem="wWK-Do-sxt" firstAttribute="bottom" secondItem="PDc-Ey-5uL" secondAttribute="bottom" type="user" id="YwO-8T-6Yo"/>
                             <constraint firstItem="8nU-vR-5fi" firstAttribute="leading" secondItem="PDc-Ey-5uL" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="cSb-PZ-NFC"/>
+                            <constraint firstItem="sgr-5L-7gw" firstAttribute="top" secondItem="PDc-Ey-5uL" secondAttribute="top" constant="73" id="e90-Ok-EBe"/>
                             <constraint firstItem="wWK-Do-sxt" firstAttribute="top" secondItem="PDc-Ey-5uL" secondAttribute="top" type="user" id="fHu-uW-6dW"/>
+                            <constraint firstItem="sgr-5L-7gw" firstAttribute="leading" secondItem="PDc-Ey-5uL" secondAttribute="leading" type="user" id="fLA-TJ-Gqt"/>
                             <constraint firstItem="wWK-Do-sxt" firstAttribute="leading" secondItem="PDc-Ey-5uL" secondAttribute="leading" type="user" id="g6W-Zq-N2B"/>
-                            <constraint firstItem="zbg-AV-X1j" firstAttribute="top" secondItem="8nU-vR-5fi" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="iQW-vd-CFS"/>
                             <constraint firstItem="8nU-vR-5fi" firstAttribute="top" secondItem="PDc-Ey-5uL" secondAttribute="top" constant="20" symbolic="YES" type="user" id="vXv-Nf-AjS"/>
-                            <constraint firstAttribute="trailing" secondItem="zbg-AV-X1j" secondAttribute="trailing" constant="8" type="user" id="xRl-J8-Spl"/>
                             <constraint firstItem="HjG-rJ-fB4" firstAttribute="top" secondItem="PDc-Ey-5uL" secondAttribute="top" type="default" id="xdC-Fw-X4U"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -673,7 +659,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="buttonLayout" destination="8nU-vR-5fi" id="y9L-2H-gh2"/>
-                        <outlet property="cardHand" destination="zbg-AV-X1j" id="83x-YT-eEx"/>
+                        <outlet property="cardHand" destination="sgr-5L-7gw" id="cfR-mi-bW6"/>
                         <outlet property="loadingPopup" destination="4be-ec-Q8O" id="JoH-u1-Skd"/>
                         <outlet property="loadingPopupTitle" destination="l2W-Vf-GSP" id="VXY-bs-bTb"/>
                         <outlet property="overlay" destination="wWK-Do-sxt" id="OGl-WG-wbr"/>
@@ -971,12 +957,6 @@ A preferences page is also available from the home screen. To get to this page, 
                 <relationship kind="action" name="mainMenu:"/>
             </relationships>
         </class>
-        <class className="HorizontalTableView" superclassName="UITableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HorizontalTableView.h"/>
-        </class>
-        <class className="HorizontalTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HorizontalTableViewCell.h"/>
-        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
@@ -984,7 +964,7 @@ A preferences page is also available from the home screen. To get to this page, 
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="buttonLayout" candidateClass="UIView"/>
-                <relationship kind="outlet" name="cardHand" candidateClass="HorizontalTableView"/>
+                <relationship kind="outlet" name="cardHand" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="loadingPopup" candidateClass="UIView"/>
                 <relationship kind="outlet" name="loadingPopupTitle" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="overlay" candidateClass="UIView"/>
