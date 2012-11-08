@@ -10,6 +10,11 @@
 
 @implementation Card
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"Card: id=%d, suit=%d, value=%d", self.cardId, self.suit, self.value];
+}
+
 - (NSString *)jsonString
 {
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:

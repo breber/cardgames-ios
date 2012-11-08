@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import "CrazyEightsPlayerController.h"
 #import "CrazyEightsRules.h"
+#import "Rules.h"
 
 @interface CrazyEightsPlayerController()
 @property(nonatomic, strong) Card *discardCard;
@@ -37,10 +38,15 @@
     }
 }
 
+- (BOOL)canPlay:(Card *)card
+{
+    return [CrazyEightsRules canPlay:card withDiscard:self.discardCard];
+}
+
 - (void)handleIsTurn:(NSDictionary *)data
 {
     [super handleIsTurn:data];
-        
+
     Card *c = [[Card alloc] init];
     c.value = [[data objectForKey:@"value"] intValue];
     c.suit = [[data objectForKey:@"suit"] intValue];

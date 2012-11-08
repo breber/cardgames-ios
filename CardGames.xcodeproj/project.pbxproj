@@ -270,8 +270,6 @@
 				D1CAA3E015FD61C600549EF7 /* Game */,
 				D1CAA3DE15FD619A00549EF7 /* UIComponents */,
 				D1A7A53B15FEE97A00754BD9 /* ViewControllers */,
-				D18663AF15F109BE0098E8AD /* AppDelegate.h */,
-				D18663B015F109BE0098E8AD /* AppDelegate.m */,
 				D18663B215F109BE0098E8AD /* MainStoryboard_iPhone.storyboard */,
 				D18663B515F109BE0098E8AD /* MainStoryboard_iPad.storyboard */,
 				D18663A715F109BE0098E8AD /* Supporting Files */,
@@ -282,6 +280,8 @@
 		D18663A715F109BE0098E8AD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D18663AF15F109BE0098E8AD /* AppDelegate.h */,
+				D18663B015F109BE0098E8AD /* AppDelegate.m */,
 				D18663A815F109BE0098E8AD /* CardGames-Info.plist */,
 				D18663A915F109BE0098E8AD /* InfoPlist.strings */,
 				D18663AC15F109BE0098E8AD /* main.m */,

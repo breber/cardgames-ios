@@ -7,9 +7,8 @@
 //
 #import <netinet/in.h>
 #import <sys/socket.h>
-
-#include <sys/types.h>
-#include <arpa/inet.h>
+#import <sys/types.h>
+#import <arpa/inet.h>
 
 #import "Server.h"
 #import "WifiConnection.h"
@@ -74,7 +73,7 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
                                  (CFSocketCallBack)&TCPServerAcceptCallBack,
                                  &socketCtxt);
 	
-	if (self.socket != NULL)	{ // the socket was created successfully
+	if (self.socket)	{ // the socket was created successfully
 		self.protocolFamily = PF_INET6;
 	} else { // there was an error creating the IPv6 socket - could be running under iOS 3.x
 		self.socket = CFSocketCreate(kCFAllocatorDefault,
@@ -84,16 +83,12 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
                                      kCFSocketAcceptCallBack,
                                      (CFSocketCallBack)&TCPServerAcceptCallBack,
                                      &socketCtxt);
-		if (self.socket != NULL) {
+		if (self.socket) {
 			self.protocolFamily = PF_INET;
 		}
 	}
     
     if (NULL == self.socket) {
-        if (self.socket) {
-            CFRelease(self.socket);
-        }
-        self.socket = NULL;
         return NO;
     }
 	
@@ -113,9 +108,6 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
 		NSData *address6 = [NSData dataWithBytes:&addr6 length:sizeof(addr6)];
 		
 		if (kCFSocketSuccess != CFSocketSetAddress(self.socket, (__bridge CFDataRef)address6)) {
-			if (self.socket) {
-                CFRelease(self.socket);
-            }
 			self.socket = NULL;
 			return NO;
 		}
@@ -135,9 +127,6 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
 		NSData *address4 = [NSData dataWithBytes:&addr4 length:sizeof(addr4)];
 		
 		if (kCFSocketSuccess != CFSocketSetAddress(self.socket, (__bridge CFDataRef)address4)) {
-			if (self.socket) {
-                CFRelease(self.socket);
-            }
 			self.socket = NULL;
 			return NO;
 		}
@@ -165,7 +154,6 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
     
 	if (self.socket) {
 		CFSocketInvalidate(self.socket);
-		CFRelease(self.socket);
 		self.socket = NULL;
 	}
 }

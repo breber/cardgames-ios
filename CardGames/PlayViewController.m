@@ -96,6 +96,17 @@
 - (void)playerTurnDidChange:(BOOL)withTurn
 {
     // Nothing to do...
+    for (int i = 0; i < self.playerController.hand.count; i++) {
+        BOOL disabled = NO;
+        
+        if (self.playerController.isTurn) {
+            Card *c = [self.playerController.hand objectAtIndex:i];
+            disabled = ![self.playerController canPlay:c];
+        }
+        
+        UIButton *button = [self.cardButtons objectAtIndex:i];
+        button.enabled = !disabled;
+    }
 }
 
 - (void)playerHandDidChange
@@ -194,8 +205,6 @@
         [button setImageEdgeInsets:UIEdgeInsetsMake(2, 2, 2, 2)];
         [button addTarget:self action:@selector(cardSelected:) forControlEvents:UIControlEventTouchUpInside];
         [button setImage:image forState:UIControlStateNormal];
-        
-        // TODO: possibly grey out card if not playable?
         
         // Add the button to our array of buttons
         [buttons addObject:button];

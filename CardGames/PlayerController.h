@@ -37,6 +37,7 @@
 @property(nonatomic, strong) NSMutableArray *hand;
 @property(nonatomic, weak) UIView *buttonView;
 
+- (BOOL)canPlay:(Card *)card;
 - (void)setName:(NSString *)name;
 - (void)handleIsTurn:(NSDictionary *)data;
 - (void)handleSegue:(UIStoryboardSegue *)segue sender:(id)sender;

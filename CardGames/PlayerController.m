@@ -10,7 +10,7 @@
 #import "Constants.h"
 
 @interface PlayerController() <ConnectionListener>
-@property(nonatomic, strong) Rules *rules;
+
 @end
 
 @implementation PlayerController
@@ -27,6 +27,11 @@
     }
 
     return self;
+}
+
+- (BOOL)canPlay:(Card *)card
+{
+    return YES;
 }
 
 - (void)setIsTurn:(BOOL)isTurn
@@ -81,10 +86,10 @@
         self.hand = arr;
         [self.delegate playerHandDidChange];
     } else if (type == MSG_IS_TURN) {
-        self.isTurn = YES;
-        
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
         [self handleIsTurn:jsonObject];
+        
+         self.isTurn = YES;
     } else if (type == MSG_CARD_DRAWN) {
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
         Card *c = [[Card alloc] init];
