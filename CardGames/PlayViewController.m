@@ -24,6 +24,7 @@
 @property(nonatomic, strong) PlayerController *playerController;
 @property(nonatomic, strong) NSArray *cardButtons;
 
+- (void)updatePlayableCards;
 @end
 
 @implementation PlayViewController
@@ -95,18 +96,7 @@
 
 - (void)playerTurnDidChange:(BOOL)withTurn
 {
-    // Nothing to do...
-    for (int i = 0; i < self.playerController.hand.count; i++) {
-        BOOL disabled = NO;
-        
-        if (self.playerController.isTurn) {
-            Card *c = [self.playerController.hand objectAtIndex:i];
-            disabled = ![self.playerController canPlay:c];
-        }
-        
-        UIButton *button = [self.cardButtons objectAtIndex:i];
-        button.enabled = !disabled;
-    }
+    [self updatePlayableCards];
 }
 
 - (void)playerHandDidChange
@@ -132,6 +122,7 @@
 - (void)gameDidResume
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self reloadData];
 }
 
 - (void)showNewScreen:(NSString *)viewController
@@ -225,8 +216,26 @@
     }
     self.cardHand.contentSize = CGSizeMake(contentSizeWidth, height);
     
+    [self updatePlayableCards];
+    
     // Set that we need to redisplay the scrollview
     [self.cardHand setNeedsDisplay];
+}
+
+- (void)updatePlayableCards
+{
+    for (int i = 0; i < self.playerController.hand.count; i++) {
+        BOOL disabled = NO;
+        
+        if (self.playerController.isTurn) {
+            Card *c = [self.playerController.hand objectAtIndex:i];
+            disabled = ![self.playerController canPlay:c];
+        }
+        
+        UIButton *button = [self.cardButtons objectAtIndex:i];
+        button.enabled = !disabled;
+    }
+    [self.buttonLayout setNeedsDisplay];
 }
 
 @end

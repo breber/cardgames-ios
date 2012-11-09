@@ -99,7 +99,6 @@
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
         NSMutableArray *arr = [[NSMutableArray alloc] init];
         
-        self.isTurn = [[jsonObject objectForKey:@"isturn"] boolValue];
         // name...?
         [self handleIsTurn:[jsonObject objectForKey:@"discardCard"]];
         
@@ -108,6 +107,7 @@
         }
         
         self.hand = [arr mutableCopy];
+        self.isTurn = [[jsonObject objectForKey:@"isturn"] boolValue];
         [self.delegate playerHandDidChange];
     } else if (type == MSG_PAUSE) {
         [self.delegate gameDidPause];
