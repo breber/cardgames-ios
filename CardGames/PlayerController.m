@@ -95,7 +95,7 @@
         [self.delegate playerDidWin];
     } else if (type == MSG_LOSER) {
         [self.delegate playerDidLose];
-    } else if (type == MSG_REFRESHV2) {
+    } else if (type == MSG_REFRESH) {
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
         NSMutableArray *arr = [[NSMutableArray alloc] init];
         

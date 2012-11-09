@@ -207,6 +207,7 @@
 		D1D2BA791603CDA0008EE137 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
 		D1DA26261604E4D100E32193 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
 		D1DA26271604E4D100E32193 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
+		D1E09757164C96420089CB69 /* C8Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C8Constants.h; sourceTree = "<group>"; };
 		D1F488CE160CC06700CC1A07 /* RoundedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedTextView.h; sourceTree = "<group>"; };
 		D1F488CF160CC06700CC1A07 /* RoundedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedTextView.m; sourceTree = "<group>"; };
 		D1F488D2160CC16600CC1A07 /* RoundedTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedTableView.h; sourceTree = "<group>"; };
@@ -427,6 +428,7 @@
 		D1D2BA721603C8AF008EE137 /* CrazyEights */ = {
 			isa = PBXGroup;
 			children = (
+				D1E09757164C96420089CB69 /* C8Constants.h */,
 				D1D2BA751603C9A0008EE137 /* CrazyEightsPlayerController.h */,
 				D1D2BA761603C9A0008EE137 /* CrazyEightsPlayerController.m */,
 				D1A7A52A15FEA4EF00754BD9 /* CrazyEightsRules.h */,

@@ -8,6 +8,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "UIColor+CardGamesColor.h"
+#import "C8Constants.h"
 #import "Constants.h"
 #import "CrazyEightsPlayerController.h"
 #import "CrazyEightsRules.h"
