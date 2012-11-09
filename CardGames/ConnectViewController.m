@@ -125,4 +125,22 @@
     }
 }
 
+- (void)outputStreamClosed:(WifiConnection *)connection
+{
+    if (DEBUG) {
+        NSLog(@"%s", __PRETTY_FUNCTION__);
+    }
+    int remotePort = connection.data;
+
+    for (int i = 0; i < self.services.count; i++) {
+        WifiConnection *obj = [self.services objectAtIndex:i];
+        if (obj.data == remotePort) {
+            [self.services removeObject:connection];
+            break;
+        }
+    }
+
+    [self updateUI];
+}
+
 @end

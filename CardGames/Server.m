@@ -44,8 +44,10 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
             NSLog(@"Error getting peer name...");
         }
 
-        NSLog(@"Peer's IP address is: %s\n", inet_ntoa(peer.sin_addr));
-        NSLog(@"Peer's port is: %d\n", (int) ntohs(peer.sin_port));
+        if (DEBUG) {
+            NSLog(@"%s - Peer's IP address is: %s\n", __PRETTY_FUNCTION__, inet_ntoa(peer.sin_addr));
+            NSLog(@"%s - Peer's port is: %d\n", __PRETTY_FUNCTION__, (int) ntohs(peer.sin_port));
+        }
         
         // TODO:
         WifiConnection* connection = [[WifiConnection alloc] init];
