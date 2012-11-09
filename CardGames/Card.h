@@ -12,6 +12,8 @@
 @property (nonatomic) int suit;
 @property (nonatomic) int value;
 
++ (Card *)cardWithValues:(NSDictionary *)values;
+
 - (NSString *)jsonString;
 - (NSString *)cardImagePath;
 

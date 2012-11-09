@@ -11,7 +11,6 @@
 #import "Constants.h"
 #import "CrazyEightsPlayerController.h"
 #import "CrazyEightsRules.h"
-#import "Rules.h"
 
 @interface CrazyEightsPlayerController()
 @property(nonatomic, strong) Card *discardCard;
@@ -47,12 +46,7 @@
 {
     [super handleIsTurn:data];
 
-    Card *c = [[Card alloc] init];
-    c.value = [[data objectForKey:@"value"] intValue];
-    c.suit = [[data objectForKey:@"suit"] intValue];
-    c.cardId = [[data objectForKey:@"id"] intValue];
-    
-    self.discardCard = c;
+    self.discardCard = [Card cardWithValues:data];
 }
 
 - (void)handleSegue:(UIStoryboardSegue *)segue

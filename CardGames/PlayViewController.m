@@ -168,6 +168,9 @@
 
 - (void)reloadData
 {
+    static double CARD_PADDING = 5;
+    static double CARD_BORDER = 3;
+
     // Remove all of the cards from the scrollview
     for (UIButton *b in self.cardButtons) {
         [b removeFromSuperview];
@@ -196,13 +199,13 @@
         
         // Set up the frame for the card
         CGRect frame;
-        frame.origin.x = width * i + 10 * i;
+        frame.origin.x = width * i + CARD_PADDING * i;
         frame.origin.y = 0;
         frame.size = CGSizeMake(width, height);
 
         // Set up the button that will be the card
         UIButton *button = [[UIButton alloc] initWithFrame:frame];
-        [button setImageEdgeInsets:UIEdgeInsetsMake(2, 2, 2, 2)];
+        [button setImageEdgeInsets:UIEdgeInsetsMake(CARD_BORDER, CARD_BORDER, 0, CARD_BORDER)];
         [button addTarget:self action:@selector(cardSelected:) forControlEvents:UIControlEventTouchUpInside];
         [button setImage:image forState:UIControlStateNormal];
         
@@ -216,7 +219,11 @@
     self.cardButtons = [buttons copy];
     
     // Set the scrollview's content size, so that it scrolls
-    self.cardHand.contentSize = CGSizeMake(width * cardCount + 10 * cardCount, height);
+    CGFloat contentSizeWidth = width * cardCount + CARD_PADDING * cardCount;
+    if (contentSizeWidth < self.cardHand.bounds.size.width) {
+        contentSizeWidth = self.cardHand.bounds.size.width;
+    }
+    self.cardHand.contentSize = CGSizeMake(contentSizeWidth, height);
     
     // Set that we need to redisplay the scrollview
     [self.cardHand setNeedsDisplay];

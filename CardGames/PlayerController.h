@@ -6,9 +6,8 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Card.h"
 #import "ConnectionListener.h"
-#import "Rules.h"
 #import "WifiConnection.h"
 
 @protocol PlayerControllerDelegate <NSObject>

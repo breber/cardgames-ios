@@ -6,8 +6,6 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 // Forward declare WifiConnection
 @class WifiConnection;
 

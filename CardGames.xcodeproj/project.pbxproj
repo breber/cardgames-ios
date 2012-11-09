@@ -93,7 +93,6 @@
 		D1CAA3ED15FD6F6800549EF7 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA3E915FD6F6800549EF7 /* icon.png */; };
 		D1D2BA771603C9A0008EE137 /* CrazyEightsPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA761603C9A0008EE137 /* CrazyEightsPlayerController.m */; };
 		D1D2BA7A1603CDA0008EE137 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA791603CDA0008EE137 /* PlayerController.m */; };
-		D1D2BA7D1603CEE1008EE137 /* Rules.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA7C1603CEE1008EE137 /* Rules.m */; };
 		D1DA26281604E4D100E32193 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DA26271604E4D100E32193 /* ConnectViewController.m */; };
 		D1F488D0160CC06700CC1A07 /* RoundedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F488CF160CC06700CC1A07 /* RoundedTextView.m */; };
 		D1F488D4160CC16600CC1A07 /* RoundedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F488D3160CC16600CC1A07 /* RoundedTableView.m */; };
@@ -206,8 +205,6 @@
 		D1D2BA761603C9A0008EE137 /* CrazyEightsPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrazyEightsPlayerController.m; sourceTree = "<group>"; };
 		D1D2BA781603CDA0008EE137 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
 		D1D2BA791603CDA0008EE137 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
-		D1D2BA7B1603CEE1008EE137 /* Rules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rules.h; sourceTree = "<group>"; };
-		D1D2BA7C1603CEE1008EE137 /* Rules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rules.m; sourceTree = "<group>"; };
 		D1DA26261604E4D100E32193 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
 		D1DA26271604E4D100E32193 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
 		D1F488CE160CC06700CC1A07 /* RoundedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedTextView.h; sourceTree = "<group>"; };
@@ -423,8 +420,6 @@
 				D1CAA3D115FD32E000549EF7 /* Card.m */,
 				D1D2BA781603CDA0008EE137 /* PlayerController.h */,
 				D1D2BA791603CDA0008EE137 /* PlayerController.m */,
-				D1D2BA7B1603CEE1008EE137 /* Rules.h */,
-				D1D2BA7C1603CEE1008EE137 /* Rules.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -579,7 +574,6 @@
 				D1A7A53A15FED05C00754BD9 /* GameResultViewController.m in Sources */,
 				D1D2BA771603C9A0008EE137 /* CrazyEightsPlayerController.m in Sources */,
 				D1D2BA7A1603CDA0008EE137 /* PlayerController.m in Sources */,
-				D1D2BA7D1603CEE1008EE137 /* Rules.m in Sources */,
 				D1DA26281604E4D100E32193 /* ConnectViewController.m in Sources */,
 				D140E9A116056E6700FDC2DA /* PlayerConnectViewController.m in Sources */,
 				D140E9BD16062AB200FDC2DA /* Server.m in Sources */,

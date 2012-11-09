@@ -6,8 +6,11 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
-#import "Rules.h"
+#import "Card.h"
 
-@interface CrazyEightsRules : Rules
+@interface CrazyEightsRules : NSObject
+
++ (BOOL)canPlay:(Card *)card
+    withDiscard:(Card *)discard;
 
 @end

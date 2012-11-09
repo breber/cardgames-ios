@@ -8,6 +8,7 @@
 
 #import "PlayerController.h"
 #import "Constants.h"
+#import "Card.h"
 
 @interface PlayerController() <ConnectionListener>
 
@@ -75,12 +76,7 @@
         NSMutableArray *arr = [[NSMutableArray alloc] init];
         
         for (NSDictionary *t in jsonObject) {
-            Card *c = [[Card alloc] init];
-            c.value = [[t objectForKey:@"value"] intValue];
-            c.suit = [[t objectForKey:@"suit"] intValue];
-            c.cardId = [[t objectForKey:@"id"] intValue];
-            
-            [arr addObject:c];
+            [arr addObject:[Card cardWithValues:t]];
         }
         
         self.hand = arr;
@@ -92,21 +88,15 @@
          self.isTurn = YES;
     } else if (type == MSG_CARD_DRAWN) {
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
-        Card *c = [[Card alloc] init];
-        c.value = [[jsonObject objectForKey:@"value"] intValue];
-        c.suit = [[jsonObject objectForKey:@"suit"] intValue];
-        c.cardId = [[jsonObject objectForKey:@"id"] intValue];
         
-        [self.hand addObject:c];
+        [self.hand addObject:[Card cardWithValues:jsonObject]];
         [self.delegate playerHandDidChange];
     } else if (type == MSG_WINNER) {
         [self.delegate playerDidWin];
     } else if (type == MSG_LOSER) {
         [self.delegate playerDidLose];
     } else if (type == MSG_REFRESHV2) {
-        NSLog(@"refresh2");
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
-        NSLog(@"%@", jsonObject);
         NSMutableArray *arr = [[NSMutableArray alloc] init];
         
         self.isTurn = [[jsonObject objectForKey:@"isturn"] boolValue];
@@ -114,12 +104,7 @@
         [self handleIsTurn:[jsonObject objectForKey:@"discardCard"]];
         
         for (NSDictionary *t in [jsonObject objectForKey:@"currenthand"]) {
-            Card *c = [[Card alloc] init];
-            c.value = [[t objectForKey:@"value"] intValue];
-            c.suit = [[t objectForKey:@"suit"] intValue];
-            c.cardId = [[t objectForKey:@"id"] intValue];
-            
-            [arr addObject:c];
+            [arr addObject:[Card cardWithValues:t]];
         }
         
         self.hand = [arr mutableCopy];

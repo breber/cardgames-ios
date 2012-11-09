@@ -10,6 +10,16 @@
 
 @implementation Card
 
++ (Card *)cardWithValues:(NSDictionary *)values
+{
+    Card *c = [[Card alloc] init];
+    c.value = [[values objectForKey:@"value"] intValue];
+    c.suit = [[values objectForKey:@"suit"] intValue];
+    c.cardId = [[values objectForKey:@"id"] intValue];
+    
+    return c;
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"Card: id=%d, suit=%d, value=%d", self.cardId, self.suit, self.value];
