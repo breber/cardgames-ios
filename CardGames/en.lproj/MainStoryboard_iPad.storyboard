@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NGj-96-3to"/>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGa-jm-9uq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGa-jm-9uq" customClass="RoundedButton">
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="104" id="yxU-nN-A38"/>
@@ -51,7 +51,7 @@
                                     <segue destination="bVe-oT-0yq" kind="push" id="8l6-Wl-psE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8RQ-lz-dno">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8RQ-lz-dno" customClass="RoundedButton">
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="0l2-Ws-h3M"/>
@@ -69,7 +69,7 @@
                                     <segue destination="Nd4-77-F2C" kind="push" id="jQG-IQ-N5x"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cU-hb-mOp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cU-hb-mOp" customClass="RoundedButton">
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="0AL-dJ-MwV"/>
@@ -86,7 +86,7 @@
                                     <segue destination="Bmy-Im-nzM" kind="push" id="47B-MJ-o7i"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aV-t7-4U7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aV-t7-4U7" customClass="RoundedButton">
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="N1Y-Qu-9G7"/>
@@ -445,7 +445,7 @@
                                     <constraint firstAttribute="trailing" secondItem="kiK-Z7-Lp9" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="zbd-Ps-DbU"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t86-6H-RGZ">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t86-6H-RGZ" customClass="RoundedButton">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="312" id="3EP-zP-onM"/>
@@ -682,7 +682,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wFA-tZ-sbE"/>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSb-Eq-0K7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSb-Eq-0K7" customClass="RoundedButton">
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="81" id="r2Z-oQ-DPq"/>
@@ -823,7 +823,7 @@ A preferences page is also available from the home screen. To get to this page, 
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ZSz-Iq-tiu"/>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0f-Ea-Zp6">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0f-Ea-Zp6" customClass="RoundedButton">
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="81" id="Z2K-BN-tNK"/>
@@ -975,6 +975,9 @@ A preferences page is also available from the home screen. To get to this page, 
             <relationships>
                 <relationship kind="outlet" name="servers" candidateClass="UITableView"/>
             </relationships>
+        </class>
+        <class className="RoundedButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedButton.h"/>
         </class>
         <class className="RoundedTableView" superclassName="UITableView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedTableView.h"/>

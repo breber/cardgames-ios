@@ -25,7 +25,7 @@
     [super setIsTurn:isTurn];
 
     for (UIView* button in [self.buttonView subviews]) {
-        if ([button isMemberOfClass:[UIButton class]]) {
+        if ([button isKindOfClass:[UIButton class]]) {
             UIButton *b = (UIButton *)button;
 
             if (isTurn) {
@@ -63,29 +63,21 @@
 - (void)addButtons:(UIView *)wrapper
 {
     self.buttonView = wrapper;
-    UIButton *drawButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 160, 37)];
+    RoundedButton *drawButton = [[RoundedButton alloc] initWithFrame:CGRectMake(0, 0, 160, 37)];
     drawButton.backgroundColor = [UIColor blackColor];
     [drawButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [drawButton setTitleColor:[UIColor goldColor] forState:UIControlStateDisabled];
     [drawButton setTitle:@"Draw" forState:UIControlStateNormal];
     [drawButton addTarget:self action:@selector(drawButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [drawButton setEnabled:NO];
-    [drawButton.layer setMasksToBounds:true];
-    [drawButton.layer setCornerRadius:4.0f];
-    [drawButton.layer setBorderColor:[UIColor blackColor].CGColor];
-    [drawButton.layer setBorderWidth:1.0f];
 
-    UIButton *playButton = [[UIButton alloc] initWithFrame:CGRectMake(self.buttonView.frame.size.width - 160, 0, 160, 37)];
+    RoundedButton *playButton = [[RoundedButton alloc] initWithFrame:CGRectMake(self.buttonView.frame.size.width - 160, 0, 160, 37)];
     playButton.backgroundColor = [UIColor blackColor];
     [playButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [playButton setTitleColor:[UIColor goldColor] forState:UIControlStateDisabled];
     [playButton setTitle:@"Play" forState:UIControlStateNormal];
     [playButton addTarget:self action:@selector(playButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     [playButton setEnabled:NO];
-    [playButton.layer setMasksToBounds:true];
-    [playButton.layer setCornerRadius:4.0f];
-    [playButton.layer setBorderColor:[UIColor blackColor].CGColor];
-    [playButton.layer setBorderWidth:1.0f];
     
     [self.buttonView addSubview:drawButton];
     [self.buttonView addSubview:playButton];
