@@ -76,6 +76,11 @@
 // Server has accepted a new connection and it needs to be processed
 - (void)handleNewConnection:(WifiConnection *)connection
 {
+    // Occasionally, iOS devices connecting connect on one port,
+    // then connect immediately on another port. So if we already
+    // have a player with a connection to the same IP address,
+    // just close the old connection, and update to use the new
+    // connection.
     BOOL alreadyFound = NO;
     for (Player *p in self.players) {
         if ([connection.connectionId isEqualToString:[p.connection connectionId]]) {

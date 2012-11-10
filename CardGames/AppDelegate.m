@@ -14,6 +14,7 @@
 {
     // Override point for customization after application launch.
     [application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    [application setIdleTimerDisabled:YES];
     
     return YES;
 }
