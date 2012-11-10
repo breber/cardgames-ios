@@ -29,6 +29,9 @@
 		D1A7A53715FECD6F00754BD9 /* ChooseSuitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A7A53615FECD6F00754BD9 /* ChooseSuitViewController.m */; };
 		D1A7A53A15FED05C00754BD9 /* GameResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A7A53915FED05C00754BD9 /* GameResultViewController.m */; };
 		D1BC21F9164DC36D0067EFF8 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC21F8164DC36D0067EFF8 /* Player.m */; };
+		D1BC21FD164DD9210067EFF8 /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC21FC164DD9210067EFF8 /* UIView+Custom.m */; };
+		D1BC2200164DDA230067EFF8 /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC21FF164DDA220067EFF8 /* RoundedButton.m */; };
+		D1BC2203164DDA610067EFF8 /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC2202164DDA610067EFF8 /* UIView+Custom.m */; };
 		D1CAA23F15FD0D3300549EF7 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA23E15FD0D3300549EF7 /* PlayViewController.m */; };
 		D1CAA24215FD1F6D00549EF7 /* WifiConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA24115FD1F6D00549EF7 /* WifiConnection.m */; };
 		D1CAA35315FD265400549EF7 /* clubs_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA31D15FD265400549EF7 /* clubs_2.png */; };
@@ -136,6 +139,12 @@
 		D1A7A53915FED05C00754BD9 /* GameResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameResultViewController.m; sourceTree = "<group>"; };
 		D1BC21F7164DC36D0067EFF8 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		D1BC21F8164DC36D0067EFF8 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		D1BC21FB164DD9210067EFF8 /* UIView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Custom.h"; sourceTree = "<group>"; };
+		D1BC21FC164DD9210067EFF8 /* UIView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Custom.m"; sourceTree = "<group>"; };
+		D1BC21FE164DDA220067EFF8 /* RoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedButton.h; sourceTree = "<group>"; };
+		D1BC21FF164DDA220067EFF8 /* RoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedButton.m; sourceTree = "<group>"; };
+		D1BC2201164DDA610067EFF8 /* UIView+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Custom.h"; sourceTree = "<group>"; };
+		D1BC2202164DDA610067EFF8 /* UIView+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Custom.m"; sourceTree = "<group>"; };
 		D1CAA23D15FD0D3300549EF7 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
 		D1CAA23E15FD0D3300549EF7 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		D1CAA24015FD1F6D00549EF7 /* WifiConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiConnection.h; sourceTree = "<group>"; };
@@ -306,6 +315,8 @@
 				D140E9A016056E6700FDC2DA /* PlayerConnectViewController.m */,
 				D18663B815F109BE0098E8AD /* ViewController.h */,
 				D18663B915F109BE0098E8AD /* ViewController.m */,
+				D1BC21FB164DD9210067EFF8 /* UIView+Custom.h */,
+				D1BC21FC164DD9210067EFF8 /* UIView+Custom.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -393,12 +404,16 @@
 		D1CAA3DE15FD619A00549EF7 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				D1BC2201164DDA610067EFF8 /* UIView+Custom.h */,
+				D1BC2202164DDA610067EFF8 /* UIView+Custom.m */,
 				D129F74D164B51E9006FB0BD /* UIColor+CardGamesColor.h */,
 				D129F74E164B51E9006FB0BD /* UIColor+CardGamesColor.m */,
 				D1F488CE160CC06700CC1A07 /* RoundedTextView.h */,
 				D1F488CF160CC06700CC1A07 /* RoundedTextView.m */,
 				D1F488D2160CC16600CC1A07 /* RoundedTableView.h */,
 				D1F488D3160CC16600CC1A07 /* RoundedTableView.m */,
+				D1BC21FE164DDA220067EFF8 /* RoundedButton.h */,
+				D1BC21FF164DDA220067EFF8 /* RoundedButton.m */,
 			);
 			name = UIComponents;
 			sourceTree = "<group>";
@@ -588,6 +603,9 @@
 				D1F488D4160CC16600CC1A07 /* RoundedTableView.m in Sources */,
 				D129F74F164B51E9006FB0BD /* UIColor+CardGamesColor.m in Sources */,
 				D1BC21F9164DC36D0067EFF8 /* Player.m in Sources */,
+				D1BC21FD164DD9210067EFF8 /* UIView+Custom.m in Sources */,
+				D1BC2200164DDA230067EFF8 /* RoundedButton.m in Sources */,
+				D1BC2203164DDA610067EFF8 /* UIView+Custom.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

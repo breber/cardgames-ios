@@ -7,7 +7,13 @@
 //
 
 #import "RoundedTextView.h"
+#import "UIView+Custom.h"
 
 @implementation RoundedTextView
+
+- (void)drawRect:(CGRect)rect
+{
+    [UIView customizeView:self];
+}
 
 @end

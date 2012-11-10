@@ -1,15 +1,15 @@
 //
-//  RoundedTableView.m
+//  RoundedButton.m
 //  CardGames
 //
-//  Created by Brian Reber on 9/21/12.
+//  Created by Brian Reber on 11/9/12.
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
-#import "RoundedTableView.h"
+#import "RoundedButton.h"
 #import "UIView+Custom.h"
 
-@implementation RoundedTableView
+@implementation RoundedButton
 
 - (void)drawRect:(CGRect)rect
 {

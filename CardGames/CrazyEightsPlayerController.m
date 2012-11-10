@@ -12,6 +12,7 @@
 #import "Constants.h"
 #import "CrazyEightsPlayerController.h"
 #import "CrazyEightsRules.h"
+#import "RoundedButton.h"
 
 @interface CrazyEightsPlayerController()
 @property(nonatomic, strong) Card *discardCard;
@@ -62,8 +63,7 @@
 - (void)addButtons:(UIView *)wrapper
 {
     self.buttonView = wrapper;
-    UIButton *drawButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    drawButton.frame = CGRectMake(0, 0, 160, 37);
+    UIButton *drawButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 160, 37)];
     drawButton.backgroundColor = [UIColor blackColor];
     [drawButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [drawButton setTitleColor:[UIColor goldColor] forState:UIControlStateDisabled];
@@ -75,8 +75,7 @@
     [drawButton.layer setBorderColor:[UIColor blackColor].CGColor];
     [drawButton.layer setBorderWidth:1.0f];
 
-    UIButton *playButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    playButton.frame = CGRectMake(self.buttonView.frame.size.width - 160, 0, 160, 37);
+    UIButton *playButton = [[UIButton alloc] initWithFrame:CGRectMake(self.buttonView.frame.size.width - 160, 0, 160, 37)];
     playButton.backgroundColor = [UIColor blackColor];
     [playButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [playButton setTitleColor:[UIColor goldColor] forState:UIControlStateDisabled];
