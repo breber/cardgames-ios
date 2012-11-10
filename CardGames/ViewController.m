@@ -17,15 +17,15 @@
 {
     [super viewDidLoad];
     
-    for (UIView* button in [self.view subviews]) {
-        if ([button isMemberOfClass:[UIButton class]] ||
-            [button isMemberOfClass:[RoundedTextView class]] ||
-            [button isMemberOfClass:[RoundedTableView class]])
+    for (UIView* view in [self.view subviews]) {
+        if ([view isKindOfClass:[UIButton class]] ||
+            [view isMemberOfClass:[RoundedTextView class]] ||
+            [view isMemberOfClass:[RoundedTableView class]])
         {
-            [button.layer setMasksToBounds:true];
-            [button.layer setCornerRadius:4.0f];
-            [button.layer setBorderColor:[UIColor blackColor].CGColor];
-            [button.layer setBorderWidth:1.0f];
+            [view.layer setMasksToBounds:true];
+            [view.layer setCornerRadius:4.0f];
+            [view.layer setBorderColor:[UIColor blackColor].CGColor];
+            [view.layer setBorderWidth:1.0f];
         }
     }
 }

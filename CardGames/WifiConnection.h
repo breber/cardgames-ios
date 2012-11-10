@@ -10,13 +10,13 @@
 
 @interface WifiConnection : NSObject <NSStreamDelegate>
 
-@property (nonatomic) int data;
+@property (nonatomic, strong) NSString *connectionId;
 @property (nonatomic, weak) id <ConnectionListener> delegate;
 
 + (id)sharedInstance;
 
 - (BOOL)initWithNativeSocket:(CFSocketNativeHandle)socket
-                    withData:(int)data;
+                    withData:(NSString *)data;
 - (BOOL)initNetworkCommunication:(NSNetService *)service;
 - (void)closeConnections;
 - (BOOL)isActive;

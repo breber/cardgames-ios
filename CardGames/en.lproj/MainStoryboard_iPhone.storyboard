@@ -94,11 +94,11 @@
                                     <constraint firstAttribute="trailing" secondItem="96a-6f-9WC" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="FHg-fR-bPN"/>
                                     <constraint firstItem="96a-6f-9WC" firstAttribute="leading" secondItem="tgr-mx-FIO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ka1-nB-DUZ"/>
                                     <constraint firstItem="2ki-jj-kyT" firstAttribute="top" secondItem="96a-6f-9WC" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="Oyt-hp-bHh"/>
-                                    <constraint firstAttribute="trailing" secondItem="hUi-70-3oz" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="R2r-Ix-wZD"/>
-                                    <constraint firstAttribute="trailing" secondItem="2ki-jj-kyT" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Zfv-n9-xAo"/>
-                                    <constraint firstItem="2ki-jj-kyT" firstAttribute="leading" secondItem="tgr-mx-FIO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="a3g-k9-g7g"/>
+                                    <constraint firstAttribute="trailing" secondItem="hUi-70-3oz" secondAttribute="trailing" constant="40" type="user" id="R2r-Ix-wZD"/>
+                                    <constraint firstAttribute="trailing" secondItem="2ki-jj-kyT" secondAttribute="trailing" constant="40" type="user" id="Zfv-n9-xAo"/>
+                                    <constraint firstItem="2ki-jj-kyT" firstAttribute="leading" secondItem="tgr-mx-FIO" secondAttribute="leading" constant="40" type="user" id="a3g-k9-g7g"/>
                                     <constraint firstAttribute="bottom" secondItem="hUi-70-3oz" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="gM9-aE-Fpx"/>
-                                    <constraint firstItem="hUi-70-3oz" firstAttribute="leading" secondItem="tgr-mx-FIO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="px4-Bb-oaD"/>
+                                    <constraint firstItem="hUi-70-3oz" firstAttribute="leading" secondItem="tgr-mx-FIO" secondAttribute="leading" constant="40" type="user" id="px4-Bb-oaD"/>
                                 </constraints>
                             </view>
                         </subviews>

@@ -30,9 +30,9 @@ static WifiConnection *instance = nil;
 }
 
 - (BOOL)initWithNativeSocket:(CFSocketNativeHandle)socket
-                    withData:(int)data
+                    withData:(NSString *)data
 {
-    self.data = data;
+    self.connectionId = data;
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
     

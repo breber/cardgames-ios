@@ -8,6 +8,7 @@
 
 #import "Constants.h"
 #import "ConnectViewController.h"
+#import "Player.h"
 #import "Server.h"
 #import "WifiConnection.h"
 
@@ -18,12 +19,12 @@
 @property(nonatomic, strong) IBOutletCollection(UIView) NSArray *playerDevices;
 @property(nonatomic, strong) IBOutletCollection(UIActivityIndicatorView) NSArray *playerLoading;
 
-
 @property(nonatomic, strong) Server *server;
-@property(nonatomic, strong) NSMutableArray *connections;
+
+@property(nonatomic, strong) NSMutableArray *players;
 
 // Keeps track of active services or services about to be published
-@property(nonatomic, strong) NSMutableArray *services;
+//@property(nonatomic, strong) NSMutableArray *services;
 
 @end
 
@@ -42,7 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.services = [[NSMutableArray alloc] init];
+    self.players = [[NSMutableArray alloc] init];
     
     // IBOutletCollections apparently aren't sorted by default...
     self.playerNameLabels = [self sortByObjectTag:self.playerNameLabels];
@@ -75,9 +76,24 @@
 // Server has accepted a new connection and it needs to be processed
 - (void)handleNewConnection:(WifiConnection *)connection
 {
-    if ([connection isActive]) {
-        [self.services addObject:connection];
+    BOOL alreadyFound = NO;
+    for (Player *p in self.players) {
+        if ([connection.connectionId isEqualToString:[p.connection connectionId]]) {
+            WifiConnection *c = p.connection;
+            [c closeConnections];
+            p.connection = connection;
+            connection.delegate = self;
+            alreadyFound = YES;
+            break;
+        }
+    }
+    
+    if ([connection isActive] && !alreadyFound) {
+        Player *player = [[Player alloc] init];
+        player.connection = connection;
         connection.delegate = self;
+        
+        [self.players addObject:player];
     }
     
     [self updateUI];
@@ -87,42 +103,59 @@
 {
     // TODO: do something
     int i = 0;
-    for (WifiConnection *c in self.services) {
-        if ([c isActive]) {
+    for (Player *p in self.players) {
+        if ([p.connection isActive]) {
             [[self.playerDevices objectAtIndex:i] setBackgroundColor:[UIColor lightGrayColor]];
+            
+            UIActivityIndicatorView *activityIndicator = [self.playerLoading objectAtIndex:i];
+            UILabel *label = [self.playerNameLabels objectAtIndex:i];
+            label.text = p.name;
+            if (p.name) {
+                label.hidden = NO;
+                [activityIndicator stopAnimating];
+            } else {
+                label.hidden = NO;
+                [activityIndicator startAnimating];
+            }
+
             i++;
-        } else {
-            // TODO: this won't work - concurrent modification
-            [self.services removeObject:c];
         }
     }
     
     for (; i < 4; i++) {
         [[self.playerDevices objectAtIndex:i] setBackgroundColor:[UIColor darkGrayColor]];
+
+        UIActivityIndicatorView *activityIndicator = [self.playerLoading objectAtIndex:i];
+        [activityIndicator stopAnimating];
+        
+        UILabel *label = [self.playerNameLabels objectAtIndex:i];
+        label.text = nil;
+        label.hidden = YES;
     }
 }
 
 
 - (void)newDataArrived:(WifiConnection *)connection
               withData:(NSString *)data
-              withType:(int) type
+              withType:(int)type
 {
     NSData *d = [data dataUsingEncoding:NSUTF8StringEncoding];
-    int remotePort = connection.data;
+    NSString *connectionId = connection.connectionId;
+    NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
+    
     if (MSG_PLAYER_NAME == type) {
         int i = 0;
-        for (WifiConnection *c in self.services) {
-            if (c.data == remotePort) {
-                NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
-                UILabel *label = [self.playerNameLabels objectAtIndex:i];
-                [label setText:[jsonObject objectForKey:@"playername"]];
-                [label setHidden:NO];
+        for (Player *p in self.players) {
+            if ([connectionId isEqualToString:[p.connection connectionId]]) {
+                p.name = [jsonObject objectForKey:@"playername"];
                 break;
             }
             
             i++;
         }
     }
+    
+    [self updateUI];
 }
 
 - (void)outputStreamClosed:(WifiConnection *)connection
@@ -130,12 +163,12 @@
     if (DEBUG) {
         NSLog(@"%s", __PRETTY_FUNCTION__);
     }
-    int remotePort = connection.data;
+    NSString *connectionId = connection.connectionId;
 
-    for (int i = 0; i < self.services.count; i++) {
-        WifiConnection *obj = [self.services objectAtIndex:i];
-        if (obj.data == remotePort) {
-            [self.services removeObject:connection];
+    for (int i = 0; i < self.players.count; i++) {
+        Player *p = [self.players objectAtIndex:i];
+        if ([connectionId isEqualToString:[p.connection connectionId]]) {
+            [self.players removeObject:p];
             break;
         }
     }

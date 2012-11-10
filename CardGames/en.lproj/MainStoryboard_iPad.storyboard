@@ -259,8 +259,6 @@
                                     <constraint firstItem="wIj-cf-sVu" firstAttribute="top" secondItem="kQ9-al-vqS" secondAttribute="top" constant="20" symbolic="YES" type="default" id="7Zi-wg-E0N"/>
                                     <constraint firstItem="wIj-cf-sVu" firstAttribute="leading" secondItem="meY-ax-Iu7" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="8Aq-k2-gn1"/>
                                     <constraint firstAttribute="bottom" secondItem="meY-ax-Iu7" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="8ED-Qi-idQ"/>
-                                    <constraint firstItem="wIj-cf-sVu" firstAttribute="baseline" secondItem="meY-ax-Iu7" secondAttribute="baseline" type="default" id="ITR-0x-7AG"/>
-                                    <constraint firstItem="meY-ax-Iu7" firstAttribute="baseline" secondItem="guw-u4-RBU" secondAttribute="baseline" type="default" id="MDB-AM-NTW"/>
                                     <constraint firstItem="meY-ax-Iu7" firstAttribute="top" secondItem="kQ9-al-vqS" secondAttribute="top" constant="20" symbolic="YES" type="default" id="PPr-GU-rzK"/>
                                     <constraint firstItem="guw-u4-RBU" firstAttribute="top" secondItem="kQ9-al-vqS" secondAttribute="top" constant="20" symbolic="YES" type="default" id="RSf-Vu-vRO"/>
                                     <constraint firstAttribute="trailing" secondItem="1CJ-Hm-fmF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Zr1-L4-aiO"/>

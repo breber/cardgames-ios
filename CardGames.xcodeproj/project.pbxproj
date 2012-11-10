@@ -28,6 +28,7 @@
 		D1A7A53415FEC9A400754BD9 /* spadesuitimage.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A7A53015FEC9A400754BD9 /* spadesuitimage.png */; };
 		D1A7A53715FECD6F00754BD9 /* ChooseSuitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A7A53615FECD6F00754BD9 /* ChooseSuitViewController.m */; };
 		D1A7A53A15FED05C00754BD9 /* GameResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A7A53915FED05C00754BD9 /* GameResultViewController.m */; };
+		D1BC21F9164DC36D0067EFF8 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC21F8164DC36D0067EFF8 /* Player.m */; };
 		D1CAA23F15FD0D3300549EF7 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA23E15FD0D3300549EF7 /* PlayViewController.m */; };
 		D1CAA24215FD1F6D00549EF7 /* WifiConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D1CAA24115FD1F6D00549EF7 /* WifiConnection.m */; };
 		D1CAA35315FD265400549EF7 /* clubs_2.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA31D15FD265400549EF7 /* clubs_2.png */; };
@@ -133,6 +134,8 @@
 		D1A7A53615FECD6F00754BD9 /* ChooseSuitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSuitViewController.m; sourceTree = "<group>"; };
 		D1A7A53815FED05C00754BD9 /* GameResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameResultViewController.h; sourceTree = "<group>"; };
 		D1A7A53915FED05C00754BD9 /* GameResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameResultViewController.m; sourceTree = "<group>"; };
+		D1BC21F7164DC36D0067EFF8 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		D1BC21F8164DC36D0067EFF8 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		D1CAA23D15FD0D3300549EF7 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
 		D1CAA23E15FD0D3300549EF7 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		D1CAA24015FD1F6D00549EF7 /* WifiConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiConnection.h; sourceTree = "<group>"; };
@@ -421,6 +424,8 @@
 				D1CAA3D115FD32E000549EF7 /* Card.m */,
 				D1D2BA781603CDA0008EE137 /* PlayerController.h */,
 				D1D2BA791603CDA0008EE137 /* PlayerController.m */,
+				D1BC21F7164DC36D0067EFF8 /* Player.h */,
+				D1BC21F8164DC36D0067EFF8 /* Player.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -582,6 +587,7 @@
 				D1F488D0160CC06700CC1A07 /* RoundedTextView.m in Sources */,
 				D1F488D4160CC16600CC1A07 /* RoundedTableView.m in Sources */,
 				D129F74F164B51E9006FB0BD /* UIColor+CardGamesColor.m in Sources */,
+				D1BC21F9164DC36D0067EFF8 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

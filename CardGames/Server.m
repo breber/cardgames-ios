@@ -5,6 +5,7 @@
 //  Created by Brian Reber on 9/9/12.
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
+#import <CFNetwork/CFNetwork.h>
 #import <netinet/in.h>
 #import <sys/socket.h>
 #import <sys/types.h>
@@ -37,22 +38,34 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
     if (kCFSocketAcceptCallBack == type) {
         // for an AcceptCallBack, the data parameter is a pointer to a CFSocketNativeHandle
         CFSocketNativeHandle nativeSocketHandle = *(CFSocketNativeHandle *)data;
-        struct sockaddr_in peer;
+        struct sockaddr_storage peer;
         socklen_t peer_len = sizeof(peer);
 
         if (0 != getpeername(nativeSocketHandle, (struct sockaddr *)&peer, &peer_len)) {
             NSLog(@"Error getting peer name...");
         }
+        
 
+        int port = -1;
+        char ipstr[INET6_ADDRSTRLEN];
+        if (peer.ss_family == AF_INET) {
+            struct sockaddr_in *s = (struct sockaddr_in *)&peer;
+            port = ntohs(s->sin_port);
+            inet_ntop(AF_INET, &s->sin_addr, ipstr, sizeof ipstr);
+        } else { // AF_INET6
+            struct sockaddr_in6 *s = (struct sockaddr_in6 *)&peer;
+            port = ntohs(s->sin6_port);
+            inet_ntop(AF_INET6, &s->sin6_addr, ipstr, sizeof ipstr);
+        }
+        
         if (DEBUG) {
-            NSLog(@"%s - Peer's IP address is: %s\n", __PRETTY_FUNCTION__, inet_ntoa(peer.sin_addr));
-            NSLog(@"%s - Peer's port is: %d\n", __PRETTY_FUNCTION__, (int) ntohs(peer.sin_port));
+            NSLog(@"%s - Peer's IP address is: %s\n", __PRETTY_FUNCTION__, ipstr);
+            NSLog(@"%s - Peer's port is: %d\n", __PRETTY_FUNCTION__, port);
         }
         
         // TODO:
         WifiConnection* connection = [[WifiConnection alloc] init];
-        
-        if (![connection initWithNativeSocket:nativeSocketHandle withData:ntohs(peer.sin_port)]) {
+        if (![connection initWithNativeSocket:nativeSocketHandle withData:[NSString stringWithFormat:@"%s", ipstr]]) {
             NSLog(@"couldn't init");
         }
         
