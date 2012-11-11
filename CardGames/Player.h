@@ -12,5 +12,6 @@
 
 @property(nonatomic, strong) id connection;
 @property(nonatomic, strong) NSString *name;
+@property(nonatomic, strong) NSMutableArray *cards;
 
 @end
