@@ -31,7 +31,7 @@
 }
 
 -(Card*) getDiscardPileTop{
-    return [self.discardPile objectAtIndex:[self.discardPile count]-1];
+    return [self.discardPile lastObject];
 }
 
 -(void) dropPlayer: (NSString*)macAddress{
