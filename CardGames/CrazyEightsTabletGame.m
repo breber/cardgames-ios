@@ -7,39 +7,43 @@
 //
 
 #import "CrazyEightsTabletGame.h"
+#import "WifiConnection.h"
+
+@interface CrazyEightsTabletGame()
+
+@property(nonatomic, strong) NSMutableArray *discardPile;
+
+@end
 
 @implementation CrazyEightsTabletGame
 
--(void) addPlayer: (Player*)p {
+- (void)addPlayer:(Player *)p
+{
     [self.players addObject:p];
 }
 
--(int) getNumberOfPlayers{
-    return [self.players count];
+- (BOOL)isGameOver:(Player *)p
+{
+    return [p.cards count] == 0;
 }
 
--(BOOL) isGameOver: (Player*)p{
-    if([p.cards count] == 0){
-        return true;
-    }
-    return false;
-}
-
--(void) discard: (Player*)p : withCard: (Card*) c{
+- (void)discard:(Player *)p withCard:(Card *)c
+{
     [self.discardPile addObject:c];
     [p.cards removeObject:c];
 }
 
--(Card*) getDiscardPileTop{
+- (Card *)getDiscardPileTop
+{
     return [self.discardPile lastObject];
 }
 
--(void) dropPlayer: (NSString*)macAddress{
+- (void)dropPlayer:(NSString *)connectionId
+{
+    Player *p = nil;
     
-    Player* p = nil;
-    
-    for(Player* player in self.players){
-        if(player.connection == macAddress){
+    for (Player *player in self.players) {
+        if ([player.connection connectionId] == connectionId) {
             p = player;
             break;
         }
@@ -48,7 +52,7 @@
     
     //TODO add computer player when player is dropped
     
-    if(p != nil){
+    if (p) {
         [self.players removeObject:p];
     }
 }

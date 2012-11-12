@@ -113,6 +113,7 @@
 		D140E9BA16062AB200FDC2DA /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
 		D140E9BB16062AB200FDC2DA /* Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Server.m; sourceTree = "<group>"; };
 		D140E9BC16062AB200FDC2DA /* ServerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerDelegate.h; sourceTree = "<group>"; };
+		D17C3363165065C500B19F43 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D186639C15F109BE0098E8AD /* CardGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18663A015F109BE0098E8AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D18663A215F109BE0098E8AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,7 +128,6 @@
 		D18663B615F109BE0098E8AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		D18663B815F109BE0098E8AD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D18663B915F109BE0098E8AD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D1A7A52915FE96FD00754BD9 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = ../Constants.h; sourceTree = "<group>"; };
 		D1A7A52A15FEA4EF00754BD9 /* CrazyEightsRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrazyEightsRules.h; sourceTree = "<group>"; };
 		D1A7A52B15FEA4EF00754BD9 /* CrazyEightsRules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrazyEightsRules.m; sourceTree = "<group>"; };
 		D1A7A52D15FEC9A400754BD9 /* clubsuitimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clubsuitimage.png; path = CardGames/Resources/clubsuitimage.png; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 		D18663A615F109BE0098E8AD /* CardGames */ = {
 			isa = PBXGroup;
 			children = (
-				D1A7A52915FE96FD00754BD9 /* Constants.h */,
+				D17C3363165065C500B19F43 /* Constants.h */,
 				D1CAA3DF15FD61B200549EF7 /* Connection */,
 				D1CAA3E015FD61C600549EF7 /* Game */,
 				D1CAA3DE15FD619A00549EF7 /* UIComponents */,
