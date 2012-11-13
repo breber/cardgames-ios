@@ -100,6 +100,7 @@
 		D1DA26281604E4D100E32193 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DA26271604E4D100E32193 /* ConnectViewController.m */; };
 		D1F488D0160CC06700CC1A07 /* RoundedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F488CF160CC06700CC1A07 /* RoundedTextView.m */; };
 		D1F488D4160CC16600CC1A07 /* RoundedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F488D3160CC16600CC1A07 /* RoundedTableView.m */; };
+		E65B97C71652C609003C5559 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E65B97C61652C609003C5559 /* SettingsViewController.m */; };
 		E681BEF816505638004EE43C /* CrazyEightsTabletGame.m in Sources */ = {isa = PBXBuildFile; fileRef = E681BEF716505638004EE43C /* CrazyEightsTabletGame.m */; };
 /* End PBXBuildFile section */
 
@@ -225,6 +226,8 @@
 		D1F488CF160CC06700CC1A07 /* RoundedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedTextView.m; sourceTree = "<group>"; };
 		D1F488D2160CC16600CC1A07 /* RoundedTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedTableView.h; sourceTree = "<group>"; };
 		D1F488D3160CC16600CC1A07 /* RoundedTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedTableView.m; sourceTree = "<group>"; };
+		E65B97C51652C609003C5559 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		E65B97C61652C609003C5559 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		E681BEF616505638004EE43C /* CrazyEightsTabletGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrazyEightsTabletGame.h; sourceTree = "<group>"; };
 		E681BEF716505638004EE43C /* CrazyEightsTabletGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrazyEightsTabletGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -320,6 +323,8 @@
 				D18663B915F109BE0098E8AD /* ViewController.m */,
 				D1BC21FB164DD9210067EFF8 /* UIView+Custom.h */,
 				D1BC21FC164DD9210067EFF8 /* UIView+Custom.m */,
+				E65B97C51652C609003C5559 /* SettingsViewController.h */,
+				E65B97C61652C609003C5559 /* SettingsViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -612,6 +617,7 @@
 				D1BC2200164DDA230067EFF8 /* RoundedButton.m in Sources */,
 				D1BC2203164DDA610067EFF8 /* UIView+Custom.m in Sources */,
 				E681BEF816505638004EE43C /* CrazyEightsTabletGame.m in Sources */,
+				E65B97C71652C609003C5559 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
