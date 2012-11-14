@@ -28,4 +28,6 @@ static const int SUIT_SPADES = 3;
 static const int SUIT_JOKER = 4;
 static const int CARD_EIGHT = 7;
 
+static NSString *DEFAULT_NAME = @"Anonymous";
+
 #endif

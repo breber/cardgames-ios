@@ -61,7 +61,7 @@
     if ([[textField text] length]) {
         [self.playerController setName:[textField text]];
     } else {
-        [self.playerController setName:@"Anonymous"];
+        [self.playerController setName:DEFAULT_NAME];
     }
     
     [self.loadingPopupTitle setText:@"Waiting for game to begin..."];

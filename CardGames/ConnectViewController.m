@@ -18,13 +18,8 @@
 @property(nonatomic, strong) IBOutletCollection(UILabel) NSArray *playerNameLabels;
 @property(nonatomic, strong) IBOutletCollection(UIView) NSArray *playerDevices;
 @property(nonatomic, strong) IBOutletCollection(UIActivityIndicatorView) NSArray *playerLoading;
-
 @property(nonatomic, strong) Server *server;
-
 @property(nonatomic, strong) NSMutableArray *players;
-
-// Keeps track of active services or services about to be published
-//@property(nonatomic, strong) NSMutableArray *services;
 
 @end
 
