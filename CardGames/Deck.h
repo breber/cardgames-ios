@@ -14,5 +14,6 @@
 @property(nonatomic) NSArray *deck;
 
 - (NSArray*) createDeck;
+- (NSArray*)shuffleArray;
 
 @end

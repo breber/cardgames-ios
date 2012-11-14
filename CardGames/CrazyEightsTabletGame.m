@@ -33,6 +33,14 @@
     [p.cards removeObject:c];
 }
 
+- (void) setup{
+    
+    self.deck = [[Deck alloc] init];
+    [self.deck createDeck];
+    self.shuffledDeck = [self.deck shuffleArray];
+    
+}
+
 - (Card *)getDiscardPileTop
 {
     return [self.discardPile lastObject];
@@ -55,6 +63,7 @@
     if (p) {
         [self.players removeObject:p];
     }
+    
 }
 
 @end

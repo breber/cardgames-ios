@@ -8,10 +8,13 @@
 
 #import "Player.h"
 #import "Card.h"
+#import "Deck.h"
 
 @interface CrazyEightsTabletGame : NSObject
 
 @property(nonatomic, strong) NSMutableArray *players;
+@property(nonatomic, strong) Deck *deck;
+@property(nonatomic, strong) NSArray *shuffledDeck;
 
 - (void)addPlayer:(Player *)p;
 - (BOOL)isGameOver:(Player *)p;
