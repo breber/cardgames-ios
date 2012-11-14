@@ -12,7 +12,7 @@
 @implementation Deck
 
 - (NSArray*) createDeck{
-    NSArray *deck = [NSArray arrayWithObjects:
+    self.deck = [NSArray arrayWithObjects:
                      //CLUBS
                      [Card cardWithValues:ACE_VALUE withSuit:SUIT_CLUBS andId:0],
                      [Card cardWithValues:TWO_VALUE withSuit:SUIT_CLUBS andId:1],
@@ -79,8 +79,22 @@
                      
                      nil];
     
-    return deck;
+    return self.deck;
 }
 
+- (NSArray*)shuffleArray{
+    
+    NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:self.deck];
+    
+    NSUInteger count = [self.deck count];
+    for (NSUInteger i = 0; i < count; ++i) {
+        // Select a random element between i and end of array to swap with.
+        int nElements = count - i;
+        int n = (random() % nElements) + i;
+        [temp exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+    
+    return [NSArray arrayWithArray:temp];
+}
 
 @end

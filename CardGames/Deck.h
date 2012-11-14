@@ -11,6 +11,8 @@
 
 @interface Deck : NSObject
 
+@property(nonatomic) NSArray *deck;
+
 - (NSArray*) createDeck;
 
 @end
