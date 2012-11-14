@@ -163,34 +163,14 @@
                                     <segue destination="eid-qb-TmD" kind="push" id="UNm-3v-jgH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrv-gf-lvr">
-                                <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="0ZR-1f-NYj"/>
-                                    <constraint firstAttribute="height" constant="21" id="XZC-5R-QU5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Settings">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Pys-28-ib1" kind="push" id="Fgs-sK-iOf"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GGa-jm-9uq" firstAttribute="top" secondItem="Igo-3Z-D1T" secondAttribute="top" constant="190" id="1SY-RL-IPM"/>
                             <constraint firstItem="8RQ-lz-dno" firstAttribute="top" secondItem="GGa-jm-9uq" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1ce-q8-GVZ"/>
                             <constraint firstAttribute="trailing" secondItem="GGa-jm-9uq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="2Gb-Wm-rYJ"/>
-                            <constraint firstItem="xrv-gf-lvr" firstAttribute="top" secondItem="Igo-3Z-D1T" secondAttribute="top" constant="8" id="5rx-fl-YNd"/>
                             <constraint firstItem="NGj-96-3to" firstAttribute="leading" secondItem="Igo-3Z-D1T" secondAttribute="leading" type="user" id="BY6-hD-kLR"/>
                             <constraint firstItem="GGa-jm-9uq" firstAttribute="leading" secondItem="Igo-3Z-D1T" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="CbI-EU-uId"/>
-                            <constraint firstItem="xrv-gf-lvr" firstAttribute="leading" secondItem="Igo-3Z-D1T" secondAttribute="leading" constant="7" id="DUh-Ca-Vv3"/>
                             <constraint firstItem="2cU-hb-mOp" firstAttribute="top" secondItem="8RQ-lz-dno" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Dnn-tX-0cb"/>
                             <constraint firstItem="GGa-jm-9uq" firstAttribute="centerX" secondItem="8RQ-lz-dno" secondAttribute="centerX" type="default" id="ZRs-9l-VUC"/>
                             <constraint firstItem="7aV-t7-4U7" firstAttribute="top" secondItem="2cU-hb-mOp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ZTD-J4-zRN"/>
@@ -204,7 +184,13 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Card Games" id="m2E-ir-wtd"/>
+                    <navigationItem key="navigationItem" title="Card Games" id="m2E-ir-wtd">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="49d-p3-x8w">
+                            <connections>
+                                <segue destination="Pys-28-ib1" kind="push" id="njS-42-g5k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqd-za-M8n" sceneMemberID="firstResponder"/>
@@ -377,11 +363,7 @@
                         <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sZf-dd-0PR">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="706" id="TVb-Rx-JeK"/>
-                                </constraints>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sZf-dd-0PR"/>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7d-Ll-TfO" userLabel="Connecting View">
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67k-MN-lbD" userLabel="ConnectingDeviceInner">
@@ -570,12 +552,13 @@
                             <constraint firstItem="fab-vT-lgK" firstAttribute="leading" secondItem="H7d-Ll-TfO" secondAttribute="leading" type="default" id="Vfv-Zd-ZLn"/>
                             <constraint firstItem="jE4-lV-BQ2" firstAttribute="leading" secondItem="H7d-Ll-TfO" secondAttribute="trailing" constant="20" type="user" id="Wzo-3N-Gja"/>
                             <constraint firstItem="H7d-Ll-TfO" firstAttribute="bottom" secondItem="kto-V7-cm0" secondAttribute="bottom" type="default" id="YiH-fP-AUX"/>
+                            <constraint firstItem="jE4-lV-BQ2" firstAttribute="centerY" secondItem="HaP-vU-e1b" secondAttribute="centerY" type="default" id="bZe-RC-igs"/>
                             <constraint firstAttribute="bottom" secondItem="OOP-kJ-kER" secondAttribute="bottom" constant="474" id="e35-ve-e8q"/>
                             <constraint firstItem="kto-V7-cm0" firstAttribute="height" secondItem="jE4-lV-BQ2" secondAttribute="height" type="user" id="fW3-vQ-rYB"/>
                             <constraint firstItem="fab-vT-lgK" firstAttribute="trailing" secondItem="H7d-Ll-TfO" secondAttribute="trailing" type="default" id="gsA-5c-NGP"/>
                             <constraint firstItem="H7d-Ll-TfO" firstAttribute="leading" secondItem="kto-V7-cm0" secondAttribute="trailing" constant="20" type="user" id="gvi-Ie-fEw"/>
                             <constraint firstItem="H7d-Ll-TfO" firstAttribute="top" secondItem="kto-V7-cm0" secondAttribute="top" type="default" id="hXd-SG-YMW"/>
-                            <constraint firstItem="sZf-dd-0PR" firstAttribute="centerY" secondItem="HaP-vU-e1b" secondAttribute="centerY" type="default" id="lyC-cx-6q8"/>
+                            <constraint firstItem="sZf-dd-0PR" firstAttribute="top" secondItem="HaP-vU-e1b" secondAttribute="top" type="default" id="nFA-IV-Jgt"/>
                             <constraint firstItem="kto-V7-cm0" firstAttribute="top" secondItem="HaP-vU-e1b" secondAttribute="top" constant="249" id="nfc-CB-u5V"/>
                             <constraint firstItem="OOP-kJ-kER" firstAttribute="leading" secondItem="HaP-vU-e1b" secondAttribute="leading" constant="356" id="pcm-Gw-CTk"/>
                             <constraint firstItem="H7d-Ll-TfO" firstAttribute="trailing" secondItem="OOP-kJ-kER" secondAttribute="trailing" type="default" id="pkA-ot-j4l"/>
