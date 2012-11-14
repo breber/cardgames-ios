@@ -20,6 +20,16 @@
     return c;
 }
 
++ (Card *)cardWithValues:(int) value withSuit:(int) suit andId:(int) cardId
+{
+    Card *c = [[Card alloc] init];
+    c.value = value;
+    c.suit = suit;
+    c.cardId = cardId;
+    
+    return c;
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"Card: id=%d, suit=%d, value=%d", self.cardId, self.suit, self.value];

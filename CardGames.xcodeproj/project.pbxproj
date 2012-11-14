@@ -101,6 +101,7 @@
 		D1F488D4160CC16600CC1A07 /* RoundedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F488D3160CC16600CC1A07 /* RoundedTableView.m */; };
 		E65B97C71652C609003C5559 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E65B97C61652C609003C5559 /* SettingsViewController.m */; };
 		E681BEF816505638004EE43C /* CrazyEightsTabletGame.m in Sources */ = {isa = PBXBuildFile; fileRef = E681BEF716505638004EE43C /* CrazyEightsTabletGame.m */; };
+		E6923E3D1653E55200D9CBC4 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = E6923E3C1653E55200D9CBC4 /* Deck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -227,6 +228,8 @@
 		E65B97C61652C609003C5559 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		E681BEF616505638004EE43C /* CrazyEightsTabletGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrazyEightsTabletGame.h; sourceTree = "<group>"; };
 		E681BEF716505638004EE43C /* CrazyEightsTabletGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrazyEightsTabletGame.m; sourceTree = "<group>"; };
+		E6923E3B1653E55200D9CBC4 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		E6923E3C1653E55200D9CBC4 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,6 +447,8 @@
 				D1D2BA791603CDA0008EE137 /* PlayerController.m */,
 				D1BC21F7164DC36D0067EFF8 /* Player.h */,
 				D1BC21F8164DC36D0067EFF8 /* Player.m */,
+				E6923E3B1653E55200D9CBC4 /* Deck.h */,
+				E6923E3C1653E55200D9CBC4 /* Deck.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -612,6 +617,7 @@
 				D1BC2203164DDA610067EFF8 /* UIView+Custom.m in Sources */,
 				E681BEF816505638004EE43C /* CrazyEightsTabletGame.m in Sources */,
 				E65B97C71652C609003C5559 /* SettingsViewController.m in Sources */,
+				E6923E3D1653E55200D9CBC4 /* Deck.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
