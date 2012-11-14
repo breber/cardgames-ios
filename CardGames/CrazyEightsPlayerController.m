@@ -100,7 +100,7 @@
             Card *c = [self.hand objectAtIndex:selected];
             
             if ([CrazyEightsRules canPlay:c withDiscard:self.discardCard]) {
-                if (c.value == CARD_EIGHT) {
+                if (c.value == EIGHT_VALUE) {
                     [self.delegate showNewScreen:@"choosesuit"];
                 } else {
                     // Send the card

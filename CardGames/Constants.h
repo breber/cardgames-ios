@@ -26,7 +26,6 @@ static const int SUIT_DIAMONDS = 1;
 static const int SUIT_HEARTS = 2;
 static const int SUIT_SPADES = 3;
 static const int SUIT_JOKER = 4;
-static const int CARD_EIGHT = 7;
 
 static const int ACE_VALUE = 0;
 static const int TWO_VALUE = 1;

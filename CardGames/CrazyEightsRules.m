@@ -18,11 +18,11 @@
         return NO;
     }
     
-    if (card.suit == SUIT_JOKER || card.value == CARD_EIGHT) {
+    if (card.suit == SUIT_JOKER || card.value == EIGHT_VALUE) {
         return YES;
     }
     
-    if (discard.value == CARD_EIGHT && discard.suit == card.suit) {
+    if (discard.value == EIGHT_VALUE && discard.suit == card.suit) {
         return YES;
     }
     
