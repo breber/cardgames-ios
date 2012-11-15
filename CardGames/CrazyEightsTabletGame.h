@@ -15,11 +15,14 @@
 @property(nonatomic, strong) NSMutableArray *players;
 @property(nonatomic, strong) Deck *deck;
 @property(nonatomic, strong) NSArray *shuffledDeck;
+@property(nonatomic, strong) NSEnumerator *e;
 
 - (void)addPlayer:(Player *)p;
 - (BOOL)isGameOver:(Player *)p;
 - (void)discard:(Player *)p withCard:(Card *)c;
 - (Card *)getDiscardPileTop;
 - (void)dropPlayer:(NSString *)connectionId;
+- (void) dealCards:(NSArray *) deck;
+- (void) setup;
 
 @end

@@ -43,6 +43,8 @@ static const int KING_VALUE = 12;
 static const int BLACK_JOKER_VALUE = 0;
 static const int RED_JOKER_VALUE = 1;
 
+static const int NUMBER_OF_CARDS_PER_HAND = 5;
+
 
 static NSString *DEFAULT_NAME = @"Anonymous";
 

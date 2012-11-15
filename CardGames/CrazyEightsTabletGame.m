@@ -8,6 +8,7 @@
 
 #import "CrazyEightsTabletGame.h"
 #import "WifiConnection.h"
+#import "Constants.h"
 
 @interface CrazyEightsTabletGame()
 
@@ -38,6 +39,39 @@
     self.deck = [[Deck alloc] init];
     [self.deck createDeck];
     self.shuffledDeck = [self.deck shuffleArray];
+    
+    [self dealCards: self.shuffledDeck];
+    
+}
+
+- (void) dealCards:(NSArray *) deck{
+    
+    self.e = [deck objectEnumerator];
+    
+    /*
+    // Deal the given number of cards to each player
+    for (int i = 0; i < NUMBER_OF_CARDS_PER_HAND; i++) {
+        for (Player p : players) {
+            // give them a card
+            p.addCard(iter.next());
+            
+            if (Util.isDebugBuild()) {
+                Log.d(TAG, "p.addCard: player[" + p.getId() + "] has " + p.getNumCards() + " cards");
+            }
+            
+            //remove the last card returned by iter.next()
+            iter.remove();
+        }
+    }
+     */
+
+    int i;
+    for(i = 0; i < NUMBER_OF_CARDS_PER_HAND; i++){
+        for (Player *p in self.players){
+            [p.cards addObject:[self.e nextObject]];
+        }
+    }
+    
     
 }
 
