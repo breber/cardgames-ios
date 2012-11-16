@@ -39,8 +39,8 @@ static CrazyEightsTabletGame *instance = nil;
     return [p.cards count] == 0;
 }
 
-- (void) setup{
-    
+- (void)setup
+{
     self.players = [[NSMutableArray alloc]init];
     self.deck = [[Deck alloc] init];
     [self.deck createDeck];
@@ -48,26 +48,25 @@ static CrazyEightsTabletGame *instance = nil;
     
     [self dealCards: self.shuffledDeck];
     self.e = [self.shuffledDeck objectEnumerator];
-    
 }
 
-- (void) dealCards{
-
-    int i;
-    for(i = 0; i < NUMBER_OF_CARDS_PER_HAND; i++){
-        for (Player *p in self.players){
+- (void)dealCards
+{
+    for (int i = 0; i < NUMBER_OF_CARDS_PER_HAND; i++) {
+        for (Player *p in self.players) {
             [p.cards addObject:[self getNextCard]];
         }
     }
-    
 }
 
-- (void) addCard:(Card*) card toDiscardPileFromPlayer:(Player*) player{
+- (void)addCard:(Card *)card toDiscardPileFromPlayer:(Player *)player
+{
     [self.discardPile addObject: card];
     [player.cards removeObject: card];
 }
 
-- (void) addCardsFromDiscardPileToShuffledDeck{
+- (void)addCardsFromDiscardPileToShuffledDeck
+{
     Card *c = [self getDiscardPileTop];
     [self.discardPile removeObject:c];
     [self.shuffledDeck addObjectsFromArray:self.discardPile];
@@ -76,7 +75,8 @@ static CrazyEightsTabletGame *instance = nil;
     [Deck shuffleArray:self.discardPile];
 }
 
-- (Card*) getNextCard{
+- (Card *)getNextCard
+{
     Card *c = [self.e nextObject];
     [self.shuffledDeck removeObject:c];
     return c;
@@ -104,7 +104,6 @@ static CrazyEightsTabletGame *instance = nil;
     if (p) {
         [self.players removeObject:p];
     }
-    
 }
 
 @end
