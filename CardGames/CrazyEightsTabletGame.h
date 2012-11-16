@@ -21,12 +21,12 @@
 
 - (void)addPlayer:(Player *)p;
 - (BOOL)isGameOver:(Player *)p;
-- (void)discard:(Player *)p withCard:(Card *)c;
 - (Card *)getDiscardPileTop;
 - (void)dropPlayer:(NSString *)connectionId;
 - (void) dealCards:(NSArray *) deck;
 - (void) setup;
 - (Card*) getNextCard;
 - (void) addCard:(Card*) card toDiscardPileFromPlayer:(Player*) player;
+- (void) addCardsFromDiscardPileToShuffledDeck;
 
 @end

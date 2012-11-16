@@ -39,12 +39,6 @@ static CrazyEightsTabletGame *instance = nil;
     return [p.cards count] == 0;
 }
 
-- (void)discard:(Player *)p withCard:(Card *)c
-{
-    [self.discardPile addObject:c];
-    [p.cards removeObject:c];
-}
-
 - (void) setup{
     
     self.players = [[NSMutableArray alloc]init];
