@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface PlayerConnectViewController : ViewController <UITableViewDataSource, UITableViewDelegate, NSNetServiceBrowserDelegate, NSNetServiceDelegate>
+@interface PlayerConnectViewController : ViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property(nonatomic, weak) IBOutlet UITableView *servers;
 

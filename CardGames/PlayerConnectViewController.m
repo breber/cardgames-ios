@@ -9,7 +9,7 @@
 #import "PlayerConnectViewController.h"
 #import "WifiConnection.h"
 
-@interface PlayerConnectViewController ()
+@interface PlayerConnectViewController() <NSNetServiceBrowserDelegate, NSNetServiceDelegate>
 
 @property(nonatomic, strong) NSNetServiceBrowser *serviceBrowser;
 @property(nonatomic, strong) NSMutableArray *services;
@@ -18,6 +18,8 @@
 @end
 
 @implementation PlayerConnectViewController
+
+#pragma mark - UIViewController
 
 - (void)viewDidLoad
 {
@@ -30,6 +32,8 @@
     [self.serviceBrowser setDelegate:self];
     [self.serviceBrowser searchForServicesOfType:@"_cardgames._tcp." inDomain:@""];
 }
+
+#pragma mark - NSNetServiceBrowserDelegate
 
 - (void)netServiceBrowserWillSearch:(NSNetServiceBrowser *)browser
 {
@@ -75,18 +79,7 @@
     }
 }
 
-// Error handling code
-- (void)handleError:(NSNumber *)error
-{
-    NSLog(@"An error occurred. Error code = %d", [error intValue]);
-    // Handle error here
-}
-
-// UI update code
-- (void)updateUI
-{
-    [self.servers reloadData];
-}
+#pragma mark - NSNetServiceDelegate
 
 - (void)netServiceDidResolveAddress:(NSNetService *)netService
 {
@@ -106,12 +99,16 @@
     NSLog(@"didNotResolve");
 }
 
+#pragma mark - UITableViewDelegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSNetService * selected = [self.services objectAtIndex:indexPath.row];
     [selected setDelegate:self];
     [selected resolveWithTimeout:5.0];
 }
+
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
@@ -131,6 +128,21 @@
     
     [[cell textLabel] setText:[c name]];
     return cell;
+}
+
+#pragma mark - PlayerConnectViewController private
+
+// Error handling code
+- (void)handleError:(NSNumber *)error
+{
+    NSLog(@"An error occurred. Error code = %d", [error intValue]);
+    // Handle error here
+}
+
+// UI update code
+- (void)updateUI
+{
+    [self.servers reloadData];
 }
 
 @end

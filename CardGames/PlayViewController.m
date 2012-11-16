@@ -29,6 +29,8 @@
 
 @implementation PlayViewController
 
+#pragma mark - UIViewController
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -47,6 +49,14 @@
     // Add the game specific buttons
     [self.playerController addButtons:self.buttonLayout];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    [self.playerController handleSegue:segue sender:sender];
+}
+
+#pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -70,11 +80,7 @@
     [self.loadingPopup setHidden:NO];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue
-                 sender:(id)sender
-{
-    [self.playerController handleSegue:segue sender:sender];
-}
+#pragma mark - PlayerControllerDelegate
 
 - (void)gameRequestingName
 {
@@ -147,6 +153,8 @@
     
     return -1;
 }
+
+#pragma mark - PlayViewController private
 
 - (void)cardSelected:(UIButton *)sender
 {

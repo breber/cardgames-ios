@@ -6,13 +6,14 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
+#import "ConnectionDelegate.h"
 #import "Constants.h"
 #import "ConnectViewController.h"
 #import "Player.h"
 #import "Server.h"
 #import "WifiConnection.h"
 
-@interface ConnectViewController()
+@interface ConnectViewController() <ServerDelegate, ConnectionDelegate>
 
 @property(nonatomic, weak) IBOutlet UIButton *startButton;
 @property(nonatomic, strong) IBOutletCollection(UILabel) NSArray *playerNameLabels;
@@ -34,6 +35,8 @@
                NSOrderedSame);
     }];
 }
+
+#pragma mark - UIViewController
 
 - (void)viewDidLoad
 {
@@ -60,6 +63,8 @@
     [super viewDidUnload];
     [self.server stop];
 }
+
+#pragma mark - ServerDelegate
 
 // Server has been terminated because of an error
 - (void)serverFailed:(Server *)server
@@ -99,6 +104,8 @@
     [self updateUI];
 }
 
+#pragma mark - ConnectViewController private
+
 - (void)updateUI
 {
     // TODO: do something
@@ -134,6 +141,7 @@
     }
 }
 
+#pragma mark - ConnectionDelegate
 
 - (void)newDataArrived:(WifiConnection *)connection
               withData:(NSString *)data
