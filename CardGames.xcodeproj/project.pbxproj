@@ -105,6 +105,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		597A3A2516568AD000A42CD5 /* CrazyEightsGameController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrazyEightsGameController.h; sourceTree = "<group>"; };
+		597A3A2616568AD000A42CD5 /* CrazyEightsGameController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrazyEightsGameController.m; sourceTree = "<group>"; };
+		597A3A2816568AE200A42CD5 /* GameController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		597A3A2916568AE200A42CD5 /* GameController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
 		D11F4971160CB97B00F46EE4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "CardGames/Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		D129F74D164B51E9006FB0BD /* UIColor+CardGamesColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CardGamesColor.h"; sourceTree = "<group>"; };
 		D129F74E164B51E9006FB0BD /* UIColor+CardGamesColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CardGamesColor.m"; sourceTree = "<group>"; };
@@ -449,6 +453,8 @@
 				D1BC21F8164DC36D0067EFF8 /* Player.m */,
 				E6923E3B1653E55200D9CBC4 /* Deck.h */,
 				E6923E3C1653E55200D9CBC4 /* Deck.m */,
+				597A3A2816568AE200A42CD5 /* GameController.h */,
+				597A3A2916568AE200A42CD5 /* GameController.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -463,6 +469,8 @@
 				D1A7A52B15FEA4EF00754BD9 /* CrazyEightsRules.m */,
 				E681BEF616505638004EE43C /* CrazyEightsTabletGame.h */,
 				E681BEF716505638004EE43C /* CrazyEightsTabletGame.m */,
+				597A3A2516568AD000A42CD5 /* CrazyEightsGameController.h */,
+				597A3A2616568AD000A42CD5 /* CrazyEightsGameController.m */,
 			);
 			name = CrazyEights;
 			sourceTree = "<group>";
