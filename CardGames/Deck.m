@@ -11,7 +11,8 @@
 
 @implementation Deck
 
-- (NSArray*) createDeck{
+- (NSArray *)createDeck
+{
     self.deck = [NSArray arrayWithObjects:
                      //CLUBS
                      [Card cardWithValues:ACE_VALUE withSuit:SUIT_CLUBS andId:0],
@@ -82,8 +83,8 @@
     return self.deck;
 }
 
-- (NSArray*)shuffleArray{
-    
+- (NSArray *)shuffleArray
+{    
     NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:self.deck];
     
     NSUInteger count = [self.deck count];

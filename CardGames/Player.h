@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "WifiConnection.h"
 
 @interface Player : NSObject
 
-@property(nonatomic, strong) id connection;
+@property(nonatomic, strong) WifiConnection *connection;
 @property(nonatomic, strong) NSString *name;
 @property(nonatomic, strong) NSMutableArray *cards;
 

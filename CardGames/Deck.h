@@ -6,14 +6,13 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "Card.h"
 
 @interface Deck : NSObject
 
-@property(nonatomic) NSArray *deck;
+@property(nonatomic, strong) NSArray *deck;
 
-- (NSArray*) createDeck;
-- (NSArray*)shuffleArray;
+- (NSArray *)createDeck;
+- (NSArray *)shuffleArray;
 
 @end

@@ -64,7 +64,7 @@
     [self.delegate playerTurnDidChange:self.isTurn];
 }
 
-#pragma mark - ConnectionListener
+#pragma mark - ConnectionDelegate
 
 - (void)outputStreamOpened:(WifiConnection *)connection
 {
