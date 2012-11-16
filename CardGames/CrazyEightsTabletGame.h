@@ -27,5 +27,6 @@
 - (void) dealCards:(NSArray *) deck;
 - (void) setup;
 - (Card*) getNextCard;
+- (void) addCard:(Card*) card toDiscardPileFromPlayer:(Player*) player;
 
 @end

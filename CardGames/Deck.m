@@ -11,9 +11,9 @@
 
 @implementation Deck
 
-- (NSArray *)createDeck
+- (NSMutableArray *)createDeck
 {
-    self.deck = [NSArray arrayWithObjects:
+    self.deck = [NSMutableArray arrayWithObjects:
                      //CLUBS
                      [Card cardWithValues:ACE_VALUE withSuit:SUIT_CLUBS andId:0],
                      [Card cardWithValues:TWO_VALUE withSuit:SUIT_CLUBS andId:1],
@@ -83,11 +83,11 @@
     return self.deck;
 }
 
-- (NSMutableArray *)shuffleArray
++ (NSMutableArray *)shuffleArray: (NSMutableArray*) array
 {    
-    NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:self.deck];
+    NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:array];
     
-    NSUInteger count = [self.deck count];
+    NSUInteger count = [array count];
     for (NSUInteger i = 0; i < count; ++i) {
         // Select a random element between i and end of array to swap with.
         int nElements = count - i;

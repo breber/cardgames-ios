@@ -10,9 +10,9 @@
 
 @interface Deck : NSObject
 
-@property(nonatomic, strong) NSArray *deck;
+@property(nonatomic, strong) NSMutableArray *deck;
 
-- (NSArray *)createDeck;
-- (NSMutableArray *)shuffleArray;
+- (NSMutableArray *)createDeck;
++ (NSMutableArray *)shuffleArray: (NSMutableArray*) array;
 
 @end
