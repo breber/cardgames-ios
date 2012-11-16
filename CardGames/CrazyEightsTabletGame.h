@@ -17,6 +17,8 @@
 @property(nonatomic, strong) NSArray *shuffledDeck;
 @property(nonatomic, strong) NSEnumerator *e;
 
++ (CrazyEightsTabletGame *)sharedInstance;
+
 - (void)addPlayer:(Player *)p;
 - (BOOL)isGameOver:(Player *)p;
 - (void)discard:(Player *)p withCard:(Card *)c;

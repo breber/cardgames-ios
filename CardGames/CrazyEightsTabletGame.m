@@ -18,6 +18,17 @@
 
 @implementation CrazyEightsTabletGame
 
+static CrazyEightsTabletGame *instance = nil;
+
++ (CrazyEightsTabletGame *)sharedInstance
+{
+    if (instance == nil) {
+        instance = [[CrazyEightsTabletGame alloc] init];
+    }
+    
+    return instance;
+}
+
 - (void)addPlayer:(Player *)p
 {
     [self.players addObject:p];
