@@ -7,9 +7,9 @@
 //
 
 #import "Server.h"
-#import "ConnectionListener.h"
+#import "ConnectionDelegate.h"
 #import "ViewController.h"
 
-@interface ConnectViewController : ViewController <ServerDelegate, ConnectionListener>
+@interface ConnectViewController : ViewController <ServerDelegate, ConnectionDelegate>
 
 @end

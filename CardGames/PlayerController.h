@@ -7,7 +7,6 @@
 //
 
 #import "Card.h"
-#import "ConnectionListener.h"
 #import "WifiConnection.h"
 
 @protocol PlayerControllerDelegate <NSObject>

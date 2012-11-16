@@ -9,14 +9,15 @@
 #import "PlayerController.h"
 #import "Constants.h"
 #import "Card.h"
+#import "ConnectionDelegate.h"
 
-@interface PlayerController() <ConnectionListener>
+@interface PlayerController() <ConnectionDelegate>
 
 @end
 
 @implementation PlayerController
 
-- (id) init
+- (id)init
 {
     self = [super init];
     
@@ -35,11 +36,35 @@
     return YES;
 }
 
+- (void)setName:(NSString *)name
+{
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: name, @"playername", nil];
+    [self.connection writeDictionary:dict withType:MSG_PLAYER_NAME];
+}
+
+- (void)handleIsTurn:(NSDictionary *)data
+{
+    // Nothing needed in this class
+}
+
+- (void)handleSegue:(UIStoryboardSegue *)segue
+             sender:(id)sender
+{
+    // Nothing needed in this class
+}
+
+- (void)addButtons:(UIView *)wrapper
+{
+    // Nothing needed in this class
+}
+
 - (void)setIsTurn:(BOOL)isTurn
 {
     _isTurn = isTurn;
     [self.delegate playerTurnDidChange:self.isTurn];
 }
+
+#pragma mark - ConnectionListener
 
 - (void)outputStreamOpened:(WifiConnection *)connection
 {
@@ -53,12 +78,6 @@
     [self.hand removeAllObjects];
     
     [self.delegate gameDidEnd];
-}
-
-- (void)setName:(NSString *)name
-{
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: name, @"playername", nil];
-    [self.connection writeDictionary:dict withType:MSG_PLAYER_NAME];
 }
 
 - (void)newDataArrived:(WifiConnection *)connection
@@ -114,22 +133,6 @@
     } else if (type == MSG_UNPAUSE) {
         [self.delegate gameDidResume];
     }
-}
-
-- (void)handleIsTurn:(NSDictionary *)data
-{
-    // Nothing needed in this class
-}
-
-- (void)handleSegue:(UIStoryboardSegue *)segue
-             sender:(id)sender
-{
-    // Nothing needed in this class
-}
-
-- (void)addButtons:(UIView *)wrapper
-{
-    // Nothing needed in this class
 }
 
 @end

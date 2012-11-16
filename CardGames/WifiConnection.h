@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
-#import "ConnectionListener.h"
+#import "ConnectionDelegate.h"
 
 @interface WifiConnection : NSObject <NSStreamDelegate>
 
 @property (nonatomic, strong) NSString *connectionId;
-@property (nonatomic, weak) id <ConnectionListener> delegate;
+@property (nonatomic, weak) id <ConnectionDelegate> delegate;
 
 + (id)sharedInstance;
 

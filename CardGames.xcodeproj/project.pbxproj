@@ -149,7 +149,7 @@
 		D1CAA23E15FD0D3300549EF7 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		D1CAA24015FD1F6D00549EF7 /* WifiConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiConnection.h; sourceTree = "<group>"; };
 		D1CAA24115FD1F6D00549EF7 /* WifiConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiConnection.m; sourceTree = "<group>"; };
-		D1CAA24315FD21BF00549EF7 /* ConnectionListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectionListener.h; sourceTree = "<group>"; };
+		D1CAA24315FD21BF00549EF7 /* ConnectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectionDelegate.h; sourceTree = "<group>"; };
 		D1CAA31D15FD265400549EF7 /* clubs_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clubs_2.png; path = CardGames/Resources/Cards/clubs_2.png; sourceTree = "<group>"; };
 		D1CAA31E15FD265400549EF7 /* clubs_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clubs_3.png; path = CardGames/Resources/Cards/clubs_3.png; sourceTree = "<group>"; };
 		D1CAA31F15FD265400549EF7 /* clubs_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clubs_4.png; path = CardGames/Resources/Cards/clubs_4.png; sourceTree = "<group>"; };
@@ -427,7 +427,7 @@
 		D1CAA3DF15FD61B200549EF7 /* Connection */ = {
 			isa = PBXGroup;
 			children = (
-				D1CAA24315FD21BF00549EF7 /* ConnectionListener.h */,
+				D1CAA24315FD21BF00549EF7 /* ConnectionDelegate.h */,
 				D140E9BA16062AB200FDC2DA /* Server.h */,
 				D140E9BB16062AB200FDC2DA /* Server.m */,
 				D140E9BC16062AB200FDC2DA /* ServerDelegate.h */,

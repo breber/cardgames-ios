@@ -1,5 +1,5 @@
 //
-//  ConnectionListener.h
+//  ConnectionDelegate.h
 //  CardGames
 //
 //  Created by Brian Reber on 9/9/12.
@@ -9,7 +9,7 @@
 // Forward declare WifiConnection
 @class WifiConnection;
 
-@protocol ConnectionListener <NSObject>
+@protocol ConnectionDelegate <NSObject>
 
 @optional
 - (void)outputStreamOpened:(WifiConnection *)connection;
