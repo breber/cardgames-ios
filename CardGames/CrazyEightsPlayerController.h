@@ -9,7 +9,7 @@
 #import "ChooseSuitViewController.h"
 #import "PlayerController.h"
 
-@interface CrazyEightsPlayerController : PlayerController <ChooseSuit>
+@interface CrazyEightsPlayerController : PlayerController <ChooseSuitDelegate>
 
 - (void)drawButtonPressed;
 - (void)playButtonPressed;

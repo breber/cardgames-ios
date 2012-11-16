@@ -9,7 +9,7 @@
 #import "WifiConnection.h"
 #import <CFNetwork/CFSocketStream.h>
 
-@interface WifiConnection()
+@interface WifiConnection() <NSStreamDelegate>
 
 @property (nonatomic, strong) NSInputStream *inputStream;
 @property (nonatomic, strong) NSOutputStream *outputStream;
@@ -118,6 +118,8 @@ static WifiConnection *instance = nil;
     return [self.outputStream write:[dataToWrite bytes]
                           maxLength:[dataToWrite length]] == [dataToWrite length];
 }
+
+#pragma mark - NSStreamDelegate
 
 - (void)stream:(NSStream *)aStream
    handleEvent:(NSStreamEvent)eventCode

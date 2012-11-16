@@ -8,7 +8,7 @@
 
 #import "ServerDelegate.h"
 
-@interface Server : NSObject <NSNetServiceDelegate>
+@interface Server : NSObject
 
 // Delegate receives various notifications about the state of our server
 @property(nonatomic, weak) id<ServerDelegate> delegate;

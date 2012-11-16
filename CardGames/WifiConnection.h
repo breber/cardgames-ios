@@ -8,7 +8,7 @@
 
 #import "ConnectionDelegate.h"
 
-@interface WifiConnection : NSObject <NSStreamDelegate>
+@interface WifiConnection : NSObject
 
 @property (nonatomic, strong) NSString *connectionId;
 @property (nonatomic, weak) id <ConnectionDelegate> delegate;

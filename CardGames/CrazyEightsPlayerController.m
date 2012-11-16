@@ -20,6 +20,8 @@
 
 @implementation CrazyEightsPlayerController
 
+#pragma mark - PlayerController
+
 - (void)setIsTurn:(BOOL)isTurn
 {
     [super setIsTurn:isTurn];
@@ -83,6 +85,8 @@
     [self.buttonView addSubview:playButton];
 }
 
+#pragma mark - CrazyEightsPlayerController private
+
 - (void)drawButtonPressed
 {
     if (self.isTurn) {
@@ -117,6 +121,8 @@
         }
     }
 }
+
+#pragma mark - ChooseSuitDelegate
 
 - (void)handleChooseSuit:(int)suit
 {

@@ -15,15 +15,13 @@
 #import "WifiConnection.h"
 
 // Declare some private properties and methods
-@interface Server ()
+@interface Server () <NSNetServiceDelegate>
 
 @property (nonatomic) CFSocketRef socket;
 @property (nonatomic) uint32_t protocolFamily;
 @property (nonatomic) int port;
 @property (nonatomic) NSNetService *netService;
 
-- (BOOL)publishService;
-- (void)unpublishService;
 @end
 
 
@@ -33,7 +31,8 @@
 // This function is called by CFSocket when a new connection comes in.
 // We gather some data here, and convert the function call to a method
 // invocation on TCPServer.
-static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType type, CFDataRef address, const void *data, void *info) {
+static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType type, CFDataRef address, const void *data, void *info)
+{
     Server *server = (__bridge Server *)info;
     if (kCFSocketAcceptCallBack == type) {
         // for an AcceptCallBack, the data parameter is a pointer to a CFSocketNativeHandle
@@ -72,6 +71,8 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
         [server.delegate handleNewConnection:connection];
     }
 }
+
+#pragma mark - Server public
 
 - (BOOL)start
 {
@@ -174,7 +175,7 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
 }
 
 
-#pragma mark Bonjour
+#pragma mark - Server, Bonjour private
 
 - (BOOL)publishService
 {
@@ -214,7 +215,7 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
     self.netService = nil;
 }
 
-#pragma mark NSNetService Delegate Method Implementations
+#pragma mark - NSNetServiceDelegate
 
 // Delegate method, called by NSNetService in case service publishing fails for whatever reason
 - (void)netService:(NSNetService *)sender

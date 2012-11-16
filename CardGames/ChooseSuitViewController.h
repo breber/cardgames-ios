@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@protocol ChooseSuit <NSObject>
+@protocol ChooseSuitDelegate <NSObject>
 
 - (void)handleChooseSuit:(int)suit;
 
@@ -16,7 +16,7 @@
 
 @interface ChooseSuitViewController : ViewController
 
-@property(nonatomic, weak) id <ChooseSuit> delegate;
+@property(nonatomic, weak) id <ChooseSuitDelegate> delegate;
 
 - (IBAction)heartsSelected:(id)sender;
 - (IBAction)spadesSelected:(id)sender;
