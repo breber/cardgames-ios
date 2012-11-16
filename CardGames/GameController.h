@@ -10,9 +10,24 @@
 #import "Card.h"
 #import "CrazyEightsTabletGame.h"
 
+
+@protocol GameControllerDelegate <NSObject>
+
+// TODO: make some of these optional
+- (void)gameRequestingName;
+- (void)gameDidBegin;
+- (void)gameDidPause;
+- (void)gameDidResume;
+- (void)gameDidEnd;
+
+
+@end
+
+
 @interface GameController : NSObject
 
 @property (nonatomic, strong) CrazyEightsTabletGame * game;
 @property (nonatomic) int whoseTurn;
+@property (nonatomic, weak) id <GameControllerDelegate> delegate;
 
 @end
