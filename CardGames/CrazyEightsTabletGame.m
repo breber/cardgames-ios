@@ -36,6 +36,7 @@
 
 - (void) setup{
     
+    self.players = [[NSMutableArray alloc]init];
     self.deck = [[Deck alloc] init];
     [self.deck createDeck];
     self.shuffledDeck = [self.deck shuffleArray];
