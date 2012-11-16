@@ -49,14 +49,20 @@
     //deal cards
     [self.game setup];
     
+    //counter to tell which player index
+    int i = 0;
+    
     //send cards to players
     for (Player* p in self.game.players) {
         //make this class recieve messages from each connection
         p.connection.delegate = self;
         
         //send cards
+        [p.connection write:[p jsonString:(self.whoseTurn == i)] withType:MSG_SETUP];
         
+        i++;
     }
+    NSLog(@"Number of Players %d", i);
     
     
     
@@ -69,10 +75,10 @@
     //get the player
     Player* player = [self.game.players objectAtIndex:self.whoseTurn];
     
-    NSString* cardString = [
+    NSString* cardString = [self.game getNextCard];
     
     //write message to player
-    [player.connection.write: cardString  withType: msg];
+    [player.connection write: cardString  withType: msg];
 }
 
 @end

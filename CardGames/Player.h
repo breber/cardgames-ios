@@ -8,10 +8,13 @@
 
 #import "WifiConnection.h"
 
+
 @interface Player : NSObject
 
 @property(nonatomic, strong) WifiConnection *connection;
 @property(nonatomic, strong) NSString *name;
 @property(nonatomic, strong) NSMutableArray *cards;
+
+- (NSString *)jsonString:(BOOL) isTurn;
 
 @end
