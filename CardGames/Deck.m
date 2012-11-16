@@ -83,7 +83,7 @@
     return self.deck;
 }
 
-- (NSArray *)shuffleArray
+- (NSMutableArray *)shuffleArray
 {    
     NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:self.deck];
     
@@ -95,7 +95,7 @@
         [temp exchangeObjectAtIndex:i withObjectAtIndex:n];
     }
     
-    return [NSArray arrayWithArray:temp];
+    return temp;
 }
 
 @end

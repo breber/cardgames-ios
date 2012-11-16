@@ -13,6 +13,6 @@
 @property(nonatomic, strong) NSArray *deck;
 
 - (NSArray *)createDeck;
-- (NSArray *)shuffleArray;
+- (NSMutableArray *)shuffleArray;
 
 @end

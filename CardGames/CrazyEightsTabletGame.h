@@ -14,7 +14,7 @@
 
 @property(nonatomic, strong) NSMutableArray *players;
 @property(nonatomic, strong) Deck *deck;
-@property(nonatomic, strong) NSArray *shuffledDeck;
+@property(nonatomic, strong) NSMutableArray *shuffledDeck;
 @property(nonatomic, strong) NSEnumerator *e;
 
 + (CrazyEightsTabletGame *)sharedInstance;
@@ -26,5 +26,6 @@
 - (void)dropPlayer:(NSString *)connectionId;
 - (void) dealCards:(NSArray *) deck;
 - (void) setup;
+- (Card*) getNextCard;
 
 @end
