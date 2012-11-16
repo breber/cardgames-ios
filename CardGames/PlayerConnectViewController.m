@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
+#import "Constants.h"
 #import "PlayerConnectViewController.h"
 #import "WifiConnection.h"
 
@@ -30,7 +31,7 @@
 
     self.serviceBrowser = [[NSNetServiceBrowser alloc] init];
     [self.serviceBrowser setDelegate:self];
-    [self.serviceBrowser searchForServicesOfType:@"_cardgames._tcp." inDomain:@""];
+    [self.serviceBrowser searchForServicesOfType:BONJOUR_SERVICE inDomain:@""];
 }
 
 #pragma mark - NSNetServiceBrowserDelegate

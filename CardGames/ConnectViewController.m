@@ -108,7 +108,6 @@
 
 - (void)updateUI
 {
-    // TODO: do something
     int i = 0;
     for (Player *p in self.players) {
         if ([p.connection isActive]) {

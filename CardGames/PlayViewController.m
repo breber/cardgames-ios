@@ -24,7 +24,6 @@
 @property(nonatomic, strong) PlayerController *playerController;
 @property(nonatomic, strong) NSArray *cardButtons;
 
-- (void)updatePlayableCards;
 @end
 
 @implementation PlayViewController

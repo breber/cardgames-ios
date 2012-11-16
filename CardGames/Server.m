@@ -11,6 +11,7 @@
 #import <sys/types.h>
 #import <arpa/inet.h>
 
+#import "Constants.h"
 #import "Server.h"
 #import "WifiConnection.h"
 
@@ -165,7 +166,8 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
     return YES;
 }
 
-- (void)stop {
+- (void)stop
+{
     [self unpublishService];
     
 	if (self.socket) {
@@ -185,7 +187,7 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
 
     // create new instance of netService
     self.netService = [[NSNetService alloc] initWithDomain:@""
-                                                      type:@"_cardgames._tcp."
+                                                      type:BONJOUR_SERVICE
                                                       name:serviceName
                                                       port:self.port];
 
