@@ -535,7 +535,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4Xu-09-eyv" kind="push" id="Rtm-9c-OLI"/>
+                                    <action selector="startButtonPressed:" destination="bVe-oT-0yq" eventType="touchUpInside" id="WK5-2I-Ltb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -570,8 +570,15 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2Q1-hx-BW5"/>
+                    <navigationItem key="navigationItem" id="2Q1-hx-BW5">
+                        <barButtonItem key="rightBarButtonItem" title="Debug Gameboard" id="zzo-7C-RvJ">
+                            <connections>
+                                <action selector="startButtonPressed:" destination="bVe-oT-0yq" id="wdz-ly-nRe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="debugGameboard" destination="2Q1-hx-BW5" id="nwB-0s-xlY"/>
                         <outlet property="startButton" destination="t86-6H-RGZ" id="Ytg-8O-XFq"/>
                         <outletCollection property="playerNameLabels" destination="xq1-YU-AY7" id="lgB-B1-qrk"/>
                         <outletCollection property="playerNameLabels" destination="iIj-B8-UEC" id="iwO-7g-sE3"/>
@@ -585,6 +592,7 @@
                         <outletCollection property="playerLoading" destination="qoa-84-7cw" id="rQI-oa-3a5"/>
                         <outletCollection property="playerLoading" destination="6r1-XJ-tjT" id="Dfk-TO-itS"/>
                         <outletCollection property="playerLoading" destination="yc0-D2-wb5" id="sfp-2N-IcC"/>
+                        <segue destination="4Xu-09-eyv" kind="push" identifier="begingame" id="rdZ-Zs-e9b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64r-fa-htm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -599,11 +607,7 @@
                         <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="JxR-l6-V3H">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="704" id="1zr-bs-gho"/>
-                                </constraints>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="JxR-l6-V3H"/>
                             <view autoresizesSubviews="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUF-4F-V0q">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -633,27 +637,28 @@
                             <constraint firstAttribute="bottom" secondItem="Dol-GG-hTa" secondAttribute="bottom" constant="153" id="4CV-cW-p60"/>
                             <constraint firstItem="JZB-Pp-AUI" firstAttribute="leading" secondItem="hUF-4F-V0q" secondAttribute="leading" type="default" id="6VU-dr-YvN"/>
                             <constraint firstItem="JxR-l6-V3H" firstAttribute="centerX" secondItem="JZB-Pp-AUI" secondAttribute="centerX" type="default" id="6zM-Ir-uyq"/>
+                            <constraint firstItem="JxR-l6-V3H" firstAttribute="bottom" secondItem="onV-JN-clO" secondAttribute="bottom" type="default" id="9Ml-3M-SDF"/>
                             <constraint firstItem="JZB-Pp-AUI" firstAttribute="trailing" secondItem="hUF-4F-V0q" secondAttribute="trailing" type="default" id="CWU-yf-MA5"/>
                             <constraint firstItem="JZB-Pp-AUI" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" type="default" id="DZq-W7-V2n"/>
                             <constraint firstAttribute="bottom" secondItem="JZB-Pp-AUI" secondAttribute="bottom" constant="554" id="Dbl-3h-X22"/>
-                            <constraint firstAttribute="trailing" secondItem="Dol-GG-hTa" secondAttribute="trailing" constant="874" id="IkK-OQ-xVM"/>
+                            <constraint firstAttribute="trailing" secondItem="Dol-GG-hTa" secondAttribute="trailing" constant="768" id="ERq-P8-jcI"/>
                             <constraint firstAttribute="trailing" secondItem="bGD-Uo-bZf" secondAttribute="trailing" constant="285" id="JKC-3S-JF2"/>
-                            <constraint firstItem="hUF-4F-V0q" firstAttribute="bottom" secondItem="JxR-l6-V3H" secondAttribute="bottom" type="default" id="LWO-re-08D"/>
+                            <constraint firstAttribute="bottom" secondItem="hUF-4F-V0q" secondAttribute="bottom" constant="1" id="M0M-t9-310"/>
+                            <constraint firstItem="JxR-l6-V3H" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" type="default" id="Nju-Rn-zw2"/>
                             <constraint firstItem="bGD-Uo-bZf" firstAttribute="bottom" secondItem="D3H-nl-5K5" secondAttribute="bottom" type="default" id="OEG-qO-Hiq"/>
-                            <constraint firstItem="JxR-l6-V3H" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="-1" id="On0-ym-vL1"/>
                             <constraint firstItem="Dol-GG-hTa" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="150" id="Sgz-ub-jLk"/>
                             <constraint firstItem="0WJ-xH-UmH" firstAttribute="bottom" secondItem="Dol-GG-hTa" secondAttribute="bottom" type="default" id="TQd-f4-yGt"/>
+                            <constraint firstItem="JxR-l6-V3H" firstAttribute="centerY" secondItem="D3H-nl-5K5" secondAttribute="centerY" type="default" id="Vh4-1r-eDK"/>
                             <constraint firstItem="JZB-Pp-AUI" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="159" id="Xua-iK-i16"/>
                             <constraint firstItem="bGD-Uo-bZf" firstAttribute="top" secondItem="D3H-nl-5K5" secondAttribute="top" type="default" id="f1q-6L-iij"/>
                             <constraint firstItem="JxR-l6-V3H" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" type="default" id="gby-JE-ZtB"/>
                             <constraint firstItem="0WJ-xH-UmH" firstAttribute="trailing" secondItem="onV-JN-clO" secondAttribute="trailing" type="default" id="gxa-7p-ALw"/>
                             <constraint firstItem="0WJ-xH-UmH" firstAttribute="top" secondItem="Dol-GG-hTa" secondAttribute="top" type="default" id="kt9-iv-5kN"/>
+                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="768" id="oAL-Ne-DDL"/>
                             <constraint firstItem="hUF-4F-V0q" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="553" id="okI-3c-4UK"/>
                             <constraint firstItem="Dol-GG-hTa" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" type="default" id="pfX-LR-6CH"/>
                             <constraint firstItem="JxR-l6-V3H" firstAttribute="trailing" secondItem="onV-JN-clO" secondAttribute="trailing" type="default" id="tIB-NI-adF"/>
-                            <constraint firstItem="bGD-Uo-bZf" firstAttribute="centerY" secondItem="onV-JN-clO" secondAttribute="centerY" type="default" id="xVS-tx-gI2"/>
                             <constraint firstItem="D3H-nl-5K5" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="286" id="zVI-Ec-kdL"/>
-                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="874" id="zvD-PV-2BX"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -1075,6 +1080,8 @@ A preferences page is also available from the home screen. To get to this page, 
         <class className="ConnectViewController" superclassName="ViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ConnectViewController.h"/>
             <relationships>
+                <relationship kind="action" name="startButtonPressed:"/>
+                <relationship kind="outlet" name="debugGameboard" candidateClass="UINavigationItem"/>
                 <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
                 <relationship kind="outletCollection" name="playerDevices" candidateClass="UIView"/>
                 <relationship kind="outletCollection" name="playerLoading" candidateClass="UIActivityIndicatorView"/>

@@ -11,10 +11,12 @@
 #import "ConnectViewController.h"
 #import "Player.h"
 #import "Server.h"
+#import "UIColor+CardGamesColor.h"
 #import "WifiConnection.h"
 
 @interface ConnectViewController() <ServerDelegate, ConnectionDelegate>
 
+@property(nonatomic, weak) IBOutlet UINavigationItem *debugGameboard;
 @property(nonatomic, weak) IBOutlet UIButton *startButton;
 @property(nonatomic, strong) IBOutletCollection(UILabel) NSArray *playerNameLabels;
 @property(nonatomic, strong) IBOutletCollection(UIView) NSArray *playerDevices;
@@ -43,6 +45,10 @@
     [super viewDidLoad];
     self.players = [[NSMutableArray alloc] init];
     
+    if (!DEBUG) {
+        self.debugGameboard.rightBarButtonItem = nil;
+    }
+    
     // IBOutletCollections apparently aren't sorted by default...
     self.playerNameLabels = [self sortByObjectTag:self.playerNameLabels];
     self.playerDevices = [self sortByObjectTag:self.playerDevices];
@@ -60,6 +66,7 @@
     [self setPlayerNameLabels:nil];
     [self setPlayerDevices:nil];
     [self setPlayerLoading:nil];
+    [self setDebugGameboard:nil];
     [super viewDidUnload];
     [self.server stop];
 }
@@ -137,6 +144,28 @@
         UILabel *label = [self.playerNameLabels objectAtIndex:i];
         label.text = nil;
         label.hidden = YES;
+    }
+    
+    self.startButton.enabled = [self canStartGame];
+    if (self.startButton.enabled) {
+        self.startButton.backgroundColor = [UIColor goldColor];
+    } else {
+        self.startButton.backgroundColor = [UIColor blackColor];
+    }
+}
+
+- (BOOL)canStartGame
+{
+#pragma warning TODO: needs implementing
+    // TODO: needs implementing
+    return YES;
+}
+
+- (IBAction)startButtonPressed:(id)sender
+{
+    if ([sender isMemberOfClass:[UIBarButtonItem class]] ||
+        [self canStartGame]) {
+        [self performSegueWithIdentifier:@"begingame" sender:self];
     }
 }
 
