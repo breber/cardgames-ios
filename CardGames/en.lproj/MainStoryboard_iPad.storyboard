@@ -143,7 +143,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Bmy-Im-nzM" kind="push" id="47B-MJ-o7i"/>
+                                    <segue destination="Bmy-Im-nzM" kind="push" id="QzG-mt-77r"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aV-t7-4U7" customClass="RoundedButton">
@@ -637,8 +637,8 @@
                             <constraint firstItem="JZB-Pp-AUI" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" type="default" id="DZq-W7-V2n"/>
                             <constraint firstAttribute="bottom" secondItem="JZB-Pp-AUI" secondAttribute="bottom" constant="554" id="Dbl-3h-X22"/>
                             <constraint firstAttribute="trailing" secondItem="Dol-GG-hTa" secondAttribute="trailing" constant="874" id="IkK-OQ-xVM"/>
+                            <constraint firstAttribute="trailing" secondItem="bGD-Uo-bZf" secondAttribute="trailing" constant="285" id="JKC-3S-JF2"/>
                             <constraint firstItem="hUF-4F-V0q" firstAttribute="bottom" secondItem="JxR-l6-V3H" secondAttribute="bottom" type="default" id="LWO-re-08D"/>
-                            <constraint firstItem="D3H-nl-5K5" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="234" id="NkY-6A-sN6"/>
                             <constraint firstItem="bGD-Uo-bZf" firstAttribute="bottom" secondItem="D3H-nl-5K5" secondAttribute="bottom" type="default" id="OEG-qO-Hiq"/>
                             <constraint firstItem="JxR-l6-V3H" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="-1" id="On0-ym-vL1"/>
                             <constraint firstItem="Dol-GG-hTa" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="150" id="Sgz-ub-jLk"/>
@@ -650,9 +650,9 @@
                             <constraint firstItem="0WJ-xH-UmH" firstAttribute="top" secondItem="Dol-GG-hTa" secondAttribute="top" type="default" id="kt9-iv-5kN"/>
                             <constraint firstItem="hUF-4F-V0q" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="553" id="okI-3c-4UK"/>
                             <constraint firstItem="Dol-GG-hTa" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" type="default" id="pfX-LR-6CH"/>
-                            <constraint firstAttribute="trailing" secondItem="bGD-Uo-bZf" secondAttribute="trailing" constant="237" id="qSe-4l-25c"/>
                             <constraint firstItem="JxR-l6-V3H" firstAttribute="trailing" secondItem="onV-JN-clO" secondAttribute="trailing" type="default" id="tIB-NI-adF"/>
-                            <constraint firstItem="D3H-nl-5K5" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="194" id="ugh-5G-uIh"/>
+                            <constraint firstItem="bGD-Uo-bZf" firstAttribute="centerY" secondItem="onV-JN-clO" secondAttribute="centerY" type="default" id="xVS-tx-gI2"/>
+                            <constraint firstItem="D3H-nl-5K5" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="286" id="zVI-Ec-kdL"/>
                             <constraint firstItem="0WJ-xH-UmH" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="874" id="zvD-PV-2BX"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -1062,6 +1062,79 @@ A preferences page is also available from the home screen. To get to this page, 
         <image name="spadesuitimage.png" width="348" height="348"/>
         <image name="wooden_top.jpg" width="600" height="361"/>
     </resources>
+    <classes>
+        <class className="ChooseSuitViewController" superclassName="ViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChooseSuitViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clubsSelected:"/>
+                <relationship kind="action" name="diamondsSelected:"/>
+                <relationship kind="action" name="heartsSelected:"/>
+                <relationship kind="action" name="spadesSelected:"/>
+            </relationships>
+        </class>
+        <class className="ConnectViewController" superclassName="ViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConnectViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
+                <relationship kind="outletCollection" name="playerDevices" candidateClass="UIView"/>
+                <relationship kind="outletCollection" name="playerLoading" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outletCollection" name="playerNameLabels" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GameBoardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameBoardViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="discardPile" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="drawPile" candidateClass="UIImageView"/>
+                <relationship kind="outletCollection" name="playerPositions" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="GameResultViewController" superclassName="ViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameResultViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="mainMenu:"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PlayViewController" superclassName="ViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="buttonLayout" candidateClass="UIView"/>
+                <relationship kind="outlet" name="cardHand" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="loadingPopup" candidateClass="UIView"/>
+                <relationship kind="outlet" name="loadingPopupTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="overlay" candidateClass="UIView"/>
+                <relationship kind="outlet" name="textPopup" candidateClass="UIView"/>
+                <relationship kind="outlet" name="textPopupTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="PlayerConnectViewController" superclassName="ViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayerConnectViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="servers" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="RoundedButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedButton.h"/>
+        </class>
+        <class className="RoundedTableView" superclassName="UITableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedTableView.h"/>
+        </class>
+        <class className="RoundedTextView" superclassName="UITextView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedTextView.h"/>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="computerDifficultyPicker" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
