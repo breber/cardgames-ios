@@ -43,35 +43,36 @@
         [self rotateView:i];
     }
     
+    /*
+    NSDictionary *cardValues = [[NSDictionary alloc] initWithObjectsAndKeys:@"1", @"suit", @"15", @"id", @"3", @"value", nil];
+    Card *tempCard = [Card cardWithValues:cardValues];
     
-     NSDictionary *cardValues = [[NSDictionary alloc] initWithObjectsAndKeys:@"1", @"suit", @"15", @"id", @"3", @"value", nil];
-     Card *tempCard = [Card cardWithValues:cardValues];
-     
-     cardValues = [[NSDictionary alloc] initWithObjectsAndKeys:@"1", @"suit", @"17", @"id", @"5", @"value", nil];
-     Card *tempCard2 = [Card cardWithValues:cardValues];
-     
-     [self addCard:tempCard toPlayer:0];
-     [self addCard:tempCard toPlayer:0];
-     [self addCard:tempCard toPlayer:1];
-     [self addCard:tempCard toPlayer:1];
-     [self addCard:tempCard toPlayer:2];
-     //[self addCard:tempCard toPlayer:2];
-     [self addCard:tempCard toPlayer:3];
-     [self addCard:tempCard toPlayer:3];
-     
-     [self addCard:tempCard2 toPlayer:0];
-     [self addCard:tempCard2 toPlayer:0];
-     [self addCard:tempCard2 toPlayer:1];
-     [self addCard:tempCard2 toPlayer:1];
-     [self addCard:tempCard2 toPlayer:2];
-     [self addCard:tempCard2 toPlayer:2];
-     [self addCard:tempCard2 toPlayer:3];
-     [self addCard:tempCard2 toPlayer:3];
-     
-     [self removeCard:tempCard fromPlayer:2];
+    cardValues = [[NSDictionary alloc] initWithObjectsAndKeys:@"1", @"suit", @"17", @"id", @"5", @"value", nil];
+    Card *tempCard2 = [Card cardWithValues:cardValues];
+    
+    [self addCard:tempCard toPlayer:0];
+    [self addCard:tempCard toPlayer:0];
+    [self addCard:tempCard toPlayer:1];
+    [self addCard:tempCard toPlayer:1];
+    [self addCard:tempCard toPlayer:2];
+    //[self addCard:tempCard toPlayer:2];
+    [self addCard:tempCard toPlayer:3];
+    [self addCard:tempCard toPlayer:3];
+    
+    [self addCard:tempCard2 toPlayer:0];
+    [self addCard:tempCard2 toPlayer:0];
+    [self addCard:tempCard2 toPlayer:1];
+    [self addCard:tempCard2 toPlayer:1];
+    [self addCard:tempCard2 toPlayer:2];
+    [self addCard:tempCard2 toPlayer:2];
+    [self addCard:tempCard2 toPlayer:3];
+    [self addCard:tempCard2 toPlayer:3];
+    
+    [self removeCard:tempCard fromPlayer:2];
     
     [self changeDiscardImage:[tempCard cardImagePath]];
     [self changeDrawImage:[tempCard2 cardImagePath]];
+     */
     
     //player1.bounds = CGRectMake(0, 0, (player1.subviews.count-1)*img.size.width*2/15 + img.size.width*2/5, img.size.height/10);
 }
