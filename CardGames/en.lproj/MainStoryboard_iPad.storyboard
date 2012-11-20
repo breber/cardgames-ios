@@ -591,10 +591,10 @@
             </objects>
             <point key="canvasLocation" x="-76" y="-3090"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Board View Controller-->
         <scene sceneID="xh5-6Q-Kh9">
             <objects>
-                <viewController id="4Xu-09-eyv" sceneMemberID="viewController">
+                <viewController id="4Xu-09-eyv" customClass="GameBoardViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="onV-JN-clO">
                         <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -604,16 +604,68 @@
                                     <constraint firstAttribute="height" constant="704" id="1zr-bs-gho"/>
                                 </constraints>
                             </imageView>
+                            <view autoresizesSubviews="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUF-4F-V0q">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view autoresizesSubviews="NO" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZB-Pp-AUI">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view autoresizesSubviews="NO" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dol-GG-hTa">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view autoresizesSubviews="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0WJ-xH-UmH">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="D3H-nl-5K5">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="288" id="GtF-Kr-KAC"/>
+                                    <constraint firstAttribute="width" constant="196" id="N1t-iB-LaA"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bGD-Uo-bZf">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="196" id="jZl-kQ-Zb0"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JxR-l6-V3H" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="-1" id="2PL-iN-h4R"/>
+                            <constraint firstAttribute="bottom" secondItem="Dol-GG-hTa" secondAttribute="bottom" constant="153" id="4CV-cW-p60"/>
+                            <constraint firstItem="JZB-Pp-AUI" firstAttribute="leading" secondItem="hUF-4F-V0q" secondAttribute="leading" type="default" id="6VU-dr-YvN"/>
+                            <constraint firstItem="JxR-l6-V3H" firstAttribute="centerX" secondItem="JZB-Pp-AUI" secondAttribute="centerX" type="default" id="6zM-Ir-uyq"/>
+                            <constraint firstItem="JZB-Pp-AUI" firstAttribute="trailing" secondItem="hUF-4F-V0q" secondAttribute="trailing" type="default" id="CWU-yf-MA5"/>
+                            <constraint firstItem="JZB-Pp-AUI" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" type="default" id="DZq-W7-V2n"/>
+                            <constraint firstAttribute="bottom" secondItem="JZB-Pp-AUI" secondAttribute="bottom" constant="554" id="Dbl-3h-X22"/>
+                            <constraint firstAttribute="trailing" secondItem="Dol-GG-hTa" secondAttribute="trailing" constant="874" id="IkK-OQ-xVM"/>
+                            <constraint firstItem="hUF-4F-V0q" firstAttribute="bottom" secondItem="JxR-l6-V3H" secondAttribute="bottom" type="default" id="LWO-re-08D"/>
+                            <constraint firstItem="D3H-nl-5K5" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="234" id="NkY-6A-sN6"/>
+                            <constraint firstItem="bGD-Uo-bZf" firstAttribute="bottom" secondItem="D3H-nl-5K5" secondAttribute="bottom" type="default" id="OEG-qO-Hiq"/>
+                            <constraint firstItem="JxR-l6-V3H" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="-1" id="On0-ym-vL1"/>
+                            <constraint firstItem="Dol-GG-hTa" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="150" id="Sgz-ub-jLk"/>
+                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="bottom" secondItem="Dol-GG-hTa" secondAttribute="bottom" type="default" id="TQd-f4-yGt"/>
+                            <constraint firstItem="JZB-Pp-AUI" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="159" id="Xua-iK-i16"/>
+                            <constraint firstItem="bGD-Uo-bZf" firstAttribute="top" secondItem="D3H-nl-5K5" secondAttribute="top" type="default" id="f1q-6L-iij"/>
                             <constraint firstItem="JxR-l6-V3H" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" type="default" id="gby-JE-ZtB"/>
+                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="trailing" secondItem="onV-JN-clO" secondAttribute="trailing" type="default" id="gxa-7p-ALw"/>
+                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="top" secondItem="Dol-GG-hTa" secondAttribute="top" type="default" id="kt9-iv-5kN"/>
+                            <constraint firstItem="hUF-4F-V0q" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="553" id="okI-3c-4UK"/>
+                            <constraint firstItem="Dol-GG-hTa" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" type="default" id="pfX-LR-6CH"/>
+                            <constraint firstAttribute="trailing" secondItem="bGD-Uo-bZf" secondAttribute="trailing" constant="237" id="qSe-4l-25c"/>
                             <constraint firstItem="JxR-l6-V3H" firstAttribute="trailing" secondItem="onV-JN-clO" secondAttribute="trailing" type="default" id="tIB-NI-adF"/>
+                            <constraint firstItem="D3H-nl-5K5" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="194" id="ugh-5G-uIh"/>
+                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="874" id="zvD-PV-2BX"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="xlM-ex-jb4"/>
+                    <connections>
+                        <outlet property="discardPile" destination="bGD-Uo-bZf" id="oYe-rb-JRs"/>
+                        <outlet property="drawPile" destination="D3H-nl-5K5" id="GMn-aC-igE"/>
+                        <outletCollection property="playerPositions" destination="hUF-4F-V0q" id="SFa-ib-WFI"/>
+                        <outletCollection property="playerPositions" destination="0WJ-xH-UmH" id="lej-LX-ja1"/>
+                        <outletCollection property="playerPositions" destination="JZB-Pp-AUI" id="4fQ-EH-hbg"/>
+                        <outletCollection property="playerPositions" destination="Dol-GG-hTa" id="bay-pG-1Tu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1j-iY-YCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1010,71 +1062,6 @@ A preferences page is also available from the home screen. To get to this page, 
         <image name="spadesuitimage.png" width="348" height="348"/>
         <image name="wooden_top.jpg" width="600" height="361"/>
     </resources>
-    <classes>
-        <class className="ChooseSuitViewController" superclassName="ViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChooseSuitViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="clubsSelected:"/>
-                <relationship kind="action" name="diamondsSelected:"/>
-                <relationship kind="action" name="heartsSelected:"/>
-                <relationship kind="action" name="spadesSelected:"/>
-            </relationships>
-        </class>
-        <class className="ConnectViewController" superclassName="ViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConnectViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
-                <relationship kind="outletCollection" name="playerDevices" candidateClass="UIView"/>
-                <relationship kind="outletCollection" name="playerLoading" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outletCollection" name="playerNameLabels" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="GameResultViewController" superclassName="ViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameResultViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="mainMenu:"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PlayViewController" superclassName="ViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="buttonLayout" candidateClass="UIView"/>
-                <relationship kind="outlet" name="cardHand" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="loadingPopup" candidateClass="UIView"/>
-                <relationship kind="outlet" name="loadingPopupTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="overlay" candidateClass="UIView"/>
-                <relationship kind="outlet" name="textPopup" candidateClass="UIView"/>
-                <relationship kind="outlet" name="textPopupTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="PlayerConnectViewController" superclassName="ViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayerConnectViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="servers" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="RoundedButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedButton.h"/>
-        </class>
-        <class className="RoundedTableView" superclassName="UITableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedTableView.h"/>
-        </class>
-        <class className="RoundedTextView" superclassName="UITextView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedTextView.h"/>
-        </class>
-        <class className="SettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="computerDifficultyPicker" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

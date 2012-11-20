@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB7CFC8A165B1B9A007EB0D7 /* GameBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7CFC89165B1B9A007EB0D7 /* GameBoardViewController.m */; };
 		D11F4972160CB97B00F46EE4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D11F4971160CB97B00F46EE4 /* Default-568h@2x.png */; };
 		D129F74F164B51E9006FB0BD /* UIColor+CardGamesColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D129F74E164B51E9006FB0BD /* UIColor+CardGamesColor.m */; };
 		D140E9A116056E6700FDC2DA /* PlayerConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D140E9A016056E6700FDC2DA /* PlayerConnectViewController.m */; };
@@ -109,6 +110,8 @@
 		597A3A2616568AD000A42CD5 /* CrazyEightsGameController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrazyEightsGameController.m; sourceTree = "<group>"; };
 		597A3A2816568AE200A42CD5 /* GameController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
 		597A3A2916568AE200A42CD5 /* GameController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		AB7CFC88165B1B9A007EB0D7 /* GameBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBoardViewController.h; sourceTree = "<group>"; };
+		AB7CFC89165B1B9A007EB0D7 /* GameBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoardViewController.m; sourceTree = "<group>"; };
 		D11F4971160CB97B00F46EE4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "CardGames/Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		D129F74D164B51E9006FB0BD /* UIColor+CardGamesColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CardGamesColor.h"; sourceTree = "<group>"; };
 		D129F74E164B51E9006FB0BD /* UIColor+CardGamesColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CardGamesColor.m"; sourceTree = "<group>"; };
@@ -327,6 +330,8 @@
 				D18663B915F109BE0098E8AD /* ViewController.m */,
 				E65B97C51652C609003C5559 /* SettingsViewController.h */,
 				E65B97C61652C609003C5559 /* SettingsViewController.m */,
+				AB7CFC88165B1B9A007EB0D7 /* GameBoardViewController.h */,
+				AB7CFC89165B1B9A007EB0D7 /* GameBoardViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -626,6 +631,7 @@
 				E681BEF816505638004EE43C /* CrazyEightsTabletGame.m in Sources */,
 				E65B97C71652C609003C5559 /* SettingsViewController.m in Sources */,
 				E6923E3D1653E55200D9CBC4 /* Deck.m in Sources */,
+				AB7CFC8A165B1B9A007EB0D7 /* GameBoardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
