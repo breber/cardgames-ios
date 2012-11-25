@@ -23,7 +23,7 @@
 - (BOOL)isGameOver:(Player *)p;
 - (Card *)getDiscardPileTop;
 - (void)dropPlayer:(NSString *)connectionId;
-- (void)dealCards:(NSArray *) deck;
+- (void)dealCards;
 - (void)setup;
 - (Card *)getNextCard;
 - (void)addCard:(Card *)card toDiscardPileFromPlayer:(Player *)player;

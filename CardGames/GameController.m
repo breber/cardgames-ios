@@ -81,4 +81,20 @@
     [player.connection write: cardString  withType: msg];
 }
 
+- (void)newDataArrived:(WifiConnection *)connection
+              withData:(NSString *)data
+              withType:(int)type
+{
+ //TODO handle incoming messages
+    
+    
+    
+}
+
+
+
+
+
+
+
 @end
