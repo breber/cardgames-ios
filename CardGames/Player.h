@@ -14,6 +14,8 @@
 @property(nonatomic, strong) WifiConnection *connection;
 @property(nonatomic, strong) NSString *name;
 @property(nonatomic, strong) NSMutableArray *cards;
+@property(nonatomic) BOOL isComputer;
+@property(nonatomic) int computerDifficulty;
 
 - (NSString *)jsonString:(BOOL) isTurn;
 

@@ -26,6 +26,7 @@
 - (void)dealCards;
 - (void)setup;
 - (Card *)getNextCard;
+- (Card *) drawCardForPlayer:(Player *) player;
 - (void)addCard:(Card *)card toDiscardPileFromPlayer:(Player *)player;
 - (void)addCardsFromDiscardPileToShuffledDeck;
 

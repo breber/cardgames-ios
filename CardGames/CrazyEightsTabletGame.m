@@ -65,6 +65,15 @@ static CrazyEightsTabletGame *instance = nil;
     [player.cards removeObject: card];
 }
 
+- (Card *) drawCardForPlayer:(Player *) player
+{
+    Card * cardDrawn = [self getNextCard];
+    
+    [player.cards addObject:cardDrawn];
+    
+    return cardDrawn;
+}
+
 - (void)addCardsFromDiscardPileToShuffledDeck
 {
     Card *c = [self getDiscardPileTop];

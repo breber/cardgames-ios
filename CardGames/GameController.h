@@ -28,6 +28,13 @@
 
 @property (nonatomic, strong) CrazyEightsTabletGame * game;
 @property (nonatomic) int whoseTurn;
+@property (nonatomic) int suitChosen;
 @property (nonatomic, weak) id <GameControllerDelegate> delegate;
+
+- (void)handleDiscard:(NSData *)data;
+- (void)handleDrawCard;
+- (void)advanceTurn;
+- (void)startComputerTurn;
+- (void)sendCard:(Card*) card withTurnCode:(int) msg toPlayerIndex:(int) index;
 
 @end

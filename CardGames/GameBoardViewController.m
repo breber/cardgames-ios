@@ -7,6 +7,7 @@
 //
 
 #import "GameBoardViewController.h"
+#import "CrazyEightsGameController.h" 
 
 @interface GameBoardViewController ()
 
@@ -26,6 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //self.gameController = [[CrazyEightsGameController alloc] init];
+    //self.gameController.delegate = self;
     
     // sort IBOutletCollection
 	self.playerPositions = [self sortByObjectTag:self.playerPositions];
@@ -75,6 +79,35 @@
      */
     
     //player1.bounds = CGRectMake(0, 0, (player1.subviews.count-1)*img.size.width*2/15 + img.size.width*2/5, img.size.height/10);
+}
+
+- (void)gameRequestingName
+{
+    //TODO
+    
+}
+
+- (void)gameDidBegin
+{
+    //TODO
+    
+}
+
+- (void)gameDidPause
+{
+    //TODO
+    
+}
+- (void)gameDidResume
+{
+    //TODO
+    
+}
+
+- (void)gameDidEnd
+{
+    //TODO
+    
 }
 
 - (void)addCard:(Card *)card toPlayer:(int)playerNumber

@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GameController.h"
 
-@interface CrazyEightsGameController : NSObject
+@interface CrazyEightsGameController : GameController
 
 @end

@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Card.h"
+#import "GameController.h"
+#import "ViewController.h"
+#import "CrazyEightsGameController.h"
 
 // Game Board Constants
 static const float GB_CARD_SCALE = 0.4;
 static const float GB_CARD_OVERLAP = 1.0/3.0;
 
-@interface GameBoardViewController : UIViewController
+@interface GameBoardViewController : ViewController <GameControllerDelegate>
 
 // Views
 @property(nonatomic, strong) IBOutletCollection(UIView) NSArray *playerPositions;
@@ -26,6 +29,7 @@ static const float GB_CARD_OVERLAP = 1.0/3.0;
 @property(nonatomic, strong) NSMutableArray *player3Cards;
 @property(nonatomic, strong) NSMutableArray *player4Cards;
 @property(nonatomic, strong) NSArray *playerHands;
+@property(nonatomic, strong) GameController *gameController;
 
 // Methods
 - (void)addCard:(Card *)card toPlayer:(int)playerNumber;
