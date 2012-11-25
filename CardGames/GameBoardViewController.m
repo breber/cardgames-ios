@@ -8,6 +8,7 @@
 
 #import "GameBoardViewController.h"
 #import "CrazyEightsGameController.h" 
+#import "GameResultViewController.h"
 
 @interface GameBoardViewController ()
 
@@ -24,12 +25,19 @@
     return self;
 }
 
+- (void)setupGameController
+{
+    self.gameController = [[CrazyEightsGameController alloc] init];
+    self.gameController.delegate = self;
+    [self.gameController setupGameboardWithPlayers:self.players];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    //self.gameController = [[CrazyEightsGameController alloc] init];
-    //self.gameController.delegate = self;
+    
     
     // sort IBOutletCollection
 	self.playerPositions = [self sortByObjectTag:self.playerPositions];
@@ -104,10 +112,16 @@
     
 }
 
-- (void)gameDidEnd
+- (void)declareWinner:(NSString *)winner
+{    
+    [self performSegueWithIdentifier:@"declarewinner" sender:winner];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    //TODO
-    
+    if(segue.identifier == @"declarewinner"){
+        ((GameResultViewController *)segue.destinationViewController).title = sender;
+    }
 }
 
 - (void)addCard:(Card *)card toPlayer:(int)playerNumber

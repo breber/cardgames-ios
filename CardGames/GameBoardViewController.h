@@ -29,6 +29,7 @@ static const float GB_CARD_OVERLAP = 1.0/3.0;
 @property(nonatomic, strong) NSMutableArray *player3Cards;
 @property(nonatomic, strong) NSMutableArray *player4Cards;
 @property(nonatomic, strong) NSArray *playerHands;
+@property(nonatomic, strong) NSMutableArray *players;
 @property(nonatomic, strong) GameController *gameController;
 
 // Methods
@@ -36,5 +37,6 @@ static const float GB_CARD_OVERLAP = 1.0/3.0;
 - (void)removeCard:(Card *)card fromPlayer:(int)playerNumber;
 - (void)changeDiscardImage:(NSString *)imagePath;
 - (void)changeDrawImage:(NSString *)imagePath;
+- (void)setupGameController;
 
 @end

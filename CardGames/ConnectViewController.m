@@ -13,6 +13,8 @@
 #import "Server.h"
 #import "UIColor+CardGamesColor.h"
 #import "WifiConnection.h"
+#import "GameBoardViewController.h"
+#import "GameController.h"
 
 @interface ConnectViewController() <ServerDelegate, ConnectionDelegate>
 
@@ -167,6 +169,16 @@
         [self canStartGame]) {
         [self performSegueWithIdentifier:@"begingame" sender:self];
     }
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if(segue.identifier == @"begingame"){
+        ((GameBoardViewController*)segue.destinationViewController).players = [self.players copy];
+        
+        [((GameBoardViewController*)segue.destinationViewController) setupGameController];
+    }
+    
 }
 
 #pragma mark - ConnectionDelegate

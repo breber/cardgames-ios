@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FAb-80-ltI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G56" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FAb-80-ltI">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <development version="4500" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -670,6 +670,7 @@
                         <outletCollection property="playerPositions" destination="0WJ-xH-UmH" id="lej-LX-ja1"/>
                         <outletCollection property="playerPositions" destination="JZB-Pp-AUI" id="4fQ-EH-hbg"/>
                         <outletCollection property="playerPositions" destination="Dol-GG-hTa" id="bay-pG-1Tu"/>
+                        <segue destination="QzC-gV-dQs" kind="push" identifier="declarewinner" id="vjH-Xe-O7R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1j-iY-YCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1059,6 +1060,53 @@ A preferences page is also available from the home screen. To get to this page, 
             </objects>
             <point key="canvasLocation" x="-64" y="-592"/>
         </scene>
+        <!--Game Result View Controller - You Win!-->
+        <scene sceneID="2JG-bl-hup">
+            <objects>
+                <viewController id="QzC-gV-dQs" customClass="GameResultViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ga-nI-5nN">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Sr6-xA-wYo"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVk-qy-Xgo" customClass="RoundedButton">
+                                <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="fQI-0p-dkg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mainMenu:" destination="QzC-gV-dQs" eventType="touchUpInside" id="5GV-fz-vGo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sr6-xA-wYo" firstAttribute="top" secondItem="6ga-nI-5nN" secondAttribute="top" type="default" id="0L8-hB-AlW"/>
+                            <constraint firstItem="UVk-qy-Xgo" firstAttribute="leading" secondItem="6ga-nI-5nN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Av2-3t-hdW"/>
+                            <constraint firstItem="Sr6-xA-wYo" firstAttribute="trailing" secondItem="6ga-nI-5nN" secondAttribute="trailing" type="default" id="FcY-Bt-XRO"/>
+                            <constraint firstItem="Sr6-xA-wYo" firstAttribute="bottom" secondItem="6ga-nI-5nN" secondAttribute="bottom" type="default" id="IGi-OF-cSj"/>
+                            <constraint firstAttribute="centerY" secondItem="UVk-qy-Xgo" secondAttribute="centerY" type="user" id="Sin-dX-vqa"/>
+                            <constraint firstAttribute="centerX" secondItem="UVk-qy-Xgo" secondAttribute="centerX" type="user" id="sc3-VB-4SD"/>
+                            <constraint firstItem="Sr6-xA-wYo" firstAttribute="leading" secondItem="6ga-nI-5nN" secondAttribute="leading" type="default" id="thy-a7-foE"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="You Win!" id="2oo-kI-qtA"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rQt-7q-ypM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2589" y="-3106"/>
+        </scene>
     </scenes>
     <resources>
         <image name="clubsuitimage.png" width="348" height="348"/>
@@ -1067,81 +1115,6 @@ A preferences page is also available from the home screen. To get to this page, 
         <image name="spadesuitimage.png" width="348" height="348"/>
         <image name="wooden_top.jpg" width="600" height="361"/>
     </resources>
-    <classes>
-        <class className="ChooseSuitViewController" superclassName="ViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChooseSuitViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="clubsSelected:"/>
-                <relationship kind="action" name="diamondsSelected:"/>
-                <relationship kind="action" name="heartsSelected:"/>
-                <relationship kind="action" name="spadesSelected:"/>
-            </relationships>
-        </class>
-        <class className="ConnectViewController" superclassName="ViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConnectViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="startButtonPressed:"/>
-                <relationship kind="outlet" name="debugGameboard" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
-                <relationship kind="outletCollection" name="playerDevices" candidateClass="UIView"/>
-                <relationship kind="outletCollection" name="playerLoading" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outletCollection" name="playerNameLabels" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="GameBoardViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameBoardViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="discardPile" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="drawPile" candidateClass="UIImageView"/>
-                <relationship kind="outletCollection" name="playerPositions" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="GameResultViewController" superclassName="ViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameResultViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="mainMenu:"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PlayViewController" superclassName="ViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="buttonLayout" candidateClass="UIView"/>
-                <relationship kind="outlet" name="cardHand" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="loadingPopup" candidateClass="UIView"/>
-                <relationship kind="outlet" name="loadingPopupTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="overlay" candidateClass="UIView"/>
-                <relationship kind="outlet" name="textPopup" candidateClass="UIView"/>
-                <relationship kind="outlet" name="textPopupTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="PlayerConnectViewController" superclassName="ViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayerConnectViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="servers" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="RoundedButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedButton.h"/>
-        </class>
-        <class className="RoundedTableView" superclassName="UITableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedTableView.h"/>
-        </class>
-        <class className="RoundedTextView" superclassName="UITextView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedTextView.h"/>
-        </class>
-        <class className="SettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="computerDifficultyPicker" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

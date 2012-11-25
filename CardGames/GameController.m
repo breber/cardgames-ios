@@ -52,7 +52,11 @@
    
 }
 
-- (void) setupGameboard {
+- (void) setupGameboardWithPlayers:(NSMutableArray *) players {
+
+    
+    
+    
     //add players
     
     //get connections
@@ -62,6 +66,12 @@
     
     //counter to tell which player index
     int i = 0;
+    
+    
+    //get computer difficulty
+    NSString *compDifficulty = [[NSUserDefaults standardUserDefaults]
+                            stringForKey:@"computerDifficulty"];
+    
     
     //send cards to players
     for (Player* p in self.game.players) {
@@ -128,96 +138,7 @@
               withData:(NSString *)data
               withType:(int)type
 {
-    NSData *d = [data dataUsingEncoding:NSUTF8StringEncoding];
-   
-    if (type == MSG_PLAY_CARD){
-        //discard card on game board
-        [self handleDiscard:d];
-        [self advanceTurn];
-        
-    } else if(type == MSG_DRAW_CARD){
-        //draw card for player
-        [self handleDrawCard];
-        [self advanceTurn];
-        
-    } else if(type == MSG_REFRESH){
-        
-        
-        
-    } else if(type == MSG_PLAY_EIGHT_C){
-        //TODO move to C8 gamecontroller
-        self.suitChosen = SUIT_CLUBS;
-        [self handleDiscard:d];
-        [self advanceTurn];
-        
-    } else if(type == MSG_PLAY_EIGHT_D){
-        self.suitChosen = SUIT_DIAMONDS;
-        [self handleDiscard:d];
-        [self advanceTurn];
-        
-    } else if(type == MSG_PLAY_EIGHT_H){
-        self.suitChosen = SUIT_HEARTS;
-        [self handleDiscard:d];
-        [self advanceTurn];
-        
-    } else if(type == MSG_PLAY_EIGHT_S){
-        self.suitChosen = SUIT_SPADES;
-        [self handleDiscard:d];
-        [self advanceTurn];
-        
-    }
-    
-    
-    
-    //playercontroller code for reference
-    /*// If this is the init message
-    if (type == NSIntegerMax) {
-        self.isTurn = NO;
-        [self.delegate gameDidBegin];
-    } else if (type == MSG_SETUP) {
-        // Setup
-        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
-        NSMutableArray *arr = [[NSMutableArray alloc] init];
-        
-        for (NSDictionary *t in jsonObject) {
-            [arr addObject:[Card cardWithValues:t]];
-        }
-        
-        self.hand = arr;
-        [self.delegate playerHandDidChange];
-    } else if (type == MSG_IS_TURN) {
-        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
-        [self handleIsTurn:jsonObject];
-        
-        self.isTurn = YES;
-    } else if (type == MSG_CARD_DRAWN) {
-        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
-        
-        [self.hand addObject:[Card cardWithValues:jsonObject]];
-        [self.delegate playerHandDidChange];
-    } else if (type == MSG_WINNER) {
-        [self.delegate playerDidWin];
-    } else if (type == MSG_LOSER) {
-        [self.delegate playerDidLose];
-    } else if (type == MSG_REFRESH) {
-        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
-        NSMutableArray *arr = [[NSMutableArray alloc] init];
-        
-        // name...?
-        [self handleIsTurn:[jsonObject objectForKey:@"discardCard"]];
-        
-        for (NSDictionary *t in [jsonObject objectForKey:@"currenthand"]) {
-            [arr addObject:[Card cardWithValues:t]];
-        }
-        
-        self.hand = [arr mutableCopy];
-        self.isTurn = [[jsonObject objectForKey:@"isturn"] boolValue];
-        [self.delegate playerHandDidChange];
-    } else if (type == MSG_PAUSE) {
-        [self.delegate gameDidPause];
-    } else if (type == MSG_UNPAUSE) {
-        [self.delegate gameDidResume];
-    }*/
+    // Nothing needed in this class
 }
 
 - (void)startComputerTurn
@@ -225,7 +146,33 @@
     // Nothing needed in this class 
 }
 
+- (void)declareWinner:(int)winner
+{
+    //TODO declare winner on gameboard
+    [self.delegate declareWinner:((Player *)[self.game.players objectAtIndex:winner]).name];
+    
+    int i = 0;
+    for (Player * p in self.game.players) {
+        if(i == winner){
+            [p.connection write: nil  withType: MSG_WINNER];
+        } else {
+            [p.connection write: nil  withType: MSG_LOSER];
+        }
+        i++;
+    }
+    
+    
+    //TODO quit game
+}
 
+- (void)refreshPlayers
+{
+    int i = 0;
+    for (Player * p in self.game.players) {
+        [p.connection write:[p jsonString:i == self.whoseTurn] withType:MSG_REFRESH];
+        i++;
+    }
+}
 
 
 

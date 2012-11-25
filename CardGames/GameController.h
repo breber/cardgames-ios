@@ -18,7 +18,7 @@
 - (void)gameDidBegin;
 - (void)gameDidPause;
 - (void)gameDidResume;
-- (void)gameDidEnd;
+- (void)declareWinner:(NSString *)winner;
 
 
 @end
@@ -31,10 +31,13 @@
 @property (nonatomic) int suitChosen;
 @property (nonatomic, weak) id <GameControllerDelegate> delegate;
 
+- (void) setupGameboardWithPlayers:(NSMutableArray *) players;
 - (void)handleDiscard:(NSData *)data;
 - (void)handleDrawCard;
 - (void)advanceTurn;
 - (void)startComputerTurn;
 - (void)sendCard:(Card*) card withTurnCode:(int) msg toPlayerIndex:(int) index;
+- (void)declareWinner:(int)winner;
+- (void)refreshPlayers;
 
 @end
