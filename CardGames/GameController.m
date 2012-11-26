@@ -167,9 +167,9 @@
     int i = 0;
     for (Player * p in self.game.players) {
         if(i == winner){
-            [p.connection write: nil  withType: MSG_WINNER];
+            [p.connection write: @""  withType: MSG_WINNER];
         } else {
-            [p.connection write: nil  withType: MSG_LOSER];
+            [p.connection write: @""  withType: MSG_LOSER];
         }
         i++;
     }
