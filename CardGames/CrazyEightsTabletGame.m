@@ -105,13 +105,11 @@ static CrazyEightsTabletGame *instance = nil;
             p = player;
             break;
         }
-    }
+    }    
     
-    
-    //TODO add computer player when player is dropped
-    
+    // Set player as a computer
     if (p) {
-        [self.players removeObject:p];
+        p.isComputer = YES;
     }
 }
 
