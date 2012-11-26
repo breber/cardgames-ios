@@ -15,6 +15,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:[self.computerDifficultyPicker titleForSegmentAtIndex:self.computerDifficultyPicker.selectedSegmentIndex]
                  forKey:@"computerDifficulty"];
+    [defaults setObject:[self.numberOfComputersPicker titleForSegmentAtIndex:self.numberOfComputersPicker.selectedSegmentIndex]
+                 forKey:@"numberOfComputers"];
     
     /*
      To get the data back out for this setting use:

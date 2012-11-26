@@ -115,4 +115,24 @@ static CrazyEightsTabletGame *instance = nil;
     }
 }
 
++ (int) getNumberOfComputerPlayersFromPicker{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *data = [defaults objectForKey:@"numberOfComputers"];
+    
+    
+    NSString * myString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    if([myString isEqualToString:@"One"]){
+        return 1;
+    } else if([myString isEqualToString:@"Two"]){
+        return 2;
+    } else if([myString isEqualToString:@"Three"]){
+        return 3;
+    }
+    
+    //This return should never happen
+    return 0;
+}
+
 @end
