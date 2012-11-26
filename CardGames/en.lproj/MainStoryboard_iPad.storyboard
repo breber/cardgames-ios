@@ -103,6 +103,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="CTa-zg-lBf"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="numberOfComputersPicker" destination="7Dl-FA-VJa" id="hPz-ew-OTt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uS-As-05f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1151,6 +1154,7 @@ A preferences page is also available from the home screen. To get to this page, 
         <class className="ConnectViewController" superclassName="ViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ConnectViewController.h"/>
             <relationships>
+                <relationship kind="action" name="startButtonPressed:"/>
                 <relationship kind="outlet" name="debugGameboard" candidateClass="UINavigationItem"/>
                 <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
                 <relationship kind="outletCollection" name="playerDevices" candidateClass="UIView"/>
@@ -1206,6 +1210,7 @@ A preferences page is also available from the home screen. To get to this page, 
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="computerDifficultyPicker" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="numberOfComputersPicker" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">

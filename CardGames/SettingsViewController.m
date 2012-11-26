@@ -25,6 +25,7 @@
      */
     
     [self setComputerDifficultyPicker:nil];
+    [self setNumberOfComputersPicker:nil];
     [super viewDidUnload];
     
 }

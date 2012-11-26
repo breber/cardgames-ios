@@ -11,5 +11,6 @@
 @interface SettingsViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *computerDifficultyPicker;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *numberOfComputersPicker;
 
 @end
