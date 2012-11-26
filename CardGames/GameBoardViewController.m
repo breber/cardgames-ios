@@ -51,6 +51,7 @@
     {
         [self redrawCardsForPlayer:i];
     }
+    [self changeDiscardImage];
 }
 
 - (void)gameRequestingName
