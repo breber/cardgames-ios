@@ -55,9 +55,10 @@ static CrazyEightsTabletGame *instance = nil;
 {
     [self.deck createDeck];
     self.shuffledDeck = [Deck shuffleArray:[self.deck deck]];
-    
-    [self dealCards];
+   
     self.e = [self.shuffledDeck objectEnumerator];
+    [self dealCards];
+    
 }
 
 - (void)dealCards
