@@ -29,6 +29,18 @@ static CrazyEightsTabletGame *instance = nil;
     return instance;
 }
 
+- (id)init
+{
+    self = [super init];
+    
+    if (self) {
+        self.players = [[NSMutableArray alloc]init];
+        self.deck = [[Deck alloc] init];
+    }
+    
+    return self;
+}
+
 - (void)addPlayer:(Player *)p
 {
     [self.players addObject:p];
@@ -41,8 +53,6 @@ static CrazyEightsTabletGame *instance = nil;
 
 - (void)setup
 {
-    self.players = [[NSMutableArray alloc]init];
-    self.deck = [[Deck alloc] init];
     [self.deck createDeck];
     self.shuffledDeck = [Deck shuffleArray:[self.deck deck]];
     
