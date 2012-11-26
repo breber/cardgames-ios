@@ -58,6 +58,14 @@
     }
 }
 
+- (void)startFirstTurn
+{
+    Card* onDiscard = [self.game getDiscardPileTop];
+    
+    //send first turn
+    [self sendCard: onDiscard withTurnCode:MSG_IS_TURN toPlayerIndex:self.whoseTurn];
+}
+
 
 - (void)handleDiscard:(NSData *)data
 {

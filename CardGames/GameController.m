@@ -52,9 +52,10 @@
     
     int numHumans = [players count];
     
-    //get computer difficulty
+    // Get computer difficulty setting
     NSString *compDifficulty = [[NSUserDefaults standardUserDefaults] stringForKey:@"computerDifficulty"];
     
+    // Get number of computers setting
     int numComputers = [CrazyEightsTabletGame getNumberOfComputerPlayersFromPicker];
     
     //TODO make this based on number of computers specified
@@ -95,14 +96,15 @@
         
         i++;
     }
-    NSLog(@"Number of Players %d", i);
+    NSLog(@"Number of Human Players: %d, Computer Players: %d", numHumans, i - numHumans);
     
-    Card* onDiscard = [self.game getDiscardPileTop];
-    
-    //send first turn
-    [self sendCard: onDiscard withTurnCode:MSG_IS_TURN toPlayerIndex:self.whoseTurn];
+    [self startFirstTurn];
 }
 
+- (void)startFirstTurn
+{
+    // Nothing needed in this class
+}
 
 
 - (void)sendCard:(Card*) card withTurnCode:(int) msg toPlayerIndex:(int) index{

@@ -39,5 +39,6 @@
 - (void)sendCard:(Card*) card withTurnCode:(int) msg toPlayerIndex:(int) index;
 - (void)declareWinner:(int)winner;
 - (void)refreshPlayers;
+- (void)startFirstTurn;
 
 @end
