@@ -169,7 +169,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Bmy-Im-nzM" kind="push" id="QzG-mt-77r"/>
+                                    <segue destination="Bmy-Im-nzM" kind="push" id="SD3-qT-Xh2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aV-t7-4U7" customClass="RoundedButton">
@@ -634,6 +634,26 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="JxR-l6-V3H"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gk-U2-dH9">
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="Oef-2n-AVV"/>
+                                    <constraint firstAttribute="width" constant="85" id="pga-Mw-DWy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshGame" destination="4Xu-09-eyv" eventType="touchUpInside" id="QEa-dJ-4AP"/>
+                                </connections>
+                            </button>
                             <view autoresizesSubviews="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUF-4F-V0q">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -657,33 +677,77 @@
                                     <constraint firstAttribute="width" constant="196" id="jZl-kQ-Zb0"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCs-rv-8KH">
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="RMb-QL-adr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Suit">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ga-cV-zST">
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="zYx-KR-3Ge"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseGame" destination="4Xu-09-eyv" eventType="touchUpInside" id="ghb-WK-m9q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Dol-GG-hTa" secondAttribute="bottom" constant="153" id="4CV-cW-p60"/>
-                            <constraint firstItem="JZB-Pp-AUI" firstAttribute="leading" secondItem="hUF-4F-V0q" secondAttribute="leading" type="default" id="6VU-dr-YvN"/>
-                            <constraint firstItem="JxR-l6-V3H" firstAttribute="centerX" secondItem="JZB-Pp-AUI" secondAttribute="centerX" type="default" id="6zM-Ir-uyq"/>
+                            <constraint firstAttribute="trailing" secondItem="1Ga-cV-zST" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="0JG-3u-emw"/>
+                            <constraint firstItem="hUF-4F-V0q" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="574" id="1tz-ZX-Sr3"/>
+                            <constraint firstAttribute="bottom" secondItem="UCs-rv-8KH" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="6ci-iJ-apE"/>
                             <constraint firstItem="JxR-l6-V3H" firstAttribute="bottom" secondItem="onV-JN-clO" secondAttribute="bottom" type="default" id="9Ml-3M-SDF"/>
-                            <constraint firstItem="JZB-Pp-AUI" firstAttribute="trailing" secondItem="hUF-4F-V0q" secondAttribute="trailing" type="default" id="CWU-yf-MA5"/>
                             <constraint firstItem="JZB-Pp-AUI" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" type="default" id="DZq-W7-V2n"/>
-                            <constraint firstAttribute="bottom" secondItem="JZB-Pp-AUI" secondAttribute="bottom" constant="554" id="Dbl-3h-X22"/>
-                            <constraint firstAttribute="trailing" secondItem="Dol-GG-hTa" secondAttribute="trailing" constant="768" id="ERq-P8-jcI"/>
+                            <constraint firstItem="JZB-Pp-AUI" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="121" id="JAy-lw-qgY"/>
                             <constraint firstAttribute="trailing" secondItem="bGD-Uo-bZf" secondAttribute="trailing" constant="285" id="JKC-3S-JF2"/>
-                            <constraint firstAttribute="bottom" secondItem="hUF-4F-V0q" secondAttribute="bottom" constant="1" id="M0M-t9-310"/>
                             <constraint firstItem="JxR-l6-V3H" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" type="default" id="Nju-Rn-zw2"/>
                             <constraint firstItem="bGD-Uo-bZf" firstAttribute="bottom" secondItem="D3H-nl-5K5" secondAttribute="bottom" type="default" id="OEG-qO-Hiq"/>
-                            <constraint firstItem="Dol-GG-hTa" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="150" id="Sgz-ub-jLk"/>
-                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="bottom" secondItem="Dol-GG-hTa" secondAttribute="bottom" type="default" id="TQd-f4-yGt"/>
-                            <constraint firstItem="JxR-l6-V3H" firstAttribute="centerY" secondItem="D3H-nl-5K5" secondAttribute="centerY" type="default" id="Vh4-1r-eDK"/>
-                            <constraint firstItem="JZB-Pp-AUI" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="159" id="Xua-iK-i16"/>
+                            <constraint firstItem="UCs-rv-8KH" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="S7D-ST-v2Z"/>
+                            <constraint firstItem="hUF-4F-V0q" firstAttribute="leading" secondItem="JZB-Pp-AUI" secondAttribute="leading" type="default" id="V9s-0h-eTA"/>
+                            <constraint firstAttribute="trailing" secondItem="Dol-GG-hTa" secondAttribute="trailing" constant="875" id="VVx-JA-Tuw"/>
+                            <constraint firstAttribute="bottom" secondItem="JZB-Pp-AUI" secondAttribute="bottom" constant="575" id="XGd-iF-NXU"/>
+                            <constraint firstAttribute="bottom" secondItem="1Ga-cV-zST" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Z24-IY-ZEH"/>
+                            <constraint firstAttribute="bottom" secondItem="hUF-4F-V0q" secondAttribute="bottom" constant="1" id="ZUr-oS-q8e"/>
+                            <constraint firstItem="5Gk-U2-dH9" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dJB-B6-m70"/>
+                            <constraint firstAttribute="bottom" secondItem="Dol-GG-hTa" secondAttribute="bottom" constant="126" id="dSX-ms-chz"/>
                             <constraint firstItem="bGD-Uo-bZf" firstAttribute="top" secondItem="D3H-nl-5K5" secondAttribute="top" type="default" id="f1q-6L-iij"/>
+                            <constraint firstItem="hUF-4F-V0q" firstAttribute="centerX" secondItem="JxR-l6-V3H" secondAttribute="centerX" type="default" id="fkk-Eh-y2E"/>
                             <constraint firstItem="JxR-l6-V3H" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" type="default" id="gby-JE-ZtB"/>
                             <constraint firstItem="0WJ-xH-UmH" firstAttribute="trailing" secondItem="onV-JN-clO" secondAttribute="trailing" type="default" id="gxa-7p-ALw"/>
-                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="top" secondItem="Dol-GG-hTa" secondAttribute="top" type="default" id="kt9-iv-5kN"/>
-                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="768" id="oAL-Ne-DDL"/>
-                            <constraint firstItem="hUF-4F-V0q" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="553" id="okI-3c-4UK"/>
+                            <constraint firstItem="5Gk-U2-dH9" firstAttribute="trailing" secondItem="UCs-rv-8KH" secondAttribute="trailing" type="default" id="hD1-ev-esg"/>
                             <constraint firstItem="Dol-GG-hTa" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" type="default" id="pfX-LR-6CH"/>
+                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="875" id="qQm-EU-Iov"/>
+                            <constraint firstItem="D3H-nl-5K5" firstAttribute="centerY" secondItem="JxR-l6-V3H" secondAttribute="centerY" type="default" id="sod-PT-ajU"/>
                             <constraint firstItem="JxR-l6-V3H" firstAttribute="trailing" secondItem="onV-JN-clO" secondAttribute="trailing" type="default" id="tIB-NI-adF"/>
+                            <constraint firstItem="JZB-Pp-AUI" firstAttribute="trailing" secondItem="hUF-4F-V0q" secondAttribute="trailing" type="default" id="tsW-zP-QsF"/>
+                            <constraint firstItem="Dol-GG-hTa" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="125" id="uk4-Fa-zd7"/>
+                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="top" secondItem="Dol-GG-hTa" secondAttribute="top" type="default" id="x5f-tH-Daf"/>
+                            <constraint firstItem="5Gk-U2-dH9" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="20" symbolic="YES" type="default" id="ytM-Ud-Q9I"/>
+                            <constraint firstItem="UCs-rv-8KH" firstAttribute="top" secondItem="1Ga-cV-zST" secondAttribute="top" type="default" id="z0u-Qt-dEb"/>
+                            <constraint firstItem="Dol-GG-hTa" firstAttribute="bottom" secondItem="0WJ-xH-UmH" secondAttribute="bottom" type="default" id="zUN-vC-YaU"/>
                             <constraint firstItem="D3H-nl-5K5" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="286" id="zVI-Ec-kdL"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -692,6 +756,9 @@
                     <connections>
                         <outlet property="discardPile" destination="bGD-Uo-bZf" id="oYe-rb-JRs"/>
                         <outlet property="drawPile" destination="D3H-nl-5K5" id="GMn-aC-igE"/>
+                        <outlet property="pauseButton" destination="1Ga-cV-zST" id="XRI-tz-4PG"/>
+                        <outlet property="refreshButton" destination="5Gk-U2-dH9" id="J8g-2N-Gyp"/>
+                        <outlet property="suitImage" destination="UCs-rv-8KH" id="37F-7Z-OsT"/>
                         <outletCollection property="playerPositions" destination="hUF-4F-V0q" id="SFa-ib-WFI"/>
                         <outletCollection property="playerPositions" destination="0WJ-xH-UmH" id="lej-LX-ja1"/>
                         <outletCollection property="playerPositions" destination="JZB-Pp-AUI" id="4fQ-EH-hbg"/>
@@ -1165,8 +1232,13 @@ A preferences page is also available from the home screen. To get to this page, 
         <class className="GameBoardViewController" superclassName="ViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GameBoardViewController.h"/>
             <relationships>
+                <relationship kind="action" name="pauseGame"/>
+                <relationship kind="action" name="refreshGame"/>
                 <relationship kind="outlet" name="discardPile" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="drawPile" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="refreshButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="suitImage" candidateClass="UIButton"/>
                 <relationship kind="outletCollection" name="playerPositions" candidateClass="UIView"/>
             </relationships>
         </class>

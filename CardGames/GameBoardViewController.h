@@ -22,21 +22,19 @@ static const float GB_CARD_OVERLAP = 1.0/3.0;
 @property(nonatomic, strong) IBOutletCollection(UIView) NSArray *playerPositions;
 @property(nonatomic, weak) IBOutlet UIImageView *discardPile;
 @property(nonatomic, weak) IBOutlet UIImageView *drawPile;
+@property(nonatomic, weak) IBOutlet UIButton *refreshButton;
+@property(nonatomic, weak) IBOutlet UIButton *suitImage;
+@property(nonatomic, weak) IBOutlet UIButton *pauseButton;
 
 // Objects to maintain state
-@property(nonatomic, strong) NSMutableArray *player1Cards;
-@property(nonatomic, strong) NSMutableArray *player2Cards;
-@property(nonatomic, strong) NSMutableArray *player3Cards;
-@property(nonatomic, strong) NSMutableArray *player4Cards;
-@property(nonatomic, strong) NSArray *playerHands;
 @property(nonatomic, strong) NSMutableArray *players;
 @property(nonatomic, strong) GameController *gameController;
 
-// Methods
-- (void)addCard:(Card *)card toPlayer:(int)playerNumber;
-- (void)removeCard:(Card *)card fromPlayer:(int)playerNumber;
-- (void)changeDiscardImage:(NSString *)imagePath;
-- (void)changeDrawImage:(NSString *)imagePath;
+// Public Methods
 - (void)setupGameController;
+
+// Action methods
+- (IBAction)pauseGame;
+- (IBAction)refreshGame;
 
 @end

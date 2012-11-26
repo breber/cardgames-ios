@@ -32,61 +32,17 @@
     [self.gameController setupGameboardWithPlayers:self.players];
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    
-    
     // sort IBOutletCollection
 	self.playerPositions = [self sortByObjectTag:self.playerPositions];
     
-    // set up player hands
-    self.player1Cards = [[NSMutableArray alloc] init];
-    self.player2Cards = [[NSMutableArray alloc] init];
-    self.player3Cards = [[NSMutableArray alloc] init];
-    self.player4Cards = [[NSMutableArray alloc] init];
-    self.playerHands = [[NSArray alloc] initWithObjects:self.player1Cards, self.player2Cards, self.player3Cards,
-                        self.player4Cards, nil];
-    
-    for (int i = 1; i < self.playerHands.count; i++)
+    for (int i = 1; i < 4; i++)
     {
         [self rotateView:i];
     }
-    
-    /*
-    NSDictionary *cardValues = [[NSDictionary alloc] initWithObjectsAndKeys:@"1", @"suit", @"15", @"id", @"3", @"value", nil];
-    Card *tempCard = [Card cardWithValues:cardValues];
-    
-    cardValues = [[NSDictionary alloc] initWithObjectsAndKeys:@"1", @"suit", @"17", @"id", @"5", @"value", nil];
-    Card *tempCard2 = [Card cardWithValues:cardValues];
-    
-    [self addCard:tempCard toPlayer:0];
-    [self addCard:tempCard toPlayer:0];
-    [self addCard:tempCard toPlayer:1];
-    [self addCard:tempCard toPlayer:1];
-    [self addCard:tempCard toPlayer:2];
-    //[self addCard:tempCard toPlayer:2];
-    [self addCard:tempCard toPlayer:3];
-    [self addCard:tempCard toPlayer:3];
-    
-    [self addCard:tempCard2 toPlayer:0];
-    [self addCard:tempCard2 toPlayer:0];
-    [self addCard:tempCard2 toPlayer:1];
-    [self addCard:tempCard2 toPlayer:1];
-    [self addCard:tempCard2 toPlayer:2];
-    [self addCard:tempCard2 toPlayer:2];
-    [self addCard:tempCard2 toPlayer:3];
-    [self addCard:tempCard2 toPlayer:3];
-    
-    [self removeCard:tempCard fromPlayer:2];
-    
-    [self changeDiscardImage:[tempCard cardImagePath]];
-    [self changeDrawImage:[tempCard2 cardImagePath]];
-     */
-    
-    //player1.bounds = CGRectMake(0, 0, (player1.subviews.count-1)*img.size.width*2/15 + img.size.width*2/5, img.size.height/10);
 }
 
 - (void)gameRequestingName
@@ -124,34 +80,52 @@
     }
 }
 
+- (IBAction)pauseGame
+{
+    [self gameDidPause];
+}
+
+- (IBAction)refreshGame
+{
+    for (int i = 0; i < self.gameController.game.players.count; i++)
+    {
+        [self redrawCardsForPlayer:i];
+    }
+}
+
+/*
+ * Adds card to player's card array and calls method
+ * to draw it to screen.
+ */
 - (void)addCard:(Card *)card toPlayer:(int)playerNumber
 {
-    NSMutableArray *tempPlayerHand = self.playerHands[playerNumber];
-    [tempPlayerHand addObject:card];
-    
-    [self drawCard:card toPlayer:playerNumber atIndex:[tempPlayerHand count] - 1];
+    Player *tempPlayer = self.gameController.game.players[playerNumber];
+    NSMutableArray *tempPlayerHand = tempPlayer.cards;
+    [self drawCard:card toPlayer:playerNumber atIndex:tempPlayerHand.count - 1];
 }
 
-- (void)removeCard:(Card *)card fromPlayer:(int)playerNumber
+/*
+ * Changes the image on the discard pile.
+ */
+- (void)changeDiscardImage
 {
-    NSMutableArray *tempPlayerHand = self.playerHands[playerNumber - 1];
-    [tempPlayerHand removeObject:card];
-    
-    [self redrawCardsForPlayer:playerNumber];
-}
-
-- (void)changeDiscardImage:(NSString *)imagePath
-{
+    NSString *imagePath = self.gameController.game.getDiscardPileTop.cardImagePath;
     UIImage *img = [UIImage imageNamed:imagePath];
     [self.discardPile setImage:img];
 }
 
+/*
+ * Changes the image in the draw pile.
+ */
 - (void)changeDrawImage:(NSString *)imagePath
 {
     UIImage *img = [UIImage imageNamed:imagePath];
     [self.drawPile setImage:img];
 }
 
+/*
+ * Draws a player's new card at the end of their hand.
+ */
 - (void)drawCard:(Card *)card toPlayer:(int)playerNumber atIndex:(int)cardIndex
 {
     UIView *tempView = self.playerPositions[playerNumber];
@@ -164,6 +138,9 @@
     [tempView addSubview:imgView];
 }
 
+/*
+ * Redraws all the cards in a player's array.
+ */
 - (void)redrawCardsForPlayer:(int)playerNumber
 {
     UIView *tempView = self.playerPositions[playerNumber];
@@ -173,7 +150,8 @@
         [i removeFromSuperview];
     }
     
-    NSMutableArray *tempPlayerHand = self.playerHands[playerNumber];
+    Player *tempPlayer = self.gameController.game.players[playerNumber];
+    NSMutableArray *tempPlayerHand = tempPlayer.cards;
     
     // Replace all card views
     for (int j = 0; j < tempPlayerHand.count; j++)
@@ -182,6 +160,9 @@
     }
 }
 
+/*
+ * Rotates the specified view to its correct position.
+ */
 - (void)rotateView:(int)playerNumber
 {
     UIView *currentPlayerView = self.playerPositions[playerNumber];
@@ -199,6 +180,9 @@
     [UIView commitAnimations];
 }
 
+/*
+ * Sorts the IBOutlet objects by their tag numbers.
+ */
 - (NSArray *)sortByObjectTag:(NSArray *)arr
 {
     return [arr sortedArrayUsingComparator:^NSComparisonResult(id objA, id objB) {
