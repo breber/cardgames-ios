@@ -45,6 +45,14 @@
     }
 }
 
+- (void)refreshGameBoard
+{
+    for (int i = 0; i < self.gameController.game.players.count; i++)
+    {
+        [self redrawCardsForPlayer:i];
+    }
+}
+
 - (void)gameRequestingName
 {
     //TODO
@@ -87,10 +95,9 @@
 
 - (IBAction)refreshGame
 {
-    for (int i = 0; i < self.gameController.game.players.count; i++)
-    {
-        [self redrawCardsForPlayer:i];
-    }
+    [self refreshGameBoard];
+    [self.gameController refreshPlayers];
+   
 }
 
 /*

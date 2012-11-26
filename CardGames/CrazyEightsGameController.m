@@ -93,7 +93,8 @@
 
 - (void)advanceTurn
 {
-    // TODO update gameboard
+    // Update gameboard
+    [self.delegate refreshGameBoard];
     
     // Determine if game is over
     if ([self.game isGameOver:((Player *)[self.game.players objectAtIndex:self.whoseTurn])]){

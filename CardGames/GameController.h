@@ -18,6 +18,7 @@
 - (void)gameDidBegin;
 - (void)gameDidPause;
 - (void)gameDidResume;
+- (void)refreshGameBoard;
 - (void)declareWinner:(NSString *)winner;
 
 

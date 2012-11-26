@@ -106,7 +106,6 @@
     // Nothing needed in this class
 }
 
-
 - (void)sendCard:(Card*) card withTurnCode:(int) msg toPlayerIndex:(int) index{
     //get the player
     Player* player = [self.game.players objectAtIndex:self.whoseTurn];
