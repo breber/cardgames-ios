@@ -145,7 +145,7 @@
 
 - (void)outputStreamClosed:(WifiConnection *)connection
 {
-    //TODO open up reconnection screen
+    [self.game dropPlayer:connection.connectionId];
 }
 
 - (void)newDataArrived:(WifiConnection *)connection
