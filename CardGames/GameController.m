@@ -45,33 +45,45 @@
     //add pause
 }
 
-- (void)handleSegue:(UIStoryboardSegue *)segue
-             sender:(id)sender
-{
-    //TODO this is where the game is setup based on info from the connect view controller
-   
-}
-
 - (void) setupGameboardWithPlayers:(NSMutableArray *) players {
 
-    
-    
-    
     //add players
+    self.game.players = players;
     
-    //get connections
+    int numHumans = [players count];
+    
+    //get computer difficulty
+    NSString *compDifficulty = [[NSUserDefaults standardUserDefaults] stringForKey:@"computerDifficulty"];
+    
+    int numComputers = 0;
+    
+    //TODO make this based on number of computers specified
+    for( int i = 0; i < 4; i++)
+    {
+        if(i<numHumans)
+        {
+            ((Player*)[players objectAtIndex:i]).isComputer = NO;
+            ((Player*)[players objectAtIndex:i]).computerDifficulty = compDifficulty;
+        } else {
+            Player *player = [[Player alloc] init];
+            player.connection = nil;
+            player.name = [NSString stringWithFormat:@"Computer %i", i - numHumans + 1];
+            player.isComputer = YES;
+            player.computerDifficulty = compDifficulty;
+            
+            [self.game addPlayer:player];
+        }
+        
+    }
     
     //deal cards
     [self.game setup];
     
+    // Let the view controller go 
+    [self.delegate gameDidBegin];
+    
     //counter to tell which player index
     int i = 0;
-    
-    
-    //get computer difficulty
-    NSString *compDifficulty = [[NSUserDefaults standardUserDefaults]
-                            stringForKey:@"computerDifficulty"];
-    
     
     //send cards to players
     for (Player* p in self.game.players) {

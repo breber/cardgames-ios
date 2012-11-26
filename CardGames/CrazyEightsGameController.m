@@ -32,8 +32,7 @@
         [self advanceTurn];
         
     } else if(type == MSG_REFRESH){
-        
-        
+        [self refreshPlayers];
         
     } else if(type == MSG_PLAY_EIGHT_C){
         //TODO move to C8 gamecontroller
@@ -86,10 +85,12 @@
 
 - (void)advanceTurn
 {
+    // TODO update gameboard
     
-    // TODO determine if game is over
+    // Determine if game is over
     if ([self.game isGameOver:((Player *)[self.game.players objectAtIndex:self.whoseTurn])]){
         [self declareWinner:self.whoseTurn];
+        return;
     }
     
     // Figure out whose turn it is next
@@ -102,15 +103,12 @@
     // Get translated discard pile top
     Card* onDiscard = [self getDiscardPileTranslated];    
     
+    // Send next turn to player or computer
     if (((Player *)[self.game.players objectAtIndex:self.whoseTurn]).isComputer){
         [self startComputerTurn];
     } else {
         [self sendCard:onDiscard withTurnCode:MSG_IS_TURN toPlayerIndex:self.whoseTurn];
-    }
-    
-    
-    // TODO Update UI to display changed cards    
-    
+    }    
 }
 
 
@@ -143,10 +141,8 @@
     Player * curPlayer = ((Player*)[self.game.players objectAtIndex:self.whoseTurn]);
     NSMutableArray* cards = curPlayer.cards;
     Card* cardSelected = nil;
-    
-    //TODO computer difficulty setting in settings page
-    
-    // Determine which card to play
+        
+    // Determine which card to play based on difficulty
     if(DIF_COMP_EASY == ((Player*)[self.game.players objectAtIndex:self.whoseTurn]).computerDifficulty){
         //easy
         for (Card *c in cards) {

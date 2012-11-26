@@ -15,7 +15,7 @@
 @property(nonatomic, strong) NSString *name;
 @property(nonatomic, strong) NSMutableArray *cards;
 @property(nonatomic) BOOL isComputer;
-@property(nonatomic) int computerDifficulty;
+@property(nonatomic) NSString * computerDifficulty;
 
 - (NSString *)jsonString:(BOOL) isTurn;
 

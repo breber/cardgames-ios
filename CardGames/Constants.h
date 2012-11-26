@@ -45,9 +45,9 @@ static const int RED_JOKER_VALUE = 1;
 
 static const int NUMBER_OF_CARDS_PER_HAND = 5;
 
-static const int DIF_COMP_EASY = 0;
-static const int DIF_COMP_MEDIUM = 1;
-static const int DIF_COMP_HARD = 2;
+static const NSString * DIF_COMP_EASY = @"easy";
+static const NSString * DIF_COMP_MEDIUM = @"medium";
+static const NSString * DIF_COMP_HARD = @"hard";
 
 static NSString *BONJOUR_SERVICE = @"_cardgames._tcp.";
 static NSString *DEFAULT_NAME = @"Anonymous";
