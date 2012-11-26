@@ -81,7 +81,7 @@
     [self.game setup];
     
     // Let the view controller go 
-    [self.delegate gameDidBegin];
+    [self.delegate refreshGameBoard];
     
     //counter to tell which player index
     int i = 0;
