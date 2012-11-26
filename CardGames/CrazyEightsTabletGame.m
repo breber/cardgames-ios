@@ -89,10 +89,12 @@ static CrazyEightsTabletGame *instance = nil;
 {
     Card *c = [self getDiscardPileTop];
     [self.discardPile removeObject:c];
+    self.e = nil;
     [self.shuffledDeck addObjectsFromArray:self.discardPile];
     [self.discardPile removeAllObjects];
     [self.discardPile addObject:c];
     [Deck shuffleArray:self.discardPile];
+    self.e = [self.shuffledDeck objectEnumerator];
 }
 
 - (Card *)getNextCard
