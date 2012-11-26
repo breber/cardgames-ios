@@ -59,18 +59,18 @@
     int numComputers = [CrazyEightsTabletGame getNumberOfComputerPlayersFromPicker];
     
     //TODO make this based on number of computers specified
-    for( int i = 0; i < 4 && i < numHumans + numComputers; i++)
-    {
-        if(i<numHumans)
-        {
+    for( int i = 0; i < 4 && i < numHumans + numComputers; i++) {
+        if (i < numHumans) {
             ((Player*)[players objectAtIndex:i]).isComputer = NO;
             ((Player*)[players objectAtIndex:i]).computerDifficulty = compDifficulty;
+            ((Player*)[players objectAtIndex:i]).cards = [[NSMutableArray alloc] init];
         } else {
             Player *player = [[Player alloc] init];
             player.connection = nil;
             player.name = [NSString stringWithFormat:@"Computer %i", i - numHumans + 1];
             player.isComputer = YES;
             player.computerDifficulty = compDifficulty;
+            player.cards = [[NSMutableArray alloc] init];
             
             [self.game addPlayer:player];
         }

@@ -100,7 +100,8 @@ static CrazyEightsTabletGame *instance = nil;
 - (Card *)getNextCard
 {
     Card *c = [self.e nextObject];
-    [self.shuffledDeck removeObject:c];
+    // TODO: fix this
+//    [self.shuffledDeck removeObject:c];
     return c;
 }
 

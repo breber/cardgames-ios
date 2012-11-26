@@ -13,5 +13,5 @@
     #import <Foundation/Foundation.h>
 #endif
 
-#define LOG_CONNECTION_READ NO
-#define LOG_CONNECTION_WRITE NO
+#define LOG_CONNECTION_READ YES
+#define LOG_CONNECTION_WRITE YES
