@@ -131,8 +131,10 @@ static CrazyEightsTabletGame *instance = nil;
         return 3;
     }
     
-    //This return should never happen
-    return 0;
+    [defaults setObject:@"One" forKey:@"numberOfComputers"];
+
+    //This return may happen if the user default for the device is nil
+    return 1;
 }
 
 @end
