@@ -55,10 +55,10 @@
     //get computer difficulty
     NSString *compDifficulty = [[NSUserDefaults standardUserDefaults] stringForKey:@"computerDifficulty"];
     
-    int numComputers = 0;
+    int numComputers = [CrazyEightsTabletGame getNumberOfComputerPlayersFromPicker];
     
     //TODO make this based on number of computers specified
-    for( int i = 0; i < 4; i++)
+    for( int i = 0; i < 4 && i < numHumans + numComputers; i++)
     {
         if(i<numHumans)
         {
