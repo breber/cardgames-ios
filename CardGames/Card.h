@@ -16,6 +16,7 @@
 + (Card *)cardWithValues:(int) value withSuit:(int) suit andId:(int) cardId;
 
 - (NSString *)jsonString;
+- (NSDictionary *)jsonObject;
 - (NSString *)cardImagePath;
 
 @end

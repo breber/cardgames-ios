@@ -37,13 +37,17 @@
 
 - (NSString *)jsonString
 {
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-                         [NSNumber numberWithInt:self.suit], @"suit",
-                         [NSNumber numberWithInt:self.cardId], @"id",
-                         [NSNumber numberWithInt:self.value], @"value",
-                         nil];
-    NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:kNilOptions error:nil];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:[self jsonObject] options:kNilOptions error:nil];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (NSDictionary *)jsonObject
+{
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            [NSNumber numberWithInt:self.suit], @"suit",
+            [NSNumber numberWithInt:self.cardId], @"id",
+            [NSNumber numberWithInt:self.value], @"value",
+            nil];
 }
 
 - (NSString *)cardImagePath
