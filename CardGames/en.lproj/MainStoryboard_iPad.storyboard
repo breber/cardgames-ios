@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G56" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FAb-80-ltI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FAb-80-ltI">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <development version="4500" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -52,6 +52,16 @@
                                     <segment title="Hard"/>
                                 </segments>
                             </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Dl-FA-VJa">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="336" id="g2X-dl-3ea"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="One"/>
+                                    <segment title="Two"/>
+                                    <segment title="Three"/>
+                                </segments>
+                            </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Computer Difficulty:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDK-Iz-uxB">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="1zs-9G-sDM"/>
@@ -61,20 +71,33 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number Of Computers:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqN-vQ-rHp">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="xLp-0J-h0J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3Vq-DL-R9y" firstAttribute="leading" secondItem="9gF-La-5ls" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0ov-tE-dQV"/>
+                            <constraint firstItem="7Dl-FA-VJa" firstAttribute="leading" secondItem="DqN-vQ-rHp" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="0p3-GJ-Mj8"/>
                             <constraint firstAttribute="bottom" secondItem="3Vq-DL-R9y" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="2a5-xZ-kwl"/>
                             <constraint firstItem="Rcr-H8-p52" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="-1" id="4gW-En-u1A"/>
                             <constraint firstItem="Rcr-H8-p52" firstAttribute="trailing" secondItem="9gF-La-5ls" secondAttribute="trailing" type="default" id="AYD-y3-4sv"/>
+                            <constraint firstItem="DqN-vQ-rHp" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="108" id="BRN-2M-pB9"/>
                             <constraint firstItem="3Vq-DL-R9y" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="20" symbolic="YES" type="default" id="HEr-oj-Lr5"/>
+                            <constraint firstItem="7Dl-FA-VJa" firstAttribute="leading" secondItem="oyA-z5-lVI" secondAttribute="leading" type="default" id="IEN-WI-8C0"/>
+                            <constraint firstItem="oyA-z5-lVI" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="50" id="JGA-gu-tIi"/>
                             <constraint firstAttribute="trailing" secondItem="3Vq-DL-R9y" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Nx5-wU-GDU"/>
-                            <constraint firstItem="oyA-z5-lVI" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="50" id="Z0p-e9-c2T"/>
+                            <constraint firstItem="oyA-z5-lVI" firstAttribute="leading" secondItem="CDK-Iz-uxB" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="OPF-Zr-llL"/>
+                            <constraint firstItem="DqN-vQ-rHp" firstAttribute="leading" secondItem="CDK-Iz-uxB" secondAttribute="leading" type="default" id="RR0-Nu-cpk"/>
                             <constraint firstItem="Rcr-H8-p52" firstAttribute="leading" secondItem="9gF-La-5ls" secondAttribute="leading" type="default" id="h3b-E9-oQK"/>
+                            <constraint firstItem="7Dl-FA-VJa" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="115" id="oqa-xR-zej"/>
                             <constraint firstItem="CDK-Iz-uxB" firstAttribute="leading" secondItem="9gF-La-5ls" secondAttribute="leading" constant="49" id="pG7-tN-Kea"/>
                             <constraint firstItem="CDK-Iz-uxB" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="43" id="z5y-Lm-2Zz"/>
-                            <constraint firstItem="oyA-z5-lVI" firstAttribute="leading" secondItem="9gF-La-5ls" secondAttribute="leading" constant="268" id="zFo-lN-k6U"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -1115,6 +1138,80 @@ A preferences page is also available from the home screen. To get to this page, 
         <image name="spadesuitimage.png" width="348" height="348"/>
         <image name="wooden_top.jpg" width="600" height="361"/>
     </resources>
+    <classes>
+        <class className="ChooseSuitViewController" superclassName="ViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChooseSuitViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="clubsSelected:"/>
+                <relationship kind="action" name="diamondsSelected:"/>
+                <relationship kind="action" name="heartsSelected:"/>
+                <relationship kind="action" name="spadesSelected:"/>
+            </relationships>
+        </class>
+        <class className="ConnectViewController" superclassName="ViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConnectViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="debugGameboard" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
+                <relationship kind="outletCollection" name="playerDevices" candidateClass="UIView"/>
+                <relationship kind="outletCollection" name="playerLoading" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outletCollection" name="playerNameLabels" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GameBoardViewController" superclassName="ViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameBoardViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="discardPile" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="drawPile" candidateClass="UIImageView"/>
+                <relationship kind="outletCollection" name="playerPositions" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="GameResultViewController" superclassName="ViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameResultViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="mainMenu:"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PlayViewController" superclassName="ViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="buttonLayout" candidateClass="UIView"/>
+                <relationship kind="outlet" name="cardHand" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="loadingPopup" candidateClass="UIView"/>
+                <relationship kind="outlet" name="loadingPopupTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="overlay" candidateClass="UIView"/>
+                <relationship kind="outlet" name="textPopup" candidateClass="UIView"/>
+                <relationship kind="outlet" name="textPopupTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="PlayerConnectViewController" superclassName="ViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayerConnectViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="servers" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="RoundedButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedButton.h"/>
+        </class>
+        <class className="RoundedTableView" superclassName="UITableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedTableView.h"/>
+        </class>
+        <class className="RoundedTextView" superclassName="UITextView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedTextView.h"/>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="computerDifficultyPicker" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
