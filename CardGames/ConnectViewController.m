@@ -173,7 +173,7 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if(segue.identifier == @"begingame"){
+    if ([segue.identifier isEqualToString:@"begingame"]) {
         ((GameBoardViewController*)segue.destinationViewController).players = [self.players copy];
         
         [((GameBoardViewController*)segue.destinationViewController) setupGameController];
