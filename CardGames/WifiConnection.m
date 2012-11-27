@@ -107,9 +107,14 @@ static WifiConnection *instance = nil;
 - (BOOL)write:(NSString *)data
      withType:(int)type
 {
+    if (!data) {
+        return NO;
+    }
+
     if (DEBUG && LOG_CONNECTION_WRITE) {
         NSLog(@"%s (%d): %@", __PRETTY_FUNCTION__, type, data);
     }
+
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: data, @"DATA", [NSString stringWithFormat:@"%i", type], @"MSG_TYPE", nil];
     NSData *dataToWrite = [NSJSONSerialization dataWithJSONObject:dict
                                                           options:kNilOptions
