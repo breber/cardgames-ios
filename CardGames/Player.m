@@ -27,7 +27,7 @@
     return toRet;
 }
 
-- (NSString *)jsonString:(BOOL) isTurn
+- (NSString *)jsonString:(BOOL)isTurn
 {    
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
                           self.name, @"name",

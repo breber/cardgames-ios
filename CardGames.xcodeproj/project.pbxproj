@@ -322,6 +322,8 @@
 				D1A7A53615FECD6F00754BD9 /* ChooseSuitViewController.m */,
 				D1DA26261604E4D100E32193 /* ConnectViewController.h */,
 				D1DA26271604E4D100E32193 /* ConnectViewController.m */,
+				AB7CFC88165B1B9A007EB0D7 /* GameBoardViewController.h */,
+				AB7CFC89165B1B9A007EB0D7 /* GameBoardViewController.m */,
 				D1A7A53815FED05C00754BD9 /* GameResultViewController.h */,
 				D1A7A53915FED05C00754BD9 /* GameResultViewController.m */,
 				D1CAA23D15FD0D3300549EF7 /* PlayViewController.h */,
@@ -332,8 +334,6 @@
 				D18663B915F109BE0098E8AD /* ViewController.m */,
 				E65B97C51652C609003C5559 /* SettingsViewController.h */,
 				E65B97C61652C609003C5559 /* SettingsViewController.m */,
-				AB7CFC88165B1B9A007EB0D7 /* GameBoardViewController.h */,
-				AB7CFC89165B1B9A007EB0D7 /* GameBoardViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

@@ -58,12 +58,13 @@
     // Get number of computers setting
     int numComputers = [CrazyEightsTabletGame getNumberOfComputerPlayersFromPicker];
     
-    //TODO make this based on number of computers specified
-    for( int i = 0; i < 4 && i < numHumans + numComputers; i++) {
+    // TODO: make this based on number of computers specified
+    for (int i = 0; i < 4 && i < numHumans + numComputers; i++) {
         if (i < numHumans) {
-            ((Player*)[players objectAtIndex:i]).isComputer = NO;
-            ((Player*)[players objectAtIndex:i]).computerDifficulty = compDifficulty;
-            ((Player*)[players objectAtIndex:i]).cards = [[NSMutableArray alloc] init];
+            Player *p = (Player *)[players objectAtIndex:i];
+            p.isComputer = NO;
+            p.computerDifficulty = compDifficulty;
+            p.cards = [[NSMutableArray alloc] init];
         } else {
             Player *player = [[Player alloc] init];
             player.connection = nil;
@@ -74,10 +75,9 @@
             
             [self.game addPlayer:player];
         }
-        
     }
     
-    //deal cards
+    // Deal cards
     [self.game setup];
     
     // Let the view controller go 
@@ -86,16 +86,22 @@
     //counter to tell which player index
     int i = 0;
     
-    //send cards to players
+    // Send cards to players
     for (Player* p in self.game.players) {
-        //make this class recieve messages from each connection
+        // make this class recieve messages from each connection
         p.connection.delegate = self;
         
-        //send cards
-        [p.connection write:[p jsonString:(self.whoseTurn == i)] withType:MSG_SETUP];
+        // Send the INIT message
+        [p.connection write:@"" withType:MSG_INIT];
+        
+        // send cards
+        NSData *data = [NSJSONSerialization dataWithJSONObject:[p jsonCards] options:kNilOptions error:nil];
+        NSString *toWrite = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        [p.connection write:toWrite withType:MSG_SETUP];
         
         i++;
     }
+
     NSLog(@"Number of Human Players: %d, Computer Players: %d", numHumans, i - numHumans);
     
     [self startFirstTurn];
@@ -106,18 +112,20 @@
     // Nothing needed in this class
 }
 
-- (void)sendCard:(Card*) card withTurnCode:(int) msg toPlayerIndex:(int) index{
-    //get the player
-    Player* player = [self.game.players objectAtIndex:self.whoseTurn];
+- (void)sendCard:(Card *)card withTurnCode:(int)msg toPlayerIndex:(int)index
+{
+    NSLog(@"%s - card: %@, turnCode: %d, playerIndex: %d", __PRETTY_FUNCTION__, card, msg, index);
+    // get the player
+    Player *player = [self.game.players objectAtIndex:self.whoseTurn];
     
-    if(player.isComputer){
+    if (player.isComputer) {
         
     }
     
-    NSString* cardString = [card jsonString];
+    NSString *cardString = [card jsonString];
     
-    //write message to player
-    [player.connection write: cardString  withType: msg];
+    // write message to player
+    [player.connection write:cardString  withType:msg];
 }
 
 - (void)handleDiscard:(NSData *)data

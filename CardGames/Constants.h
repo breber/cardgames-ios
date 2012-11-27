@@ -9,6 +9,7 @@
 #ifndef CardGames_Constants_h
 #define CardGames_Constants_h
 
+static const int MSG_INIT = 2147483647;
 static const int MSG_SETUP = 0;
 static const int MSG_IS_TURN = 1;
 static const int MSG_CARD_DRAWN = 2;
@@ -45,9 +46,9 @@ static const int RED_JOKER_VALUE = 1;
 
 static const int NUMBER_OF_CARDS_PER_HAND = 5;
 
-static const NSString * DIF_COMP_EASY = @"easy";
-static const NSString * DIF_COMP_MEDIUM = @"medium";
-static const NSString * DIF_COMP_HARD = @"hard";
+static const NSString *DIF_COMP_EASY = @"easy";
+static const NSString *DIF_COMP_MEDIUM = @"medium";
+static const NSString *DIF_COMP_HARD = @"hard";
 
 static NSString *BONJOUR_SERVICE = @"_cardgames._tcp.";
 static NSString *DEFAULT_NAME = @"Anonymous";

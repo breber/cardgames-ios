@@ -73,6 +73,17 @@
     [self.server stop];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"begingame"]) {
+        ((GameBoardViewController*)segue.destinationViewController).players = [self.players mutableCopy];
+        
+        [((GameBoardViewController*)segue.destinationViewController) setupGameController];
+    }
+}
+
+
 #pragma mark - ServerDelegate
 
 // Server has been terminated because of an error
@@ -169,16 +180,6 @@
         [self canStartGame]) {
         [self performSegueWithIdentifier:@"begingame" sender:self];
     }
-}
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"begingame"]) {
-        ((GameBoardViewController*)segue.destinationViewController).players = [self.players mutableCopy];
-        
-        [((GameBoardViewController*)segue.destinationViewController) setupGameController];
-    }
-    
 }
 
 #pragma mark - ConnectionDelegate

@@ -54,16 +54,16 @@
         self.suitChosen = SUIT_SPADES;
         [self handleDiscard:d];
         [self advanceTurn];
-        
     }
 }
 
 - (void)startFirstTurn
 {
-    Card* onDiscard = [self.game getDiscardPileTop];
+    // TODO: the first time this is called, discardPileTop is nil...
+    Card *onDiscard = [self.game getDiscardPileTop];
     
-    //send first turn
-    [self sendCard: onDiscard withTurnCode:MSG_IS_TURN toPlayerIndex:self.whoseTurn];
+    // send first turn
+    [self sendCard:onDiscard withTurnCode:MSG_IS_TURN toPlayerIndex:self.whoseTurn];
 }
 
 
@@ -80,9 +80,9 @@
 
 - (void)handleDrawCard
 {
-    Card * cardDrawn = [self.game drawCardForPlayer:((Player *)[self.game.players objectAtIndex:self.whoseTurn])];
+    Card *cardDrawn = [self.game drawCardForPlayer:((Player *)[self.game.players objectAtIndex:self.whoseTurn])];
     
-    if(cardDrawn != nil){
+    if (cardDrawn) {
         // send the card to the player
         [self sendCard:cardDrawn withTurnCode:MSG_CARD_DRAWN toPlayerIndex:self.whoseTurn];
     } else {
@@ -97,29 +97,28 @@
     [self.delegate refreshGameBoard];
     
     // Determine if game is over
-    if ([self.game isGameOver:((Player *)[self.game.players objectAtIndex:self.whoseTurn])]){
+    if ([self.game isGameOver:((Player *)[self.game.players objectAtIndex:self.whoseTurn])]) {
         [self declareWinner:self.whoseTurn];
         return;
     }
     
     // Figure out whose turn it is next
-    if ( self.whoseTurn < [self.game.players count] - 1){
+    if (self.whoseTurn < [self.game.players count] - 1) {
         self.whoseTurn++;
     } else {
         self.whoseTurn = 0;
     }
     
     // Get translated discard pile top
-    Card* onDiscard = [self getDiscardPileTranslated];    
+    Card *onDiscard = [self getDiscardPileTranslated];
     
     // Send next turn to player or computer
-    if (((Player *)[self.game.players objectAtIndex:self.whoseTurn]).isComputer){
+    if (((Player *)[self.game.players objectAtIndex:self.whoseTurn]).isComputer) {
         [self startComputerTurn];
     } else {
         [self sendCard:onDiscard withTurnCode:MSG_IS_TURN toPlayerIndex:self.whoseTurn];
     }    
 }
-
 
 
 //This method will handle an 8 being on the discard pile.
@@ -128,14 +127,14 @@
     // handle logic for changing suit for 8 played
     Card* onDiscard = [self.game getDiscardPileTop];
     
-    if(onDiscard.value == EIGHT_VALUE){
+    if (onDiscard.value == EIGHT_VALUE) {
         
         //default to suit of card
-        if(self.suitChosen == -1){
+        if (self.suitChosen == -1) {
             self.suitChosen = onDiscard.suit;
         }
         
-        //update discard value
+        // update discard value
         onDiscard = [Card cardWithValues:onDiscard.value withSuit:self.suitChosen andId:onDiscard.cardId];
     }
     
@@ -178,7 +177,7 @@
     
     
     // Perform action
-    if(cardSelected != nil){
+    if (cardSelected) {
         //TODO card discard sound
         [self.game addCard:cardSelected toDiscardPileFromPlayer:curPlayer];
     } else {

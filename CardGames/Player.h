@@ -17,6 +17,7 @@
 @property(nonatomic) BOOL isComputer;
 @property(nonatomic) NSString * computerDifficulty;
 
+- (NSArray *)jsonCards;
 - (NSString *)jsonString:(BOOL) isTurn;
 
 @end

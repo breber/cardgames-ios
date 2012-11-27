@@ -136,7 +136,7 @@
 // Error handling code
 - (void)handleError:(NSNumber *)error
 {
-    NSLog(@"An error occurred. Error code = %d", [error intValue]);
+    NSLog(@"%s - An error occurred. Error code = %d", __PRETTY_FUNCTION__, [error intValue]);
     // Handle error here
 }
 

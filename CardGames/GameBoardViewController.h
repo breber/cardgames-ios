@@ -33,8 +33,4 @@ static const float GB_CARD_OVERLAP = 1.0/3.0;
 // Public Methods
 - (void)setupGameController;
 
-// Action methods
-- (IBAction)pauseGame;
-- (IBAction)refreshGame;
-
 @end
