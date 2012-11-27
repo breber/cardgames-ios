@@ -40,10 +40,10 @@
 
 - (void)refreshGameBoard
 {
-    for (int i = 0; i < self.gameController.game.players.count; i++)
-    {
+    for (int i = 0; i < self.gameController.game.players.count; i++) {
         [self redrawCardsForPlayer:i];
     }
+
     [self changeDiscardImage];
 }
 
@@ -75,9 +75,10 @@
     [self performSegueWithIdentifier:@"declarewinner" sender:winner];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
 {
-    if(segue.identifier == @"declarewinner"){
+    if ([segue.identifier isEqualToString:@"declarewinner"]) {
         ((GameResultViewController *)segue.destinationViewController).title = sender;
     }
 }
@@ -97,7 +98,8 @@
  * Adds card to player's card array and calls method
  * to draw it to screen.
  */
-- (void)addCard:(Card *)card toPlayer:(int)playerNumber
+- (void)addCard:(Card *)card
+       toPlayer:(int)playerNumber
 {
     Player *tempPlayer = self.gameController.game.players[playerNumber];
     NSMutableArray *tempPlayerHand = tempPlayer.cards;
@@ -126,7 +128,9 @@
 /*
  * Draws a player's new card at the end of their hand.
  */
-- (void)drawCard:(Card *)card toPlayer:(int)playerNumber atIndex:(int)cardIndex
+- (void)drawCard:(Card *)card
+        toPlayer:(int)playerNumber
+         atIndex:(int)cardIndex
 {
     UIView *tempView = self.playerPositions[playerNumber];
     

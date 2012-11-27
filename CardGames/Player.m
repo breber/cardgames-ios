@@ -13,7 +13,10 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"Player: name: %@, cards: %@, isComputer, %d", self.name, self.cards, self.isComputer];
+    return [NSString stringWithFormat:@"Player: name: %@, cards: %@, isComputer, %d",
+            self.name,
+            self.cards,
+            self.isComputer];
 }
 
 - (NSArray *)jsonCards

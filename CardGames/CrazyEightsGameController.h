@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "GameController.h"
 
 @interface CrazyEightsGameController : GameController

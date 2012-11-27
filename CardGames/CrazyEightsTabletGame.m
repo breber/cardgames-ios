@@ -76,7 +76,7 @@ static CrazyEightsTabletGame *instance = nil;
     [player.cards removeObject: card];
 }
 
-- (Card *) drawCardForPlayer:(Player *) player
+- (Card *)drawCardForPlayer:(Player *)player
 {
     Card * cardDrawn = [self getNextCard];
     
@@ -127,8 +127,8 @@ static CrazyEightsTabletGame *instance = nil;
     }
 }
 
-+ (int) getNumberOfComputerPlayersFromPicker{
-    
++ (int)getNumberOfComputerPlayersFromPicker
+{    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *myString = [defaults objectForKey:@"numberOfComputers"];
     

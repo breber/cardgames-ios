@@ -6,17 +6,9 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
-#import "GameController.h"
-#import <QuartzCore/QuartzCore.h>
-#import "UIColor+CardGamesColor.h"
-#import "C8Constants.h"
-#import "WifiConnection.h"
-#import "Player.h"
-#import "Card.h"
 #import "Constants.h"
-#import "CrazyEightsTabletGame.h"
-#import "ConnectionDelegate.h"
-#import "CrazyEightsRules.h"
+#import "GameController.h"
+#import "Player.h"
 
 @interface GameController() <ConnectionDelegate>
 
@@ -24,7 +16,7 @@
 
 @implementation GameController
 
-- (id) init
+- (id)init
 {
     self = [super init];
     
@@ -38,15 +30,16 @@
     return self;
 }
 
-- (void) addButtons {
+- (void)addButtons
+{
     //TODO
     //add refresh
     
     //add pause
 }
 
-- (void) setupGameboardWithPlayers:(NSMutableArray *) players {
-
+- (void)setupGameboardWithPlayers:(NSMutableArray *) players
+{
     //add players
     self.game.players = players;
     
@@ -112,7 +105,9 @@
     // Nothing needed in this class
 }
 
-- (void)sendCard:(Card *)card withTurnCode:(int)msg toPlayerIndex:(int)index
+- (void)sendCard:(Card *)card
+    withTurnCode:(int)msg
+   toPlayerIndex:(int)index
 {
     NSLog(@"%s - card: %@, turnCode: %d, playerIndex: %d", __PRETTY_FUNCTION__, card, msg, index);
     // get the player

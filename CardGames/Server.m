@@ -32,7 +32,11 @@
 // This function is called by CFSocket when a new connection comes in.
 // We gather some data here, and convert the function call to a method
 // invocation on TCPServer.
-static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType type, CFDataRef address, const void *data, void *info)
+static void TCPServerAcceptCallBack(CFSocketRef socket,
+                                    CFSocketCallBackType type,
+                                    CFDataRef address,
+                                    const void *data,
+                                    void *info)
 {
     Server *server = (__bridge Server *)info;
     if (kCFSocketAcceptCallBack == type) {
@@ -62,9 +66,8 @@ static void TCPServerAcceptCallBack(CFSocketRef socket, CFSocketCallBackType typ
             NSLog(@"%s - Peer's IP address is: %s\n", __PRETTY_FUNCTION__, ipstr);
             NSLog(@"%s - Peer's port is: %d\n", __PRETTY_FUNCTION__, port);
         }
-        
-        // TODO:
-        WifiConnection* connection = [[WifiConnection alloc] init];
+
+        WifiConnection *connection = [[WifiConnection alloc] init];
         if (![connection initWithNativeSocket:nativeSocketHandle withData:[NSString stringWithFormat:@"%s", ipstr]]) {
             NSLog(@"couldn't init");
         }

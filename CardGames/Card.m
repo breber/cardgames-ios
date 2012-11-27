@@ -20,7 +20,9 @@
     return c;
 }
 
-+ (Card *)cardWithValues:(int) value withSuit:(int) suit andId:(int) cardId
++ (Card *)cardWithValues:(int)value
+                withSuit:(int)suit
+                   andId:(int)cardId
 {
     Card *c = [[Card alloc] init];
     c.value = value;

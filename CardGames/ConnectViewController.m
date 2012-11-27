@@ -170,10 +170,7 @@
 - (BOOL)canStartGame
 {
     for (Player *p in self.players) {
-        if (!p.name) {
-            return NO;
-        }
-        if ([p.name isEqualToString:@""]) {
+        if (!p.name || [p.name isEqualToString:@""]) {
             return NO;
         }
     }

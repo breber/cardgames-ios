@@ -13,7 +13,7 @@
 @property (nonatomic) int value;
 
 + (Card *)cardWithValues:(NSDictionary *)values;
-+ (Card *)cardWithValues:(int) value withSuit:(int) suit andId:(int) cardId;
++ (Card *)cardWithValues:(int)value withSuit:(int)suit andId:(int)cardId;
 
 - (NSString *)jsonString;
 - (NSDictionary *)jsonObject;

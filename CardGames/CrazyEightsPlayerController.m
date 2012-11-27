@@ -6,13 +6,12 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
-#import "UIColor+CardGamesColor.h"
 #import "C8Constants.h"
 #import "Constants.h"
 #import "CrazyEightsPlayerController.h"
 #import "CrazyEightsRules.h"
 #import "RoundedButton.h"
+#import "UIColor+CardGamesColor.h"
 
 @interface CrazyEightsPlayerController()
 @property(nonatomic, strong) Card *discardCard;
