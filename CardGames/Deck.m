@@ -83,15 +83,14 @@
     return self.deck;
 }
 
-+ (NSMutableArray *)shuffleArray: (NSMutableArray*) array
-{    
++ (NSMutableArray *)shuffleArray:(NSMutableArray *)array
+{
     NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:array];
-    
     NSUInteger count = [array count];
     for (NSUInteger i = 0; i < count; ++i) {
         // Select a random element between i and end of array to swap with.
         int nElements = count - i;
-        int n = (random() % nElements) + i;
+        int n = (arc4random() % nElements) + i;
         [temp exchangeObjectAtIndex:i withObjectAtIndex:n];
     }
     

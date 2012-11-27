@@ -169,8 +169,15 @@
 
 - (BOOL)canStartGame
 {
-#pragma warning TODO: needs implementing
-    // TODO: needs implementing
+    for (Player *p in self.players) {
+        if (!p.name) {
+            return NO;
+        }
+        if ([p.name isEqualToString:@""]) {
+            return NO;
+        }
+    }
+    
     return YES;
 }
 
