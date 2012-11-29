@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
+#import "C8Constants.h"
 #import "CrazyEightsTabletGame.h"
 #import "WifiConnection.h"
-#import "Constants.h"
 
 @interface CrazyEightsTabletGame()
 
@@ -63,7 +63,7 @@ static CrazyEightsTabletGame *instance = nil;
 
 - (void)dealCards
 {
-    for (int i = 0; i < NUMBER_OF_CARDS_PER_HAND; i++) {
+    for (int i = 0; i < C8_CARDS_PER_HAND; i++) {
         for (Player *p in self.players) {
             [p.cards addObject:[self getNextCard]];
         }

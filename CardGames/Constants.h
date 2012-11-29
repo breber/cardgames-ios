@@ -44,8 +44,6 @@ static const int KING_VALUE = 12;
 static const int BLACK_JOKER_VALUE = 0;
 static const int RED_JOKER_VALUE = 1;
 
-static const int NUMBER_OF_CARDS_PER_HAND = 5;
-
 static const NSString *DIF_COMP_EASY = @"easy";
 static const NSString *DIF_COMP_MEDIUM = @"medium";
 static const NSString *DIF_COMP_HARD = @"hard";

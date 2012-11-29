@@ -14,4 +14,6 @@ static const int MSG_PLAY_EIGHT_D = 1001;
 static const int MSG_PLAY_EIGHT_H = 1002;
 static const int MSG_PLAY_EIGHT_S = 1003;
 
+static const int C8_CARDS_PER_HAND = 5;
+
 #endif
