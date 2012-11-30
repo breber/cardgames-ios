@@ -59,9 +59,8 @@
 
 - (void)startFirstTurn
 {
-    // TODO: the first time this is called, discardPileTop is nil...
     Card *onDiscard = [self.game getDiscardPileTop];
-    
+
     // send first turn
     [self sendCard:onDiscard withTurnCode:MSG_IS_TURN toPlayerIndex:self.whoseTurn];
 }
@@ -95,9 +94,11 @@
 {
     // Update gameboard
     [self.delegate refreshGameBoard];
+
+    Player *p = [self.game.players objectAtIndex:self.whoseTurn];
     
     // Determine if game is over
-    if ([self.game isGameOver:((Player *)[self.game.players objectAtIndex:self.whoseTurn])]) {
+    if ([self.game isGameOver:p]) {
         [self declareWinner:self.whoseTurn];
         return;
     }
@@ -108,12 +109,14 @@
     } else {
         self.whoseTurn = 0;
     }
+
+    p = [self.game.players objectAtIndex:self.whoseTurn];
     
     // Get translated discard pile top
     Card *onDiscard = [self getDiscardPileTranslated];
     
     // Send next turn to player or computer
-    if (((Player *)[self.game.players objectAtIndex:self.whoseTurn]).isComputer) {
+    if (p.isComputer) {
         [self startComputerTurn];
     } else {
         [self sendCard:onDiscard withTurnCode:MSG_IS_TURN toPlayerIndex:self.whoseTurn];
@@ -141,32 +144,26 @@
     return onDiscard;
 }
 
-- (int) getSuit
+- (int)getSuit
 {
     return [self getDiscardPileTranslated].suit;
 }
 
 - (void)startComputerTurn
 {
-    //TODO make waiting happen here
-    [self playComputerTurn];
-       
-    [self advanceTurn];
+    // Make the computer play after a 1 second delay
+    [self performSelector:@selector(playComputerTurn) withObject:self afterDelay:1];
 }
 
 - (void)playComputerTurn
 {
-    //TODO make this wait before playing. 
-    
     Card* onDiscard = [self getDiscardPileTranslated];
     Player * curPlayer = ((Player*)[self.game.players objectAtIndex:self.whoseTurn]);
     NSMutableArray* cards = curPlayer.cards;
     Card* cardSelected = nil;
     
     NSString * compDifficulty = ((Player*)[self.game.players objectAtIndex:self.whoseTurn]).computerDifficulty;
-    
-    NSLog(@"Difficulty: %@",compDifficulty);
-    
+
     // Determine which card to play based on difficulty
     if([DIF_COMP_EASY isEqualToString:compDifficulty]){
         //easy
@@ -204,6 +201,8 @@
         //TODO draw sound
         [self.game drawCardForPlayer:curPlayer];
     }
+
+    [self advanceTurn];
 }
 
 @end

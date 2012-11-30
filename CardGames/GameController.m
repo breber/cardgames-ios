@@ -96,8 +96,9 @@
     }
 
     NSLog(@"Number of Human Players: %d, Computer Players: %d", numHumans, i - numHumans);
-    
-    [self startFirstTurn];
+
+    // Start first turn after 1 second (so that the messages are sent separately
+    [self performSelector:@selector(startFirstTurn) withObject:self afterDelay:1];
 }
 
 - (void)startFirstTurn
@@ -109,12 +110,11 @@
     withTurnCode:(int)msg
    toPlayerIndex:(int)index
 {
-    NSLog(@"%s - card: %@, turnCode: %d, playerIndex: %d", __PRETTY_FUNCTION__, card, msg, index);
     // get the player
     Player *player = [self.game.players objectAtIndex:self.whoseTurn];
     
     if (player.isComputer) {
-        
+        NSLog(@"%s - computerPlayer...", __PRETTY_FUNCTION__);
     }
     
     NSString *cardString = [card jsonString];

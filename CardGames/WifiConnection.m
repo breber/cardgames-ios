@@ -157,7 +157,7 @@ static WifiConnection *instance = nil;
                                                                                          error:nil];
                             
                             if (DEBUG && LOG_CONNECTION_READ) {
-                                NSLog(@"%s - READ: %@", __PRETTY_FUNCTION__, jsonObject);
+                                NSLog(@"%s - READ: %@", __PRETTY_FUNCTION__, output);
                             }
                             
                             if (jsonObject && [self.delegate respondsToSelector:@selector(newDataArrived:withData:withType:)]) {
