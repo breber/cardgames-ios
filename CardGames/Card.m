@@ -37,6 +37,11 @@
     return [NSString stringWithFormat:@"Card: id=%d, suit=%d, value=%d", self.cardId, self.suit, self.value];
 }
 
+- (BOOL)isEqualToCard:(Card *)card
+{
+    return self.value == card.value;
+}
+
 - (NSString *)jsonString
 {
     NSData *data = [NSJSONSerialization dataWithJSONObject:[self jsonObject] options:kNilOptions error:nil];

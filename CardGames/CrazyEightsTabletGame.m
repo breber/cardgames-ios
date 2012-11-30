@@ -77,12 +77,11 @@ static CrazyEightsTabletGame *instance = nil;
 - (void)addCard:(Card *)card toDiscardPileFromPlayer:(Player *)player
 {
     [self.discardPile addObject: card];
-    int i = 0;
     
-    for(i = 0; i < [player.cards count]; i++){
-        Card * c = [player.cards objectAtIndex:i];
+    for (int i = 0; i < [player.cards count]; i++) {
+        Card *c = [player.cards objectAtIndex:i];
         
-        if(c.suit == card.suit && c.value == card.value && c.cardId == card.cardId){
+        if ([c isEqualToCard:card]) {
             [player.cards removeObjectAtIndex:i];
             break;
         }
@@ -91,7 +90,7 @@ static CrazyEightsTabletGame *instance = nil;
 
 - (Card *)drawCardForPlayer:(Player *)player
 {
-    Card * cardDrawn = [self getNextCard];
+    Card *cardDrawn = [self getNextCard];
     
     [player.cards addObject:cardDrawn];
     
@@ -140,7 +139,7 @@ static CrazyEightsTabletGame *instance = nil;
     }
 }
 
-+ (NSString*)getComputerDifficultyFromPicker
++ (NSString *)getComputerDifficultyFromPicker
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *myString = [defaults objectForKey:@"computerDifficulty"];
