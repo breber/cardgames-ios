@@ -231,6 +231,11 @@
 
 - (void)updatePlayableCards
 {
+    if (self.playerController.hand.count != self.cardButtons.count) {
+        [self reloadData];
+        return;
+    }
+
     for (int i = 0; i < self.playerController.hand.count; i++) {
         BOOL disabled = NO;
         
@@ -238,8 +243,7 @@
             Card *c = [self.playerController.hand objectAtIndex:i];
             disabled = ![self.playerController canPlay:c];
         }
-        
-        //TODO refresh card buttons array
+
         UIButton *button = [self.cardButtons objectAtIndex:i];
         button.enabled = !disabled;
     }
