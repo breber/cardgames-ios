@@ -9,6 +9,7 @@
 #import "GameBoardViewController.h"
 #import "CrazyEightsGameController.h" 
 #import "GameResultViewController.h"
+#import "Constants.h"
 
 @interface GameBoardViewController ()
 
@@ -111,9 +112,11 @@
  */
 - (void)changeDiscardImage
 {
-    NSString *imagePath = self.gameController.game.getDiscardPileTop.cardImagePath;
+    NSString *imagePath = [self.gameController.game getDiscardPileTop].cardImagePath;
     UIImage *img = [UIImage imageNamed:imagePath];
     [self.discardPile setImage:img];
+    
+    [self changeSuitImageToSuit:[self.gameController getSuit]];
 }
 
 /*
@@ -140,6 +143,30 @@
                                                                          img.size.height * GB_CARD_SCALE)];
     [imgView setImage:img];
     [tempView addSubview:imgView];
+}
+
+/*
+ * Change the suit image in bottom left corner
+ */
+- (void)changeSuitImageToSuit:(int)suit
+{
+    switch (suit) {
+        case SUIT_CLUBS:
+            [self.suitImage setImage:[UIImage imageNamed:@"clubsuitimage.png"] forState:UIControlStateNormal];
+            break;
+        case SUIT_DIAMONDS:
+            [self.suitImage setImage:[UIImage imageNamed:@"diamondsuitimage.png"] forState:UIControlStateNormal];
+            break;
+        case SUIT_HEARTS:
+            [self.suitImage setImage:[UIImage imageNamed:@"heartsuitimage.png"] forState:UIControlStateNormal];
+            break;
+        case SUIT_SPADES:
+            [self.suitImage setImage:[UIImage imageNamed:@"spadesuitimage.png"] forState:UIControlStateNormal];
+            break;
+        default:
+            [self.suitImage setImage:nil forState:UIControlStateNormal];
+            break;
+    }
 }
 
 /*

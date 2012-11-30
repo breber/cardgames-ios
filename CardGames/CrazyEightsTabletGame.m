@@ -53,11 +53,13 @@ static CrazyEightsTabletGame *instance = nil;
 
 - (void)setup
 {
+    
     [self.deck createDeck];
     self.shuffledDeck = [Deck shuffleArray:[self.deck deck]];
    
     self.e = [self.shuffledDeck objectEnumerator];
     [self dealCards];
+    self.discardPile = [[NSMutableArray alloc]init];
     [self.discardPile addObject:[self getNextCard]];
     
 }

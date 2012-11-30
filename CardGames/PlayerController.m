@@ -86,7 +86,7 @@
 {
     NSData *d = [data dataUsingEncoding:NSUTF8StringEncoding];
     // If this is the init message
-    if (type == NSIntegerMax) {
+    if (type == MSG_INIT) {
         self.isTurn = NO;
         [self.delegate gameDidBegin];
     } else if (type == MSG_SETUP) {
@@ -118,7 +118,8 @@
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
         NSMutableArray *arr = [[NSMutableArray alloc] init];
         
-        // name...?
+        // name...?   key @"playername"
+        
         [self handleIsTurn:[jsonObject objectForKey:@"discardCard"]];
         
         for (NSDictionary *t in [jsonObject objectForKey:@"currenthand"]) {

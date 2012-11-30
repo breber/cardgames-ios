@@ -30,11 +30,12 @@
     return toRet;
 }
 
-- (NSString *)jsonString:(BOOL)isTurn
+- (NSString *)jsonString:(BOOL)isTurn withDiscard: (Card*)discardCard
 {    
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-                          self.name, @"name",
-                          [self jsonCards], @"cards",
+                          self.name, @"playername",
+                          [self jsonCards], @"currenthand",
+                          [discardCard jsonString], @"discardCard",
                           [NSNumber numberWithBool:isTurn], @"isturn",
                           nil];
     NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:kNilOptions error:nil];

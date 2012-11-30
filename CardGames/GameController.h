@@ -39,5 +39,6 @@
 - (void)declareWinner:(int)winner;
 - (void)refreshPlayers;
 - (void)startFirstTurn;
+- (int) getSuit;
 
 @end

@@ -141,6 +141,11 @@
     return onDiscard;
 }
 
+- (int) getSuit
+{
+    return [self getDiscardPileTranslated].suit;
+}
+
 - (void)startComputerTurn
 {
     //TODO make this wait before playing. 
@@ -151,21 +156,21 @@
     Card* cardSelected = nil;
         
     // Determine which card to play based on difficulty
-    if(DIF_COMP_EASY == ((Player*)[self.game.players objectAtIndex:self.whoseTurn]).computerDifficulty){
+    if([DIF_COMP_EASY isEqualToString:((Player*)[self.game.players objectAtIndex:self.whoseTurn]).computerDifficulty]){
         //easy
         for (Card *c in cards) {
             if([CrazyEightsRules canPlay:c withDiscard:onDiscard]){
                 cardSelected = c;
             }
         }
-    } else if(DIF_COMP_MEDIUM == ((Player*)[self.game.players objectAtIndex:self.whoseTurn]).computerDifficulty){
+    } else if([DIF_COMP_MEDIUM isEqualToString:((Player*)[self.game.players objectAtIndex:self.whoseTurn]).computerDifficulty]){
         //TODO medium
         for (Card *c in cards) {
             if([CrazyEightsRules canPlay:c withDiscard:onDiscard]){
                 cardSelected = c;
             }
         }
-    } else if(DIF_COMP_HARD == ((Player*)[self.game.players objectAtIndex:self.whoseTurn]).computerDifficulty){
+    } else if([DIF_COMP_HARD isEqualToString: ((Player*)[self.game.players objectAtIndex:self.whoseTurn]).computerDifficulty]){
         //TODO Hard, not necessary for 388 turn in.
         for (Card *c in cards) {
             if([CrazyEightsRules canPlay:c withDiscard:onDiscard]){

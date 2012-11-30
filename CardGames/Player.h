@@ -7,6 +7,7 @@
 //
 
 #import "WifiConnection.h"
+#import "Card.h"
 
 
 @interface Player : NSObject
@@ -18,6 +19,6 @@
 @property(nonatomic) NSString * computerDifficulty;
 
 - (NSArray *)jsonCards;
-- (NSString *)jsonString:(BOOL) isTurn;
+- (NSString *)jsonString:(BOOL)isTurn withDiscard: (Card*)discardCard;
 
 @end

@@ -138,6 +138,12 @@
     // Nothing needed in this class   
 }
 
+- (int) getSuit
+{
+    // Nothing needed in this class
+    return 0;
+}
+
 #pragma mark - ConnectionDelegate
 
 - (void)outputStreamOpened:(WifiConnection *)connection
@@ -185,7 +191,7 @@
 {
     int i = 0;
     for (Player * p in self.game.players) {
-        [p.connection write:[p jsonString:i == self.whoseTurn] withType:MSG_REFRESH];
+        [p.connection write:[p jsonString:(i == self.whoseTurn) withDiscard:[self.game getDiscardPileTop]] withType:MSG_REFRESH];
         i++;
     }
 }
