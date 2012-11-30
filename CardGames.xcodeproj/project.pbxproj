@@ -15,6 +15,7 @@
 		D140E9A116056E6700FDC2DA /* PlayerConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D140E9A016056E6700FDC2DA /* PlayerConnectViewController.m */; };
 		D140E9AA1605705900FDC2DA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D140E9A91605705900FDC2DA /* CFNetwork.framework */; };
 		D140E9BD16062AB200FDC2DA /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = D140E9BB16062AB200FDC2DA /* Server.m */; };
+		D172F5571668FD10002F3EF2 /* RoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D172F5561668FD0F002F3EF2 /* RoundedView.m */; };
 		D18663A115F109BE0098E8AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18663A015F109BE0098E8AD /* UIKit.framework */; };
 		D18663A315F109BE0098E8AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18663A215F109BE0098E8AD /* Foundation.framework */; };
 		D18663A515F109BE0098E8AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18663A415F109BE0098E8AD /* CoreGraphics.framework */; };
@@ -123,6 +124,8 @@
 		D140E9BA16062AB200FDC2DA /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
 		D140E9BB16062AB200FDC2DA /* Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Server.m; sourceTree = "<group>"; };
 		D140E9BC16062AB200FDC2DA /* ServerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerDelegate.h; sourceTree = "<group>"; };
+		D172F5551668FD0F002F3EF2 /* RoundedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedView.h; sourceTree = "<group>"; };
+		D172F5561668FD0F002F3EF2 /* RoundedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedView.m; sourceTree = "<group>"; };
 		D17C3363165065C500B19F43 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D186639C15F109BE0098E8AD /* CardGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18663A015F109BE0098E8AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -431,6 +434,8 @@
 				D1F488D3160CC16600CC1A07 /* RoundedTableView.m */,
 				D1BC21FE164DDA220067EFF8 /* RoundedButton.h */,
 				D1BC21FF164DDA220067EFF8 /* RoundedButton.m */,
+				D172F5551668FD0F002F3EF2 /* RoundedView.h */,
+				D172F5561668FD0F002F3EF2 /* RoundedView.m */,
 			);
 			name = UIComponents;
 			sourceTree = "<group>";
@@ -636,6 +641,7 @@
 				AB7CFC8A165B1B9A007EB0D7 /* GameBoardViewController.m in Sources */,
 				593213111662C52D00F7245E /* CrazyEightsGameController.m in Sources */,
 				593213141662C53B00F7245E /* GameController.m in Sources */,
+				D172F5571668FD10002F3EF2 /* RoundedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

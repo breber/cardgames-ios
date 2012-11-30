@@ -9,12 +9,10 @@
 #import "ConnectionDelegate.h"
 #import "Constants.h"
 #import "ConnectViewController.h"
+#import "GameBoardViewController.h"
 #import "Player.h"
 #import "Server.h"
 #import "UIColor+CardGamesColor.h"
-#import "WifiConnection.h"
-#import "GameBoardViewController.h"
-#import "GameController.h"
 
 @interface ConnectViewController() <ServerDelegate, ConnectionDelegate>
 
@@ -63,12 +61,6 @@
 
 - (void)viewDidUnload
 {
-    [self setPlayerNameLabels:nil];
-    [self setStartButton:nil];
-    [self setPlayerNameLabels:nil];
-    [self setPlayerDevices:nil];
-    [self setPlayerLoading:nil];
-    [self setDebugGameboard:nil];
     [super viewDidUnload];
     [self.server stop];
 }
@@ -77,9 +69,10 @@
                  sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"begingame"]) {
-        ((GameBoardViewController*)segue.destinationViewController).players = [self.players mutableCopy];
-        
-        [((GameBoardViewController*)segue.destinationViewController) setupGameController];
+        GameBoardViewController *dest = segue.destinationViewController;
+
+        dest.players = [self.players mutableCopy];
+        [dest setupGameController];
     }
 }
 
