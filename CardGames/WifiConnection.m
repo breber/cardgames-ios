@@ -151,7 +151,7 @@ static WifiConnection *instance = nil;
                     if (len > 0) {
                         NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:NSASCIIStringEncoding];
                         
-                        if (nil != output) {
+                        if (output) {
                             NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:[output dataUsingEncoding:NSUTF8StringEncoding]
                                                                                        options:0
                                                                                          error:nil];
@@ -160,7 +160,7 @@ static WifiConnection *instance = nil;
                                 NSLog(@"%s - READ: %@", __PRETTY_FUNCTION__, jsonObject);
                             }
                             
-                            if ([self.delegate respondsToSelector:@selector(newDataArrived:withData:withType:)]) {
+                            if (jsonObject && [self.delegate respondsToSelector:@selector(newDataArrived:withData:withType:)]) {
                                 NSString *data = [jsonObject objectForKey:@"DATA"];
                                 int type = [[jsonObject objectForKey:@"MSG_TYPE"] intValue];
                                 
