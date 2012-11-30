@@ -142,34 +142,38 @@ static CrazyEightsTabletGame *instance = nil;
 + (NSString *)getComputerDifficultyFromPicker
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *myString = [defaults objectForKey:@"computerDifficulty"];
+    NSString *difficulty = [defaults objectForKey:@"computerDifficulty"];
     
-    if (myString)  {
-        return myString;
+    if (difficulty)  {
+        return difficulty;
     }
     
     [defaults setObject:DIF_COMP_EASY forKey:@"computerDifficulty"];
     
-    //This return may happen if the user default for the device is nil
+    // This return may happen if the user default for the device is nil
     return DIF_COMP_EASY;
 }
 
 + (int)getNumberOfComputerPlayersFromPicker
 {    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *myString = [defaults objectForKey:@"numberOfComputers"];
-    
-    if ([myString isEqualToString:@"One"]) {
+    NSString *numComputers = [defaults objectForKey:@"numberOfComputers"];
+
+    if (DEBUG) {
+        NSLog(@"Num Computers Pref: %@", numComputers);
+    }
+
+    if ([numComputers isEqualToString:@"One"]) {
         return 1;
-    } else if ([myString isEqualToString:@"Two"]) {
+    } else if ([numComputers isEqualToString:@"Two"]) {
         return 2;
-    } else if ([myString isEqualToString:@"Three"]) {
+    } else if ([numComputers isEqualToString:@"Three"]) {
         return 3;
     }
     
     [defaults setObject:@"One" forKey:@"numberOfComputers"];
 
-    //This return may happen if the user default for the device is nil
+    // This return may happen if the user default for the device is nil
     return 1;
 }
 

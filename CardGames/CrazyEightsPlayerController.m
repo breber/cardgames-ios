@@ -25,7 +25,7 @@
 {
     [super setIsTurn:isTurn];
 
-    for (UIView* button in [self.buttonView subviews]) {
+    for (UIView *button in [self.buttonView subviews]) {
         if ([button isKindOfClass:[UIButton class]]) {
             UIButton *b = (UIButton *)button;
 

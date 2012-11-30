@@ -21,36 +21,30 @@
 {
     NSData *d = [data dataUsingEncoding:NSUTF8StringEncoding];
     
-    if (type == MSG_PLAY_CARD){
-        //discard card on game board
+    if (type == MSG_PLAY_CARD) {
+        // discard card on game board
         [self handleDiscard:d];
         [self advanceTurn];
-        
-    } else if(type == MSG_DRAW_CARD){
-        //draw card for player
+    } else if (type == MSG_DRAW_CARD) {
+        // draw card for player
         [self handleDrawCard];
         [self advanceTurn];
-        
-    } else if(type == MSG_REFRESH){
+    } else if (type == MSG_REFRESH) {
         [self refreshPlayers];
-        
-    } else if(type == MSG_PLAY_EIGHT_C){
-        //TODO move to C8 gamecontroller
+    } else if (type == MSG_PLAY_EIGHT_C) {
+        // TODO move to C8 gamecontroller
         self.suitChosen = SUIT_CLUBS;
         [self handleDiscard:d];
         [self advanceTurn];
-        
-    } else if(type == MSG_PLAY_EIGHT_D){
+    } else if (type == MSG_PLAY_EIGHT_D) {
         self.suitChosen = SUIT_DIAMONDS;
         [self handleDiscard:d];
         [self advanceTurn];
-        
-    } else if(type == MSG_PLAY_EIGHT_H){
+    } else if (type == MSG_PLAY_EIGHT_H) {
         self.suitChosen = SUIT_HEARTS;
         [self handleDiscard:d];
         [self advanceTurn];
-        
-    } else if(type == MSG_PLAY_EIGHT_S){
+    } else if (type == MSG_PLAY_EIGHT_S) {
         self.suitChosen = SUIT_SPADES;
         [self handleDiscard:d];
         [self advanceTurn];
@@ -59,10 +53,11 @@
 
 - (void)startFirstTurn
 {
+    Player *p = [self.game.players objectAtIndex:self.whoseTurn];
     Card *onDiscard = [self.game getDiscardPileTop];
 
     // send first turn
-    [self sendCard:onDiscard withTurnCode:MSG_IS_TURN toPlayerIndex:self.whoseTurn];
+    [self sendCard:onDiscard withTurnCode:MSG_IS_TURN toPlayer:p];
 }
 
 
@@ -79,13 +74,14 @@
 
 - (void)handleDrawCard
 {
-    Card *cardDrawn = [self.game drawCardForPlayer:((Player *)[self.game.players objectAtIndex:self.whoseTurn])];
+    Player *p = [self.game.players objectAtIndex:self.whoseTurn];
+    Card *cardDrawn = [self.game drawCardForPlayer:p];
     
     if (cardDrawn) {
         // send the card to the player
-        [self sendCard:cardDrawn withTurnCode:MSG_CARD_DRAWN toPlayerIndex:self.whoseTurn];
+        [self sendCard:cardDrawn withTurnCode:MSG_CARD_DRAWN toPlayer:p];
     } else {
-        //TODO we have a problem, need to reshuffle deck or something worse.
+        // TODO: we have a problem, need to reshuffle deck or something worse.
     }
 }
 
@@ -119,7 +115,7 @@
     if (p.isComputer) {
         [self startComputerTurn];
     } else {
-        [self sendCard:onDiscard withTurnCode:MSG_IS_TURN toPlayerIndex:self.whoseTurn];
+        [self sendCard:onDiscard withTurnCode:MSG_IS_TURN toPlayer:p];
     }    
 }
 
@@ -157,45 +153,43 @@
 
 - (void)playComputerTurn
 {
-    Card* onDiscard = [self getDiscardPileTranslated];
-    Player * curPlayer = ((Player*)[self.game.players objectAtIndex:self.whoseTurn]);
-    NSMutableArray* cards = curPlayer.cards;
-    Card* cardSelected = nil;
+    Card *onDiscard = [self getDiscardPileTranslated];
+    Player *curPlayer = [self.game.players objectAtIndex:self.whoseTurn];
+    NSMutableArray *cards = curPlayer.cards;
+    Card *cardSelected = nil;
     
-    NSString * compDifficulty = ((Player*)[self.game.players objectAtIndex:self.whoseTurn]).computerDifficulty;
+    NSString *compDifficulty = curPlayer.computerDifficulty;
 
     // Determine which card to play based on difficulty
-    if([DIF_COMP_EASY isEqualToString:compDifficulty]){
-        //easy
+    if ([DIF_COMP_EASY isEqualToString:compDifficulty]) {
+        // Easy
         for (Card *c in cards) {
-            if([CrazyEightsRules canPlay:c withDiscard:onDiscard]){
+            if ([CrazyEightsRules canPlay:c withDiscard:onDiscard]) {
                 cardSelected = c;
                 break;
             }
         }
-    } else if([DIF_COMP_MEDIUM isEqualToString:compDifficulty]){
-        //TODO medium
+    } else if ([DIF_COMP_MEDIUM isEqualToString:compDifficulty]) {
+        // TODO: medium
         for (Card *c in cards) {
-            if([CrazyEightsRules canPlay:c withDiscard:onDiscard]){
+            if ([CrazyEightsRules canPlay:c withDiscard:onDiscard]) {
                 cardSelected = c;
                 break;
             }
         }
-    } else if([DIF_COMP_HARD isEqualToString: compDifficulty]){
-        //TODO Hard, not necessary for 388 turn in.
+    } else if ([DIF_COMP_HARD isEqualToString: compDifficulty]) {
+        // TODO: Hard, not necessary for 388 turn in.
         for (Card *c in cards) {
-            if([CrazyEightsRules canPlay:c withDiscard:onDiscard]){
+            if ([CrazyEightsRules canPlay:c withDiscard:onDiscard]) {
                 cardSelected = c;
                 break;
             }
         }
     }
 
-    
-    
     // Perform action
     if (cardSelected) {
-        //TODO card discard sound
+        // TODO: card discard sound
         [self.game addCard:cardSelected toDiscardPileFromPlayer:curPlayer];
     } else {
         //TODO draw sound

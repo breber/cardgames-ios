@@ -48,12 +48,6 @@
     [self changeDiscardImage];
 }
 
-- (void)gameRequestingName
-{
-    //TODO
-    
-}
-
 - (void)gameDidBegin
 {
     //TODO
@@ -63,7 +57,7 @@
 - (void)gameDidPause
 {
     //TODO
-    
+
 }
 - (void)gameDidResume
 {

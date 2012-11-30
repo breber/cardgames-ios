@@ -152,6 +152,7 @@ static WifiConnection *instance = nil;
                         NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:NSASCIIStringEncoding];
                         
                         if (output) {
+                            // TODO: multiple json objects mashed together
                             NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:[output dataUsingEncoding:NSUTF8StringEncoding]
                                                                                        options:0
                                                                                          error:nil];

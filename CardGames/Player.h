@@ -16,9 +16,9 @@
 @property(nonatomic, strong) NSString *name;
 @property(nonatomic, strong) NSMutableArray *cards;
 @property(nonatomic) BOOL isComputer;
-@property(nonatomic) NSString * computerDifficulty;
+@property(nonatomic, strong) NSString *computerDifficulty;
 
 - (NSArray *)jsonCards;
-- (NSString *)jsonString:(BOOL)isTurn withDiscard: (Card*)discardCard;
+- (NSString *)jsonString:(BOOL)isTurn withDiscard:(Card *)discardCard;
 
 @end

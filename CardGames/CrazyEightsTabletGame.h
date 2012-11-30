@@ -18,8 +18,8 @@
 @property(nonatomic, strong) NSEnumerator *e;
 
 + (CrazyEightsTabletGame *)sharedInstance;
-+ (NSString*)getComputerDifficultyFromPicker;
-+ (int) getNumberOfComputerPlayersFromPicker;
++ (NSString *)getComputerDifficultyFromPicker;
++ (int)getNumberOfComputerPlayersFromPicker;
 
 
 - (void)addPlayer:(Player *)p;

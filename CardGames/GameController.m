@@ -23,22 +23,12 @@
     if (self) {
         self.whoseTurn = 0;
         self.game = [CrazyEightsTabletGame sharedInstance];
-        
-        
     }
     
     return self;
 }
 
-- (void)addButtons
-{
-    //TODO
-    //add refresh
-    
-    //add pause
-}
-
-- (void)setupGameboardWithPlayers:(NSMutableArray *) players
+- (void)setupGameboardWithPlayers:(NSMutableArray *)players
 {
     //add players
     self.game.players = players;
@@ -95,7 +85,9 @@
         i++;
     }
 
-    NSLog(@"Number of Human Players: %d, Computer Players: %d", numHumans, i - numHumans);
+    if (DEBUG) {
+        NSLog(@"Number of Human Players: %d, Computer Players: %d", numHumans, i - numHumans);
+    }
 
     // Start first turn after 1 second (so that the messages are sent separately
     [self performSelector:@selector(startFirstTurn) withObject:self afterDelay:1];
@@ -108,19 +100,14 @@
 
 - (void)sendCard:(Card *)card
     withTurnCode:(int)msg
-   toPlayerIndex:(int)index
+        toPlayer:(Player *)player
 {
-    // get the player
-    Player *player = [self.game.players objectAtIndex:self.whoseTurn];
-    
     if (player.isComputer) {
         NSLog(@"%s - computerPlayer...", __PRETTY_FUNCTION__);
     }
-    
-    NSString *cardString = [card jsonString];
-    
+
     // write message to player
-    [player.connection write:cardString  withType:msg];
+    [player.connection write:[card jsonString] withType:msg];
 }
 
 - (void)handleDiscard:(NSData *)data
@@ -138,7 +125,7 @@
     // Nothing needed in this class   
 }
 
-- (int) getSuit
+- (int)getSuit
 {
     // Nothing needed in this class
     return 0;
@@ -148,7 +135,7 @@
 
 - (void)outputStreamOpened:(WifiConnection *)connection
 {
-    //TODO, not sure what todo
+    // TODO: not sure what todo
 }
 
 - (void)outputStreamClosed:(WifiConnection *)connection
@@ -170,34 +157,29 @@
 
 - (void)declareWinner:(int)winner
 {
-    NSString * winnerName = [NSString stringWithFormat:@"%@ wins!", ((Player *)[self.game.players objectAtIndex:winner]).name];
-    //TODO declare winner on gameboard
+    Player *p = [self.game.players objectAtIndex:winner];
+    NSString *winnerName = [NSString stringWithFormat:@"%@ wins!", p.name];
+
     [self.delegate declareWinner:winnerName];
     
     int i = 0;
-    for (Player * p in self.game.players) {
-        if(i == winner){
-            [p.connection write: @""  withType: MSG_WINNER];
+    for (Player *p in self.game.players) {
+        if (i == winner) {
+            [p.connection write: @"" withType:MSG_WINNER];
         } else {
-            [p.connection write: @""  withType: MSG_LOSER];
+            [p.connection write: @"" withType:MSG_LOSER];
         }
         i++;
     }
-    
-    
-    //TODO quit game
 }
 
 - (void)refreshPlayers
 {
     int i = 0;
-    for (Player * p in self.game.players) {
+    for (Player *p in self.game.players) {
         [p.connection write:[p jsonString:(i == self.whoseTurn) withDiscard:[self.game getDiscardPileTop]] withType:MSG_REFRESH];
         i++;
     }
 }
-
-
-
 
 @end
