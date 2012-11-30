@@ -9,6 +9,7 @@
 #import "C8Constants.h"
 #import "CrazyEightsTabletGame.h"
 #import "WifiConnection.h"
+#import "Constants.h"
 
 @interface CrazyEightsTabletGame()
 
@@ -137,6 +138,21 @@ static CrazyEightsTabletGame *instance = nil;
     if (p) {
         p.isComputer = YES;
     }
+}
+
++ (NSString*)getComputerDifficultyFromPicker
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *myString = [defaults objectForKey:@"computerDifficulty"];
+    
+    if (myString)  {
+        return myString;
+    }
+    
+    [defaults setObject:DIF_COMP_EASY forKey:@"computerDifficulty"];
+    
+    //This return may happen if the user default for the device is nil
+    return DIF_COMP_EASY;
 }
 
 + (int)getNumberOfComputerPlayersFromPicker
