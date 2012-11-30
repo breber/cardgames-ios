@@ -35,7 +35,7 @@
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
                           self.name, @"playername",
                           [self jsonCards], @"currenthand",
-                          [discardCard jsonString], @"discardCard",
+                          [discardCard jsonObject], @"discardCard",
                           [NSNumber numberWithBool:isTurn], @"isturn",
                           nil];
     NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:kNilOptions error:nil];

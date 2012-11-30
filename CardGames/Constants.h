@@ -44,9 +44,9 @@ static const int KING_VALUE = 12;
 static const int BLACK_JOKER_VALUE = 0;
 static const int RED_JOKER_VALUE = 1;
 
-static const NSString *DIF_COMP_EASY = @"easy";
-static const NSString *DIF_COMP_MEDIUM = @"medium";
-static const NSString *DIF_COMP_HARD = @"hard";
+static NSString *DIF_COMP_EASY = @"Easy";
+static NSString *DIF_COMP_MEDIUM = @"Medium";
+static NSString *DIF_COMP_HARD = @"Hard";
 
 static NSString *BONJOUR_SERVICE = @"_cardgames._tcp.";
 static NSString *DEFAULT_NAME = @"Anonymous";

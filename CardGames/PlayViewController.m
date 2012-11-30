@@ -239,6 +239,7 @@
             disabled = ![self.playerController canPlay:c];
         }
         
+        //TODO refresh card buttons array
         UIButton *button = [self.cardButtons objectAtIndex:i];
         button.enabled = !disabled;
     }

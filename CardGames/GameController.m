@@ -46,7 +46,7 @@
     int numHumans = [players count];
     
     // Get computer difficulty setting
-    NSString *compDifficulty = [[NSUserDefaults standardUserDefaults] stringForKey:@"computerDifficulty"];
+    NSString *compDifficulty = [CrazyEightsTabletGame getComputerDifficultyFromPicker];
     
     // Get number of computers setting
     int numComputers = [CrazyEightsTabletGame getNumberOfComputerPlayersFromPicker];

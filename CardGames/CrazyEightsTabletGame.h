@@ -18,7 +18,9 @@
 @property(nonatomic, strong) NSEnumerator *e;
 
 + (CrazyEightsTabletGame *)sharedInstance;
++ (NSString*)getComputerDifficultyFromPicker;
 + (int) getNumberOfComputerPlayersFromPicker;
+
 
 - (void)addPlayer:(Player *)p;
 - (BOOL)isGameOver:(Player *)p;

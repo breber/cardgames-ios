@@ -148,33 +148,48 @@
 
 - (void)startComputerTurn
 {
+    //TODO make waiting happen here
+    [self playComputerTurn];
+       
+    [self advanceTurn];
+}
+
+- (void)playComputerTurn
+{
     //TODO make this wait before playing. 
     
     Card* onDiscard = [self getDiscardPileTranslated];
     Player * curPlayer = ((Player*)[self.game.players objectAtIndex:self.whoseTurn]);
     NSMutableArray* cards = curPlayer.cards;
     Card* cardSelected = nil;
-        
+    
+    NSString * compDifficulty = ((Player*)[self.game.players objectAtIndex:self.whoseTurn]).computerDifficulty;
+    
+    NSLog(@"Difficulty: %@",compDifficulty);
+    
     // Determine which card to play based on difficulty
-    if([DIF_COMP_EASY isEqualToString:((Player*)[self.game.players objectAtIndex:self.whoseTurn]).computerDifficulty]){
+    if([DIF_COMP_EASY isEqualToString:compDifficulty]){
         //easy
         for (Card *c in cards) {
             if([CrazyEightsRules canPlay:c withDiscard:onDiscard]){
                 cardSelected = c;
+                break;
             }
         }
-    } else if([DIF_COMP_MEDIUM isEqualToString:((Player*)[self.game.players objectAtIndex:self.whoseTurn]).computerDifficulty]){
+    } else if([DIF_COMP_MEDIUM isEqualToString:compDifficulty]){
         //TODO medium
         for (Card *c in cards) {
             if([CrazyEightsRules canPlay:c withDiscard:onDiscard]){
                 cardSelected = c;
+                break;
             }
         }
-    } else if([DIF_COMP_HARD isEqualToString: ((Player*)[self.game.players objectAtIndex:self.whoseTurn]).computerDifficulty]){
+    } else if([DIF_COMP_HARD isEqualToString: compDifficulty]){
         //TODO Hard, not necessary for 388 turn in.
         for (Card *c in cards) {
             if([CrazyEightsRules canPlay:c withDiscard:onDiscard]){
                 cardSelected = c;
+                break;
             }
         }
     }
