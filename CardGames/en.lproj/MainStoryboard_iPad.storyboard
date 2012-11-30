@@ -33,11 +33,7 @@
                         <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Rcr-H8-p52">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="704" id="3H3-SN-QA2"/>
-                                </constraints>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Rcr-H8-p52"/>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Vq-DL-R9y" customClass="RoundedTextView">
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -85,18 +81,19 @@
                             <constraint firstItem="3Vq-DL-R9y" firstAttribute="leading" secondItem="9gF-La-5ls" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0ov-tE-dQV"/>
                             <constraint firstItem="7Dl-FA-VJa" firstAttribute="leading" secondItem="DqN-vQ-rHp" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="0p3-GJ-Mj8"/>
                             <constraint firstAttribute="bottom" secondItem="3Vq-DL-R9y" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="2a5-xZ-kwl"/>
-                            <constraint firstItem="Rcr-H8-p52" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="-1" id="4gW-En-u1A"/>
                             <constraint firstItem="Rcr-H8-p52" firstAttribute="trailing" secondItem="9gF-La-5ls" secondAttribute="trailing" type="default" id="AYD-y3-4sv"/>
                             <constraint firstItem="DqN-vQ-rHp" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="108" id="BRN-2M-pB9"/>
                             <constraint firstItem="3Vq-DL-R9y" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="20" symbolic="YES" type="default" id="HEr-oj-Lr5"/>
                             <constraint firstItem="7Dl-FA-VJa" firstAttribute="leading" secondItem="oyA-z5-lVI" secondAttribute="leading" type="default" id="IEN-WI-8C0"/>
                             <constraint firstItem="oyA-z5-lVI" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="50" id="JGA-gu-tIi"/>
+                            <constraint firstItem="Rcr-H8-p52" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" type="default" id="Mbo-Jq-osI"/>
                             <constraint firstAttribute="trailing" secondItem="3Vq-DL-R9y" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Nx5-wU-GDU"/>
                             <constraint firstItem="oyA-z5-lVI" firstAttribute="leading" secondItem="CDK-Iz-uxB" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="OPF-Zr-llL"/>
                             <constraint firstItem="DqN-vQ-rHp" firstAttribute="leading" secondItem="CDK-Iz-uxB" secondAttribute="leading" type="default" id="RR0-Nu-cpk"/>
                             <constraint firstItem="Rcr-H8-p52" firstAttribute="leading" secondItem="9gF-La-5ls" secondAttribute="leading" type="default" id="h3b-E9-oQK"/>
                             <constraint firstItem="7Dl-FA-VJa" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="115" id="oqa-xR-zej"/>
                             <constraint firstItem="CDK-Iz-uxB" firstAttribute="leading" secondItem="9gF-La-5ls" secondAttribute="leading" constant="49" id="pG7-tN-Kea"/>
+                            <constraint firstItem="Rcr-H8-p52" firstAttribute="bottom" secondItem="9gF-La-5ls" secondAttribute="bottom" type="default" id="pOq-y6-lxB"/>
                             <constraint firstItem="CDK-Iz-uxB" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="43" id="z5y-Lm-2Zz"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -232,7 +229,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fwA-nE-Sf6"/>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDR-qk-fLc">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDR-qk-fLc" customClass="RoundedView">
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Paused..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Itw-bJ-bir">
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
@@ -280,7 +277,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8g1-dC-9Ff"/>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQ9-al-vqS">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQ9-al-vqS" customClass="RoundedView">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIj-cf-sVu">
                                         <constraints>
@@ -792,7 +789,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWK-Do-sxt">
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oyy-lz-VTY">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oyy-lz-VTY" customClass="RoundedView">
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please Enter Your Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="nhO-OH-Wg7">
                                                 <constraints>
@@ -823,7 +820,7 @@
                                             <constraint firstAttribute="width" constant="355" type="user" id="vt9-90-B9o"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4be-ec-Q8O">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4be-ec-Q8O" customClass="RoundedView">
                                         <subviews>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yIW-2j-AcC">
                                                 <constraints>
@@ -1098,16 +1095,9 @@ A preferences page is also available from the home screen. To get to this page, 
                         <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8xO-xI-0cI">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="704" id="QXY-D2-L23"/>
-                                </constraints>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8xO-xI-0cI"/>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="P7i-H5-Cz0" customClass="RoundedTableView">
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="664" id="gHi-3y-sKR"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="services" textLabel="l2V-J5-23d" style="IBUITableViewCellStyleDefault" id="G1a-v8-Oyu">
                                         <rect key="frame" x="0.0" y="22" width="984" height="44"/>
@@ -1136,11 +1126,13 @@ A preferences page is also available from the home screen. To get to this page, 
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="P7i-H5-Cz0" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="0bw-4z-lLi"/>
                             <constraint firstItem="8xO-xI-0cI" firstAttribute="trailing" secondItem="ZiT-bZ-pwv" secondAttribute="trailing" type="default" id="1e0-4l-fBt"/>
                             <constraint firstAttribute="trailing" secondItem="P7i-H5-Cz0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="83v-CR-MyE"/>
+                            <constraint firstItem="8xO-xI-0cI" firstAttribute="top" secondItem="ZiT-bZ-pwv" secondAttribute="top" type="default" id="I8d-jy-Oyw"/>
+                            <constraint firstItem="8xO-xI-0cI" firstAttribute="bottom" secondItem="ZiT-bZ-pwv" secondAttribute="bottom" type="default" id="YeK-K3-ADd"/>
                             <constraint firstItem="P7i-H5-Cz0" firstAttribute="leading" secondItem="ZiT-bZ-pwv" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bS7-G7-lTT"/>
-                            <constraint firstItem="8xO-xI-0cI" firstAttribute="top" secondItem="ZiT-bZ-pwv" secondAttribute="top" constant="-1" id="dom-NR-0hR"/>
-                            <constraint firstItem="P7i-H5-Cz0" firstAttribute="centerY" secondItem="8xO-xI-0cI" secondAttribute="centerY" type="default" id="h0G-dT-5xF"/>
+                            <constraint firstItem="P7i-H5-Cz0" firstAttribute="top" secondItem="ZiT-bZ-pwv" secondAttribute="top" constant="20" symbolic="YES" type="default" id="eWy-vS-UoF"/>
                             <constraint firstItem="8xO-xI-0cI" firstAttribute="leading" secondItem="ZiT-bZ-pwv" secondAttribute="leading" type="default" id="nnk-mr-E8A"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -1278,6 +1270,9 @@ A preferences page is also available from the home screen. To get to this page, 
         </class>
         <class className="RoundedTextView" superclassName="UITextView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedTextView.h"/>
+        </class>
+        <class className="RoundedView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedView.h"/>
         </class>
         <class className="SettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
