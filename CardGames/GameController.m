@@ -170,8 +170,9 @@
 
 - (void)declareWinner:(int)winner
 {
+    NSString * winnerName = [NSString stringWithFormat:@"%@ wins!", ((Player *)[self.game.players objectAtIndex:winner]).name];
     //TODO declare winner on gameboard
-    [self.delegate declareWinner:((Player *)[self.game.players objectAtIndex:winner]).name];
+    [self.delegate declareWinner:winnerName];
     
     int i = 0;
     for (Player * p in self.game.players) {
