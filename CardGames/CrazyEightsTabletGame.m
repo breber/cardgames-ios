@@ -76,7 +76,16 @@ static CrazyEightsTabletGame *instance = nil;
 - (void)addCard:(Card *)card toDiscardPileFromPlayer:(Player *)player
 {
     [self.discardPile addObject: card];
-    [player.cards removeObject: card];
+    int i = 0;
+    
+    for(i = 0; i < [player.cards count]; i++){
+        Card * c = [player.cards objectAtIndex:i];
+        
+        if(c.suit == card.suit && c.value == card.value && c.cardId == card.cardId){
+            [player.cards removeObjectAtIndex:i];
+            break;
+        }
+    }
 }
 
 - (Card *)drawCardForPlayer:(Player *)player
