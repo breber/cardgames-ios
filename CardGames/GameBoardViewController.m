@@ -48,23 +48,6 @@
     [self changeDiscardImage];
 }
 
-- (void)gameDidBegin
-{
-    //TODO
-    
-}
-
-- (void)gameDidPause
-{
-    //TODO
-
-}
-- (void)gameDidResume
-{
-    //TODO
-    
-}
-
 - (void)declareWinner:(NSString *)winner
 {    
     [self performSegueWithIdentifier:@"declarewinner" sender:winner];
@@ -80,7 +63,8 @@
 
 - (IBAction)pauseGame
 {
-    [self gameDidPause];
+    // TODO: segue to paused game screen
+    // TODO: send paused game message to players
 }
 
 - (IBAction)refreshGame

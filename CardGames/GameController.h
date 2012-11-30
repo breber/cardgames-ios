@@ -11,10 +11,6 @@
 
 @protocol GameControllerDelegate <NSObject>
 
-// TODO: make some of these optional
-- (void)gameDidBegin;
-- (void)gameDidPause;
-- (void)gameDidResume;
 - (void)refreshGameBoard;
 - (void)declareWinner:(NSString *)winner;
 
