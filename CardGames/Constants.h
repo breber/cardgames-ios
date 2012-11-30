@@ -44,6 +44,9 @@ static const int KING_VALUE = 12;
 static const int BLACK_JOKER_VALUE = 0;
 static const int RED_JOKER_VALUE = 1;
 
+static NSString *PREF_DIFFICULTY = @"computerDifficulty";
+static NSString *PREF_NUM_COMPUTERS = @"numberOfComputers";
+
 static NSString *DIF_COMP_EASY = @"Easy";
 static NSString *DIF_COMP_MEDIUM = @"Medium";
 static NSString *DIF_COMP_HARD = @"Hard";

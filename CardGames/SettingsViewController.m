@@ -6,30 +6,40 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
+#import "Constants.h"
 #import "SettingsViewController.h"
 
 @implementation SettingsViewController
 
-- (void)viewDidUnload {
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
 
+    // TODO: set the layout based on the NSUserDefaults values...
+
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    [self.computerDifficultyPicker setSelectedSegmentIndex:]
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:[self.computerDifficultyPicker titleForSegmentAtIndex:self.computerDifficultyPicker.selectedSegmentIndex]
-                 forKey:@"computerDifficulty"];
+                 forKey:PREF_DIFFICULTY];
     
     [defaults setObject:[self.numberOfComputersPicker titleForSegmentAtIndex:self.numberOfComputersPicker.selectedSegmentIndex]
-                 forKey:@"numberOfComputers"];
-    
+                 forKey:PREF_NUM_COMPUTERS];
+    [defaults synchronize];
+
     /*
      To get the data back out for this setting use:
      
      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-     NSData *myEncodedObject = [defaults objectForKey:@"computerDifficulty"];
+     NSData *myEncodedObject = [defaults objectForKey:PREF_DIFFICULTY];
      
      */
     
-    [self setComputerDifficultyPicker:nil];
-    [self setNumberOfComputersPicker:nil];
-    [super viewDidUnload];
+    [super viewWillDisappear:animated];
     
 }
 @end

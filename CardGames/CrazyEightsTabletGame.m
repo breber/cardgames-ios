@@ -7,9 +7,9 @@
 //
 
 #import "C8Constants.h"
+#import "Constants.h"
 #import "CrazyEightsTabletGame.h"
 #import "WifiConnection.h"
-#import "Constants.h"
 
 @interface CrazyEightsTabletGame()
 
@@ -142,13 +142,13 @@ static CrazyEightsTabletGame *instance = nil;
 + (NSString *)getComputerDifficultyFromPicker
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *difficulty = [defaults objectForKey:@"computerDifficulty"];
+    NSString *difficulty = [defaults objectForKey:PREF_DIFFICULTY];
     
     if (difficulty)  {
         return difficulty;
     }
     
-    [defaults setObject:DIF_COMP_EASY forKey:@"computerDifficulty"];
+    [defaults setObject:DIF_COMP_EASY forKey:PREF_DIFFICULTY];
     
     // This return may happen if the user default for the device is nil
     return DIF_COMP_EASY;
@@ -157,11 +157,7 @@ static CrazyEightsTabletGame *instance = nil;
 + (int)getNumberOfComputerPlayersFromPicker
 {    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *numComputers = [defaults objectForKey:@"numberOfComputers"];
-
-    if (DEBUG) {
-        NSLog(@"Num Computers Pref: %@", numComputers);
-    }
+    NSString *numComputers = [defaults objectForKey:PREF_NUM_COMPUTERS];
 
     if ([numComputers isEqualToString:@"One"]) {
         return 1;
@@ -171,7 +167,7 @@ static CrazyEightsTabletGame *instance = nil;
         return 3;
     }
     
-    [defaults setObject:@"One" forKey:@"numberOfComputers"];
+    [defaults setObject:@"One" forKey:PREF_NUM_COMPUTERS];
 
     // This return may happen if the user default for the device is nil
     return 1;
