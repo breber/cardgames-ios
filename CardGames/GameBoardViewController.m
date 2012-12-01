@@ -48,7 +48,12 @@
     [self changeDiscardImage];
 }
 
-- (void)declareWinner:(NSString *)winner
+- (void)gameStateDidUpdate:(GameController *)controller
+{
+    [self refreshGameBoard];
+}
+
+- (void)gameDidEnd:(GameController *)controller withWinner:(NSString *)winner
 {    
     [self performSegueWithIdentifier:@"declarewinner" sender:winner];
 }

@@ -9,10 +9,12 @@
 #import "Card.h"
 #import "CrazyEightsTabletGame.h"
 
+@class GameController;
+
 @protocol GameControllerDelegate <NSObject>
 
-- (void)refreshGameBoard;
-- (void)declareWinner:(NSString *)winner;
+- (void)gameStateDidUpdate:(GameController *)controller;
+- (void)gameDidEnd:(GameController *)controller withWinner:(NSString *)winner;
 
 @end
 

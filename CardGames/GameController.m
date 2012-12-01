@@ -64,7 +64,7 @@
     [self.game setup];
     
     // Let the view controller go 
-    [self.delegate refreshGameBoard];
+    [self.delegate gameStateDidUpdate:self];
     
     //counter to tell which player index
     int i = 0;
@@ -160,7 +160,7 @@
     Player *p = [self.game.players objectAtIndex:winner];
     NSString *winnerName = [NSString stringWithFormat:@"%@ wins!", p.name];
 
-    [self.delegate declareWinner:winnerName];
+    [self.delegate gameDidEnd:self withWinner:winnerName];
     
     int i = 0;
     for (Player *p in self.game.players) {

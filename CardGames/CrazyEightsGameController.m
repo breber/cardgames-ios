@@ -89,7 +89,7 @@
 - (void)advanceTurn
 {
     // Update gameboard
-    [self.delegate refreshGameBoard];
+    [self.delegate gameStateDidUpdate:self];
 
     Player *p = [self.game.players objectAtIndex:self.whoseTurn];
     
