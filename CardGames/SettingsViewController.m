@@ -9,14 +9,11 @@
 #import "Constants.h"
 #import "SettingsViewController.h"
 
-
 @implementation SettingsViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // TODO: set the layout based on the NSUserDefaults values...
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
