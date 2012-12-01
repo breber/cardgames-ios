@@ -9,6 +9,7 @@
 #import "Constants.h"
 #import "SettingsViewController.h"
 
+
 @implementation SettingsViewController
 
 - (void)viewDidLoad
@@ -17,8 +18,35 @@
 
     // TODO: set the layout based on the NSUserDefaults values...
 
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [self.computerDifficultyPicker setSelectedSegmentIndex:]
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    int computerDifficultyIndex = 0;
+    
+    NSString *computerDifficulty = [defaults objectForKey:PREF_DIFFICULTY];
+
+    if ([computerDifficulty isEqualToString:@"Easy"]) {
+        computerDifficultyIndex = 0;
+    } else if ([computerDifficulty isEqualToString:@"Medium"]) {
+        //Add in the future...right now there are only two difficulties
+    } else if ([computerDifficulty isEqualToString:@"Hard"]) {
+        computerDifficultyIndex = 1;
+    }
+
+    int numberOfComputersIndex = 0;
+    
+    NSString *numComputers = [defaults objectForKey:PREF_NUM_COMPUTERS];
+    
+    if ([numComputers isEqualToString:@"One"]) {
+        numberOfComputersIndex = 0;
+    } else if ([numComputers isEqualToString:@"Two"]) {
+        numberOfComputersIndex = 1;
+    } else if ([numComputers isEqualToString:@"Three"]) {
+        numberOfComputersIndex = 2;
+    }
+
+    
+    [self.computerDifficultyPicker setSelectedSegmentIndex: computerDifficultyIndex];
+    [self.numberOfComputersPicker setSelectedSegmentIndex: numberOfComputersIndex];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
