@@ -185,7 +185,7 @@ static void TCPServerAcceptCallBack(CFSocketRef socket,
 - (BOOL)publishService
 {
     // come up with a name for our service
-    NSString* serviceName = [NSString stringWithFormat:@"Card Games - %@", [[UIDevice currentDevice] name]];
+    NSString* serviceName = [NSString stringWithFormat:@"Crazy Eights: %@", [[UIDevice currentDevice] name]];
 
     // create new instance of netService
     self.netService = [[NSNetService alloc] initWithDomain:@""
