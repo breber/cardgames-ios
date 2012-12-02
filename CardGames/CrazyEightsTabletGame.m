@@ -112,8 +112,10 @@ static CrazyEightsTabletGame *instance = nil;
 - (Card *)getNextCard
 {
     Card *c = [self.e nextObject];
-    // TODO: fix this
-//    [self.shuffledDeck removeObject:c];
+    self.e = nil;
+    // TODO: this might work? check for duplicate cards in players hand
+    [self.shuffledDeck removeObject:c];
+    self.e = [self.shuffledDeck objectEnumerator];
     return c;
 }
 
