@@ -10,4 +10,6 @@
 
 @interface ViewController : UIViewController
 
+- (NSArray *)sortByObjectTag:(NSArray *)arr;
+
 @end

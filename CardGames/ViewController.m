@@ -16,4 +16,14 @@
            (interfaceOrientation != UIInterfaceOrientationLandscapeRight);
 }
 
+- (NSArray *)sortByObjectTag:(NSArray *)arr
+{
+    return [arr sortedArrayUsingComparator:^NSComparisonResult(id objA, id objB) {
+        return (
+                ([objA tag] < [objB tag]) ? NSOrderedAscending  :
+                ([objA tag] > [objB tag]) ? NSOrderedDescending :
+                NSOrderedSame);
+    }];
+}
+
 @end

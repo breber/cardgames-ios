@@ -28,7 +28,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+    // Hide the navigation bar for more screen real estate
+    self.navigationController.navigationBarHidden = YES;
+
     // sort IBOutletCollection
 	self.playerPositions = [self sortByObjectTag:self.playerPositions];
     
@@ -198,24 +201,12 @@
     [UIView commitAnimations];
 }
 
-/*
- * Sorts the IBOutlet objects by their tag numbers.
- */
-- (NSArray *)sortByObjectTag:(NSArray *)arr
-{
-    return [arr sortedArrayUsingComparator:^NSComparisonResult(id objA, id objB) {
-        return (
-                ([objA tag] < [objB tag]) ? NSOrderedAscending  :
-                ([objA tag] > [objB tag]) ? NSOrderedDescending :
-                NSOrderedSame);
-    }];
-}
-
 #pragma mark - GameBoardPauseDelegate
 
 - (void)gameShouldResume
 {
     [self.gameController unpauseGame];
+    self.navigationController.navigationBarHidden = YES;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
