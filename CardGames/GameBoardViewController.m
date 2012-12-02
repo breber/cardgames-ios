@@ -221,7 +221,7 @@
 
 - (void)gameShouldEnd
 {
-    // TODO: player pressed main menu on pause screen
+    // TODO: player pressed main menu on pause screen (we need to send the game over message to all players)
 }
 
 @end
