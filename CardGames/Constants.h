@@ -54,4 +54,9 @@ static NSString *DIF_COMP_HARD = @"Hard";
 static NSString *BONJOUR_SERVICE = @"_cardgames._tcp.";
 static NSString *DEFAULT_NAME = @"Anonymous";
 
+static NSString *NUM_COMP_ZERO = @"Zero";
+static NSString *NUM_COMP_ONE = @"One";
+static NSString *NUM_COMP_TWO = @"Two";
+static NSString *NUM_COMP_THREE = @"Three";
+
 #endif

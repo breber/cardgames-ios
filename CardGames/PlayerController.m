@@ -86,7 +86,8 @@
 {
     NSData *d = [data dataUsingEncoding:NSUTF8StringEncoding];
     // If this is the init message
-    if (type == MSG_INIT) {
+    if (type == MSG_INIT || (!self.isGameStarted && ( type == MSG_REFRESH || type == MSG_IS_TURN ) )) {
+        self.isGameStarted = YES;
         self.isTurn = NO;
         [self.delegate gameDidBegin];
     } else if (type == MSG_SETUP) {

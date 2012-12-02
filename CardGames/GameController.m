@@ -41,9 +41,10 @@
     // Get number of computers setting
     int numComputers = [CrazyEightsTabletGame getNumberOfComputerPlayersFromPicker];
     
-    
-    // TODO TODO remove this hard code
-    numComputers = 0;
+    // Make sure at least 2 players are playing
+    if( numHumans + numComputers < 2){
+        numComputers = 2 - numHumans;
+    }
     
     // TODO: make this based on number of computers specified
     for (int i = 0; i < 4 && i < numHumans + numComputers; i++) {

@@ -159,15 +159,17 @@ static CrazyEightsTabletGame *instance = nil;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *numComputers = [defaults objectForKey:PREF_NUM_COMPUTERS];
 
-    if ([numComputers isEqualToString:@"One"]) {
+    if ([numComputers isEqualToString:NUM_COMP_ZERO]) {
+        return 0;
+    } else if ([numComputers isEqualToString:NUM_COMP_ONE]) {
         return 1;
-    } else if ([numComputers isEqualToString:@"Two"]) {
+    } else if ([numComputers isEqualToString:NUM_COMP_TWO]) {
         return 2;
-    } else if ([numComputers isEqualToString:@"Three"]) {
+    } else if ([numComputers isEqualToString:NUM_COMP_THREE]) {
         return 3;
     }
     
-    [defaults setObject:@"One" forKey:PREF_NUM_COMPUTERS];
+    [defaults setObject:NUM_COMP_ONE forKey:PREF_NUM_COMPUTERS];
 
     // This return may happen if the user default for the device is nil
     return 1;

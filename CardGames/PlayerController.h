@@ -32,6 +32,7 @@
 @property(nonatomic, weak) id <PlayerControllerDelegate> delegate;
 @property(nonatomic, strong) WifiConnection *connection;
 @property(nonatomic) BOOL isTurn;
+@property(nonatomic) BOOL isGameStarted;
 @property(nonatomic, strong) NSMutableArray *hand;
 @property(nonatomic, weak) UIView *buttonView;
 

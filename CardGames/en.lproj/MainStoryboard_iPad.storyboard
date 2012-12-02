@@ -50,9 +50,10 @@
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Dl-FA-VJa">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="336" id="g2X-dl-3ea"/>
+                                    <constraint firstAttribute="width" constant="452" id="T2v-UE-AEh"/>
                                 </constraints>
                                 <segments>
+                                    <segment title="Zero"/>
                                     <segment title="One"/>
                                     <segment title="Two"/>
                                     <segment title="Three"/>

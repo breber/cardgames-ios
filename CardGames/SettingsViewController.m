@@ -21,11 +21,11 @@
     
     NSString *computerDifficulty = [defaults objectForKey:PREF_DIFFICULTY];
 
-    if ([computerDifficulty isEqualToString:@"Easy"]) {
+    if ([computerDifficulty isEqualToString:DIF_COMP_EASY]) {
         computerDifficultyIndex = 0;
-    } else if ([computerDifficulty isEqualToString:@"Medium"]) {
+    } else if ([computerDifficulty isEqualToString:DIF_COMP_MEDIUM]) {
         //Add in the future...right now there are only two difficulties
-    } else if ([computerDifficulty isEqualToString:@"Hard"]) {
+    } else if ([computerDifficulty isEqualToString:DIF_COMP_HARD]) {
         computerDifficultyIndex = 1;
     }
 
@@ -33,12 +33,14 @@
     
     NSString *numComputers = [defaults objectForKey:PREF_NUM_COMPUTERS];
     
-    if ([numComputers isEqualToString:@"One"]) {
+    if ([numComputers isEqualToString:NUM_COMP_ZERO]) {
         numberOfComputersIndex = 0;
-    } else if ([numComputers isEqualToString:@"Two"]) {
+    } else if ([numComputers isEqualToString:NUM_COMP_ONE]) {
         numberOfComputersIndex = 1;
-    } else if ([numComputers isEqualToString:@"Three"]) {
+    } else if ([numComputers isEqualToString:NUM_COMP_TWO]) {
         numberOfComputersIndex = 2;
+    } else if ([numComputers isEqualToString:NUM_COMP_THREE]) {
+        numberOfComputersIndex = 3;
     }
 
     
