@@ -127,6 +127,9 @@
         [player.connection write:@"" withType:MSG_UNPAUSE];
     }
     
+    // Make the players be refreshed after a small delay
+    [self performSelector:@selector(refreshPlayers) withObject:self afterDelay:1];
+    
 }
 
 - (void)handleDiscard:(NSData *)data
