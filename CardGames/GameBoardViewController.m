@@ -68,9 +68,9 @@
 
 - (IBAction)pauseGame
 {
-    // TODO: segue to paused game screen
+    [self performSegueWithIdentifier:@"gameboardpause" sender:self];
     
-    if(self.gameController.isPaused){
+    if (self.gameController.isPaused) {
         // TODO: move this unpause to the resume game function
         [self.gameController unpauseGame];
     } else {

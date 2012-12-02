@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G56" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FAb-80-ltI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C2034" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FAb-80-ltI">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <development version="4500" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -643,7 +643,7 @@
                                     <constraint firstAttribute="width" constant="85" id="pga-Mw-DWy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Refresh">
+                                <state key="normal" title="Refresh" image="refresh_button.png">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -704,7 +704,7 @@
                                     <constraint firstAttribute="width" constant="85" id="zYx-KR-3Ge"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Pause">
+                                <state key="normal" title="Pause" image="pause_button.png">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -766,11 +766,12 @@
                         <outletCollection property="playerPositions" destination="JZB-Pp-AUI" id="4fQ-EH-hbg"/>
                         <outletCollection property="playerPositions" destination="Dol-GG-hTa" id="bay-pG-1Tu"/>
                         <segue destination="QzC-gV-dQs" kind="push" identifier="declarewinner" id="vjH-Xe-O7R"/>
+                        <segue destination="vPz-u1-Cxe" kind="push" identifier="gameboardpause" id="ROc-OH-ub7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1j-iY-YCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1161" y="-3090"/>
+            <point key="canvasLocation" x="1344" y="-3090"/>
         </scene>
         <!--Play View Controller - Play-->
         <scene sceneID="iWU-dS-Gv9">
@@ -1197,11 +1198,100 @@ A preferences page is also available from the home screen. To get to this page, 
             </objects>
             <point key="canvasLocation" x="2589" y="-3090"/>
         </scene>
+        <!--Game Board Pause View Controller - Pause-->
+        <scene sceneID="WeH-6t-KQA">
+            <objects>
+                <viewController id="vPz-u1-Cxe" customClass="GameBoardPauseViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D84-NA-F1V">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="HNE-Qn-Wyt"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOa-AU-GEu" customClass="RoundedButton">
+                                <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="104" id="tvz-oa-6Sr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="27"/>
+                                <state key="normal" title="Resume">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resumeButtonPressed" destination="vPz-u1-Cxe" eventType="touchUpInside" id="VWc-Dw-18X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrD-PH-pfw" customClass="RoundedButton">
+                                <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="9i7-cj-7dU"/>
+                                    <constraint firstAttribute="width" constant="821" id="nj3-PN-cRT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="22"/>
+                                <state key="normal" title="Rules">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Bmy-Im-nzM" kind="push" id="b5K-WP-gvI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abt-pw-2aR" customClass="RoundedButton">
+                                <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="yLR-c8-QOZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mainMenu:" destination="vPz-u1-Cxe" eventType="touchUpInside" id="dqX-Wo-9EK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BrD-PH-pfw" firstAttribute="centerX" secondItem="dOa-AU-GEu" secondAttribute="centerX" type="default" id="DTd-4J-9Y6"/>
+                            <constraint firstItem="BrD-PH-pfw" firstAttribute="leading" secondItem="Abt-pw-2aR" secondAttribute="leading" type="default" id="NQ7-Yn-ike"/>
+                            <constraint firstItem="dOa-AU-GEu" firstAttribute="leading" secondItem="D84-NA-F1V" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="O2g-tl-imk"/>
+                            <constraint firstItem="dOa-AU-GEu" firstAttribute="top" secondItem="D84-NA-F1V" secondAttribute="top" constant="227" id="V0N-xI-J7y"/>
+                            <constraint firstItem="HNE-Qn-Wyt" firstAttribute="leading" secondItem="D84-NA-F1V" secondAttribute="leading" type="default" id="VC4-n4-4Re"/>
+                            <constraint firstItem="HNE-Qn-Wyt" firstAttribute="trailing" secondItem="D84-NA-F1V" secondAttribute="trailing" type="default" id="c2V-Bx-F37"/>
+                            <constraint firstItem="BrD-PH-pfw" firstAttribute="top" secondItem="dOa-AU-GEu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dEi-Xp-gDi"/>
+                            <constraint firstItem="Abt-pw-2aR" firstAttribute="trailing" secondItem="BrD-PH-pfw" secondAttribute="trailing" type="default" id="f9o-7e-ZVU"/>
+                            <constraint firstItem="HNE-Qn-Wyt" firstAttribute="bottom" secondItem="D84-NA-F1V" secondAttribute="bottom" type="default" id="ffP-fO-ojH"/>
+                            <constraint firstItem="Abt-pw-2aR" firstAttribute="top" secondItem="BrD-PH-pfw" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gdW-34-dSb"/>
+                            <constraint firstItem="HNE-Qn-Wyt" firstAttribute="top" secondItem="D84-NA-F1V" secondAttribute="top" type="default" id="if6-6c-up2"/>
+                            <constraint firstAttribute="trailing" secondItem="dOa-AU-GEu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="j27-hV-v1e"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pause" id="iqB-aV-f9t"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9CO-rg-0WP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2589" y="-3954"/>
+        </scene>
     </scenes>
     <resources>
         <image name="clubsuitimage.png" width="348" height="348"/>
         <image name="diamondsuitimage.png" width="348" height="348"/>
         <image name="heartsuitimage.png" width="348" height="348"/>
+        <image name="pause_button.png" width="348" height="348"/>
+        <image name="refresh_button.png" width="348" height="348"/>
         <image name="spadesuitimage.png" width="348" height="348"/>
         <image name="wooden_top.jpg" width="600" height="361"/>
     </resources>
@@ -1224,6 +1314,12 @@ A preferences page is also available from the home screen. To get to this page, 
                 <relationship kind="outletCollection" name="playerDevices" candidateClass="UIView"/>
                 <relationship kind="outletCollection" name="playerLoading" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outletCollection" name="playerNameLabels" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GameBoardPauseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameBoardPauseViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="mainMenu:"/>
             </relationships>
         </class>
         <class className="GameBoardViewController" superclassName="ViewController">
@@ -1292,4 +1388,7 @@ A preferences page is also available from the home screen. To get to this page, 
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="b5K-WP-gvI"/>
+    </inferredMetricsTieBreakers>
 </document>

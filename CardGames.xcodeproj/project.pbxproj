@@ -98,6 +98,9 @@
 		D1CAA3EB15FD6F6800549EF7 /* icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA3E715FD6F6800549EF7 /* icon-ipad.png */; };
 		D1CAA3EC15FD6F6800549EF7 /* icon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA3E815FD6F6800549EF7 /* icon-retina.png */; };
 		D1CAA3ED15FD6F6800549EF7 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D1CAA3E915FD6F6800549EF7 /* icon.png */; };
+		D1D0ED0B166B1AB600EAE03C /* pause_button.png in Resources */ = {isa = PBXBuildFile; fileRef = D1D0ED09166B1AB600EAE03C /* pause_button.png */; };
+		D1D0ED0C166B1AB600EAE03C /* refresh_button.png in Resources */ = {isa = PBXBuildFile; fileRef = D1D0ED0A166B1AB600EAE03C /* refresh_button.png */; };
+		D1D0ED0F166B1BFB00EAE03C /* GameBoardPauseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D0ED0E166B1BFB00EAE03C /* GameBoardPauseViewController.m */; };
 		D1D2BA771603C9A0008EE137 /* CrazyEightsPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA761603C9A0008EE137 /* CrazyEightsPlayerController.m */; };
 		D1D2BA7A1603CDA0008EE137 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA791603CDA0008EE137 /* PlayerController.m */; };
 		D1DA26281604E4D100E32193 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DA26271604E4D100E32193 /* ConnectViewController.m */; };
@@ -225,6 +228,10 @@
 		D1CAA3E715FD6F6800549EF7 /* icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-ipad.png"; path = "CardGames/Resources/icon-ipad.png"; sourceTree = "<group>"; };
 		D1CAA3E815FD6F6800549EF7 /* icon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-retina.png"; path = "CardGames/Resources/icon-retina.png"; sourceTree = "<group>"; };
 		D1CAA3E915FD6F6800549EF7 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = CardGames/Resources/icon.png; sourceTree = "<group>"; };
+		D1D0ED09166B1AB600EAE03C /* pause_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause_button.png; path = CardGames/Resources/pause_button.png; sourceTree = "<group>"; };
+		D1D0ED0A166B1AB600EAE03C /* refresh_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refresh_button.png; path = CardGames/Resources/refresh_button.png; sourceTree = "<group>"; };
+		D1D0ED0D166B1BFB00EAE03C /* GameBoardPauseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBoardPauseViewController.h; sourceTree = "<group>"; };
+		D1D0ED0E166B1BFB00EAE03C /* GameBoardPauseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoardPauseViewController.m; sourceTree = "<group>"; };
 		D1D2BA751603C9A0008EE137 /* CrazyEightsPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrazyEightsPlayerController.h; sourceTree = "<group>"; };
 		D1D2BA761603C9A0008EE137 /* CrazyEightsPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrazyEightsPlayerController.m; sourceTree = "<group>"; };
 		D1D2BA781603CDA0008EE137 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
@@ -325,6 +332,8 @@
 				D1A7A53615FECD6F00754BD9 /* ChooseSuitViewController.m */,
 				D1DA26261604E4D100E32193 /* ConnectViewController.h */,
 				D1DA26271604E4D100E32193 /* ConnectViewController.m */,
+				D1D0ED0D166B1BFB00EAE03C /* GameBoardPauseViewController.h */,
+				D1D0ED0E166B1BFB00EAE03C /* GameBoardPauseViewController.m */,
 				AB7CFC88165B1B9A007EB0D7 /* GameBoardViewController.h */,
 				AB7CFC89165B1B9A007EB0D7 /* GameBoardViewController.m */,
 				D1A7A53815FED05C00754BD9 /* GameResultViewController.h */,
@@ -355,6 +364,8 @@
 				D1CAA3E715FD6F6800549EF7 /* icon-ipad.png */,
 				D1CAA3E815FD6F6800549EF7 /* icon-retina.png */,
 				D1CAA3E915FD6F6800549EF7 /* icon.png */,
+				D1D0ED09166B1AB600EAE03C /* pause_button.png */,
+				D1D0ED0A166B1AB600EAE03C /* refresh_button.png */,
 				D1CAA38B15FD266C00549EF7 /* wooden_top.jpg */,
 			);
 			name = Resources;
@@ -605,6 +616,8 @@
 				D1A7A53315FEC9A400754BD9 /* heartsuitimage.png in Resources */,
 				D1A7A53415FEC9A400754BD9 /* spadesuitimage.png in Resources */,
 				D11F4972160CB97B00F46EE4 /* Default-568h@2x.png in Resources */,
+				D1D0ED0B166B1AB600EAE03C /* pause_button.png in Resources */,
+				D1D0ED0C166B1AB600EAE03C /* refresh_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +655,7 @@
 				593213111662C52D00F7245E /* CrazyEightsGameController.m in Sources */,
 				593213141662C53B00F7245E /* GameController.m in Sources */,
 				D172F5571668FD10002F3EF2 /* RoundedView.m in Sources */,
+				D1D0ED0F166B1BFB00EAE03C /* GameBoardPauseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
