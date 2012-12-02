@@ -6,12 +6,13 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
+#import "CrazyEightsGameController.h"
+#import "GameBoardPauseViewController.h"
 #import "GameBoardViewController.h"
-#import "CrazyEightsGameController.h" 
 #import "GameResultViewController.h"
 #import "Constants.h"
 
-@interface GameBoardViewController ()
+@interface GameBoardViewController() <GameBoardPauseDelegate>
 
 @end
 
@@ -63,19 +64,16 @@
 {
     if ([segue.identifier isEqualToString:@"declarewinner"]) {
         ((GameResultViewController *)segue.destinationViewController).title = sender;
+    } else if ([segue.identifier isEqualToString:@"gameboardpause"]) {
+        GameBoardPauseViewController *vc = (GameBoardPauseViewController *)segue.destinationViewController;
+        vc.delegate = self;
     }
 }
 
 - (IBAction)pauseGame
 {
     [self performSegueWithIdentifier:@"gameboardpause" sender:self];
-    
-    if (self.gameController.isPaused) {
-        // TODO: move this unpause to the resume game function
-        [self.gameController unpauseGame];
-    } else {
-        [self.gameController pauseGame];
-    }    
+    [self.gameController pauseGame];
 }
 
 - (IBAction)refreshGame
@@ -211,6 +209,19 @@
                 ([objA tag] > [objB tag]) ? NSOrderedDescending :
                 NSOrderedSame);
     }];
+}
+
+#pragma mark - GameBoardPauseDelegate
+
+- (void)gameShouldResume
+{
+    [self.gameController unpauseGame];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)gameShouldEnd
+{
+    // TODO: player pressed main menu on pause screen
 }
 
 @end

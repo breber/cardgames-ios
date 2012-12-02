@@ -14,13 +14,21 @@
 
 @implementation GameBoardPauseViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    self.navigationItem.hidesBackButton = YES;
+}
+
 - (IBAction)resumeButtonPressed
 {
-
+    [self.delegate gameShouldResume];
 }
 
 - (IBAction)mainMenu:(id)sender
 {
+    [self.delegate gameShouldEnd];
     [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 

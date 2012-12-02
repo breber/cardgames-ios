@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol GameBoardPauseDelegate <NSObject>
+
+- (void)gameShouldResume;
+- (void)gameShouldEnd;
+
+@end
+
 @interface GameBoardPauseViewController : UIViewController
+
+@property(nonatomic, weak) id <GameBoardPauseDelegate> delegate;
 
 @end
