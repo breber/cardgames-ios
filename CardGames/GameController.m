@@ -41,6 +41,10 @@
     // Get number of computers setting
     int numComputers = [CrazyEightsTabletGame getNumberOfComputerPlayersFromPicker];
     
+    
+    // TODO TODO remove this hard code
+    numComputers = 0;
+    
     // TODO: make this based on number of computers specified
     for (int i = 0; i < 4 && i < numHumans + numComputers; i++) {
         if (i < numHumans) {
@@ -102,12 +106,26 @@
     withTurnCode:(int)msg
         toPlayer:(Player *)player
 {
-    if (player.isComputer) {
-        NSLog(@"%s - computerPlayer...", __PRETTY_FUNCTION__);
-    }
-
     // write message to player
     [player.connection write:[card jsonString] withType:msg];
+}
+
+- (void)pauseGame
+{
+    self.isPaused = YES;
+    for (Player *player in self.game.players) {
+        [player.connection write:@"" withType:MSG_PAUSE];
+    }
+
+}
+
+- (void)unpauseGame
+{
+    self.isPaused = NO;
+    for (Player *player in self.game.players) {
+        [player.connection write:@"" withType:MSG_UNPAUSE];
+    }
+    
 }
 
 - (void)handleDiscard:(NSData *)data

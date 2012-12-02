@@ -69,7 +69,13 @@
 - (IBAction)pauseGame
 {
     // TODO: segue to paused game screen
-    // TODO: send paused game message to players
+    
+    if(self.gameController.isPaused){
+        // TODO: move this unpause to the resume game function
+        [self.gameController unpauseGame];
+    } else {
+        [self.gameController pauseGame];
+    }    
 }
 
 - (IBAction)refreshGame

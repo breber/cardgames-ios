@@ -10,4 +10,6 @@
 
 @interface CrazyEightsGameController : GameController
 
+@property (nonatomic) int suitChosen;
+
 @end

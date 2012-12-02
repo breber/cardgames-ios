@@ -72,7 +72,7 @@
                      [Card cardWithValues:TEN_VALUE withSuit:SUIT_SPADES andId:48],
                      [Card cardWithValues:JACK_VALUE withSuit:SUIT_SPADES andId:49],
                      [Card cardWithValues:QUEEN_VALUE withSuit:SUIT_SPADES andId:50],
-                     [Card cardWithValues:KING_VALUE withSuit:SUIT_SPADES andId:52],
+                     [Card cardWithValues:KING_VALUE withSuit:SUIT_SPADES andId:51],
                      
                      //JOKERS
                      [Card cardWithValues:BLACK_JOKER_VALUE withSuit:SUIT_JOKER andId:52],

@@ -15,6 +15,16 @@
 
 @implementation CrazyEightsGameController
 
+- (id)init
+{
+    self = [super init];
+    
+    self.suitChosen = -1;
+    
+    return self;
+}
+
+
 - (void)newDataArrived:(WifiConnection *)connection
               withData:(NSString *)data
               withType:(int)type
@@ -122,7 +132,7 @@
 
 //This method will handle an 8 being on the discard pile.
 - (Card *)getDiscardPileTranslated
-{
+{  
     // handle logic for changing suit for 8 played
     Card* onDiscard = [self.game getDiscardPileTop];
     

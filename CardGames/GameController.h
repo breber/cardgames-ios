@@ -23,9 +23,11 @@
 
 @property (nonatomic, strong) CrazyEightsTabletGame *game;
 @property (nonatomic) int whoseTurn;
-@property (nonatomic) int suitChosen;
+@property (nonatomic) BOOL isPaused;
 @property (nonatomic, weak) id <GameControllerDelegate> delegate;
 
+- (void)pauseGame;
+- (void)unpauseGame;
 - (void)setupGameboardWithPlayers:(NSMutableArray *)players;
 - (void)handleDiscard:(NSData *)data;
 - (void)handleDrawCard;
