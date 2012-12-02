@@ -32,6 +32,16 @@
     return c;
 }
 
++ (NSArray *)sortCards:(NSArray *)arr
+{
+    return [arr sortedArrayUsingComparator:^NSComparisonResult(Card *objA, Card *objB) {
+        return (
+                (objA.cardId < objB.cardId) ? NSOrderedAscending  :
+                (objA.cardId > objB.cardId) ? NSOrderedDescending :
+                NSOrderedSame);
+    }];
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"Card: id=%d, suit=%d, value=%d", self.cardId, self.suit, self.value];
@@ -39,7 +49,7 @@
 
 - (BOOL)isEqualToCard:(Card *)card
 {
-    return self.value == card.value;
+    return self.cardId == card.cardId;
 }
 
 - (NSString *)jsonString

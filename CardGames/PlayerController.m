@@ -86,7 +86,7 @@
 {
     NSData *d = [data dataUsingEncoding:NSUTF8StringEncoding];
     // If this is the init message
-    if (type == MSG_INIT || (!self.isGameStarted && ( type == MSG_REFRESH || type == MSG_IS_TURN ) )) {
+    if (type == MSG_INIT || (!self.isGameStarted && (type == MSG_REFRESH || type == MSG_IS_TURN))) {
         self.isGameStarted = YES;
         self.isTurn = NO;
         [self.delegate gameDidBegin];
@@ -99,7 +99,7 @@
             [arr addObject:[Card cardWithValues:t]];
         }
         
-        self.hand = arr;
+        self.hand = [[Card sortCards:arr] mutableCopy];
         [self.delegate playerHandDidChange];
     } else if (type == MSG_IS_TURN) {
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
@@ -108,8 +108,10 @@
          self.isTurn = YES;
     } else if (type == MSG_CARD_DRAWN) {
         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:d options:kNilOptions error:nil];
+        NSMutableArray *arr = [self.hand mutableCopy];
         
-        [self.hand addObject:[Card cardWithValues:jsonObject]];
+        [arr addObject:[Card cardWithValues:jsonObject]];
+        self.hand = [[Card sortCards:arr] mutableCopy];
         [self.delegate playerHandDidChange];
     } else if (type == MSG_WINNER) {
         [self.delegate playerDidWin];
@@ -126,8 +128,8 @@
         for (NSDictionary *t in [jsonObject objectForKey:@"currenthand"]) {
             [arr addObject:[Card cardWithValues:t]];
         }
-        
-        self.hand = [arr mutableCopy];
+
+        self.hand = [[Card sortCards:arr] mutableCopy];
         self.isTurn = [[jsonObject objectForKey:@"isturn"] boolValue];
         [self.delegate playerHandDidChange];
     } else if (type == MSG_PAUSE) {

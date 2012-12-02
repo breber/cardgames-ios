@@ -14,6 +14,7 @@
 
 + (Card *)cardWithValues:(NSDictionary *)values;
 + (Card *)cardWithValues:(int)value withSuit:(int)suit andId:(int)cardId;
++ (NSArray *)sortCards:(NSArray *)arr;
 
 - (BOOL)isEqualToCard:(Card *)card;
 - (NSString *)jsonString;
