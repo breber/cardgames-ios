@@ -35,11 +35,10 @@
     // sort IBOutletCollection
 	self.playerPositions = [self sortByObjectTag:self.playerPositions];
     
-    for (int i = 1; i < 4; i++)
-    {
+    for (int i = 1; i < 4; i++) {
         [self rotateView:i];
     }
-    
+
     [self refreshGameBoard];
 }
 
@@ -50,6 +49,7 @@
     }
 
     [self changeDiscardImage];
+    [self changeDrawImage:@"back_blue.png"];
 }
 
 - (void)gameStateDidUpdate:(GameController *)controller
@@ -127,7 +127,14 @@
 {
     UIView *tempView = self.playerPositions[playerNumber];
     
-    UIImage *img = [UIImage imageNamed:[card cardImagePath]];
+    UIImage *img = nil;
+
+    if (DEBUG) {
+        img = [UIImage imageNamed:[card cardImagePath]];
+    } else {
+        // TODO: when this is used, the images aren't the right size...
+        img = [UIImage imageNamed:@"back_blue.png"];
+    }
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake((img.size.width * GB_CARD_SCALE * GB_CARD_OVERLAP) *
                                                                          cardIndex, 0, img.size.width * GB_CARD_SCALE,
                                                                          img.size.height * GB_CARD_SCALE)];

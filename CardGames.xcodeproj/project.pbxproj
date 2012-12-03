@@ -15,6 +15,7 @@
 		D140E9A116056E6700FDC2DA /* PlayerConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D140E9A016056E6700FDC2DA /* PlayerConnectViewController.m */; };
 		D140E9AA1605705900FDC2DA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D140E9A91605705900FDC2DA /* CFNetwork.framework */; };
 		D140E9BD16062AB200FDC2DA /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = D140E9BB16062AB200FDC2DA /* Server.m */; };
+		D1708FBF166D1FF7007CA179 /* back_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = D1708FBE166D1FF7007CA179 /* back_blue.png */; };
 		D172F5571668FD10002F3EF2 /* RoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D172F5561668FD0F002F3EF2 /* RoundedView.m */; };
 		D18663A115F109BE0098E8AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18663A015F109BE0098E8AD /* UIKit.framework */; };
 		D18663A315F109BE0098E8AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18663A215F109BE0098E8AD /* Foundation.framework */; };
@@ -127,6 +128,7 @@
 		D140E9BA16062AB200FDC2DA /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
 		D140E9BB16062AB200FDC2DA /* Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Server.m; sourceTree = "<group>"; };
 		D140E9BC16062AB200FDC2DA /* ServerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerDelegate.h; sourceTree = "<group>"; };
+		D1708FBE166D1FF7007CA179 /* back_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_blue.png; path = CardGames/Resources/Cards/back_blue.png; sourceTree = "<group>"; };
 		D172F5551668FD0F002F3EF2 /* RoundedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedView.h; sourceTree = "<group>"; };
 		D172F5561668FD0F002F3EF2 /* RoundedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedView.m; sourceTree = "<group>"; };
 		D17C3363165065C500B19F43 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 		D1CAA24415FD254E00549EF7 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
+				D1708FBE166D1FF7007CA179 /* back_blue.png */,
 				D1CAA31D15FD265400549EF7 /* clubs_2.png */,
 				D1CAA31E15FD265400549EF7 /* clubs_3.png */,
 				D1CAA31F15FD265400549EF7 /* clubs_4.png */,
@@ -618,6 +621,7 @@
 				D11F4972160CB97B00F46EE4 /* Default-568h@2x.png in Resources */,
 				D1D0ED0B166B1AB600EAE03C /* pause_button.png in Resources */,
 				D1D0ED0C166B1AB600EAE03C /* refresh_button.png in Resources */,
+				D1708FBF166D1FF7007CA179 /* back_blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
