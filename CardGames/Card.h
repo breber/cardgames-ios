@@ -12,6 +12,7 @@
 @property (nonatomic) int suit;
 @property (nonatomic) int value;
 
++ (NSString *)cardBackImage;
 + (Card *)cardWithValues:(NSDictionary *)values;
 + (Card *)cardWithValues:(int)value withSuit:(int)suit andId:(int)cardId;
 + (NSArray *)sortCards:(NSArray *)arr;

@@ -33,6 +33,7 @@
 		D1A7A53415FEC9A400754BD9 /* spadesuitimage.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A7A53015FEC9A400754BD9 /* spadesuitimage.png */; };
 		D1A7A53715FECD6F00754BD9 /* ChooseSuitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A7A53615FECD6F00754BD9 /* ChooseSuitViewController.m */; };
 		D1A7A53A15FED05C00754BD9 /* GameResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A7A53915FED05C00754BD9 /* GameResultViewController.m */; };
+		D1B8CBDE166D652400869AF0 /* back_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = D1B8CBDD166D652400869AF0 /* back_custom.png */; };
 		D1BC21F9164DC36D0067EFF8 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC21F8164DC36D0067EFF8 /* Player.m */; };
 		D1BC2200164DDA230067EFF8 /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC21FF164DDA220067EFF8 /* RoundedButton.m */; };
 		D1BC2203164DDA610067EFF8 /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC2202164DDA610067EFF8 /* UIView+Custom.m */; };
@@ -156,6 +157,7 @@
 		D1A7A53615FECD6F00754BD9 /* ChooseSuitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSuitViewController.m; sourceTree = "<group>"; };
 		D1A7A53815FED05C00754BD9 /* GameResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameResultViewController.h; sourceTree = "<group>"; };
 		D1A7A53915FED05C00754BD9 /* GameResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameResultViewController.m; sourceTree = "<group>"; };
+		D1B8CBDD166D652400869AF0 /* back_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_custom.png; path = CardGames/Resources/Cards/back_custom.png; sourceTree = "<group>"; };
 		D1BC21F7164DC36D0067EFF8 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		D1BC21F8164DC36D0067EFF8 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		D1BC21FE164DDA220067EFF8 /* RoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedButton.h; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				D1708FBE166D1FF7007CA179 /* back_blue.png */,
+				D1B8CBDD166D652400869AF0 /* back_custom.png */,
 				D1CAA31D15FD265400549EF7 /* clubs_2.png */,
 				D1CAA31E15FD265400549EF7 /* clubs_3.png */,
 				D1CAA31F15FD265400549EF7 /* clubs_4.png */,
@@ -622,6 +625,7 @@
 				D1D0ED0B166B1AB600EAE03C /* pause_button.png in Resources */,
 				D1D0ED0C166B1AB600EAE03C /* refresh_button.png in Resources */,
 				D1708FBF166D1FF7007CA179 /* back_blue.png in Resources */,
+				D1B8CBDE166D652400869AF0 /* back_custom.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

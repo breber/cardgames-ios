@@ -10,6 +10,11 @@
 
 @implementation Card
 
++ (NSString *)cardBackImage
+{
+    return @"back_custom.png";
+}
+
 + (Card *)cardWithValues:(NSDictionary *)values
 {
     Card *c = [[Card alloc] init];

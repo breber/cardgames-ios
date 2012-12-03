@@ -49,7 +49,7 @@
     }
 
     [self changeDiscardImage];
-    [self changeDrawImage:@"back_blue.png"];
+    [self changeDrawImage:[Card cardBackImage]];
 }
 
 - (void)gameStateDidUpdate:(GameController *)controller
@@ -129,11 +129,10 @@
     
     UIImage *img = nil;
 
-    if (DEBUG) {
+    if (GAMEBOARD_DEBUG) {
         img = [UIImage imageNamed:[card cardImagePath]];
     } else {
-        // TODO: when this is used, the images aren't the right size...
-        img = [UIImage imageNamed:@"back_blue.png"];
+        img = [UIImage imageNamed:[Card cardBackImage]];
     }
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake((img.size.width * GB_CARD_SCALE * GB_CARD_OVERLAP) *
                                                                          cardIndex, 0, img.size.width * GB_CARD_SCALE,
