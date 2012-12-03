@@ -34,6 +34,7 @@
 		D1A7A53715FECD6F00754BD9 /* ChooseSuitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A7A53615FECD6F00754BD9 /* ChooseSuitViewController.m */; };
 		D1A7A53A15FED05C00754BD9 /* GameResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A7A53915FED05C00754BD9 /* GameResultViewController.m */; };
 		D1B8CBDE166D652400869AF0 /* back_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = D1B8CBDD166D652400869AF0 /* back_custom.png */; };
+		D1B8CBE2166D6AA900869AF0 /* CenteredScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B8CBE1166D6AA900869AF0 /* CenteredScrollView.m */; };
 		D1BC21F9164DC36D0067EFF8 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC21F8164DC36D0067EFF8 /* Player.m */; };
 		D1BC2200164DDA230067EFF8 /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC21FF164DDA220067EFF8 /* RoundedButton.m */; };
 		D1BC2203164DDA610067EFF8 /* UIView+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BC2202164DDA610067EFF8 /* UIView+Custom.m */; };
@@ -158,6 +159,8 @@
 		D1A7A53815FED05C00754BD9 /* GameResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameResultViewController.h; sourceTree = "<group>"; };
 		D1A7A53915FED05C00754BD9 /* GameResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameResultViewController.m; sourceTree = "<group>"; };
 		D1B8CBDD166D652400869AF0 /* back_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_custom.png; path = CardGames/Resources/Cards/back_custom.png; sourceTree = "<group>"; };
+		D1B8CBE0166D6AA900869AF0 /* CenteredScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenteredScrollView.h; sourceTree = "<group>"; };
+		D1B8CBE1166D6AA900869AF0 /* CenteredScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenteredScrollView.m; sourceTree = "<group>"; };
 		D1BC21F7164DC36D0067EFF8 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		D1BC21F8164DC36D0067EFF8 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		D1BC21FE164DDA220067EFF8 /* RoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedButton.h; sourceTree = "<group>"; };
@@ -441,6 +444,8 @@
 		D1CAA3DE15FD619A00549EF7 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				D1B8CBE0166D6AA900869AF0 /* CenteredScrollView.h */,
+				D1B8CBE1166D6AA900869AF0 /* CenteredScrollView.m */,
 				D1BC2201164DDA610067EFF8 /* UIView+Custom.h */,
 				D1BC2202164DDA610067EFF8 /* UIView+Custom.m */,
 				D129F74D164B51E9006FB0BD /* UIColor+CardGamesColor.h */,
@@ -664,6 +669,7 @@
 				593213141662C53B00F7245E /* GameController.m in Sources */,
 				D172F5571668FD10002F3EF2 /* RoundedView.m in Sources */,
 				D1D0ED0F166B1BFB00EAE03C /* GameBoardPauseViewController.m in Sources */,
+				D1B8CBE2166D6AA900869AF0 /* CenteredScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

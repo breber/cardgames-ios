@@ -783,7 +783,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="HjG-rJ-fB4"/>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgr-5L-7gw">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgr-5L-7gw" customClass="CenteredScrollView">
                                 <connections>
                                     <outlet property="delegate" destination="kKW-Fg-x1I" id="B37-D6-LTS"/>
                                 </connections>
@@ -1297,6 +1297,9 @@ A preferences page is also available from the home screen. To get to this page, 
         <image name="wooden_top.jpg" width="600" height="361"/>
     </resources>
     <classes>
+        <class className="CenteredScrollView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CenteredScrollView.h"/>
+        </class>
         <class className="ChooseSuitViewController" superclassName="ViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ChooseSuitViewController.h"/>
             <relationships>
@@ -1347,7 +1350,7 @@ A preferences page is also available from the home screen. To get to this page, 
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="buttonLayout" candidateClass="UIView"/>
-                <relationship kind="outlet" name="cardHand" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="cardHand" candidateClass="CenteredScrollView"/>
                 <relationship kind="outlet" name="loadingPopup" candidateClass="UIView"/>
                 <relationship kind="outlet" name="loadingPopupTitle" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="overlay" candidateClass="UIView"/>

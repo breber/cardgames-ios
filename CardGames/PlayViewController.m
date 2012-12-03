@@ -6,11 +6,12 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
-#import "UIColor+CardGamesColor.h"
-#import "PlayViewController.h"
 #import "Card.h"
+#import "CenteredScrollView.h"
 #import "Constants.h"
 #import "CrazyEightsPlayerController.h"
+#import "PlayViewController.h"
+#import "UIColor+CardGamesColor.h"
 
 @interface PlayViewController() <UITextFieldDelegate>
 
@@ -20,7 +21,7 @@
 @property(nonatomic, weak) IBOutlet UIView *textPopup;
 @property(nonatomic, weak) IBOutlet UIView *loadingPopup;
 @property(nonatomic, weak) IBOutlet UILabel *loadingPopupTitle;
-@property(nonatomic, weak) IBOutlet UIScrollView *cardHand;
+@property(nonatomic, weak) IBOutlet CenteredScrollView *cardHand;
 @property(nonatomic, strong) PlayerController *playerController;
 @property(nonatomic, strong) NSArray *cardButtons;
 
@@ -174,6 +175,10 @@
         [b removeFromSuperview];
     }
 
+    for (UIView *v in self.cardHand.subviews) {
+        [v removeFromSuperview];
+    }
+
     // Create a new array for the buttons
     NSMutableArray *buttons = [NSMutableArray array];
     
@@ -209,18 +214,20 @@
         
         // Add the button to our array of buttons
         [buttons addObject:button];
-        
-        [self.cardHand addSubview:button];
     }
+
+    CGFloat contentSizeWidth = width * cardCount + CARD_PADDING * cardCount;
+    UIView *subviewWrapper = [[UIView alloc] initWithFrame:CGRectMake(0, 0, contentSizeWidth, height)];
+    for (UIButton *b in buttons) {
+        [subviewWrapper addSubview:b];
+    }
+
+    [self.cardHand addSubview:subviewWrapper];
 
     // Update our property with the button array
     self.cardButtons = [buttons copy];
     
     // Set the scrollview's content size, so that it scrolls
-    CGFloat contentSizeWidth = width * cardCount + CARD_PADDING * cardCount;
-    if (contentSizeWidth < self.cardHand.bounds.size.width) {
-        contentSizeWidth = self.cardHand.bounds.size.width;
-    }
     self.cardHand.contentSize = CGSizeMake(contentSizeWidth, height);
     
     [self updatePlayableCards];
