@@ -35,7 +35,7 @@
     [super viewDidLoad];
     self.players = [[NSMutableArray alloc] init];
     
-    if (!DEBUG) {
+    if (!GAMEBOARD_DEBUG) {
         self.debugGameboard.rightBarButtonItem = nil;
     }
     
