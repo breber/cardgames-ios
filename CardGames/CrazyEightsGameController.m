@@ -179,14 +179,90 @@
                 break;
             }
         }
-    } else if ([DIF_COMP_MEDIUM isEqualToString:compDifficulty]) {
-        // TODO: medium
+    } else if ([DIF_COMP_MEDIUM isEqualToString:compDifficulty] || [DIF_COMP_HARD isEqualToString: compDifficulty]) {
+        // TODO: remove check for Hard in this if statement once Hard is implemented
+        NSMutableArray * sameSuit = [[NSMutableArray alloc]init];
+        NSMutableArray * sameNum = [[NSMutableArray alloc]init];
+        NSMutableArray * special = [[NSMutableArray alloc]init];
+        
+        // array with the 5 suits counts
+        NSInteger suits[5];
+        for (int i = 0; i<5; i++) {
+            suits[i] = 0;
+        }
+        
+        int maxSuitIndex = 0;
+        
         for (Card *c in cards) {
-            if ([CrazyEightsRules canPlay:c withDiscard:onDiscard]) {
-                cardSelected = c;
+            // see if it is a special card
+            if(c.value == EIGHT_VALUE || c.suit == SUIT_JOKER){
+                [special addObject:c];
+            }
+            
+            suits[c.suit]++;
+            if(suits[c.suit] > suits[maxSuitIndex] && c.suit != SUIT_JOKER){
+                maxSuitIndex = c.suit;
+            }
+            
+            if(c.suit == onDiscard.suit && [CrazyEightsRules canPlay:c withDiscard:onDiscard]){
+                [sameSuit addObject:c];
+            } else if(c.value == onDiscard.value && c.suit != SUIT_JOKER && [CrazyEightsRules canPlay:c withDiscard:onDiscard]){
+                [sameNum addObject:c];
+            }
+        }
+        
+        BOOL moreOfOtherSuit = NO;
+        for(Card *c in sameNum){
+            if(suits[c.suit] > suits[onDiscard.suit]){
+                moreOfOtherSuit = YES;
                 break;
             }
         }
+        
+        if(onDiscard.suit == SUIT_JOKER){
+            for (Card *c in cards) {
+                if (c.suit == maxSuitIndex && c.value != EIGHT_VALUE) {
+                    cardSelected = c;
+                    break;
+                }
+            }
+            if(cardSelected == nil){
+                for (Card *c in cards) {
+                    if (c.suit == maxSuitIndex) {
+                        cardSelected = c;
+                        break;
+                    }
+                }
+            }
+        } else if(moreOfOtherSuit && [sameNum count] > 0){
+            cardSelected = [sameNum objectAtIndex:0];
+            for (Card * c in sameNum) {
+                if(suits[c.suit] > suits[cardSelected.suit]){
+                    cardSelected = c;
+                }
+            }
+        } else if([sameSuit count] > 0){
+            cardSelected = [sameSuit objectAtIndex:0];
+            BOOL hasAnotherCardWithIndex = NO;
+            for (Card * c in sameSuit) {
+                for (Card * c1 in cards) {
+                    if(![c isEqual:c1] && c.value == c1.value && suits[c.suit] <= suits[c1.suit]){
+                        cardSelected = c;
+                        hasAnotherCardWithIndex = YES;
+                        break;
+                    }
+                }
+                if(hasAnotherCardWithIndex){
+                    break;
+                }
+            }
+        } else if([special count]){
+            cardSelected = [special objectAtIndex:0];
+            if(cardSelected != nil && cardSelected.value == EIGHT_VALUE){
+                self.suitChosen = maxSuitIndex;
+            }
+        } // else { no card selected }
+        
     } else if ([DIF_COMP_HARD isEqualToString: compDifficulty]) {
         // TODO: Hard, not necessary for 388 turn in.
         for (Card *c in cards) {
@@ -198,7 +274,7 @@
     }
 
     // Perform action
-    if (cardSelected) {
+    if (cardSelected && [CrazyEightsRules canPlay:cardSelected withDiscard:onDiscard]) {
         // TODO: card discard sound
         [self.game addCard:cardSelected toDiscardPileFromPlayer:curPlayer];
     } else {
