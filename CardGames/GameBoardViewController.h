@@ -20,6 +20,7 @@ static const float GB_CARD_OVERLAP = 1.0/3.0;
 
 // Views
 @property(nonatomic, strong) IBOutletCollection(UIView) NSArray *playerPositions;
+@property(nonatomic, strong) IBOutletCollection(UILabel) NSArray *playerNameLabels;
 @property(nonatomic, weak) IBOutlet UIImageView *discardPile;
 @property(nonatomic, weak) IBOutlet UIImageView *drawPile;
 @property(nonatomic, weak) IBOutlet UIButton *refreshButton;

@@ -6,11 +6,12 @@
 //  Copyright (c) 2012 Brian Reber. All rights reserved.
 //
 
+#import "Constants.h"
 #import "CrazyEightsGameController.h"
 #import "GameBoardPauseViewController.h"
 #import "GameBoardViewController.h"
 #import "GameResultViewController.h"
-#import "Constants.h"
+#import "UIColor+CardGamesColor.h"
 
 @interface GameBoardViewController() <GameBoardPauseDelegate>
 
@@ -34,6 +35,7 @@
 
     // sort IBOutletCollection
 	self.playerPositions = [self sortByObjectTag:self.playerPositions];
+    self.playerNameLabels = [self sortByObjectTag:self.playerNameLabels];
     
     for (int i = 1; i < 4; i++) {
         [self rotateView:i];
@@ -45,7 +47,8 @@
 - (void)refreshGameBoard
 {
     for (int i = 0; i < self.gameController.game.players.count; i++) {
-        [self redrawCardsForPlayer:i];
+        BOOL isTurn = self.gameController.whoseTurn == i;
+        [self redrawCardsForPlayer:i isTurn:isTurn];
     }
 
     [self changeDiscardImage];
@@ -172,9 +175,9 @@
 /*
  * Redraws all the cards in a player's array.
  */
-- (void)redrawCardsForPlayer:(int)playerNumber
+- (void)redrawCardsForPlayer:(int)playerNumber isTurn:(BOOL)isTurn
 {
-    UIView *tempView = self.playerPositions[playerNumber];
+    UIView *tempView = [self.playerPositions objectAtIndex:playerNumber];
     
     // Remove all card views
     for (UIImageView *i in tempView.subviews) {
@@ -188,6 +191,15 @@
     for (int j = 0; j < tempPlayerHand.count; j++) {
         [self drawCard:tempPlayerHand[j] toPlayer:playerNumber atIndex:j];
     }
+
+    UILabel *playerNameLabel = [self.playerNameLabels objectAtIndex:playerNumber];
+    playerNameLabel.text = tempPlayer.name;
+
+    if (isTurn) {
+        playerNameLabel.textColor = [UIColor goldColor];
+    } else {
+        playerNameLabel.textColor = [UIColor blackColor];
+    }
 }
 
 /*
@@ -195,8 +207,9 @@
  */
 - (void)rotateView:(int)playerNumber
 {
-    UIView *currentPlayerView = self.playerPositions[playerNumber];
-    
+    UIView *currentPlayerView = [self.playerPositions objectAtIndex:playerNumber];
+    UIView *playerNameLabel = [self.playerNameLabels objectAtIndex:playerNumber];
+
     // Setup the animation
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.0];
@@ -205,7 +218,8 @@
     // The transform matrix
     CGAffineTransform transform = CGAffineTransformMakeRotation(-90 * playerNumber / 180.0 * M_PI);
     currentPlayerView.transform = transform;
-    
+    playerNameLabel.transform = transform;
+
     // Commit the changes
     [UIView commitAnimations];
 }

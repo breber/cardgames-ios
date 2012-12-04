@@ -160,6 +160,7 @@
 {
     for (UIButton *b in self.cardButtons) {
         b.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+        b.tag = 0;
     }
     sender.backgroundColor = [UIColor goldColor];
     sender.tag = 1;

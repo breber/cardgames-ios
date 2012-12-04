@@ -98,9 +98,6 @@
 
 - (void)advanceTurn
 {
-    // Update gameboard
-    [self.delegate gameStateDidUpdate:self];
-
     Player *p = [self.game.players objectAtIndex:self.whoseTurn];
     
     // Determine if game is over
@@ -115,6 +112,9 @@
     } else {
         self.whoseTurn = 0;
     }
+
+    // Update gameboard
+    [self.delegate gameStateDidUpdate:self];
 
     p = [self.game.players objectAtIndex:self.whoseTurn];
     
