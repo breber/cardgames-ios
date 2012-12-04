@@ -153,6 +153,14 @@
     return 0;
 }
 
+- (void)endGame
+{
+    // TODO: this doesn't seem to be causing anything to happen on the player side...
+    for (Player *p in self.game.players) {
+        [p.connection closeConnections];
+    }
+}
+
 #pragma mark - ConnectionDelegate
 
 - (void)outputStreamOpened:(WifiConnection *)connection

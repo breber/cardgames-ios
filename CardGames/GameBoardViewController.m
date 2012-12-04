@@ -134,6 +134,10 @@
     } else {
         img = [UIImage imageNamed:[Card cardBackImage]];
     }
+
+    // TODO: I wonder if we should make the height equal to the height of tempView, then
+    // calculate the width based on that. This would allow us to use any size card image
+    // and have it scale properly.
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake((img.size.width * GB_CARD_SCALE * GB_CARD_OVERLAP) *
                                                                          cardIndex, 0, img.size.width * GB_CARD_SCALE,
                                                                          img.size.height * GB_CARD_SCALE)];
@@ -148,19 +152,19 @@
 {
     switch (suit) {
         case SUIT_CLUBS:
-            [self.suitImage setImage:[UIImage imageNamed:@"clubsuitimage.png"] forState:UIControlStateNormal];
+            [self.suitImage setImage:[UIImage imageNamed:@"clubsuitimage.png"] forState:UIControlStateDisabled];
             break;
         case SUIT_DIAMONDS:
-            [self.suitImage setImage:[UIImage imageNamed:@"diamondsuitimage.png"] forState:UIControlStateNormal];
+            [self.suitImage setImage:[UIImage imageNamed:@"diamondsuitimage.png"] forState:UIControlStateDisabled];
             break;
         case SUIT_HEARTS:
-            [self.suitImage setImage:[UIImage imageNamed:@"heartsuitimage.png"] forState:UIControlStateNormal];
+            [self.suitImage setImage:[UIImage imageNamed:@"heartsuitimage.png"] forState:UIControlStateDisabled];
             break;
         case SUIT_SPADES:
-            [self.suitImage setImage:[UIImage imageNamed:@"spadesuitimage.png"] forState:UIControlStateNormal];
+            [self.suitImage setImage:[UIImage imageNamed:@"spadesuitimage.png"] forState:UIControlStateDisabled];
             break;
         default:
-            [self.suitImage setImage:nil forState:UIControlStateNormal];
+            [self.suitImage setImage:nil forState:UIControlStateDisabled];
             break;
     }
 }
@@ -181,8 +185,7 @@
     NSMutableArray *tempPlayerHand = tempPlayer.cards;
     
     // Replace all card views
-    for (int j = 0; j < tempPlayerHand.count; j++)
-    {
+    for (int j = 0; j < tempPlayerHand.count; j++) {
         [self drawCard:tempPlayerHand[j] toPlayer:playerNumber atIndex:j];
     }
 }
@@ -218,7 +221,7 @@
 
 - (void)gameShouldEnd
 {
-    // TODO: player pressed main menu on pause screen (we need to send the game over message to all players)
+    [self.gameController endGame];
 }
 
 @end

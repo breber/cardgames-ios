@@ -38,5 +38,6 @@
 - (void)refreshPlayers;
 - (void)startFirstTurn;
 - (int)getSuit;
+- (void)endGame;
 
 @end
