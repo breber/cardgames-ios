@@ -18,6 +18,7 @@ static const int MSG_LOSER = 4;
 static const int MSG_REFRESH = 5;
 static const int MSG_PAUSE = 6;
 static const int MSG_UNPAUSE = 7;
+static const int MSG_END_GAME = 8;
 static const int MSG_PLAY_CARD = 9;
 static const int MSG_DRAW_CARD = 10;
 static const int MSG_PLAYER_NAME = 12;

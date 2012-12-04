@@ -136,6 +136,8 @@
         [self.delegate gameDidPause];
     } else if (type == MSG_UNPAUSE) {
         [self.delegate gameDidResume];
+    } else if (type == MSG_END_GAME) {
+        [self.delegate gameDidEnd];
     }
 }
 

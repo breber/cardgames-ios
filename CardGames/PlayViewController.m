@@ -97,6 +97,10 @@
 
 - (void)gameDidEnd
 {
+    // Dismiss the pause view controller if it exists
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+    // Then go back to main menu
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

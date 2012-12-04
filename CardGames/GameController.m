@@ -129,7 +129,6 @@
     
     // Make the players be refreshed after a small delay
     [self performSelector:@selector(refreshPlayers) withObject:self afterDelay:1];
-    
 }
 
 - (void)handleDiscard:(NSData *)data
@@ -155,9 +154,9 @@
 
 - (void)endGame
 {
-    // TODO: this doesn't seem to be causing anything to happen on the player side...
     for (Player *p in self.game.players) {
-        [p.connection closeConnections];
+        [p.connection write:@"" withType:MSG_END_GAME];
+        [p.connection performSelector:@selector(closeConnections) withObject:p.connection afterDelay:2];
     }
 }
 

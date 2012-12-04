@@ -41,7 +41,8 @@
         [self rotateView:i];
     }
 
-    [self refreshGameBoard];
+    // Delay the refreshGameBoard call so we don't see the rotation animating
+    [self performSelector:@selector(refreshGameBoard) withObject:self afterDelay:.5];
 }
 
 - (void)refreshGameBoard
@@ -153,6 +154,7 @@
  */
 - (void)changeSuitImageToSuit:(int)suit
 {
+    [self.suitImage setHidden:NO];
     switch (suit) {
         case SUIT_CLUBS:
             [self.suitImage setImage:[UIImage imageNamed:@"clubsuitimage.png"] forState:UIControlStateDisabled];
@@ -167,6 +169,7 @@
             [self.suitImage setImage:[UIImage imageNamed:@"spadesuitimage.png"] forState:UIControlStateDisabled];
             break;
         default:
+            [self.suitImage setHidden:YES];
             [self.suitImage setImage:nil forState:UIControlStateDisabled];
             break;
     }
