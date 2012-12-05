@@ -25,7 +25,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+    // Close any previous connections
+    WifiConnection *connection = [WifiConnection sharedInstance];
+    [connection closeConnections];
+
     self.services = [[NSMutableArray alloc] init];
     self.searching = NO;
 
