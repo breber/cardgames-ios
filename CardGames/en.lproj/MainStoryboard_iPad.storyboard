@@ -686,16 +686,16 @@
                                     <action selector="pauseGame" destination="4Xu-09-eyv" eventType="touchUpInside" id="ghb-WK-m9q"/>
                                 </connections>
                             </button>
-                            <view autoresizesSubviews="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUF-4F-V0q" userLabel="Player 1 Hand">
+                            <view autoresizesSubviews="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUF-4F-V0q" userLabel="Player 1 Hand" customClass="CenteredView">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view autoresizesSubviews="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0WJ-xH-UmH" userLabel="Player 2 Hand">
+                            <view autoresizesSubviews="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0WJ-xH-UmH" userLabel="Player 2 Hand" customClass="CenteredView">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view autoresizesSubviews="NO" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZB-Pp-AUI" userLabel="Player 3 Hand">
+                            <view autoresizesSubviews="NO" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZB-Pp-AUI" userLabel="Player 3 Hand" customClass="CenteredView">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view autoresizesSubviews="NO" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dol-GG-hTa" userLabel="Player 4 Hand">
+                            <view autoresizesSubviews="NO" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dol-GG-hTa" userLabel="Player 4 Hand" customClass="CenteredView">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNN-ik-pSw" userLabel="Player 1 Name">
@@ -1348,6 +1348,9 @@ A preferences page is also available from the home screen. To get to this page, 
     <classes>
         <class className="CenteredScrollView" superclassName="UIScrollView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CenteredScrollView.h"/>
+        </class>
+        <class className="CenteredView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CenteredView.h"/>
         </class>
         <class className="ChooseSuitViewController" superclassName="ViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ChooseSuitViewController.h"/>

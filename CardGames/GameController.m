@@ -90,10 +90,6 @@
         i++;
     }
 
-    if (DEBUG) {
-        NSLog(@"Number of Human Players: %d, Computer Players: %d", numHumans, i - numHumans);
-    }
-
     // Start first turn after 1 second (so that the messages are sent separately
     [self performSelector:@selector(startFirstTurn) withObject:self afterDelay:1];
 }

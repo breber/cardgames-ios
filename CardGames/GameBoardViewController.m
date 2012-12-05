@@ -125,11 +125,12 @@
 /*
  * Draws a player's new card at the end of their hand.
  */
-- (void)drawCard:(Card *)card
+- (float)drawCard:(Card *)card
         toPlayer:(int)playerNumber
          atIndex:(int)cardIndex
 {
-    UIView *tempView = self.playerPositions[playerNumber];
+    UIView *tempView = [self.playerPositions objectAtIndex:playerNumber];
+    UIView *subView = [tempView.subviews objectAtIndex:0];
     
     UIImage *img = nil;
 
@@ -146,7 +147,9 @@
                                                                          cardIndex, 0, img.size.width * GB_CARD_SCALE,
                                                                          img.size.height * GB_CARD_SCALE)];
     [imgView setImage:img];
-    [tempView addSubview:imgView];
+    [subView addSubview:imgView];
+
+    return img.size.width * GB_CARD_SCALE;
 }
 
 /*
@@ -181,9 +184,22 @@
 - (void)redrawCardsForPlayer:(int)playerNumber isTurn:(BOOL)isTurn
 {
     UIView *tempView = [self.playerPositions objectAtIndex:playerNumber];
+    UIView *subView = nil;
+
+    // If the player's hand doesn't have any subviews, create one
+    if (tempView.subviews.count == 0) {
+        CGRect frame = tempView.frame;
+        frame.origin.x = 0;
+        frame.origin.y = 0;
+
+        UIView *playerHandSubview = [[UIView alloc] initWithFrame:frame];
+        [tempView addSubview:playerHandSubview];
+    }
+
+    subView = [tempView.subviews objectAtIndex:0];
     
     // Remove all card views
-    for (UIImageView *i in tempView.subviews) {
+    for (UIImageView *i in subView.subviews) {
         [i removeFromSuperview];
     }
     
@@ -191,9 +207,15 @@
     NSMutableArray *tempPlayerHand = tempPlayer.cards;
     
     // Replace all card views
+    float cardWidth = 0;
     for (int j = 0; j < tempPlayerHand.count; j++) {
-        [self drawCard:tempPlayerHand[j] toPlayer:playerNumber atIndex:j];
+        cardWidth = [self drawCard:tempPlayerHand[j] toPlayer:playerNumber atIndex:j];
     }
+
+    // Update the frame of the player's hand's subview so that it can be centered properly
+    CGRect frame = subView.frame;
+    frame.size.width = cardWidth + (cardWidth * GB_CARD_OVERLAP * (tempPlayerHand.count - 1));;
+    subView.frame = frame;
 
     UILabel *playerNameLabel = [self.playerNameLabels objectAtIndex:playerNumber];
     playerNameLabel.text = tempPlayer.name;

@@ -15,6 +15,7 @@
 		D140E9A116056E6700FDC2DA /* PlayerConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D140E9A016056E6700FDC2DA /* PlayerConnectViewController.m */; };
 		D140E9AA1605705900FDC2DA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D140E9A91605705900FDC2DA /* CFNetwork.framework */; };
 		D140E9BD16062AB200FDC2DA /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = D140E9BB16062AB200FDC2DA /* Server.m */; };
+		D158EDE2166EDF8C003AE18C /* CenteredView.m in Sources */ = {isa = PBXBuildFile; fileRef = D158EDE1166EDF8C003AE18C /* CenteredView.m */; };
 		D1708FBF166D1FF7007CA179 /* back_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = D1708FBE166D1FF7007CA179 /* back_blue.png */; };
 		D172F5571668FD10002F3EF2 /* RoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D172F5561668FD0F002F3EF2 /* RoundedView.m */; };
 		D18663A115F109BE0098E8AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18663A015F109BE0098E8AD /* UIKit.framework */; };
@@ -130,6 +131,8 @@
 		D140E9BA16062AB200FDC2DA /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
 		D140E9BB16062AB200FDC2DA /* Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Server.m; sourceTree = "<group>"; };
 		D140E9BC16062AB200FDC2DA /* ServerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerDelegate.h; sourceTree = "<group>"; };
+		D158EDE0166EDF8C003AE18C /* CenteredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenteredView.h; sourceTree = "<group>"; };
+		D158EDE1166EDF8C003AE18C /* CenteredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenteredView.m; sourceTree = "<group>"; };
 		D1708FBE166D1FF7007CA179 /* back_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_blue.png; path = CardGames/Resources/Cards/back_blue.png; sourceTree = "<group>"; };
 		D172F5551668FD0F002F3EF2 /* RoundedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedView.h; sourceTree = "<group>"; };
 		D172F5561668FD0F002F3EF2 /* RoundedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedView.m; sourceTree = "<group>"; };
@@ -444,6 +447,8 @@
 		D1CAA3DE15FD619A00549EF7 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				D158EDE0166EDF8C003AE18C /* CenteredView.h */,
+				D158EDE1166EDF8C003AE18C /* CenteredView.m */,
 				D1B8CBE0166D6AA900869AF0 /* CenteredScrollView.h */,
 				D1B8CBE1166D6AA900869AF0 /* CenteredScrollView.m */,
 				D1BC2201164DDA610067EFF8 /* UIView+Custom.h */,
@@ -670,6 +675,7 @@
 				D172F5571668FD10002F3EF2 /* RoundedView.m in Sources */,
 				D1D0ED0F166B1BFB00EAE03C /* GameBoardPauseViewController.m in Sources */,
 				D1B8CBE2166D6AA900869AF0 /* CenteredScrollView.m in Sources */,
+				D158EDE2166EDF8C003AE18C /* CenteredView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
