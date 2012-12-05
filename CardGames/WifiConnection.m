@@ -53,6 +53,10 @@ static WifiConnection *instance = nil;
 
 - (BOOL)initNetworkCommunication:(NSNetService *)service
 {
+    if (self.inputStream || self.outputStream) {
+        return NO;
+    }
+
     NSInputStream *readStream;
     NSOutputStream *writeStream;
     

@@ -104,7 +104,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSNetService * selected = [self.services objectAtIndex:indexPath.row];
+    NSNetService *selected = [self.services objectAtIndex:indexPath.row];
     [selected setDelegate:self];
     [selected resolveWithTimeout:5.0];
 }
