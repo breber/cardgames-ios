@@ -439,13 +439,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7d-Ll-TfO" userLabel="Connecting View">
-                                <rect key="frame" x="356" y="249" width="312" height="272"/>
+                                <rect key="frame" x="356" y="249" width="312" height="208"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67k-MN-lbD" userLabel="ConnectingDeviceInner">
-                                        <rect key="frame" x="20" y="20" width="272" height="232"/>
+                                        <rect key="frame" x="20" y="20" width="272" height="168"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Connecting..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="60o-DN-PLA">
-                                                <rect key="frame" x="20" y="20" width="232" height="192"/>
+                                                <rect key="frame" x="20" y="20" width="232" height="128"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -469,7 +469,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fab-vT-lgK" userLabel="Player1DeviceWrapper">
-                                <rect key="frame" x="356" y="541" width="312" height="208"/>
+                                <rect key="frame" x="356" y="477" width="312" height="208"/>
                                 <subviews>
                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWs-76-hOf" userLabel="Player1DeviceInner">
                                         <rect key="frame" x="20" y="21" width="272" height="168"/>
@@ -504,19 +504,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jE4-lV-BQ2" userLabel="Player2DeviceWrapper">
-                                <rect key="frame" x="688" y="248" width="316" height="272"/>
+                                <rect key="frame" x="688" y="248" width="316" height="208"/>
                                 <subviews>
                                     <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bte-j9-dK8" userLabel="Player2DeviceInner">
-                                        <rect key="frame" x="20" y="19" width="276" height="232"/>
+                                        <rect key="frame" x="20" y="19" width="276" height="168"/>
                                         <subviews>
                                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Player 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="iIj-B8-UEC">
-                                                <rect key="frame" x="20" y="20" width="236" height="192"/>
+                                                <rect key="frame" x="20" y="20" width="236" height="128"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <activityIndicatorView hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qoa-84-7cw">
-                                                <rect key="frame" x="128" y="106" width="20" height="20"/>
+                                                <rect key="frame" x="128" y="74" width="20" height="20"/>
                                             </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -574,19 +574,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kto-V7-cm0" userLabel="Player4DeviceWrapper">
-                                <rect key="frame" x="20" y="249" width="316" height="272"/>
+                                <rect key="frame" x="20" y="249" width="316" height="208"/>
                                 <subviews>
                                     <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kiK-Z7-Lp9" userLabel="Player4DeviceInner">
-                                        <rect key="frame" x="20" y="20" width="276" height="232"/>
+                                        <rect key="frame" x="20" y="20" width="276" height="168"/>
                                         <subviews>
                                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" text="Player 4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bKr-p7-dy7">
-                                                <rect key="frame" x="20" y="20" width="236" height="192"/>
+                                                <rect key="frame" x="20" y="20" width="236" height="128"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <activityIndicatorView hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="yc0-D2-wb5">
-                                                <rect key="frame" x="128" y="106" width="20" height="20"/>
+                                                <rect key="frame" x="128" y="74" width="20" height="20"/>
                                             </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -770,7 +770,7 @@
                                 </connections>
                             </button>
                             <view autoresizesSubviews="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUF-4F-V0q" userLabel="Player 1 Hand" customClass="CenteredView">
-                                <rect key="frame" x="157" y="593" width="710" height="176"/>
+                                <rect key="frame" x="157" y="593" width="710" height="175"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view autoresizesSubviews="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0WJ-xH-UmH" userLabel="Player 2 Hand" customClass="CenteredView">
