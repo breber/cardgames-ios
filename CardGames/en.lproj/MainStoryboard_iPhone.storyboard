@@ -132,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="100" y="317"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Game Paused-->
         <scene sceneID="a1o-St-jIU">
             <objects>
-                <viewController id="F5Q-YB-nBF" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Game Paused" providesPresentationContextTransitionStyle="YES" id="F5Q-YB-nBF" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Isl-pk-URL"/>
                         <viewControllerLayoutGuide type="bottom" id="W6s-LG-EhP"/>
@@ -175,6 +175,13 @@
                                     <constraint firstItem="kx4-kZ-AZS" firstAttribute="leading" secondItem="6w3-1g-k9A" secondAttribute="trailing" constant="8" symbolic="YES" id="ftT-ZC-Oco"/>
                                 </constraints>
                             </view>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hQ-tw-WeQ">
+                                <rect key="frame" x="80" y="270" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="F5Q-YB-nBF" id="trB-fL-bdV"/>
+                                </connections>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -187,6 +194,7 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHY-Wz-k1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -417,6 +425,13 @@
                                     <constraint firstItem="IGR-yd-dUZ" firstAttribute="leading" secondItem="6hh-sm-L9v" secondAttribute="leading" id="qrx-JR-gtx"/>
                                 </constraints>
                             </view>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nhz-7a-F4b">
+                                <rect key="frame" x="80" y="270" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="5YQ-yq-kIg" id="5cK-5q-yaU"/>
+                                </connections>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -468,14 +483,14 @@
                         <viewControllerLayoutGuide type="bottom" id="Pi6-Sa-C1d"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3d3-0a-Lbi">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <rect key="frame" x="0.0" y="44" width="480" height="276"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="iru-UQ-Bwi">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="276"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEN-GI-iU9" customClass="RoundedButton">
-                                <rect key="frame" x="20" y="142" width="440" height="37"/>
+                                <rect key="frame" x="20" y="120" width="440" height="37"/>
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="deN-nk-mgr"/>
@@ -492,6 +507,13 @@
                                     <action selector="mainMenu:" destination="k5I-1V-T9v" eventType="touchUpInside" id="Bww-Nk-h4P"/>
                                 </connections>
                             </button>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uWg-l7-zi3">
+                                <rect key="frame" x="80" y="226" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="k5I-1V-T9v" id="ODN-e5-L9x"/>
+                                </connections>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -505,6 +527,7 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="You Win!" id="Mnv-wB-KCW"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                 </viewController>
@@ -697,14 +720,14 @@ A preferences page is also available from the home screen. To get to this page, 
                         <viewControllerLayoutGuide type="bottom" id="Pvg-G4-ueC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wuk-Fq-hVI">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <rect key="frame" x="0.0" y="44" width="480" height="276"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zTW-yn-FTZ">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="276"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuD-rI-SVO" customClass="RoundedButton">
-                                <rect key="frame" x="20" y="142" width="440" height="37"/>
+                                <rect key="frame" x="20" y="120" width="440" height="37"/>
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="a1V-a1-WSG"/>
@@ -721,6 +744,13 @@ A preferences page is also available from the home screen. To get to this page, 
                                     <action selector="mainMenu:" destination="PIN-XC-1M0" eventType="touchUpInside" id="kXX-T4-5Wq"/>
                                 </connections>
                             </button>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LuA-v2-aig">
+                                <rect key="frame" x="80" y="226" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="PIN-XC-1M0" id="e4E-YD-E3y"/>
+                                </connections>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -734,6 +764,7 @@ A preferences page is also available from the home screen. To get to this page, 
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="You Lose :(" id="1cK-pF-GAW"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                 </viewController>

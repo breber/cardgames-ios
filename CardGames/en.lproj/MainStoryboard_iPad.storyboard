@@ -209,6 +209,13 @@
                                     <segue destination="eid-qb-TmD" kind="push" id="UNm-3v-jgH"/>
                                 </connections>
                             </button>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wq0-0A-OK2">
+                                <rect key="frame" x="128" y="638" width="768" height="66"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Z8y-9M-nJh" id="tRL-5m-Wz1"/>
+                                </connections>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -269,12 +276,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yVd-Nt-EXI">
-                                        <rect key="frame" x="32" y="30" width="37" height="37"/>
+                                        <rect key="frame" x="20" y="30" width="37" height="58"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstItem="yVd-Nt-EXI" firstAttribute="leading" secondItem="TDR-qk-fLc" secondAttribute="leading" constant="32" id="5Mw-uk-KfN"/>
+                                    <constraint firstItem="yVd-Nt-EXI" firstAttribute="leading" secondItem="TDR-qk-fLc" secondAttribute="leading" constant="20" symbolic="YES" id="5Mw-uk-KfN"/>
+                                    <constraint firstAttribute="centerY" secondItem="yVd-Nt-EXI" secondAttribute="centerY" id="EdM-hJ-kdu"/>
                                     <constraint firstAttribute="trailing" secondItem="Itw-bJ-bir" secondAttribute="trailing" constant="20" symbolic="YES" id="SXB-bK-QTZ"/>
                                     <constraint firstAttribute="bottom" secondItem="Itw-bJ-bir" secondAttribute="bottom" constant="20" symbolic="YES" id="a5w-3A-Lgg"/>
                                     <constraint firstItem="yVd-Nt-EXI" firstAttribute="top" secondItem="TDR-qk-fLc" secondAttribute="top" constant="30" id="h0r-AU-D9H"/>
@@ -282,6 +290,13 @@
                                     <constraint firstItem="Itw-bJ-bir" firstAttribute="leading" secondItem="TDR-qk-fLc" secondAttribute="leading" constant="20" symbolic="YES" id="vO2-7L-0Cq"/>
                                 </constraints>
                             </view>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xy5-D1-BWz">
+                                <rect key="frame" x="128" y="702" width="768" height="66"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="mEw-Xp-GQC" id="s7H-CH-8RG"/>
+                                </connections>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -1020,6 +1035,13 @@
                                     <constraint firstAttribute="centerY" secondItem="4be-ec-Q8O" secondAttribute="centerY" id="mcA-jk-wqg"/>
                                 </constraints>
                             </view>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SYA-Y0-YlI">
+                                <rect key="frame" x="128" y="702" width="768" height="66"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kKW-Fg-x1I" id="6Pi-mC-bhI"/>
+                                </connections>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -1096,6 +1118,13 @@
                                     <action selector="mainMenu:" destination="wtK-XN-KPg" eventType="touchUpInside" id="Ckx-Se-2cw"/>
                                 </connections>
                             </button>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P5c-Bd-DUF">
+                                <rect key="frame" x="128" y="702" width="768" height="66"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wtK-XN-KPg" id="Q4a-4G-hbk"/>
+                                </connections>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -1260,6 +1289,13 @@ A preferences page is also available from the home screen. To get to this page, 
                                     <action selector="mainMenu:" destination="cc5-qU-mmm" eventType="touchUpInside" id="E27-a8-gft"/>
                                 </connections>
                             </button>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QLa-sb-tgr">
+                                <rect key="frame" x="128" y="702" width="768" height="66"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="cc5-qU-mmm" id="gVE-Du-TQT"/>
+                                </connections>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -1383,6 +1419,13 @@ A preferences page is also available from the home screen. To get to this page, 
                                     <action selector="mainMenu:" destination="QzC-gV-dQs" eventType="touchUpInside" id="5GV-fz-vGo"/>
                                 </connections>
                             </button>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7N-kL-8RN">
+                                <rect key="frame" x="128" y="702" width="768" height="66"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="QzC-gV-dQs" id="Nbo-gR-Oke"/>
+                                </connections>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -1474,6 +1517,13 @@ A preferences page is also available from the home screen. To get to this page, 
                                     <action selector="mainMenu:" destination="vPz-u1-Cxe" eventType="touchUpInside" id="dqX-Wo-9EK"/>
                                 </connections>
                             </button>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lhh-a1-uYy">
+                                <rect key="frame" x="128" y="702" width="768" height="66"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vPz-u1-Cxe" id="gLV-rM-QT3"/>
+                                </connections>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -1516,6 +1566,6 @@ A preferences page is also available from the home screen. To get to this page, 
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="SD3-qT-Xh2"/>
+        <segue reference="b5K-WP-gvI"/>
     </inferredMetricsTieBreakers>
 </document>

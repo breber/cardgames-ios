@@ -108,6 +108,7 @@
 		D1D2BA771603C9A0008EE137 /* CrazyEightsPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA761603C9A0008EE137 /* CrazyEightsPlayerController.m */; };
 		D1D2BA7A1603CDA0008EE137 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2BA791603CDA0008EE137 /* PlayerController.m */; };
 		D1DA26281604E4D100E32193 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DA26271604E4D100E32193 /* ConnectViewController.m */; };
+		D1E8F4D3178E134700785E4C /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E8F4D2178E134700785E4C /* iAd.framework */; };
 		D1F488D0160CC06700CC1A07 /* RoundedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F488CF160CC06700CC1A07 /* RoundedTextView.m */; };
 		D1F488D4160CC16600CC1A07 /* RoundedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F488D3160CC16600CC1A07 /* RoundedTableView.m */; };
 		E65B97C71652C609003C5559 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E65B97C61652C609003C5559 /* SettingsViewController.m */; };
@@ -249,6 +250,7 @@
 		D1DA26261604E4D100E32193 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
 		D1DA26271604E4D100E32193 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
 		D1E09757164C96420089CB69 /* C8Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C8Constants.h; sourceTree = "<group>"; };
+		D1E8F4D2178E134700785E4C /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		D1F488CE160CC06700CC1A07 /* RoundedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedTextView.h; sourceTree = "<group>"; };
 		D1F488CF160CC06700CC1A07 /* RoundedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedTextView.m; sourceTree = "<group>"; };
 		D1F488D2160CC16600CC1A07 /* RoundedTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedTableView.h; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1E8F4D3178E134700785E4C /* iAd.framework in Frameworks */,
 				D140E9AA1605705900FDC2DA /* CFNetwork.framework in Frameworks */,
 				D1CAA3E515FD63E800549EF7 /* QuartzCore.framework in Frameworks */,
 				D18663A115F109BE0098E8AD /* UIKit.framework in Frameworks */,
@@ -298,6 +301,7 @@
 		D186639F15F109BE0098E8AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1E8F4D2178E134700785E4C /* iAd.framework */,
 				D140E9A91605705900FDC2DA /* CFNetwork.framework */,
 				D1CAA3E415FD63E800549EF7 /* QuartzCore.framework */,
 				D18663A015F109BE0098E8AD /* UIKit.framework */,

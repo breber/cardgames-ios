@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <iAd/iAd.h>
 
 @implementation ViewController
 
@@ -24,6 +25,18 @@
                 ([objA tag] > [objB tag]) ? NSOrderedDescending :
                 NSOrderedSame);
     }];
+}
+
+#pragma mark - iAd Stuff
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    [banner setHidden:NO];
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    [banner setHidden:YES];
 }
 
 @end
