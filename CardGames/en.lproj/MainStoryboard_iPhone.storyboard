@@ -175,11 +175,11 @@
                                     <constraint firstItem="kx4-kZ-AZS" firstAttribute="leading" secondItem="6w3-1g-k9A" secondAttribute="trailing" constant="8" symbolic="YES" id="ftT-ZC-Oco"/>
                                 </constraints>
                             </view>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hQ-tw-WeQ">
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kc1-Ua-tKr">
                                 <rect key="frame" x="80" y="270" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="F5Q-YB-nBF" id="trB-fL-bdV"/>
+                                    <outlet property="delegate" destination="F5Q-YB-nBF" id="WcC-VP-KIG"/>
                                 </connections>
                             </adBannerView>
                         </subviews>
@@ -507,11 +507,11 @@
                                     <action selector="mainMenu:" destination="k5I-1V-T9v" eventType="touchUpInside" id="Bww-Nk-h4P"/>
                                 </connections>
                             </button>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uWg-l7-zi3">
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qdh-bS-NpU">
                                 <rect key="frame" x="80" y="226" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="k5I-1V-T9v" id="ODN-e5-L9x"/>
+                                    <outlet property="delegate" destination="k5I-1V-T9v" id="0m6-op-Sv0"/>
                                 </connections>
                             </adBannerView>
                         </subviews>
@@ -744,11 +744,11 @@ A preferences page is also available from the home screen. To get to this page, 
                                     <action selector="mainMenu:" destination="PIN-XC-1M0" eventType="touchUpInside" id="kXX-T4-5Wq"/>
                                 </connections>
                             </button>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LuA-v2-aig">
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q2F-93-0Yz">
                                 <rect key="frame" x="80" y="226" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="PIN-XC-1M0" id="e4E-YD-E3y"/>
+                                    <outlet property="delegate" destination="PIN-XC-1M0" id="cFD-Z6-FsG"/>
                                 </connections>
                             </adBannerView>
                         </subviews>
