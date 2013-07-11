@@ -209,11 +209,11 @@
                                     <segue destination="eid-qb-TmD" kind="push" id="UNm-3v-jgH"/>
                                 </connections>
                             </button>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wq0-0A-OK2">
+                            <adBannerView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wq0-0A-OK2">
                                 <rect key="frame" x="128" y="638" width="768" height="66"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="Z8y-9M-nJh" id="tRL-5m-Wz1"/>
+                                    <outlet property="delegate" destination="Z8y-9M-nJh" id="7Y2-SL-Ng6"/>
                                 </connections>
                             </adBannerView>
                         </subviews>
@@ -1566,6 +1566,6 @@ A preferences page is also available from the home screen. To get to this page, 
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="b5K-WP-gvI"/>
+        <segue reference="SD3-qT-Xh2"/>
     </inferredMetricsTieBreakers>
 </document>
