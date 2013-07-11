@@ -62,10 +62,10 @@ static void TCPServerAcceptCallBack(CFSocketRef socket,
             inet_ntop(AF_INET6, &s->sin6_addr, ipstr, sizeof ipstr);
         }
         
-        if (DEBUG) {
-            NSLog(@"%s - Peer's IP address is: %s\n", __PRETTY_FUNCTION__, ipstr);
-            NSLog(@"%s - Peer's port is: %d\n", __PRETTY_FUNCTION__, port);
-        }
+#if DEBUG
+        NSLog(@"%s - Peer's IP address is: %s\n", __PRETTY_FUNCTION__, ipstr);
+        NSLog(@"%s - Peer's port is: %d\n", __PRETTY_FUNCTION__, port);
+#endif
 
         WifiConnection *connection = [[WifiConnection alloc] init];
         if (![connection initWithNativeSocket:nativeSocketHandle withData:[NSString stringWithFormat:@"%s", ipstr]]) {

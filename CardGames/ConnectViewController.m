@@ -196,9 +196,10 @@
 
 - (void)outputStreamClosed:(WifiConnection *)connection
 {
-    if (DEBUG) {
-        NSLog(@"%s", __PRETTY_FUNCTION__);
-    }
+#if DEBUG
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+#endif
+
     NSString *connectionId = connection.connectionId;
 
     for (int i = 0; i < self.players.count; i++) {

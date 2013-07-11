@@ -81,9 +81,9 @@ static WifiConnection *instance = nil;
 
 - (void)closeConnections
 {
-    if (DEBUG) {
-        NSLog(@"%s", __PRETTY_FUNCTION__);
-    }
+#if DEBUG
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+#endif
     [self.outputStream close];
     [self.inputStream close];
 
@@ -100,9 +100,11 @@ static WifiConnection *instance = nil;
 - (BOOL)writeDictionary:(NSDictionary *)dict
                withType:(int)type
 {
-    if (DEBUG && LOG_CONNECTION_WRITE) {
+#if DEBUG
+    if (LOG_CONNECTION_WRITE) {
         NSLog(@"%s (%d): %@", __PRETTY_FUNCTION__, type, dict);
     }
+#endif
     NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:kNilOptions error:nil];
     NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     return [self write:str withType:type];
@@ -115,9 +117,11 @@ static WifiConnection *instance = nil;
         return NO;
     }
 
-    if (DEBUG && LOG_CONNECTION_WRITE) {
+#if DEBUG
+    if (LOG_CONNECTION_WRITE) {
         NSLog(@"%s (%d): %@", __PRETTY_FUNCTION__, type, data);
     }
+#endif
 
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: data, @"DATA", [NSString stringWithFormat:@"%i", type], @"MSG_TYPE", nil];
     NSData *dataToWrite = [NSJSONSerialization dataWithJSONObject:dict
@@ -136,9 +140,9 @@ static WifiConnection *instance = nil;
     switch (eventCode) {
 		case NSStreamEventOpenCompleted:
             if (aStream == self.outputStream) {
-                if (DEBUG) {
-                    NSLog(@"%s NSEventOpenCompleted", __PRETTY_FUNCTION__);
-                }
+#if DEBUG
+                NSLog(@"%s NSEventOpenCompleted", __PRETTY_FUNCTION__);
+#endif
                 if ([self.delegate respondsToSelector:@selector(outputStreamOpened:)]) {
                     [self.delegate outputStreamOpened:self];
                 }
@@ -160,11 +164,13 @@ static WifiConnection *instance = nil;
                             NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:[output dataUsingEncoding:NSUTF8StringEncoding]
                                                                                        options:0
                                                                                          error:nil];
-                            
-                            if (DEBUG && LOG_CONNECTION_READ) {
+
+#if DEBUG
+                            if (LOG_CONNECTION_READ) {
                                 NSLog(@"%s - READ: %@", __PRETTY_FUNCTION__, output);
                             }
-                            
+#endif
+
                             if (jsonObject && [self.delegate respondsToSelector:@selector(newDataArrived:withData:withType:)]) {
                                 NSString *data = [jsonObject objectForKey:@"DATA"];
                                 int type = [[jsonObject objectForKey:@"MSG_TYPE"] intValue];
@@ -182,9 +188,9 @@ static WifiConnection *instance = nil;
             
 		case NSStreamEventErrorOccurred:
         case NSStreamEventEndEncountered:
-            if (DEBUG) {
-                NSLog(@"%s NSStreamEventErrorOccurred || NSStreamEventEndEncountered", __PRETTY_FUNCTION__);
-            }
+#if DEBUG
+            NSLog(@"%s NSStreamEventErrorOccurred || NSStreamEventEndEncountered", __PRETTY_FUNCTION__);
+#endif
             [self.outputStream close];
             [self.inputStream close];
             

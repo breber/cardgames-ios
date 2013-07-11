@@ -18,6 +18,13 @@
 		D158EDE2166EDF8C003AE18C /* CenteredView.m in Sources */ = {isa = PBXBuildFile; fileRef = D158EDE1166EDF8C003AE18C /* CenteredView.m */; };
 		D1708FBF166D1FF7007CA179 /* back_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = D1708FBE166D1FF7007CA179 /* back_blue.png */; };
 		D172F5571668FD10002F3EF2 /* RoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = D172F5561668FD0F002F3EF2 /* RoundedView.m */; };
+		D1753256178E4C81007E2B21 /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = D175324F178E4C81007E2B21 /* Icon-57.png */; };
+		D1753257178E4C81007E2B21 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = D1753250178E4C81007E2B21 /* Icon-72.png */; };
+		D1753258178E4C81007E2B21 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = D1753251178E4C81007E2B21 /* Icon-76.png */; };
+		D1753259178E4C81007E2B21 /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = D1753252178E4C81007E2B21 /* Icon-114.png */; };
+		D175325A178E4C81007E2B21 /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = D1753253178E4C81007E2B21 /* Icon-120.png */; };
+		D175325B178E4C81007E2B21 /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = D1753254178E4C81007E2B21 /* Icon-144.png */; };
+		D175325C178E4C81007E2B21 /* Icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = D1753255178E4C81007E2B21 /* Icon-152.png */; };
 		D18663A115F109BE0098E8AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18663A015F109BE0098E8AD /* UIKit.framework */; };
 		D18663A315F109BE0098E8AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18663A215F109BE0098E8AD /* Foundation.framework */; };
 		D18663A515F109BE0098E8AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18663A415F109BE0098E8AD /* CoreGraphics.framework */; };
@@ -138,6 +145,13 @@
 		D1708FBE166D1FF7007CA179 /* back_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_blue.png; path = CardGames/Resources/Cards/back_blue.png; sourceTree = "<group>"; };
 		D172F5551668FD0F002F3EF2 /* RoundedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedView.h; sourceTree = "<group>"; };
 		D172F5561668FD0F002F3EF2 /* RoundedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedView.m; sourceTree = "<group>"; };
+		D175324F178E4C81007E2B21 /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-57.png"; path = "CardGames/Resources/Icon-57.png"; sourceTree = "<group>"; };
+		D1753250178E4C81007E2B21 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "CardGames/Resources/Icon-72.png"; sourceTree = "<group>"; };
+		D1753251178E4C81007E2B21 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76.png"; path = "CardGames/Resources/Icon-76.png"; sourceTree = "<group>"; };
+		D1753252178E4C81007E2B21 /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-114.png"; path = "CardGames/Resources/Icon-114.png"; sourceTree = "<group>"; };
+		D1753253178E4C81007E2B21 /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-120.png"; path = "CardGames/Resources/Icon-120.png"; sourceTree = "<group>"; };
+		D1753254178E4C81007E2B21 /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-144.png"; path = "CardGames/Resources/Icon-144.png"; sourceTree = "<group>"; };
+		D1753255178E4C81007E2B21 /* Icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-152.png"; path = "CardGames/Resources/Icon-152.png"; sourceTree = "<group>"; };
 		D17C3363165065C500B19F43 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D186639C15F109BE0098E8AD /* CardGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18663A015F109BE0098E8AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -381,6 +395,13 @@
 				D1CAA3E715FD6F6800549EF7 /* icon-ipad.png */,
 				D1CAA3E815FD6F6800549EF7 /* icon-retina.png */,
 				D1CAA3E915FD6F6800549EF7 /* icon.png */,
+				D175324F178E4C81007E2B21 /* Icon-57.png */,
+				D1753250178E4C81007E2B21 /* Icon-72.png */,
+				D1753251178E4C81007E2B21 /* Icon-76.png */,
+				D1753252178E4C81007E2B21 /* Icon-114.png */,
+				D1753253178E4C81007E2B21 /* Icon-120.png */,
+				D1753254178E4C81007E2B21 /* Icon-144.png */,
+				D1753255178E4C81007E2B21 /* Icon-152.png */,
 				D1D0ED09166B1AB600EAE03C /* pause_button.png */,
 				D1D0ED0A166B1AB600EAE03C /* refresh_button.png */,
 				D1CAA38B15FD266C00549EF7 /* wooden_top.jpg */,
@@ -588,6 +609,7 @@
 				D1CAA35815FD265400549EF7 /* clubs_7.png in Resources */,
 				D1E8F4D5178E307C00785E4C /* Images.xcassets in Resources */,
 				D1CAA35915FD265400549EF7 /* clubs_8.png in Resources */,
+				D1753259178E4C81007E2B21 /* Icon-114.png in Resources */,
 				D1CAA35A15FD265400549EF7 /* clubs_9.png in Resources */,
 				D1CAA35B15FD265400549EF7 /* clubs_10.png in Resources */,
 				D1CAA35C15FD265400549EF7 /* clubs_a.png in Resources */,
@@ -606,11 +628,13 @@
 				D1CAA36915FD265400549EF7 /* diamonds_a.png in Resources */,
 				D1CAA36A15FD265400549EF7 /* diamonds_j.png in Resources */,
 				D1CAA36B15FD265400549EF7 /* diamonds_k.png in Resources */,
+				D1753257178E4C81007E2B21 /* Icon-72.png in Resources */,
 				D1CAA36C15FD265400549EF7 /* diamonds_q.png in Resources */,
 				D1CAA36D15FD265400549EF7 /* hearts_2.png in Resources */,
 				D1CAA36E15FD265400549EF7 /* hearts_3.png in Resources */,
 				D1CAA36F15FD265400549EF7 /* hearts_4.png in Resources */,
 				D1CAA37015FD265400549EF7 /* hearts_5.png in Resources */,
+				D1753256178E4C81007E2B21 /* Icon-57.png in Resources */,
 				D1CAA37115FD265400549EF7 /* hearts_6.png in Resources */,
 				D1CAA37215FD265400549EF7 /* hearts_7.png in Resources */,
 				D1CAA37315FD265400549EF7 /* hearts_8.png in Resources */,
@@ -622,6 +646,8 @@
 				D1CAA37915FD265400549EF7 /* hearts_q.png in Resources */,
 				D1CAA37A15FD265400549EF7 /* joker_b.png in Resources */,
 				D1CAA37B15FD265400549EF7 /* joker_r.png in Resources */,
+				D1753258178E4C81007E2B21 /* Icon-76.png in Resources */,
+				D175325C178E4C81007E2B21 /* Icon-152.png in Resources */,
 				D1CAA37C15FD265400549EF7 /* spades_2.png in Resources */,
 				D1CAA37D15FD265400549EF7 /* spades_3.png in Resources */,
 				D1CAA37E15FD265400549EF7 /* spades_4.png in Resources */,
@@ -629,7 +655,9 @@
 				D1CAA38015FD265400549EF7 /* spades_6.png in Resources */,
 				D1CAA38115FD265400549EF7 /* spades_7.png in Resources */,
 				D1CAA38215FD265400549EF7 /* spades_8.png in Resources */,
+				D175325A178E4C81007E2B21 /* Icon-120.png in Resources */,
 				D1CAA38315FD265400549EF7 /* spades_9.png in Resources */,
+				D175325B178E4C81007E2B21 /* Icon-144.png in Resources */,
 				D1CAA38415FD265400549EF7 /* spades_10.png in Resources */,
 				D1CAA38515FD265400549EF7 /* spades_a.png in Resources */,
 				D1CAA38615FD265400549EF7 /* spades_j.png in Resources */,
@@ -789,13 +817,13 @@
 		D18663BE15F109BE0098E8AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CardGames/CardGames-Prefix.pch";
 				INFOPLIST_FILE = "CardGames/CardGames-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "EC71DB26-56D2-444E-B599-587D029E8149";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -803,13 +831,15 @@
 		D18663BF15F109BE0098E8AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CardGames/CardGames-Prefix.pch";
 				INFOPLIST_FILE = "CardGames/CardGames-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "EC71DB26-56D2-444E-B599-587D029E8149";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EC71DB26-56D2-444E-B599-587D029E8149";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
