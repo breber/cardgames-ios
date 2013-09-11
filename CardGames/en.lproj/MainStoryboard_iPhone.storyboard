@@ -780,14 +780,6 @@ A preferences page is also available from the home screen. To get to this page, 
         <image name="heartsuitimage.png" width="348" height="348"/>
         <image name="spadesuitimage.png" width="348" height="348"/>
         <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
