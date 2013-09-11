@@ -41,8 +41,6 @@
     // Hide the navigation bar
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 
-    [[UIApplication sharedApplication] setStatusBarHidden:YES];
-
     // Show the keyboard
     [self.textPopupTextField becomeFirstResponder];
 }

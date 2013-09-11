@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="FAb-80-ltI">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
@@ -9,6 +9,7 @@
         <scene sceneID="KpY-3v-25K">
             <objects>
                 <navigationController wantsFullScreenLayout="YES" definesPresentationContext="YES" id="FAb-80-ltI" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -33,22 +34,22 @@
                         <viewControllerLayoutGuide type="bottom" id="lYD-Um-WwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9gF-La-5ls">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="44" width="1024" height="724"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Rcr-H8-p52">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="724"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Vq-DL-R9y" customClass="RoundedTextView">
-                                <rect key="frame" x="20" y="20" width="984" height="728"/>
+                                <rect key="frame" x="20" y="20" width="984" height="684"/>
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oyA-z5-lVI">
-                                <rect key="frame" x="341" y="50" width="223" height="29"/>
+                                <rect key="frame" x="341" y="58" width="223" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="223" id="IMq-eQ-2hg"/>
+                                    <constraint firstAttribute="width" constant="223" id="rpe-XR-U0E"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Easy"/>
@@ -56,7 +57,7 @@
                                 </segments>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Dl-FA-VJa">
-                                <rect key="frame" x="341" y="115" width="452" height="29"/>
+                                <rect key="frame" x="341" y="123" width="452" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="452" id="T2v-UE-AEh"/>
                                 </constraints>
@@ -94,21 +95,22 @@
                             <constraint firstAttribute="bottom" secondItem="3Vq-DL-R9y" secondAttribute="bottom" constant="20" symbolic="YES" id="2a5-xZ-kwl"/>
                             <constraint firstItem="Rcr-H8-p52" firstAttribute="trailing" secondItem="9gF-La-5ls" secondAttribute="trailing" id="AYD-y3-4sv"/>
                             <constraint firstItem="DqN-vQ-rHp" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="108" id="BRN-2M-pB9"/>
+                            <constraint firstItem="oyA-z5-lVI" firstAttribute="leading" secondItem="CDK-Iz-uxB" secondAttribute="trailing" constant="8" symbolic="YES" id="GUv-0N-7yS"/>
                             <constraint firstItem="3Vq-DL-R9y" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="20" symbolic="YES" id="HEr-oj-Lr5"/>
-                            <constraint firstItem="7Dl-FA-VJa" firstAttribute="leading" secondItem="oyA-z5-lVI" secondAttribute="leading" id="IEN-WI-8C0"/>
-                            <constraint firstItem="oyA-z5-lVI" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="50" id="JGA-gu-tIi"/>
                             <constraint firstItem="Rcr-H8-p52" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" id="Mbo-Jq-osI"/>
                             <constraint firstAttribute="trailing" secondItem="3Vq-DL-R9y" secondAttribute="trailing" constant="20" symbolic="YES" id="Nx5-wU-GDU"/>
-                            <constraint firstItem="oyA-z5-lVI" firstAttribute="leading" secondItem="CDK-Iz-uxB" secondAttribute="trailing" constant="8" symbolic="YES" id="OPF-Zr-llL"/>
                             <constraint firstItem="DqN-vQ-rHp" firstAttribute="leading" secondItem="CDK-Iz-uxB" secondAttribute="leading" id="RR0-Nu-cpk"/>
                             <constraint firstItem="Rcr-H8-p52" firstAttribute="leading" secondItem="9gF-La-5ls" secondAttribute="leading" id="h3b-E9-oQK"/>
-                            <constraint firstItem="7Dl-FA-VJa" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="115" id="oqa-xR-zej"/>
+                            <constraint firstItem="oyA-z5-lVI" firstAttribute="centerY" secondItem="CDK-Iz-uxB" secondAttribute="centerY" id="hfd-mF-E0W"/>
+                            <constraint firstItem="7Dl-FA-VJa" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="123" id="oqa-xR-zej"/>
                             <constraint firstItem="CDK-Iz-uxB" firstAttribute="leading" secondItem="9gF-La-5ls" secondAttribute="leading" constant="49" id="pG7-tN-Kea"/>
                             <constraint firstItem="Rcr-H8-p52" firstAttribute="bottom" secondItem="9gF-La-5ls" secondAttribute="bottom" id="pOq-y6-lxB"/>
+                            <constraint firstItem="oyA-z5-lVI" firstAttribute="leading" secondItem="7Dl-FA-VJa" secondAttribute="leading" id="x8k-D0-ENf"/>
                             <constraint firstItem="CDK-Iz-uxB" firstAttribute="top" secondItem="9gF-La-5ls" secondAttribute="top" constant="43" id="z5y-Lm-2Zz"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Settings" id="CTa-zg-lBf"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
@@ -129,11 +131,11 @@
                         <viewControllerLayoutGuide type="bottom" id="cK8-2d-eB1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Igo-3Z-D1T">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="44" width="1024" height="724"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NGj-96-3to">
-                                <rect key="frame" x="0.0" y="-5" width="1024" height="773"/>
+                                <rect key="frame" x="0.0" y="-5" width="1024" height="729"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGa-jm-9uq" customClass="RoundedButton">
                                 <rect key="frame" x="20" y="190" width="984" height="104"/>
@@ -209,7 +211,7 @@
                                 </connections>
                             </button>
                             <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="OwU-2a-I51">
-                                <rect key="frame" x="128" y="702" width="480" height="66"/>
+                                <rect key="frame" x="128" y="658" width="480" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="bHq-H2-snE"/>
                                     <constraint firstAttribute="width" constant="480" id="nNp-Fw-UVE"/>
@@ -241,6 +243,7 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Card Games" id="m2E-ir-wtd">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="49d-p3-x8w">
                             <connections>
@@ -248,7 +251,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqd-za-M8n" sceneMemberID="firstResponder"/>
             </objects>
@@ -434,20 +436,20 @@
                         <viewControllerLayoutGuide type="bottom" id="dzf-g5-w31"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HaP-vU-e1b">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="44" width="1024" height="724"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="sZf-dd-0PR">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="724"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7d-Ll-TfO" userLabel="Connecting View">
-                                <rect key="frame" x="356" y="249" width="312" height="272"/>
+                                <rect key="frame" x="356" y="249" width="312" height="228"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67k-MN-lbD" userLabel="ConnectingDeviceInner">
-                                        <rect key="frame" x="20" y="20" width="272" height="232"/>
+                                        <rect key="frame" x="20" y="20" width="272" height="188"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Connecting..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="60o-DN-PLA">
-                                                <rect key="frame" x="20" y="20" width="232" height="192"/>
+                                                <rect key="frame" x="20" y="20" width="232" height="148"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -471,7 +473,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fab-vT-lgK" userLabel="Player1DeviceWrapper">
-                                <rect key="frame" x="356" y="541" width="312" height="208"/>
+                                <rect key="frame" x="356" y="497" width="312" height="208"/>
                                 <subviews>
                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWs-76-hOf" userLabel="Player1DeviceInner">
                                         <rect key="frame" x="20" y="21" width="272" height="168"/>
@@ -506,19 +508,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jE4-lV-BQ2" userLabel="Player2DeviceWrapper">
-                                <rect key="frame" x="688" y="248" width="316" height="272"/>
+                                <rect key="frame" x="688" y="248" width="316" height="228"/>
                                 <subviews>
                                     <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bte-j9-dK8" userLabel="Player2DeviceInner">
-                                        <rect key="frame" x="20" y="19" width="276" height="232"/>
+                                        <rect key="frame" x="20" y="19" width="276" height="188"/>
                                         <subviews>
                                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Player 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="iIj-B8-UEC">
-                                                <rect key="frame" x="20" y="20" width="236" height="192"/>
+                                                <rect key="frame" x="20" y="20" width="236" height="148"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <activityIndicatorView hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qoa-84-7cw">
-                                                <rect key="frame" x="128" y="106" width="20" height="20"/>
+                                                <rect key="frame" x="128" y="84" width="20" height="20"/>
                                             </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -576,19 +578,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kto-V7-cm0" userLabel="Player4DeviceWrapper">
-                                <rect key="frame" x="20" y="249" width="316" height="272"/>
+                                <rect key="frame" x="20" y="249" width="316" height="228"/>
                                 <subviews>
                                     <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kiK-Z7-Lp9" userLabel="Player4DeviceInner">
-                                        <rect key="frame" x="20" y="20" width="276" height="232"/>
+                                        <rect key="frame" x="20" y="20" width="276" height="188"/>
                                         <subviews>
                                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" text="Player 4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bKr-p7-dy7">
-                                                <rect key="frame" x="20" y="20" width="236" height="192"/>
+                                                <rect key="frame" x="20" y="20" width="236" height="148"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <activityIndicatorView hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="yc0-D2-wb5">
-                                                <rect key="frame" x="128" y="106" width="20" height="20"/>
+                                                <rect key="frame" x="128" y="84" width="20" height="20"/>
                                             </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -664,6 +666,7 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="2Q1-hx-BW5">
                         <barButtonItem key="rightBarButtonItem" title="Debug Gameboard" id="zzo-7C-RvJ">
                             <connections>
@@ -774,7 +777,7 @@
                                 <rect key="frame" x="157" y="593" width="710" height="175"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view autoresizesSubviews="NO" tag="2" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0WJ-xH-UmH" userLabel="Player 2 Hand" customClass="CenteredView">
+                            <view autoresizesSubviews="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0WJ-xH-UmH" userLabel="Player 2 Hand" customClass="CenteredView">
                                 <rect key="frame" x="875" y="114" width="149" height="541"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -850,9 +853,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="1Ga-cV-zST" secondAttribute="trailing" constant="20" symbolic="YES" id="0JG-3u-emw"/>
-                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="top" secondItem="Dol-GG-hTa" secondAttribute="top" id="0eG-44-Ujh"/>
                             <constraint firstItem="WUO-Io-v9y" firstAttribute="baseline" secondItem="ay7-qF-4tO" secondAttribute="baseline" id="4uk-Ab-CDI"/>
-                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="centerY" secondItem="JxR-l6-V3H" secondAttribute="centerY" id="5eS-Hx-BDo"/>
+                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="trailing" secondItem="JxR-l6-V3H" secondAttribute="trailing" id="CyA-80-OKm"/>
                             <constraint firstItem="lNN-ik-pSw" firstAttribute="centerX" secondItem="hUF-4F-V0q" secondAttribute="centerX" id="DQt-Bz-DC9"/>
                             <constraint firstItem="JZB-Pp-AUI" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" id="DZq-W7-V2n"/>
                             <constraint firstItem="UCs-rv-8KH" firstAttribute="bottom" secondItem="1Ga-cV-zST" secondAttribute="bottom" id="Eis-rr-TUs"/>
@@ -865,27 +867,27 @@
                             <constraint firstAttribute="centerY" secondItem="ay7-qF-4tO" secondAttribute="centerY" id="Rng-wm-POJ"/>
                             <constraint firstItem="UCs-rv-8KH" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="20" symbolic="YES" id="S7D-ST-v2Z"/>
                             <constraint firstItem="Q6U-XX-1hl" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="165" id="U9a-Sb-6xG"/>
-                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="leading" secondItem="hUF-4F-V0q" secondAttribute="trailing" constant="8" symbolic="YES" id="YAN-QW-x1E"/>
-                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="leading" secondItem="JZB-Pp-AUI" secondAttribute="trailing" constant="8" symbolic="YES" id="ZKa-bL-oun"/>
+                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="leading" secondItem="ay7-qF-4tO" secondAttribute="trailing" constant="8" symbolic="YES" id="UKY-I1-oqe"/>
+                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="leading" secondItem="JZB-Pp-AUI" secondAttribute="trailing" constant="8" symbolic="YES" id="YiH-q8-62G"/>
                             <constraint firstItem="5Gk-U2-dH9" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="20" symbolic="YES" id="dJB-B6-m70"/>
                             <constraint firstItem="lNN-ik-pSw" firstAttribute="height" secondItem="Q6U-XX-1hl" secondAttribute="height" id="dRT-Zc-L3K"/>
+                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="leading" secondItem="hUF-4F-V0q" secondAttribute="trailing" constant="8" symbolic="YES" id="eiX-kD-Czd"/>
                             <constraint firstItem="Q6U-XX-1hl" firstAttribute="top" secondItem="JZB-Pp-AUI" secondAttribute="bottom" constant="8" symbolic="YES" id="ez8-VM-9tQ"/>
                             <constraint firstItem="Q6U-XX-1hl" firstAttribute="leading" secondItem="lNN-ik-pSw" secondAttribute="leading" id="fMd-GX-CuW"/>
                             <constraint firstItem="hUF-4F-V0q" firstAttribute="top" secondItem="onV-JN-clO" secondAttribute="top" constant="593" id="fdV-pI-0eh"/>
-                            <constraint firstItem="1Ga-cV-zST" firstAttribute="top" secondItem="0WJ-xH-UmH" secondAttribute="bottom" constant="8" symbolic="YES" id="g2Z-s6-5e4"/>
+                            <constraint firstItem="1Ga-cV-zST" firstAttribute="top" secondItem="0WJ-xH-UmH" secondAttribute="bottom" constant="8" symbolic="YES" id="fkk-8v-iuB"/>
                             <constraint firstItem="JxR-l6-V3H" firstAttribute="bottom" secondItem="hUF-4F-V0q" secondAttribute="bottom" id="gQf-9A-dYb"/>
                             <constraint firstItem="JxR-l6-V3H" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" id="gby-JE-ZtB"/>
                             <constraint firstItem="lNN-ik-pSw" firstAttribute="width" secondItem="Q6U-XX-1hl" secondAttribute="width" id="gqs-Xd-VAd"/>
-                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="leading" secondItem="ay7-qF-4tO" secondAttribute="trailing" constant="8" symbolic="YES" id="gwf-62-gZ8"/>
-                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="trailing" secondItem="onV-JN-clO" secondAttribute="trailing" id="gxa-7p-ALw"/>
                             <constraint firstAttribute="trailing" secondItem="TzA-q6-4lU" secondAttribute="trailing" constant="290" id="hBr-JU-Z0o"/>
-                            <constraint firstItem="Dol-GG-hTa" firstAttribute="width" secondItem="0WJ-xH-UmH" secondAttribute="width" id="jRh-51-tBa"/>
                             <constraint firstItem="lNN-ik-pSw" firstAttribute="top" secondItem="TzA-q6-4lU" secondAttribute="bottom" constant="8" symbolic="YES" id="l5o-Db-MbR"/>
                             <constraint firstItem="UCs-rv-8KH" firstAttribute="top" secondItem="Dol-GG-hTa" secondAttribute="bottom" constant="8" symbolic="YES" id="lVC-eQ-Ucc"/>
                             <constraint firstItem="JZB-Pp-AUI" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="157" id="msO-wL-x2P"/>
+                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="top" secondItem="Dol-GG-hTa" secondAttribute="top" id="paz-Z2-ajW"/>
                             <constraint firstItem="Dol-GG-hTa" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" id="pfX-LR-6CH"/>
                             <constraint firstItem="WUO-Io-v9y" firstAttribute="leading" secondItem="Dol-GG-hTa" secondAttribute="trailing" constant="8" symbolic="YES" id="qeA-oE-V4i"/>
                             <constraint firstItem="Dol-GG-hTa" firstAttribute="top" secondItem="5Gk-U2-dH9" secondAttribute="bottom" constant="8" symbolic="YES" id="qmS-KX-46D"/>
+                            <constraint firstItem="0WJ-xH-UmH" firstAttribute="leading" secondItem="onV-JN-clO" secondAttribute="leading" constant="875" id="smd-0T-mBt"/>
                             <constraint firstItem="JxR-l6-V3H" firstAttribute="trailing" secondItem="onV-JN-clO" secondAttribute="trailing" id="tIB-NI-adF"/>
                             <constraint firstAttribute="bottom" secondItem="JxR-l6-V3H" secondAttribute="bottom" id="tZE-Rh-Uvj"/>
                             <constraint firstAttribute="centerY" secondItem="WUO-Io-v9y" secondAttribute="centerY" id="xpb-xa-jg3"/>
@@ -923,7 +925,7 @@
         <!--Play View Controller - Play-->
         <scene sceneID="iWU-dS-Gv9">
             <objects>
-                <viewController wantsFullScreenLayout="YES" providesPresentationContextTransitionStyle="YES" id="kKW-Fg-x1I" customClass="PlayViewController" sceneMemberID="viewController">
+                <viewController providesPresentationContextTransitionStyle="YES" id="kKW-Fg-x1I" customClass="PlayViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o4o-up-qfU"/>
                         <viewControllerLayoutGuide type="bottom" id="W3U-G5-WWp"/>
@@ -1055,8 +1057,8 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Play" id="Tbc-83-jwz"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="buttonLayout" destination="8nU-vR-5fi" id="y9L-2H-gh2"/>
@@ -1085,14 +1087,14 @@
                         <viewControllerLayoutGuide type="bottom" id="Hfg-LE-cgh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Eik-YF-1DJ">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wFA-tZ-sbE">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSb-Eq-0K7" customClass="RoundedButton">
-                                <rect key="frame" x="20" y="344" width="985" height="81"/>
+                                <rect key="frame" x="20" y="312" width="985" height="81"/>
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="81" id="r2Z-oQ-DPq"/>
@@ -1110,7 +1112,7 @@
                                 </connections>
                             </button>
                             <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="wYQ-CH-mTY">
-                                <rect key="frame" x="128" y="702" width="480" height="66"/>
+                                <rect key="frame" x="128" y="638" width="480" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="480" id="QsS-cI-JOx"/>
                                     <constraint firstAttribute="height" constant="66" id="WkF-qF-PlU"/>
@@ -1134,6 +1136,7 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="You Win!" id="QKJ-WQ-tnO"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
@@ -1151,14 +1154,14 @@
                         <viewControllerLayoutGuide type="bottom" id="ckd-cB-dZT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Q0m-gT-YS1">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lkH-8N-YMK">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5om-D3-5a7" customClass="RoundedTextView">
-                                <rect key="frame" x="20" y="20" width="984" height="728"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5om-D3-5a7" customClass="RoundedTextView">
+                                <rect key="frame" x="20" y="20" width="984" height="664"/>
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <string key="text">The basic game of Crazy Eights is played with a standard deck of 52 cards. Each player will be dealt five cards and the rest of the cards will be put into a draw pile which is placed face down on the playing table. After the cards are dealt, one card will be taken from and placed next to the draw pile face up. This will serve as the discard pile.
 
@@ -1179,7 +1182,7 @@ Basic Game Play:
 6. Jokers can be played on any card, and any card can be played on a Joker.
 
 The first player to successfully get rid of all of their cards wins the game. If at any point in the game the draw pile is empty, all of the cards from the discard pile except for the top card will be re-shuffled to form a new draw pile.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -1196,6 +1199,7 @@ The first player to successfully get rid of all of their cards wins the game. If
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Rules" id="GV8-lR-gpR"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                 </viewController>
@@ -1212,21 +1216,21 @@ The first player to successfully get rid of all of their cards wins the game. If
                         <viewControllerLayoutGuide type="bottom" id="x4g-qw-ffT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LrS-Fk-tbb">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aXf-NO-gpE">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZr-qQ-ea8" customClass="RoundedTextView">
-                                <rect key="frame" x="20" y="20" width="984" height="728"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZr-qQ-ea8" customClass="RoundedTextView">
+                                <rect key="frame" x="20" y="20" width="984" height="664"/>
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <string key="text">This 2 to 4 player card game application requires one Android tablet per game and one Android device of any kind per player, all of which should have Bluetooth or WiFi capabilities. The tablet will serve as the game board, and each of the player’s devices will contain their hands of cards. Each player will connect to the tablet via Wifi or Bluetooth, depending on the chosen option in the application preferences.
 
 To start a game, press Create Game on the tablet that you will be using as your game board. If you device is large enough to act as a tablet, it will have the option to join a game as well. All of the players’ devices have a button that says Play on their Main Menu, which they should press to join a game. If Bluetooth is currently selected in the preferences, a list of nearby devices will display for the user to choose from. If WiFi is the type of connection a player will enter the IP address of the device they wish to connect to. They should then select the tablet’s Bluetooth ID or enter the IP address in the prompt. The IP address or the Bluetooth name will appear in the top left corner of tablet screen. Once a connection has been established between the tablet and a device, the player will be prompted to enter their name. Once all connected players have entered their name, the Start button will turn Yellow, indicating the game can begin.
 
 A preferences page is also available from the home screen. To get to this page, touch the wrench button that is displayed to the left of the game title on the Main Menu. This page will allow a player to set their language locale, change the number and difficulty of computer player, change connection type and modify the sound settings of the game.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -1243,6 +1247,7 @@ A preferences page is also available from the home screen. To get to this page, 
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="About" id="2Qe-tU-O45"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                 </viewController>
@@ -1259,14 +1264,14 @@ A preferences page is also available from the home screen. To get to this page, 
                         <viewControllerLayoutGuide type="bottom" id="eGh-8g-SgY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="u0P-ll-uVa">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ZSz-Iq-tiu">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0f-Ea-Zp6" customClass="RoundedButton">
-                                <rect key="frame" x="20" y="344" width="985" height="81"/>
+                                <rect key="frame" x="20" y="312" width="985" height="81"/>
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="81" id="Z2K-BN-tNK"/>
@@ -1284,7 +1289,7 @@ A preferences page is also available from the home screen. To get to this page, 
                                 </connections>
                             </button>
                             <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="L6M-WV-cor">
-                                <rect key="frame" x="128" y="702" width="480" height="66"/>
+                                <rect key="frame" x="128" y="638" width="480" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="4mO-Fj-bN4"/>
                                     <constraint firstAttribute="width" constant="480" id="Rig-wQ-Bqd"/>
@@ -1308,6 +1313,7 @@ A preferences page is also available from the home screen. To get to this page, 
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="You Lose :(" id="mlK-kj-KNW"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
@@ -1325,14 +1331,14 @@ A preferences page is also available from the home screen. To get to this page, 
                         <viewControllerLayoutGuide type="bottom" id="nJQ-hM-ogg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZiT-bZ-pwv">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8xO-xI-0cI">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="P7i-H5-Cz0" customClass="RoundedTableView">
-                                <rect key="frame" x="20" y="20" width="984" height="728"/>
+                                <rect key="frame" x="20" y="20" width="984" height="664"/>
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="services" textLabel="l2V-J5-23d" style="IBUITableViewCellStyleDefault" id="G1a-v8-Oyu">
@@ -1351,6 +1357,8 @@ A preferences page is also available from the home screen. To get to this page, 
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="0.75" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1372,6 +1380,7 @@ A preferences page is also available from the home screen. To get to this page, 
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Search for Devices" id="quh-d7-FXq"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
@@ -1392,14 +1401,14 @@ A preferences page is also available from the home screen. To get to this page, 
                         <viewControllerLayoutGuide type="bottom" id="xel-KM-LMd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6ga-nI-5nN">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Sr6-xA-wYo">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVk-qy-Xgo" customClass="RoundedButton">
-                                <rect key="frame" x="20" y="344" width="985" height="81"/>
+                                <rect key="frame" x="20" y="312" width="985" height="81"/>
                                 <color key="backgroundColor" red="1" green="0.78039222959999999" blue="0.27450981740000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="81" id="fQI-0p-dkg"/>
@@ -1417,7 +1426,7 @@ A preferences page is also available from the home screen. To get to this page, 
                                 </connections>
                             </button>
                             <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="9rA-0P-q49">
-                                <rect key="frame" x="128" y="702" width="480" height="66"/>
+                                <rect key="frame" x="128" y="638" width="480" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="NPi-7x-hFi"/>
                                     <constraint firstAttribute="width" constant="480" id="jES-UZ-Ir8"/>
@@ -1441,6 +1450,7 @@ A preferences page is also available from the home screen. To get to this page, 
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="You Win!" id="2oo-kI-qtA"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
@@ -1458,11 +1468,11 @@ A preferences page is also available from the home screen. To get to this page, 
                         <viewControllerLayoutGuide type="bottom" id="Kso-I6-aZP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="D84-NA-F1V">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wooden_top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="HNE-Qn-Wyt">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOa-AU-GEu" customClass="RoundedButton">
                                 <rect key="frame" x="20" y="227" width="984" height="104"/>
@@ -1520,7 +1530,7 @@ A preferences page is also available from the home screen. To get to this page, 
                                 </connections>
                             </button>
                             <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Q9a-Qn-L5i">
-                                <rect key="frame" x="272" y="702" width="480" height="66"/>
+                                <rect key="frame" x="272" y="638" width="480" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="480" id="3se-1f-EZi"/>
                                     <constraint firstAttribute="height" constant="66" id="aCH-1M-Hck"/>
@@ -1549,6 +1559,7 @@ A preferences page is also available from the home screen. To get to this page, 
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Pause" id="iqB-aV-f9t"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
@@ -1566,19 +1577,6 @@ A preferences page is also available from the home screen. To get to this page, 
         <image name="refresh_button.png" width="348" height="348"/>
         <image name="spadesuitimage.png" width="348" height="348"/>
         <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
-        <image name="wooden_top.jpg" width="600" height="361"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1586,6 +1584,6 @@ A preferences page is also available from the home screen. To get to this page, 
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="SD3-qT-Xh2"/>
+        <segue reference="b5K-WP-gvI"/>
     </inferredMetricsTieBreakers>
 </document>
