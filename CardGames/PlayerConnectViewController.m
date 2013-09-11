@@ -10,6 +10,8 @@
 #import "PlayerConnectViewController.h"
 #import "WifiConnection.h"
 
+#import "UIColor+CardGamesColor.h"
+
 @interface PlayerConnectViewController() <NSNetServiceBrowserDelegate, NSNetServiceDelegate>
 
 @property(nonatomic, strong) NSNetServiceBrowser *serviceBrowser;
@@ -130,7 +132,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"services"];
     }
-    
+
+    cell.backgroundColor = [UIColor goldColor];
     [[cell textLabel] setText:[c name]];
     return cell;
 }
